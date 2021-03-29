@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="?attr/selectableItemBackground"
+              android:clickable="true"
+              android:orientation="horizontal"
+              tools:background="@android:color/white"
+              tools:ignore="RtlSymmetry">
+
+    <ImageView
+        android:id="@+id/txt_firstletter"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/padding"
+       />
+
+
+
+<!--     `   <TextView-->
+<!--            android:id="@+id/txt_name"-->
+<!--            style="@style/TextAppearance.AppCompat.Subhead"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="@dimen/activity_horizontal_margin"-->
+<!--            android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+<!--            android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+<!--            android:layout_marginStart="@dimen/activity_horizontal_margin"-->
+<!--            android:ellipsize="end"-->
+<!--            android:visibility="gone"-->
+<!--            android:fontFamily="sans-serif-medium"-->
+<!--            tools:targetApi="jelly_bean"-->
+<!--            tools:text="Nougat"/>`-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/txt_firstletter">
+
+        <TextView
+            android:id="@+id/txt_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:layout_centerVertical="true"
+            tools:text="A family of confections made with sugar or honey, roasted nuts, whipped egg whites, and sometimes chopped candied fruit. The consistency of nougat is chewy, and it is used in a variety of candy bars and chocolates."/>
+
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:alpha="0.12"
+        android:layout_toRightOf="@+id/txt_firstletter"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/black"/>
+
+</RelativeLayout>

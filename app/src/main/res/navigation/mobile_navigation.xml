@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="lu.uni.bicslab.greenbot.android.ui.fragment.indicator_category.IndicatorCategoryFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_indicator_category">
+    <action
+        android:id="@+id/goto_indicator"
+        app:destination="@id/fragment_indicator"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"
+        />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_indicator"
+        android:name="lu.uni.bicslab.greenbot.android.ui.fragment.indicator.IndicatorFragment"
+        tools:layout="@layout/fragment_indicator"
+        />
+    <fragment
+        android:id="@+id/fragment_compare"
+        android:name="lu.uni.bicslab.greenbot.android.ui.fragment.compare.CompareActivity"
+        tools:layout="@layout/fragment_comare_layout"
+        />
+
+</navigation>

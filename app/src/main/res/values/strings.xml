@@ -1,0 +1,123 @@
+<resources>
+    <string name="app_name">GreenBot</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="home_second">Home Second</string>
+
+
+    <string name="title_activity_onbording">OnbordingActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="title_activity_signin">SigninActivity</string>
+
+
+    <string name="ok">OK</string>
+    <string name="permission_camera_rationale">Access to the camera is needed for detection</string>
+    <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
+    <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
+    <string name="title_activity_main">Barcode Reader Sample</string>
+    <string name="barcode_header">Click &quot;Read Barcode&quot; to read a barcode</string>
+    <string name="read_barcode">Read Barcode</string>
+    <string name="auto_focus">Auto Focus</string>
+    <string name="use_flash">Use Flash</string>
+    <string name="barcode_success">Barcode read successfully</string>
+    <string name="barcode_failure">No barcode captured</string>
+    <string name="barcode_error">"Error reading barcode: %1$s"</string>
+<!--onbording-->
+    <string name="onbording_one_title">Quel consommateur \n êtes-vous?</string>
+    <string name="onbording_one_doc">Dites-nous ce qui compte pour vous afin de
+personnaliser votre expérience.</string>
+    <string name="onbording_title">  Welcome to GreenBot!</string>
+    <string name="onbording_doc">We want to be transparent and allow you
+to buy the products that suit you.
+This is why we have developed the application
+GreenBot. This will allow you to consult
+a multitude of product-specific data
+and compare it to others before performing
+your purchases.</string>
+    <string name="onbording_two_title">Scannez un produit</string>
+    <string name="onbording_two_doc">Munissez vous de votre Smartphone durant vos
+courses afin de scanner les QR Code présents sur
+une sélection de produits et obtenez des
+récompenses.</string>
+    <string name="onbording_three_title">Consultez les indicateurs qui
+comptent pour vous</string>
+    <string name="onbording_three_doc">Pour des achats plus responsables, il ne vous reste
+plus qu’à profiter des informations disponibles
+pour chaque produit.</string>
+    <string name="following">FOLLOWING</string>
+
+
+    <string name="title_activity_onbord_start">OnbordStartActivity</string>
+    <string name="title_activity_siginin_select">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <string name="title_activity_signin_select">SigninSelectActivity</string>
+    <string name="scanner">Scanner</string>
+    <string name="profile">Profile</string>
+    <string name="loading">Loading..</string>
+    <string name="nodata">No Data!</string>
+    <string name="continueff">Continue</string>
+    <string name="serialscanner"> Serial Scanner</string>
+    <string name="price">Price</string>
+
+    <!-- profile -->
+    <string name="productscanner"> Produits scannés</string>
+    <string name="productconsult"> Produits consultés</string>
+    <string name="retourclient"> Retour client</string>
+    <string name="recompenses"> Récompenses</string>
+    <string name="termes"> Termes et conditions d’utilisation</string>
+
+    <string name="type"> Type:</string>
+    <string name="category"> Category"</string>
+    <string name="provider"> Provider"</string>
+
+    <string name="bioimporte">Bio importé</string>
+    <string name="biolocal">Bio local</string>
+    <string name="conimporte">Conventionel importé</string>
+    <string name="conlocal">Conventionel local</string>
+
+    <string name="privilege"> Privilégier des
+    méthodes
+    agricoles éthiques</string>
+    <string name="Encourager" >Encourager une
+    production
+    équitable</string>
+    <string name= "Connaitre" > Connaître les lois
+    qui régissent une
+    filière.</string>
+    <string name="Soutenir" >Soutenir les
+    producteurs au
+        juste prix.</string>
+<string name="review">Review</string>
+<string name="Price">Price</string>
+    <string name="accountconsideration">Your account is under consideration</string>
+    <string name="local_organic">local_organic</string>
+    <string name="local_conventional">local_conventional</string>
+    <string name="imported_organic">imported_organic</string>
+    <string name="imported_conventional">imported_conventional</string>
+    <string name="ind_cat_environment">ind_cat_environment</string>
+    <string name="ind_cat_social">ind_cat_social</string>
+    <string name="ind_cat_governance">ind_cat_governance</string>
+    <string name="ind_cat_economic">ind_cat_economic</string>
+    <string name="requested">requested</string>
+    <string name="valid">ind_cat_economic</string>
+</resources>
+
