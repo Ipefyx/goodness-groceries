@@ -9,6 +9,16 @@
     <color name="blue">#34B8E6</color>
    <color name="gray">#E0E0E0</color>
     <color name="gray_dark">#808080</color>
+    
+    
+    <color name="palette_green1">#9DB963</color>
+    <color name="palette_green2">#BCD094</color>
+    <color name="palette_blue1">#12667B</color>
+    <color name="palette_blue2">#6FA6B5</color>
+    <color name="palette_violet1">#B96E9B</color>
+    <color name="palette_violet2">#CF9AB9</color>
+    <color name="palette_yellow1">#F4E27A</color>
+    <color name="palette_yellow2">#F6ECA5</color>
 
 
 
