@@ -26,8 +26,6 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import org.json.JSONObject;
-
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
@@ -121,9 +119,9 @@ public class ItemDetailsActivity extends AppCompatActivity {
                 }
             }
         });
-        setview(fillDummyData());
-
-
+        
+        
+        setView(getIndicators());
     }
 
     @Override
@@ -163,7 +161,7 @@ public class ItemDetailsActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private List<IndicatorModel> fillDummyData() {
+    private List<IndicatorModel> getIndicators() {
         String jsonFileStringIndicator = Utils.getJsonFromAssets(getApplicationContext(), "indicators.json");
         String jsonFileStringProduct = Utils.getJsonFromAssets(getApplicationContext(), "products.json");
 
@@ -190,11 +188,11 @@ public class ItemDetailsActivity extends AppCompatActivity {
                 }
             }
         }
+        
         return indicatorModel;
-
     }
 
-    private void setview(List<IndicatorModel> indicatorModel) {
+    private void setView(List<IndicatorModel> indicatorModel) {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
 
@@ -208,6 +206,4 @@ public class ItemDetailsActivity extends AppCompatActivity {
         header = findViewById(R.id.header);
         Glide.with(getApplicationContext()).load(productmodel.getImage_url()).apply(RequestOptions.centerCropTransform()).into(header);
     }
-
-    //
 }
