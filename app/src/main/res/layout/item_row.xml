@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:background="?attr/selectableItemBackground"
@@ -10,13 +11,14 @@
               tools:ignore="RtlSymmetry">
 
     <ImageView
-        android:id="@+id/txt_firstletter"
-        style="@style/TextAppearance.AppCompat.Headline"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="@dimen/padding"
-       />
+            android:id="@+id/txt_firstletter"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/padding"
+            app:srcCompat="@drawable/ic_menu_gallery"
+            android:scaleType="fitCenter" />
 
 
 
