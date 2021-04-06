@@ -19,59 +19,59 @@ import lu.uni.bicslab.greenbot.android.ui.activity.fromprofile.RetourClientActiv
 import lu.uni.bicslab.greenbot.android.ui.activity.fromprofile.TermesAndConditionActivity;
 
 public class ProfileFragment extends Fragment {
-
-    private ProfileViewModel homeViewModel;
-    RelativeLayout layout_produitsscanner, layout_produitsconsultes, layout_retourclient, layout_recompenses, layout_teams;
-
-
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(ProfileViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_profile, container, false);
-        layout_produitsscanner = (RelativeLayout)root.findViewById(R.id.layout_produitsscanner);
-        layout_produitsconsultes = (RelativeLayout)root.findViewById(R.id.layout_produitsconsultes);
-        layout_retourclient = (RelativeLayout)root.findViewById(R.id.layout_retourclient);
-        layout_recompenses = (RelativeLayout)root.findViewById(R.id.layout_recompenses);
-        layout_teams = (RelativeLayout)root.findViewById(R.id.layout_teams);
-
-        layout_produitsscanner.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), ProductsScannerActivity.class);
-                startActivity(intent);
-            }
-        });
-        layout_produitsconsultes.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(getContext(), ProductConsultActivity.class);
-                        startActivity(intent);
-                    }
-                });
-
-        layout_retourclient.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), RetourClientActivity.class);
-                startActivity(intent);
-            }
-        });
-        layout_recompenses.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(getContext(), RecompensesActivity.class);
-                        startActivity(intent);
-                    }
-                });
-        layout_teams.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), TermesAndConditionActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        return root;
-    }
+	
+	private ProfileViewModel homeViewModel;
+	RelativeLayout layout_produitsscanner, layout_produitsconsultes, layout_retourclient, layout_recompenses, layout_teams;
+	
+	
+	public View onCreateView(@NonNull LayoutInflater inflater,
+									 ViewGroup container, Bundle savedInstanceState) {
+		homeViewModel =
+				ViewModelProviders.of(this).get(ProfileViewModel.class);
+		View root = inflater.inflate(R.layout.fragment_profile, container, false);
+		layout_produitsscanner = root.findViewById(R.id.layout_produitsscanner);
+		layout_produitsconsultes = root.findViewById(R.id.layout_produitsconsultes);
+		layout_retourclient = root.findViewById(R.id.layout_retourclient);
+		layout_recompenses = root.findViewById(R.id.layout_recompenses);
+		layout_teams = root.findViewById(R.id.layout_teams);
+		
+		layout_produitsscanner.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getContext(), ProductsScannerActivity.class);
+				startActivity(intent);
+			}
+		});
+		layout_produitsconsultes.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getContext(), ProductConsultActivity.class);
+				startActivity(intent);
+			}
+		});
+		
+		layout_retourclient.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getContext(), RetourClientActivity.class);
+				startActivity(intent);
+			}
+		});
+		layout_recompenses.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getContext(), RecompensesActivity.class);
+				startActivity(intent);
+			}
+		});
+		layout_teams.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getContext(), TermesAndConditionActivity.class);
+				startActivity(intent);
+			}
+		});
+		
+		return root;
+	}
 }

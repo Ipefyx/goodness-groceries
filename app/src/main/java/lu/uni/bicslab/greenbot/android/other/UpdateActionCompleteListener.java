@@ -2,5 +2,5 @@ package lu.uni.bicslab.greenbot.android.other;
 
 
 public interface UpdateActionCompleteListener {
-    public void updateAction(boolean isUpdated);
+	void updateAction(boolean isUpdated);
 }

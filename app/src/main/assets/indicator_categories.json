@@ -1,26 +1,26 @@
 [
-  {
-    "id": "ind_cat_environment",
-    "name": "Environment",
-    "icon_name": "indicator_cat_environment",
-    "description": "Category Environment dummy description"
-  },
-  {
-    "id": "ind_cat_economic",
-    "name": "Economic Well being",
-    "icon_name": "indicator_cat_economicwellbeing",
-    "description": "Category Economic Well being dummy description"
-  },
-  {
-    "id": "ind_cat_social",
-    "name": "Social Well being",
-    "icon_name": "indicator_cat_socialwellbeing",
-    "description": "Category Social Well being dummy description"
-  },
-  {
-    "id": "ind_cat_governance",
-    "name": "Good Governance",
-    "icon_name": "indicator_cat_goodgovernance",
-    "description": "Category Good Governance dummy description"
-  }
+	{
+		"id": "ind_cat_environment",
+		"name": "Environment",
+		"icon_name": "indicator_cat_environment",
+		"description": "Category Environment dummy description"
+	},
+	{
+		"id": "ind_cat_economic",
+		"name": "Economic Well being",
+		"icon_name": "indicator_cat_economicwellbeing",
+		"description": "Category Economic Well being dummy description"
+	},
+	{
+		"id": "ind_cat_social",
+		"name": "Social Well being",
+		"icon_name": "indicator_cat_socialwellbeing",
+		"description": "Category Social Well being dummy description"
+	},
+	{
+		"id": "ind_cat_governance",
+		"name": "Good Governance",
+		"icon_name": "indicator_cat_goodgovernance",
+		"description": "Category Good Governance dummy description"
+	}
 ]
