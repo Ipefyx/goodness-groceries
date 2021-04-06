@@ -50,7 +50,7 @@ public class CustomCompareListRowAdapter extends RecyclerView.Adapter<CustomComp
         holder.mName.setText(model.getName());
         holder.layout_main_compare.setVisibility(View.INVISIBLE);
 
-        Glide.with(context).load(Utils.GetImage(context, model.getIcon_name())).apply(RequestOptions.centerCropTransform()).into(holder.txt_firstletter);
+        Glide.with(context).load(Utils.getDrawableImage(context, model.getIcon_name())).apply(RequestOptions.centerCropTransform()).into(holder.txt_firstletter);
         if (model.isSelected() == false) {
             holder.mName.setTextColor(Color.GRAY);
             // Apply grayscale filter

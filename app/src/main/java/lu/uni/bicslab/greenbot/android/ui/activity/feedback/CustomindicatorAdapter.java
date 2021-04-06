@@ -75,7 +75,7 @@ public class CustomindicatorAdapter extends RecyclerView.Adapter<Customindicator
         } else {
             holder.edit_feedback.setVisibility(View.GONE);
             holder.imageView_icon.setVisibility(View.VISIBLE);
-            Drawable img = Utils.GetImage(context, data.getIcon_name());
+            Drawable img = Utils.getDrawableImage(context, data.getIcon_name());
             Glide.with(context).load(img).apply(RequestOptions.centerCropTransform()).into(holder.imageView_icon);
         }
         //this icons can change - 1st green, 2nd yellow, not selected black - take each value using click position

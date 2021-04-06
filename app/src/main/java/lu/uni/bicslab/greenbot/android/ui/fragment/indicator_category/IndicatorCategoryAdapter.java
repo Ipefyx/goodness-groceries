@@ -111,8 +111,7 @@ public class IndicatorCategoryAdapter extends RecyclerView.Adapter<ItemHolder> i
             }
         });
         
-        holder.imageview_icon.setBackground(ContextCompat.getDrawable(context, context.getResources().getIdentifier(model.getIcon_name(), "drawable", context.getPackageName())));
-
+        holder.imageview_icon.setBackground(Utils.getDrawableImage(context, model.getIcon_name()));
 
         //Glide.with(context).load(movieList.get(position).getImageUrl()).apply(RequestOptions.centerCropTransform()).into(holder.image);
     }

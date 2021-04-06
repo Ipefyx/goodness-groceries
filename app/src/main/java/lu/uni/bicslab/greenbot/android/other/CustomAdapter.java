@@ -42,7 +42,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         //holder.mName.setText(model.getName());
         holder.mDescription.setText(model.getGeneral_description());
 
-        Glide.with(context).load(Utils.GetImage(context, model.getIcon_name())).apply(RequestOptions.centerCropTransform()).into(holder.txt_firstletter);
+        Glide.with(context).load(Utils.getDrawableImage(context, model.getIcon_name())).apply(RequestOptions.centerCropTransform()).into(holder.txt_firstletter);
 
     }
 

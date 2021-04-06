@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 
+import androidx.core.content.ContextCompat;
+
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
@@ -68,12 +70,11 @@ public class Utils {
         return jsonString;
     }
 
-    public static Drawable GetImage(Context c, String ImageName) {
+    public static Drawable getDrawableImage(Context c, String imageName) {
         try {
-            return c.getResources().getDrawable(c.getResources().getIdentifier(ImageName, "drawable", c.getPackageName()));
+            return ContextCompat.getDrawable(c, c.getResources().getIdentifier(imageName, "drawable", c.getPackageName()));
         } catch (Exception e) {
-            return c.getResources().getDrawable(c.getResources().getIdentifier("ind_animal", "drawable", c.getPackageName()));
-
+			  return ContextCompat.getDrawable(c, c.getResources().getIdentifier("ic_baseline_report_24", "drawable", c.getPackageName()));
         }
 
     }
