@@ -17,6 +17,8 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -111,9 +113,8 @@ public class IndicatorCategoryAdapter extends RecyclerView.Adapter<ItemHolder> i
 			}
 		});
 		
-		holder.imageview_icon.setImageDrawable(Utils.getDrawableImage(context, model.getIcon_name()));
-		
-		//Glide.with(context).load(movieList.get(position).getImageUrl()).apply(RequestOptions.centerCropTransform()).into(holder.image);
+//		holder.imageview_icon.setImageDrawable(Utils.getDrawableImage(context, model.getIcon_name()));
+		Glide.with(context).load(Utils.getDrawableImage(context, model.getIcon_name())).error(R.drawable.ic_menu_gallery).into(holder.imageview_icon);
 	}
 	
 	@Override
