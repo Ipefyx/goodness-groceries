@@ -38,13 +38,13 @@
             android:layout_marginTop="@dimen/padding"
         android:layout_below="@+id/headding">
 
-        <ImageView
-            android:id="@+id/imageview_icon"
-            android:layout_width="@dimen/img_category_size"
-            android:layout_height="@dimen/img_category_size"
-            android:layout_centerVertical="true"
-            android:background="@drawable/ic_menu_gallery">
-        </ImageView>
+            <ImageView
+                    android:id="@+id/imageview_icon"
+                    android:layout_width="@dimen/img_category_size"
+                    android:layout_height="@dimen/img_category_size"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitCenter"
+                    card_view:srcCompat="@drawable/ic_menu_gallery"></ImageView>
 
         <TextView
             android:id="@+id/txtDoc"
