@@ -74,7 +74,7 @@ public class Utils {
         try {
             return ContextCompat.getDrawable(c, c.getResources().getIdentifier(imageName, "drawable", c.getPackageName()));
         } catch (Exception e) {
-			  return ContextCompat.getDrawable(c, c.getResources().getIdentifier("ic_baseline_report_24", "drawable", c.getPackageName()));
+			  return ContextCompat.getDrawable(c, c.getResources().getIdentifier("ic_menu_gallery", "drawable", c.getPackageName()));
         }
 
     }
