@@ -62,7 +62,7 @@ public class CustomGridAdapter extends RecyclerView.Adapter<CustomGridAdapter.My
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         
-        //TODO: Fix this mess
+        //TODO: Fix this mess (tho it doesn't matter as the startup menu will be fully remade)
         //Used on first startup to give the selectable buttons their background color
         
         TextView text_title = holder.text_title;

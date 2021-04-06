@@ -46,7 +46,8 @@ public class ScanSelectedItemActivity extends AppCompatActivity {
                     startActivityForResult(intent, RC_BARCODE_CAPTURE);
 
                 } else {
-
+                    
+                    //todo: bruh why is this hardcoded
                     //goto item details activity
                     Intent intent = new Intent(getApplicationContext(), ItemDetailsActivity.class);
                     intent.putExtra("code", "2354896578459");
