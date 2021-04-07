@@ -9,18 +9,18 @@ public class ProductModel implements Serializable {
 	String name;
 	String description;
 	String type;
-	String category;
+	String origin_icon;
 	String provider;
 	String image_url;
 	List<IndicatorModel> indicators;
 	
 	
-	public ProductModel(String code, String name, String description, String type, String category, String provider, String image_url, List<IndicatorModel> indicators) {
+	public ProductModel(String code, String name, String description, String type, String origin_icon, String provider, String image_url, List<IndicatorModel> indicators) {
 		this.code = code;
 		this.name = name;
 		this.description = description;
 		this.type = type;
-		this.category = category;
+		this.origin_icon = origin_icon;
 		this.provider = provider;
 		this.image_url = image_url;
 		this.indicators = indicators;
@@ -58,12 +58,12 @@ public class ProductModel implements Serializable {
 		this.type = type;
 	}
 	
-	public String getCategory() {
-		return category;
+	public String getOrigin_icon() {
+		return origin_icon;
 	}
 	
-	public void setCategory(String category) {
-		this.category = category;
+	public void setOrigin_icon(String origin_icon) {
+		this.origin_icon = origin_icon;
 	}
 	
 	public String getProvider() {
