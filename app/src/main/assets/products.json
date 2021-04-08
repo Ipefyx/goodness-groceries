@@ -71,16 +71,8 @@
 		"image_url": "https://euzoea.com/wp-content/uploads/2016/12/honey.jpg",
 		"indicators": [
 			{
-				"indicator_id": "ind_animal",
-				"indicator_description": "The company provides a large field of flowers without using pesticide."
-			},
-			{
-				"indicator_id": "ind_localeco",
-				"indicator_description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy "
-			},
-			{
-				"indicator_id": "ind_soil",
-				"indicator_description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy "
+				"indicator_id": "ind_equity",
+				"indicator_description": "Much equity, very wow"
 			}
 		]
 	},
@@ -209,16 +201,8 @@
 		"image_url": "https://www.irishtimes.com/polopoly_fs/1.3907332.1559058394!/image/image.jpg_gen/derivatives/box_620_330/image.jpg",
 		"indicators": [
 			{
-				"indicator_id": "ind_animal",
-				"indicator_description": "The company provides a large field of flowers without using pesticide."
-			},
-			{
-				"indicator_id": "ind_localeco",
-				"indicator_description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy "
-			},
-			{
-				"indicator_id": "ind_soil",
-				"indicator_description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy "
+				"indicator_id": "ind_equity",
+				"indicator_description": "Much equity, very wow"
 			}
 		]
 	},
@@ -232,16 +216,8 @@
 		"image_url": "https://www.irishtimes.com/polopoly_fs/1.3907332.1559058394!/image/image.jpg_gen/derivatives/box_620_330/image.jpg",
 		"indicators": [
 			{
-				"indicator_id": "ind_animal",
-				"indicator_description": "The company provides a large field of flowers without using pesticide."
-			},
-			{
-				"indicator_id": "ind_localeco",
-				"indicator_description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy "
-			},
-			{
-				"indicator_id": "ind_soil",
-				"indicator_description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy "
+				"indicator_id": "ind_equity",
+				"indicator_description": "Much equity, very wow"
 			}
 		]
 	},

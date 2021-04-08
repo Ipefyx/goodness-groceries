@@ -2,6 +2,7 @@ package lu.uni.bicslab.greenbot.android.ui.fragment.indicator;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,16 +12,21 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.helper.widget.Flow;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.google.android.gms.common.util.ArrayUtils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import lu.uni.bicslab.greenbot.android.R;
+import lu.uni.bicslab.greenbot.android.other.Utils;
 import lu.uni.bicslab.greenbot.android.ui.activity.itemmain.ItemDetailsActivity;
 
 public class IndicatorAdapter extends RecyclerView.Adapter<IndicatorAdapter.IndicatorItemHolder> implements Filterable {
@@ -77,19 +83,31 @@ public class IndicatorAdapter extends RecyclerView.Adapter<IndicatorAdapter.Indi
 	
 	@Override
 	public void onBindViewHolder(IndicatorItemHolder holder, int position) {
-		final int pos = position;
-		holder.txtName.setText(indicatorListFiltered.get(position).getName());
+		ProductModel product = indicatorListFiltered.get(position);
+		holder.txtName.setText(product.getName());
 		holder.card_view.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(context, ItemDetailsActivity.class);
-				intent.putExtra("code", indicatorListFiltered.get(pos).getCode());
-				intent.putExtra("title", indicatorListFiltered.get(pos).getName());
+				intent.putExtra("code", product.getCode());
+				intent.putExtra("title", product.getName());
 				context.startActivity(intent);
 			}
 		});
 		
-		Glide.with(context).load(indicatorListFiltered.get(position).getImage_url()).apply(RequestOptions.centerCropTransform()).into(holder.imageview_icon);
+		// Assume Flow is element 0 and remove all of the ImageViews that may already be there
+		holder.indicator_layout.removeViewsInLayout(1, holder.indicator_layout.getChildCount()-1);
+		
+		for (IndicatorModel ind : product.indicators) {
+			ImageView imageview = (ImageView) LayoutInflater.from(context).inflate(R.layout.indicator_item_layout_indicator_imageview, holder.indicator_layout, false);
+			Glide.with(context).load(Utils.getDrawableImage(context, ind.icon_name)).into(imageview);
+			imageview.setId(View.generateViewId());
+			holder.indicator_layout.addView(imageview);
+			holder.indicator_flow.addView(imageview);
+		}
+		
+		Glide.with(context).load(product.getImage_url()).apply(RequestOptions.centerCropTransform()).error(R.drawable.ic_menu_gallery).into(holder.imageview_icon);
+		Glide.with(context).load(Utils.getDrawableImage(context, product.origin_icon)).error(R.drawable.ic_menu_gallery).into(holder.imageview_origin);
 	}
 	
 	@Override
@@ -139,12 +157,18 @@ public class IndicatorAdapter extends RecyclerView.Adapter<IndicatorAdapter.Indi
 		public TextView txtName;
 		public CardView card_view;
 		public ImageView imageview_icon;
+		public ImageView imageview_origin;
+		public Flow indicator_flow;
+		public ConstraintLayout indicator_layout;
 		
 		public IndicatorItemHolder(View view) {
 			super(view);
 			txtName = view.findViewById(R.id.txtName);
 			card_view = view.findViewById(R.id.card_view);
 			imageview_icon = view.findViewById(R.id.imageview_icon);
+			imageview_origin = view.findViewById(R.id.imageview_origin);
+			indicator_flow = view.findViewById(R.id.indicator_flow);
+			indicator_layout = view.findViewById(R.id.indicator_layout);
 		}
 	}
 }

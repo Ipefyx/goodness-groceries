@@ -36,6 +36,8 @@
     <dimen name="profilearrowsize">20dp</dimen>
     <dimen name="textdetails">16dp</dimen>
     <dimen name="img_category_size">60dp</dimen>
+    
+    <dimen name="product_card_indicator_size">35dp</dimen>
 
     <dimen name="txt_title_size">20dp</dimen>
     <dimen name="txt_doc_size">18dp</dimen>

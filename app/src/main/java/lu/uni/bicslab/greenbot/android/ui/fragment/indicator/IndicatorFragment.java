@@ -2,7 +2,6 @@ package lu.uni.bicslab.greenbot.android.ui.fragment.indicator;
 
 import android.app.SearchManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +20,7 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.Utils;
@@ -95,32 +95,48 @@ public class IndicatorFragment extends Fragment {
 		List<IndicatorModel> indicatorCategoryList = gson.fromJson(jsonFileStringIndicator, listUserTypeIndicator);
 		List<ProductModel> productList = gson.fromJson(jsonFileStringProduct, listUserTypeProduct);
 		
-		List<IndicatorModel> indicatorlist = new ArrayList<IndicatorModel>();
-		for (IndicatorModel c : indicatorCategoryList) {
-			if (indicatorlist.equals(c.getCategory_id())) {
-				indicatorlist.add(c);
+		// Feels hacky, but gets the job done (kinda had to work with the existing stuff)
+		for (ProductModel product : productList) {
+			for (int i = 0; i < product.indicators.size(); i++) {
+				String ind_id = product.indicators.get(i).getIndicator_id();
+				String ind_desc = product.indicators.get(i).getIndicator_description();
+				
+				Optional<IndicatorModel> matchingIndicator = indicatorCategoryList.stream().filter(ind -> ind.id.equals(ind_id)).findFirst();
+				if (matchingIndicator.isPresent()) {
+					product.indicators.set(i, matchingIndicator.get());
+					product.indicators.get(i).setIndicator_description(ind_desc);
+				}
 			}
 		}
 		
-		List<ProductModel> productfinallist = new ArrayList<ProductModel>();
-		for (ProductModel c : productList) {
-			boolean added = false;
-			Log.e("product", "" + c.getIndicators());
-			for (IndicatorModel indicaor : c.getIndicators()) {
-				for (IndicatorModel indicaormain : indicatorCategoryList) {
-					Log.e("indicaor", "" + indicaor.getCategory_id());
-					if ((indicaor.getIndicator_idForProduct().equals(indicaormain.getId())) &&
-							(indicaormain.getCategory_id().equals(indicatorID))) {
-						productfinallist.add(c);
-						added = true;
-						break;
-					}
-					if (added) break;
-				}
-				if (added) break;
-			}
-		}
-		if (productfinallist.size() > 0) {
+		//TODO: Fix this filter code
+//		List<IndicatorModel> indicatorlist = new ArrayList<IndicatorModel>();
+//		for (IndicatorModel c : indicatorCategoryList) {
+//			if (indicatorlist.equals(c.getCategory_id())) {
+//				indicatorlist.add(c);
+//			}
+//		}
+//		
+//		List<ProductModel> productfinallist = new ArrayList<ProductModel>();
+//		for (ProductModel c : productList) {
+//			boolean added = false;
+//			Log.e("product", "" + c.getIndicators());
+//			for (IndicatorModel indicator : c.getIndicators()) {
+//				for (IndicatorModel indicatormain : indicatorCategoryList) {
+//					Log.e("indicator", "" + indicator.getCategory_id());
+//					if ((indicator.getIndicator_idForProduct().equals(indicatormain.getId())) &&
+//							(indicatormain.getCategory_id().equals(indicatorID))) {
+//						productfinallist.add(c);
+//						added = true;
+//						break;
+//					}
+//					if (added) break;
+//				}
+//				if (added) break;
+//			}
+//		}
+		
+		if (productList.size() > 0) {
 			textviewloading.setVisibility(View.GONE);
 			searchView.setVisibility(View.VISIBLE);
 		} else {
@@ -129,8 +145,10 @@ public class IndicatorFragment extends Fragment {
 			searchView.setVisibility(View.GONE);
 		}
 		
-		Log.e("productfinallist", "" + productfinallist);
-		return productfinallist;
+		return productList;
+
+//		Log.e("productfinallist", "" + productfinallist);
+//		return productfinallist;
 		
 	}
 }

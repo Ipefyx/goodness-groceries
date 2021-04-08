@@ -1,73 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/card_view"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="3dp"
     card_view:cardCornerRadius="9dp"
     card_view:cardElevation="2dp"
     >
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/padding">
 
-        <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/padding"
+            android:layout_marginRight="@dimen/padding"
+            android:layout_marginBottom="@dimen/padding"
+            android:layout_marginLeft="@dimen/padding">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/img_main"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_centerVertical="true"
-        android:layout_margin="@dimen/padding"
-        card_view:cardCornerRadius="9dp"
-        android:layout_marginRight="@dimen/padding2"
-        >
-    <ImageView
-        android:id="@+id/imageview_icon"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/ic_menu_gallery"
-        ></ImageView>
-    </androidx.cardview.widget.CardView>
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                card_view:layout_constraintTop_toBottomOf="@+id/txtName"
+                card_view:layout_constraintStart_toStartOf="@+id/txtName"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="5dp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintVertical_bias="1.0">
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/indicator_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    card_view:layout_constraintTop_toTopOf="parent"
+                    card_view:layout_constraintStart_toEndOf="@+id/imageview_origin"
+                    card_view:layout_constraintHorizontal_bias="1.0"
+                    android:layout_marginStart="@dimen/padding">
+
+                <androidx.constraintlayout.helper.widget.Flow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        card_view:layout_constraintTop_toTopOf="parent"
+                        android:orientation="horizontal"
+                        card_view:flow_wrapMode="chain"
+                        card_view:flow_horizontalAlign="end"
+                        card_view:flow_horizontalStyle="packed"
+                        card_view:flow_verticalAlign="top"
+                        card_view:flow_verticalStyle="packed"
+                        card_view:flow_horizontalGap="5dp"
+                        card_view:flow_verticalGap="5dp"
+                        card_view:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/indicator_flow"
+                        card_view:flow_verticalBias="0"
+                        card_view:flow_horizontalBias="1" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                    android:layout_width="@dimen/product_card_indicator_size"
+                    android:layout_height="@dimen/product_card_indicator_size"
+                    card_view:srcCompat="@drawable/ic_menu_gallery"
+                    android:id="@+id/imageview_origin"
+                    card_view:layout_constraintStart_toStartOf="parent"
+                    card_view:layout_constraintTop_toTopOf="parent"
+                    android:scaleType="fitCenter" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:id="@+id/txtName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/img_main"
-            android:lines="2"
-            android:layout_marginTop="@dimen/padding2"
-            android:text=" ggggggggggggggggggggggggggggggggggggggggggggg"
-            style="@style/textdatastyle"></TextView>
-            <RelativeLayout
-                android:layout_width="wrap_content"
+                android:id="@+id/txtName"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txtName"
-                android:layout_alignParentRight="true">
-                <ImageView
-                    android:id="@+id/imageview_icon_1"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/socio_ecologique_icon"
-                    ></ImageView>
-                <ImageView
-                    android:id="@+id/imageview_icon_2"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_margin="@dimen/padding"
-                    android:layout_toRightOf="@+id/imageview_icon_1"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/socio_culturel_icon"
-                    ></ImageView>
+                android:text="asd"
+                style="@style/textdatastyle"
+                card_view:layout_constraintStart_toEndOf="@+id/img_main"
+                card_view:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="@dimen/padding"
+                card_view:layout_constraintEnd_toEndOf="parent" />
 
-            </RelativeLayout>
-    </RelativeLayout>
-    </RelativeLayout>
+        <androidx.cardview.widget.CardView
+                android:id="@+id/img_main"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                card_view:cardCornerRadius="9dp"
+                card_view:layout_constraintTop_toTopOf="parent"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:cardElevation="0dp">
+
+            <ImageView
+                    android:id="@+id/imageview_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    card_view:srcCompat="@drawable/ic_menu_gallery"
+                    android:scaleType="fitCenter" />
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.cardview.widget.CardView>
