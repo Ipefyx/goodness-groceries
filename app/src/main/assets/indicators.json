@@ -79,21 +79,21 @@
 	{
 		"id": "ind_transparency",
 		"name": "Transparency",
-		"category_id": "ind_cat_good_gevernance",
+		"category_id": "ind_cat_governance",
 		"icon_name": "indicator_transparency",
 		"general_description": "lorem ipsum Husbandry Conditions, Transport Conditions, Slaughtering Conditions"
 	},
 	{
 		"id": "ind_participation",
 		"name": "Participation",
-		"category_id": "ind_cat_good_gevernance",
+		"category_id": "ind_cat_governance",
 		"icon_name": "indicator_participation",
 		"general_description": "lorem ipsum Husbandry Conditions, Transport Conditions, Slaughtering Conditions"
 	},
 	{
 		"id": "ind_sustainable",
 		"name": "Sustainable Management",
-		"category_id": "ind_cat_environmental_integrity",
+		"category_id": "ind_cat_governance",
 		"icon_name": "indicator_sustainablemanagement",
 		"general_description": "lorem ipsum Husbandry Conditions, Transport Conditions, Slaughtering Conditions"
 	}
