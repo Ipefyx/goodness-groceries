@@ -96,6 +96,7 @@ public class IndicatorFragment extends Fragment {
 		List<ProductModel> productList = gson.fromJson(jsonFileStringProduct, listUserTypeProduct);
 		
 		// Feels hacky, but gets the job done (kinda had to work with the existing stuff)
+		// For each indicator id listed for the product, find the corresponding indicator, put it into the product, and fill in the indicator_description
 		for (ProductModel product : productList) {
 			for (int i = 0; i < product.indicators.size(); i++) {
 				String ind_id = product.indicators.get(i).getIndicator_id();
