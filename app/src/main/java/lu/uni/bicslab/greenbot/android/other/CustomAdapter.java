@@ -40,7 +40,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 		IndicatorModel model = indicatorModel.get(position);
 		
 		//holder.mName.setText(model.getName());
-		holder.mDescription.setText(model.getGeneral_description());
+		holder.mDescription.setText(model.getIndicator_description());
 		
 //		holder.txt_firstletter.setImageDrawable(Utils.getDrawableImage(context, model.getIcon_name()));
 		Glide.with(context).load(Utils.getDrawableImage(context, model.getIcon_name())).error(R.drawable.ic_menu_gallery).into(holder.txt_firstletter);

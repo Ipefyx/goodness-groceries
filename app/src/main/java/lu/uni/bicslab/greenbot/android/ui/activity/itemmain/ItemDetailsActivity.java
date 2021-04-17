@@ -29,6 +29,7 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.CustomAdapter;
@@ -174,22 +175,39 @@ public class ItemDetailsActivity extends AppCompatActivity {
 		List<IndicatorModel> indicatorCategoryList = gson.fromJson(jsonFileStringIndicator, listUserTypeIndicator);
 		List<ProductModel> productList = gson.fromJson(jsonFileStringProduct, listUserTypeProduct);
 		
-		List<IndicatorModel> indicatorModel = new ArrayList<IndicatorModel>();
-		for (ProductModel product : productList) {
-			Log.e("product", "" + product.getIndicators());
-			if (product.getCode().equals(value)) {
-				productmodel = product;
-				for (IndicatorModel main : product.getIndicators()) {
-					for (IndicatorModel model : indicatorCategoryList) {
-						if (model.getId().equals(main.getIndicator_idForProduct())) {
-							indicatorModel.add(model);
-						}
-					}
+//		List<IndicatorModel> indicatorModel = new ArrayList<IndicatorModel>();
+//		for (ProductModel product : productList) {
+//			Log.e("product", "" + product.getIndicators());
+//			if (product.getCode().equals(value)) {
+//				productmodel = product;
+//				for (IndicatorModel main : product.getIndicators()) {
+//					for (IndicatorModel model : indicatorCategoryList) {
+//						if (model.getId().equals(main.getIndicator_idForProduct())) {
+//							indicatorModel.add(model);
+//						}
+//					}
+//				}
+//			}
+//		}
+		
+		Optional<ProductModel> matchingProduct = productList.stream().filter(product -> product.code.equals(value)).findFirst();
+		if (matchingProduct.isPresent()) {
+			productmodel = matchingProduct.get();
+			
+			// Copied from IndicatorFragment.java because it serves the same purpose
+			for (int i = 0; i < productmodel.indicators.size(); i++) {
+				String ind_id = productmodel.indicators.get(i).getIndicator_id();
+				String ind_desc = productmodel.indicators.get(i).getIndicator_description();
+				
+				Optional<IndicatorModel> matchingIndicator = indicatorCategoryList.stream().filter(ind -> ind.id.equals(ind_id)).findFirst();
+				if (matchingIndicator.isPresent()) {
+					productmodel.indicators.set(i, matchingIndicator.get());
+					productmodel.indicators.get(i).setIndicator_description(ind_desc);
 				}
 			}
 		}
 		
-		return indicatorModel;
+		return productmodel.getIndicators();
 	}
 	
 	private void setView(List<IndicatorModel> indicatorModel) {
