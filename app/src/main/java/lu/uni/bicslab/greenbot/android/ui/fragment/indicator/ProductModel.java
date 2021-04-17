@@ -5,14 +5,14 @@ import java.util.List;
 
 public class ProductModel implements Serializable {
 	
-	String code;
-	String name;
-	String description;
-	String type;
-	String origin_icon;
-	String provider;
-	String image_url;
-	List<IndicatorModel> indicators;
+	public String code;
+	public String name;
+	public String description;
+	public String type;
+	public String origin_icon;
+	public String provider;
+	public String image_url;
+	public List<IndicatorModel> indicators;
 	
 	
 	public ProductModel(String code, String name, String description, String type, String origin_icon, String provider, String image_url, List<IndicatorModel> indicators) {

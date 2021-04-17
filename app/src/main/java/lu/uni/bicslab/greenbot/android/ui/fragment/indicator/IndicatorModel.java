@@ -6,14 +6,14 @@ import java.io.Serializable;
 
 public class IndicatorModel implements Serializable {
 	
-	String indicator_id;
-	String name;
-	String icon_name;
-	String indicator_description;
-	String category_id;
-	String id;
-	String general_description;
-	int selectionnumber = 0;
+	public String indicator_id;
+	public String name;
+	public String icon_name;
+	public String indicator_description;
+	public String category_id;
+	public String id;
+	public String general_description;
+	public int selectionnumber = 0;
 	
 	boolean isSelected = false;
 	
