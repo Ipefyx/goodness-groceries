@@ -21,6 +21,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.Utils;
@@ -29,7 +30,7 @@ public class IndicatorFragment extends Fragment {
 	private RecyclerView recyclerView;
 	
 	private IndicatorAdapter itemAdapter;
-	private String indicatorID;
+	private String indicatorCategoryFilter;
 	SearchManager searchManager;
 	SearchView searchView;
 	TextView textviewloading;
@@ -45,10 +46,11 @@ public class IndicatorFragment extends Fragment {
 		searchView = root.findViewById(R.id.search_src_text);
 		searchView.setMaxWidth(Integer.MAX_VALUE);
 		try {
-			indicatorID = getActivity().getIntent().getExtras().getString("value");
+			indicatorCategoryFilter = getActivity().getIntent().getExtras().getString("value");
 		} catch (Exception e) {
-			indicatorID = Utils.id;
+			indicatorCategoryFilter = Utils.id;
 		}
+		
 		list = new ArrayList<ProductModel>();
 		itemAdapter = new IndicatorAdapter();
 		list = fillDummyData();
@@ -97,6 +99,7 @@ public class IndicatorFragment extends Fragment {
 		
 		// Feels hacky, but gets the job done (kinda had to work with the existing stuff)
 		// For each indicator id listed for the product, find the corresponding indicator, put it into the product, and fill in the indicator_description
+		// Surprisingly doing this also simplifies filtering drastically (a little further below)
 		for (ProductModel product : productList) {
 			for (int i = 0; i < product.indicators.size(); i++) {
 				String ind_id = product.indicators.get(i).getIndicator_id();
@@ -110,34 +113,17 @@ public class IndicatorFragment extends Fragment {
 			}
 		}
 		
-		//TODO: Fix this filter code
-//		List<IndicatorModel> indicatorlist = new ArrayList<IndicatorModel>();
-//		for (IndicatorModel c : indicatorCategoryList) {
-//			if (indicatorlist.equals(c.getCategory_id())) {
-//				indicatorlist.add(c);
-//			}
-//		}
-//		
-//		List<ProductModel> productfinallist = new ArrayList<ProductModel>();
-//		for (ProductModel c : productList) {
-//			boolean added = false;
-//			Log.e("product", "" + c.getIndicators());
-//			for (IndicatorModel indicator : c.getIndicators()) {
-//				for (IndicatorModel indicatormain : indicatorCategoryList) {
-//					Log.e("indicator", "" + indicator.getCategory_id());
-//					if ((indicator.getIndicator_idForProduct().equals(indicatormain.getId())) &&
-//							(indicatormain.getCategory_id().equals(indicatorID))) {
-//						productfinallist.add(c);
-//						added = true;
-//						break;
-//					}
-//					if (added) break;
-//				}
-//				if (added) break;
-//			}
-//		}
+		// Filters the product list according to this logic:
+		// For each PRODUCT: there exists at least one INDICATOR from PRODUCT.INDICATORS where INDICATOR.CATEGORY == indicatorCategoryFilter
+		// TODO: Expand to also filter for origin
+		List<ProductModel> filteredProductList = productList.stream().filter(product -> 
+				product.indicators.stream().anyMatch(indicator -> 
+						indicator.category_id.equals(indicatorCategoryFilter))
+		).collect(Collectors.toList());
 		
-		if (productList.size() > 0) {
+		
+		
+		if (filteredProductList.size() > 0) {
 			textviewloading.setVisibility(View.GONE);
 			searchView.setVisibility(View.VISIBLE);
 		} else {
@@ -146,7 +132,7 @@ public class IndicatorFragment extends Fragment {
 			searchView.setVisibility(View.GONE);
 		}
 		
-		return productList;
+		return filteredProductList;
 
 //		Log.e("productfinallist", "" + productfinallist);
 //		return productfinallist;
