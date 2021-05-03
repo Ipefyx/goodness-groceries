@@ -68,6 +68,6 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:text="@string/following"
+        android:text="@string/next"
         style="@style/bluebuton"></Button>
 </RelativeLayout>
