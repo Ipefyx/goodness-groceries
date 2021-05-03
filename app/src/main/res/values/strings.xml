@@ -37,7 +37,7 @@
     <string name="onbording_one_title">Quel consommateur \n êtes-vous?</string>
     <string name="onbording_one_doc">Dites-nous ce qui compte pour vous afin de
 personnaliser votre expérience.</string>
-    <string name="onbording_title">  Welcome to GreenBot!</string>
+    <string name="onbording_title">Welcome to Goodness Groceries!</string>
     <string name="onbording_doc">We want to be transparent and allow you
 to buy the products that suit you.
 This is why we have developed the application
@@ -55,7 +55,8 @@ comptent pour vous</string>
     <string name="onbording_three_doc">Pour des achats plus responsables, il ne vous reste
 plus qu’à profiter des informations disponibles
 pour chaque produit.</string>
-    <string name="following">FOLLOWING</string>
+    <string name="next">Next</string>
+    <string name="continue_btn">Continue</string>
 
 
     <string name="title_activity_onbord_start">OnbordStartActivity</string>

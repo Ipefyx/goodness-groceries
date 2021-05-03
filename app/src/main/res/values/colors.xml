@@ -22,6 +22,11 @@
 
 
 
+    <color name="onbord_dot_active">@color/palette_blue1</color>
+    <color name="onbord_dot_inactive">@color/gray</color>
+    
+
+
 
     <color name="lightgreen"> #C3EE8D</color>
 
