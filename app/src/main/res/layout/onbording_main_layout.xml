@@ -10,6 +10,20 @@
             android:id="@+id/constraintLayout">
 
 
+        <ImageView
+                android:id="@+id/uniLogo"
+                android:layout_width="@dimen/icon_width"
+                android:layout_height="@dimen/icon_width"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/uni_icon"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/view_pager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="@dimen/padding2"
+                app:layout_constraintVertical_bias="0.0" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -59,10 +73,10 @@
                 android:id="@+id/view_pager"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/bottomControls" />
+                app:layout_constraintBottom_toTopOf="@id/bottomControls"
+                app:layout_constraintTop_toBottomOf="@+id/uniLogo" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

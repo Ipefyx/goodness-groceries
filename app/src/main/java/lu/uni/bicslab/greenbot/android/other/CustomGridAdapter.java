@@ -14,12 +14,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import lu.uni.bicslab.greenbot.android.R;
-import lu.uni.bicslab.greenbot.android.ui.activity.selectgrid.SelectLocalImportModel;
+import lu.uni.bicslab.greenbot.android.ui.activity.onbord.OnbordSelectable;
 import lu.uni.bicslab.greenbot.android.ui.activity.selectgrid.SelectionActionCompleteListner;
 
 public class CustomGridAdapter extends RecyclerView.Adapter<CustomGridAdapter.MyViewHolder> {
 	
-	private final ArrayList<SelectLocalImportModel> dataModel;
+	private final ArrayList<OnbordSelectable> dataModel;
 	private final Context mContext;
 	SelectionActionCompleteListner mSelectionActionCompleteListner;
 	
@@ -42,7 +42,7 @@ public class CustomGridAdapter extends RecyclerView.Adapter<CustomGridAdapter.My
 		}
 	}
 	
-	public CustomGridAdapter(Context mContext, ArrayList<SelectLocalImportModel> data, SelectionActionCompleteListner mSelectionActionCompleteListner) {
+	public CustomGridAdapter(Context mContext, ArrayList<OnbordSelectable> data, SelectionActionCompleteListner mSelectionActionCompleteListner) {
 		this.dataModel = data;
 		this.mContext = mContext;
 		this.mSelectionActionCompleteListner = mSelectionActionCompleteListner;
@@ -52,7 +52,7 @@ public class CustomGridAdapter extends RecyclerView.Adapter<CustomGridAdapter.My
 	public MyViewHolder onCreateViewHolder(ViewGroup parent,
 														int viewType) {
 		View view = LayoutInflater.from(parent.getContext())
-				.inflate(R.layout.cardview_row, parent, false);
+				.inflate(R.layout.onbording_cardview_row, parent, false);
 		
 		// view.setOnClickListener(MainActivity.myOnClickListener);
 		
@@ -63,28 +63,28 @@ public class CustomGridAdapter extends RecyclerView.Adapter<CustomGridAdapter.My
 	@Override
 	public void onBindViewHolder(final MyViewHolder holder, final int position) {
 		
-		//TODO: Fix this mess (tho it doesn't matter as the startup menu will be fully remade)
+		//TODO: Fix this mess
 		//Used on first startup to give the selectable buttons their background color
 		
 		TextView text_title = holder.text_title;
 		ImageView imageview_icon = holder.imageview_icon;
 		CardView cardview = holder.cardview;
 		
-		text_title.setText(dataModel.get(position).getTitle());
-		imageview_icon.setBackground(dataModel.get(position).getImage());
+		text_title.setText(dataModel.get(position).getDescription());
+//		imageview_icon.setBackground(dataModel.get(position).getImage());
 		if (dataModel.get(position).isSelected()) {
-			if (dataModel.get(position).getTitle().startsWith("Soute")) {
+			if (dataModel.get(position).getDescription().startsWith("Soute")) {
 				cardview.setBackgroundColor(mContext.getResources().getColor(R.color.lightyellow));
-			} else if (dataModel.get(position).getTitle().startsWith("Conn")) {
+			} else if (dataModel.get(position).getDescription().startsWith("Conn")) {
 				cardview.setBackgroundColor(mContext.getResources().getColor(R.color.lightgreen));
 				
-			} else if (dataModel.get(position).getTitle().startsWith("Encour")) {
+			} else if (dataModel.get(position).getDescription().startsWith("Encour")) {
 				cardview.setBackgroundColor(mContext.getResources().getColor(R.color.lightorange));
 				
-			} else if (dataModel.get(position).getTitle().startsWith("Privi")) {
+			} else if (dataModel.get(position).getDescription().startsWith("Privi")) {
 				cardview.setBackgroundColor(mContext.getResources().getColor(R.color.lightblue));
 				
-			} else if (dataModel.get(position).getTitle().startsWith("Conve")) {
+			} else if (dataModel.get(position).getDescription().startsWith("Conve")) {
 				cardview.setBackgroundColor(mContext.getResources().getColor(R.color.blue_));
 			} else {
 				cardview.setBackgroundColor(mContext.getResources().getColor(R.color.lightgreen));
@@ -97,7 +97,7 @@ public class CustomGridAdapter extends RecyclerView.Adapter<CustomGridAdapter.My
 			@Override
 			public void onClick(View view) {
 				dataModel.get(position).setSelected(!dataModel.get(position).isSelected());
-				mSelectionActionCompleteListner.onSeclectionCompleted(position);
+				mSelectionActionCompleteListner.onSelectionCompleted(position);
 				notifyDataSetChanged();
 			}
 		});

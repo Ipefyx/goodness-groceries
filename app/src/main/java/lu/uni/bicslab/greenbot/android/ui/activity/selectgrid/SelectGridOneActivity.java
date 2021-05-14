@@ -18,12 +18,13 @@ import java.util.ArrayList;
 
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.CustomGridAdapter;
+import lu.uni.bicslab.greenbot.android.ui.activity.onbord.OnbordSelectable;
 
 public class SelectGridOneActivity extends AppCompatActivity implements SelectionActionCompleteListner {
 	
 	private static RecyclerView.Adapter adapter;
 	private static RecyclerView recyclerView;
-	private static ArrayList<SelectLocalImportModel> data;
+	private static ArrayList<OnbordSelectable> data;
 	private GridLayoutManager gridLayoutManager;
 	private Button btn_start;
 	JSONObject jsonObject;
@@ -32,7 +33,7 @@ public class SelectGridOneActivity extends AppCompatActivity implements Selectio
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_select_one_layout);
+		setContentView(R.layout.onbording_select_one_layout);
 		
 		String datajson = getIntent().getStringExtra("data");
 		try {
@@ -50,13 +51,13 @@ public class SelectGridOneActivity extends AppCompatActivity implements Selectio
 		recyclerView.setLayoutManager(gridLayoutManager);
 		recyclerView.setItemAnimator(new DefaultItemAnimator());
 		
-		data = new ArrayList<SelectLocalImportModel>();
-		for (int i = 0; i < SelectLocalImportModel.getTitle(getApplicationContext()).length; i++) {
-			data.add(new SelectLocalImportModel(SelectLocalImportModel.getTitle(getApplicationContext())[i],
-					SelectLocalImportModel.getimage(getApplicationContext())[i], false
-			
-			));
-		}
+		data = new ArrayList<OnbordSelectable>();
+//		for (int i = 0; i < OnbordSelectable.getDescription(getApplicationContext()).length; i++) {
+//			data.add(new SelectLocalImportModel(SelectLocalImportModel.getTitle(getApplicationContext())[i],
+//					SelectLocalImportModel.getImage(getApplicationContext())[i], false
+//			
+//			));
+//		}
 		btn_start.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -72,7 +73,7 @@ public class SelectGridOneActivity extends AppCompatActivity implements Selectio
 	}
 	
 	@Override
-	public void onSeclectionCompleted(int position) {
+	public void onSelectionCompleted(int position) {
 		onJsonObjectSet(position);
 	}
 	

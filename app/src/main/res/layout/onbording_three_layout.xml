@@ -6,12 +6,13 @@
 
 
     <ImageView
-        android:id="@+id/icon"
-        android:layout_width="@dimen/icon_width"
-        android:layout_height="@dimen/icon_width"
-        android:layout_marginTop="@dimen/padding2"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/uni_icon" />
+            android:id="@+id/icon"
+            android:layout_width="@dimen/icon_width"
+            android:layout_height="@dimen/icon_width"
+            android:layout_marginTop="@dimen/padding2"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/uni_icon"
+            android:visibility="gone" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
