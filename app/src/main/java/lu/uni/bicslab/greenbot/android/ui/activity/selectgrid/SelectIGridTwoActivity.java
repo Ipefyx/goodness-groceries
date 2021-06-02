@@ -21,13 +21,14 @@ import lu.uni.bicslab.greenbot.android.other.Profile;
 import lu.uni.bicslab.greenbot.android.other.ServerConnection;
 import lu.uni.bicslab.greenbot.android.other.Utils;
 import lu.uni.bicslab.greenbot.android.other.CustomGridAdapter;
+import lu.uni.bicslab.greenbot.android.ui.activity.onbord.OnbordSelectable;
 import lu.uni.bicslab.greenbot.android.ui.activity.ui.WaitingPageActivity;
 
 public class SelectIGridTwoActivity extends AppCompatActivity implements ServerConnection.ServerConnectionListner, SelectionActionCompleteListner {
 	
 	private static RecyclerView.Adapter adapter;
 	private static RecyclerView recyclerView;
-	private static ArrayList<SelectLocalImportModel> data;
+	private static ArrayList<OnbordSelectable> data;
 	private GridLayoutManager gridLayoutManager;
 	private Button btn_start;
 	JSONObject jsonObject;
@@ -37,7 +38,7 @@ public class SelectIGridTwoActivity extends AppCompatActivity implements ServerC
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_select_one_layout);
+		setContentView(R.layout.onbording_select_one_layout);
 		
 		mSelectionActionCompleteListner = this;
 		mServerConnectionListner = this;
@@ -57,13 +58,13 @@ public class SelectIGridTwoActivity extends AppCompatActivity implements ServerC
 		recyclerView.setLayoutManager(gridLayoutManager);
 		recyclerView.setItemAnimator(new DefaultItemAnimator());
 		
-		data = new ArrayList<SelectLocalImportModel>();
-		for (int i = 0; i < SelectLocalImportModel.getTitle(getApplicationContext()).length; i++) {
-			data.add(new SelectLocalImportModel(SelectLocalImportModel.getTitle2(getApplicationContext())[i],
-					SelectLocalImportModel.getIndicatorDrawable(getApplicationContext())[i], false
-			
-			));
-		}
+		data = new ArrayList<OnbordSelectable>();
+//		for (int i = 0; i < OnbordSelectable.getDescription(getApplicationContext()).length; i++) {
+//			data.add(new OnbordSelectable(OnbordSelectable.getTitle2(getApplicationContext())[i],
+//					OnbordSelectable.getIndicatorDrawable(getApplicationContext())[i], false
+//			
+//			));
+//		}
 		btn_start.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -132,7 +133,7 @@ public class SelectIGridTwoActivity extends AppCompatActivity implements ServerC
 	}
 	
 	@Override
-	public void onSeclectionCompleted(int position) {
+	public void onSelectionCompleted(int position) {
 		onJsonObjectSet(position);
 	}
 	

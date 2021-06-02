@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:tag="cards main container">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
+            android:layout_width="match_parent"
         android:layout_height="wrap_content"
         card_view:cardCornerRadius="1dp"
         android:layout_margin="5dp"
@@ -37,14 +37,17 @@
                  />
 
             <ImageView
-                android:id="@+id/imageview_icon"
-                android:layout_width="@dimen/img_category_size"
-                android:layout_height="@dimen/img_category_size"
-                android:layout_centerHorizontal="true"
-                android:layout_margin="20dp"
-                android:layout_below="@+id/text_title"
-                android:background="@drawable/ic_menu_gallery"
-                ></ImageView>
+                    android:id="@+id/imageview_icon"
+                    android:layout_width="@dimen/img_category_size"
+                    android:layout_height="@dimen/img_category_size"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/text_title"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    card_view:srcCompat="@drawable/ic_menu_gallery"
+                    android:scaleType="fitCenter"></ImageView>
 
 
         </RelativeLayout>
