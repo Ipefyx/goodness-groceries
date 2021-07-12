@@ -22,7 +22,6 @@ import org.json.JSONObject;
 import lu.uni.bicslab.greenbot.android.MainActivity;
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.Profile;
-import lu.uni.bicslab.greenbot.android.ui.activity.scan.SigninActivity;
 import lu.uni.bicslab.greenbot.android.databinding.OnbordingMainLayoutBinding;
 import lu.uni.bicslab.greenbot.android.other.Utils;
 
@@ -39,7 +38,7 @@ public class OnbordingActivity extends AppCompatActivity {
 	JSONObject jsonObject;
 	
 	public OnbordSelectable[] selectableIndicatorCategories;
-	public OnbordSelectable[] selectableOrigins;
+	public OnbordSelectable[] selectableProductCategories;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -159,9 +158,9 @@ public class OnbordingActivity extends AppCompatActivity {
 				case 0:
 					return new SimpleLayoutFragment(R.layout.onbording_one_layout);
 				case 1:
-					return new SelectIndicatorsFragment();
+					return new SelectIndicatorCategoriesFragment();
 				case 2:
-					return new SelectOriginsFragment();
+					return new SelectProductCategoriesFragment();
 				case 3:
 					return new SimpleLayoutFragment(R.layout.onbording_two_layout);
 				case 4:

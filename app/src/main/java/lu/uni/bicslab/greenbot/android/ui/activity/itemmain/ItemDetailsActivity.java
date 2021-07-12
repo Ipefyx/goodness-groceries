@@ -27,7 +27,6 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -219,7 +218,7 @@ public class ItemDetailsActivity extends AppCompatActivity {
 		
 		type_data.setText(productmodel.getType());
 		description.setText(productmodel.getDescription());
-		type_category.setText(productmodel.getOrigin_icon());
+		type_category.setText(productmodel.getProd_cat_icon());
 		type_provider.setText(productmodel.getProvider());
 		header = findViewById(R.id.header);
 		Glide.with(getApplicationContext()).load(productmodel.getImage_url()).apply(RequestOptions.centerCropTransform()).into(header);

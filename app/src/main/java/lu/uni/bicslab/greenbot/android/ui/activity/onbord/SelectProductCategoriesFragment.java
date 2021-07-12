@@ -14,17 +14,11 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.List;
 
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.Utils;
-import lu.uni.bicslab.greenbot.android.ui.fragment.indicator_category.IndicatorCategoryModel;
 
-public class SelectOriginsFragment extends Fragment {
+public class SelectProductCategoriesFragment extends Fragment {
 	
 	private OnbordSelectable[] selectables;
 	
@@ -45,16 +39,16 @@ public class SelectOriginsFragment extends Fragment {
 		
 		LinearLayout selectorLayout = getView().findViewById(R.id.selector_layout);
 		
-		// Origins are fully hardcoded, because there is no origins.json in the first place
+		// Product categories are fully hardcoded, because there is no product_categories.json in the first place
 		OnbordSelectable[] selectables = new OnbordSelectable[] {
-				new OnbordSelectable(getResources().getString(R.string.biolocal), "origin_localorganic", R.color.palette_green2),
-				new OnbordSelectable(getResources().getString(R.string.bioimporte), "origin_importedorganic", R.color.palette_green2),
-				new OnbordSelectable(getResources().getString(R.string.conlocal), "origin_localconventional", R.color.palette_green2),
-				new OnbordSelectable(getResources().getString(R.string.conimporte), "origin_importedconventional", R.color.palette_green2),
+				new OnbordSelectable(getResources().getString(R.string.biolocal), "prod_cat_localorganic", R.color.palette_green2),
+				new OnbordSelectable(getResources().getString(R.string.bioimporte), "prod_cat_importedorganic", R.color.palette_green2),
+				new OnbordSelectable(getResources().getString(R.string.conlocal), "prod_cat_localconventional", R.color.palette_green2),
+				new OnbordSelectable(getResources().getString(R.string.conimporte), "prod_cat_importedconventional", R.color.palette_green2),
 		};
 		// Sorry for this hacky mess, but technically it's not wrong (just keeps the Activity and the Fragment tightly coupled),
 		// much simpler for this use than trying to serialize the data through the bundle
-		((OnbordingActivity) getActivity()).selectableOrigins = selectables;
+		((OnbordingActivity) getActivity()).selectableProductCategories = selectables;
 		
 		for (OnbordSelectable selectable : selectables) {
 			

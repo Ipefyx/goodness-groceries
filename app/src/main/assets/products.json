@@ -4,7 +4,7 @@
 		"name": "Honey from Ourdaller asd asda sdasdasd asdasadadasdadada sdas das asdasdasda asdasda asdasdasdasd asdas dasda sda sda ",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Honey",
-		"origin_icon": "origin_localconventional",
+		"prod_cat_icon": "prod_cat_localconventional",
 		"provider": "Ourdaller",
 		"image_url": "https://euzoea.com/wp-content/uploads/2016/12/honey.jpg",
 		"indicators": [
@@ -43,7 +43,7 @@
 		"name": "Short name",
 		"description": "Short",
 		"type": "Honey",
-		"origin_icon": "origin_importedorganic",
+		"prod_cat_icon": "prod_cat_importedorganic",
 		"provider": "Reiffers Charles",
 		"image_url": "https://euzoea.com/wp-content/uploads/2016/12/honey.jpg",
 		"indicators": [
@@ -66,7 +66,7 @@
 		"name": "Honey from Bona Miel / Mannavita",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Honey",
-		"origin_icon": "origin_localorganic",
+		"prod_cat_icon": "prod_cat_localorganic",
 		"provider": "Bona Miel / Mannavita",
 		"image_url": "https://euzoea.com/wp-content/uploads/2016/12/honey.jpg",
 		"indicators": [
@@ -81,7 +81,7 @@
 		"name": "Flour from Moulin Dieschbourg",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Flour",
-		"origin_icon": "local_organic",
+		"prod_cat_icon": "prod_cat_localorganic",
 		"provider": "Moulin Dieschbourg",
 		"image_url": "https://www.bakingbusiness.com/ext/resources/2020/5/WholeWheatFlour_Lead.jpg",
 		"indicators": [
@@ -104,7 +104,7 @@
 		"name": "Flour from Moulin de Kleinbettingen",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Flour",
-		"origin_icon": "local_conventional",
+		"prod_cat_icon": "prod_cat_localconventional",
 		"provider": "Moulin de Kleinbettingen",
 		"image_url": "https://www.bakingbusiness.com/ext/resources/2020/5/WholeWheatFlour_Lead.jpg",
 		"indicators": [
@@ -127,7 +127,7 @@
 		"name": "Flour from Celnat / Couleur Nature",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Flour",
-		"origin_icon": "imported_organic",
+		"prod_cat_icon": "prod_cat_importedorganic",
 		"provider": "Celnat / Couleur Nature",
 		"image_url": "https://www.bakingbusiness.com/ext/resources/2020/5/WholeWheatFlour_Lead.jpg",
 		"indicators": [
@@ -150,7 +150,7 @@
 		"name": "Chocolate spread from Nathalie Bonn",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Chocolate spread",
-		"origin_icon": "imported_organic",
+		"prod_cat_icon": "prod_cat_importedorganic",
 		"provider": "Nathalie Bonn",
 		"image_url": "https://www.irishtimes.com/polopoly_fs/1.3907332.1559058394!/image/image.jpg_gen/derivatives/box_620_330/image.jpg",
 		"indicators": [
@@ -173,7 +173,7 @@
 		"name": "Chocolate spread from Genaveh",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Chocolate spread",
-		"origin_icon": "imported_organic",
+		"prod_cat_icon": "prod_cat_importedorganic",
 		"provider": "Genaveh",
 		"image_url": "https://www.irishtimes.com/polopoly_fs/1.3907332.1559058394!/image/image.jpg_gen/derivatives/box_620_330/image.jpg",
 		"indicators": [
@@ -196,7 +196,7 @@
 		"name": "Jam from Autisme",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Jam",
-		"origin_icon": "local_conventional",
+		"prod_cat_icon": "prod_cat_localconventional",
 		"provider": "Autisme",
 		"image_url": "https://www.irishtimes.com/polopoly_fs/1.3907332.1559058394!/image/image.jpg_gen/derivatives/box_620_330/image.jpg",
 		"indicators": [
@@ -211,7 +211,7 @@
 		"name": "Jam from Fior Di Frutta / BIODIS",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Jam",
-		"origin_icon": "imported_organic",
+		"prod_cat_icon": "prod_cat_importedorganic",
 		"provider": "Fior Di Frutta / BIODIS",
 		"image_url": "https://www.irishtimes.com/polopoly_fs/1.3907332.1559058394!/image/image.jpg_gen/derivatives/box_620_330/image.jpg",
 		"indicators": [
@@ -226,7 +226,7 @@
 		"name": "Coffee from Dieschbourg",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Jam",
-		"origin_icon": "local_organic",
+		"prod_cat_icon": "prod_cat_localorganic",
 		"provider": "Dieschbourg",
 		"image_url": "https://mobilebrewcafe.com/wp-content/uploads/2019/10/coffee.jpg",
 		"indicators": [
@@ -249,7 +249,7 @@
 		"name": "Coffee from Knopes",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Coffee",
-		"origin_icon": "local_conventional",
+		"prod_cat_icon": "prod_cat_localconventional",
 		"provider": "Knopes",
 		"image_url": "https://mobilebrewcafe.com/wp-content/uploads/2019/10/coffee.jpg",
 		"indicators": [
@@ -272,7 +272,7 @@
 		"name": "Coffee from Ethiquable",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Coffee",
-		"origin_icon": "imported_organic",
+		"prod_cat_icon": "prod_cat_importedorganic",
 		"provider": "Ethiquable",
 		"image_url": "https://mobilebrewcafe.com/wp-content/uploads/2019/10/coffee.jpg",
 		"indicators": [
@@ -295,7 +295,7 @@
 		"name": "Milk from BIOG",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Milk",
-		"origin_icon": "local_organic",
+		"prod_cat_icon": "prod_cat_localorganic",
 		"provider": "BIOG",
 		"image_url": "https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/1/3/1/9/2389131-1-eng-GB/Will-the-value-of-milk-protein-continue-to-increase-Probably_wrbm_large.jpg",
 		"indicators": [
@@ -318,7 +318,7 @@
 		"name": "Milk from Luxlait",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Milk",
-		"origin_icon": "local_organic",
+		"prod_cat_icon": "prod_cat_localorganic",
 		"provider": "Luxlait",
 		"image_url": "https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/1/3/1/9/2389131-1-eng-GB/Will-the-value-of-milk-protein-continue-to-increase-Probably_wrbm_large.jpg",
 		"indicators": [
@@ -341,7 +341,7 @@
 		"name": "Milk from Berchtesgadener Land",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Milk",
-		"origin_icon": "imported_organic",
+		"prod_cat_icon": "prod_cat_importedorganic",
 		"provider": "Berchtesgadener Land",
 		"image_url": "https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/1/3/1/9/2389131-1-eng-GB/Will-the-value-of-milk-protein-continue-to-increase-Probably_wrbm_large.jpg",
 		"indicators": [
@@ -364,7 +364,7 @@
 		"name": "Milk from Inza",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Milk",
-		"origin_icon": "imported_conventional",
+		"prod_cat_icon": "prod_cat_importedconventional",
 		"provider": "Inza",
 		"image_url": "https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/1/3/1/9/2389131-1-eng-GB/Will-the-value-of-milk-protein-continue-to-increase-Probably_wrbm_large.jpg",
 		"indicators": [
@@ -387,7 +387,7 @@
 		"name": "Yaourt nature from Biog",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Yaourt nature",
-		"origin_icon": "local_organic",
+		"prod_cat_icon": "prod_cat_localorganic",
 		"provider": "Biog",
 		"image_url": "https://crookies.fr/wp-content/uploads/2020/03/yaourt-nature-maison-crookies.png",
 		"indicators": [
@@ -410,7 +410,7 @@
 		"name": "Yaourt nature from Luxlait",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Yaourt nature",
-		"origin_icon": "local_organic",
+		"prod_cat_icon": "prod_cat_localorganic",
 		"provider": "Luxlait",
 		"image_url": "https://crookies.fr/wp-content/uploads/2020/03/yaourt-nature-maison-crookies.png",
 		"indicators": [
@@ -433,7 +433,7 @@
 		"name": "Yaourt nature from Pur Natur",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Yaourt nature",
-		"origin_icon": "local_organic",
+		"prod_cat_icon": "prod_cat_localorganic",
 		"provider": "Pur Natur",
 		"image_url": "https://crookies.fr/wp-content/uploads/2020/03/yaourt-nature-maison-crookies.png",
 		"indicators": [
@@ -456,7 +456,7 @@
 		"name": "Yaourt nature from Fage",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Yaourt nature",
-		"origin_icon": "imported_conventional",
+		"prod_cat_icon": "prod_cat_importedconventional",
 		"provider": "Fage",
 		"image_url": "https://crookies.fr/wp-content/uploads/2020/03/yaourt-nature-maison-crookies.png",
 		"indicators": [
@@ -479,7 +479,7 @@
 		"name": "Eggs from Biog",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Eggs",
-		"origin_icon": "local_organic",
+		"prod_cat_icon": "prod_cat_localorganic",
 		"provider": "Biog",
 		"image_url": "https://cdn.vox-cdn.com/thumbor/hadCk8XZp60iP8jkUUmuj7e0PKc=/0x0:4800x3600/1820x1213/filters:focal(2016x1416:2784x2184)/cdn.vox-cdn.com/uploads/chorus_image/image/65052658/microwaved_eggs_delish_recipe.0.jpg",
 		"indicators": [
@@ -502,7 +502,7 @@
 		"name": "Eggs from Meyrishaff",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Eggs",
-		"origin_icon": "local_organic",
+		"prod_cat_icon": "prod_cat_localorganic",
 		"provider": "Meyrishaff",
 		"image_url": "https://cdn.vox-cdn.com/thumbor/hadCk8XZp60iP8jkUUmuj7e0PKc=/0x0:4800x3600/1820x1213/filters:focal(2016x1416:2784x2184)/cdn.vox-cdn.com/uploads/chorus_image/image/65052658/microwaved_eggs_delish_recipe.0.jpg",
 		"indicators": [
@@ -525,7 +525,7 @@
 		"name": "Eggs from Rachecourt",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Eggs",
-		"origin_icon": "local_organic",
+		"prod_cat_icon": "prod_cat_localorganic",
 		"provider": "Rachecourt",
 		"image_url": "https://cdn.vox-cdn.com/thumbor/hadCk8XZp60iP8jkUUmuj7e0PKc=/0x0:4800x3600/1820x1213/filters:focal(2016x1416:2784x2184)/cdn.vox-cdn.com/uploads/chorus_image/image/65052658/microwaved_eggs_delish_recipe.0.jpg",
 		"indicators": [
@@ -548,7 +548,7 @@
 		"name": "Eggs from Rachecourt",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Eggs",
-		"origin_icon": "imported_organic",
+		"prod_cat_icon": "prod_cat_importedorganic",
 		"provider": "Rachecourt",
 		"image_url": "https://cdn.vox-cdn.com/thumbor/hadCk8XZp60iP8jkUUmuj7e0PKc=/0x0:4800x3600/1820x1213/filters:focal(2016x1416:2784x2184)/cdn.vox-cdn.com/uploads/chorus_image/image/65052658/microwaved_eggs_delish_recipe.0.jpg",
 		"indicators": [
@@ -571,7 +571,7 @@
 		"name": "pasta from Maxime",
 		"description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
 		"type": "Eggs",
-		"origin_icon": "local_conventional",
+		"prod_cat_icon": "prod_cat_localconventional",
 		"provider": "Maxime",
 		"image_url": " https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Farfalle_Pasta.JPG/1920px-Farfalle_Pasta.JPG",
 		"indicators": [

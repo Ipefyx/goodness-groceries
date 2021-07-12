@@ -6,7 +6,7 @@
         android:layout_width="wrap_content"
         android:layout_height="@dimen/product_card_indicator_size"
         android:scaleType="fitCenter"
-        card_view:srcCompat="@drawable/indicator_biodiversity"
+        card_view:srcCompat="@drawable/ind_biodiversity"
         tools:ignore="ContentDescription"
         android:adjustViewBounds="true"
         android:visibility="visible" />

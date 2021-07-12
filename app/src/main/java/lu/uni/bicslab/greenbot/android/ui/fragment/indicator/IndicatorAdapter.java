@@ -2,7 +2,6 @@ package lu.uni.bicslab.greenbot.android.ui.fragment.indicator;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,10 +18,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.google.android.gms.common.util.ArrayUtils;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import lu.uni.bicslab.greenbot.android.R;
@@ -107,7 +104,7 @@ public class IndicatorAdapter extends RecyclerView.Adapter<IndicatorAdapter.Indi
 		}
 		
 		Glide.with(context).load(product.getImage_url()).apply(RequestOptions.centerCropTransform()).error(R.drawable.ic_menu_gallery).into(holder.imageview_icon);
-		Glide.with(context).load(Utils.getDrawableImage(context, product.origin_icon)).error(R.drawable.ic_menu_gallery).into(holder.imageview_origin);
+		Glide.with(context).load(Utils.getDrawableImage(context, product.prod_cat_icon)).error(R.drawable.ic_menu_gallery).into(holder.imageview_origin);
 	}
 	
 	@Override

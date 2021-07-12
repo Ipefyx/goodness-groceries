@@ -3,98 +3,98 @@
 		"id": "ind_animal",
 		"name": "Animal Welfare",
 		"category_id": "ind_cat_environment",
-		"icon_name": "indicator_animalwelfare",
+		"icon_name": "ind_animalwelfare",
 		"general_description": "lorem ipsum Husbandry Conditions, Transport Conditions, Slaughtering Conditions"
 	},
 	{
 		"id": "ind_biodiv",
 		"name": "Biodiversity",
 		"category_id": "ind_cat_environment",
-		"icon_name": "indicator_biodiversity",
+		"icon_name": "ind_biodiversity",
 		"general_description": "lorem ipsum Husbandry Conditions, Transport Conditions, Slaughtering Conditions"
 	},
 	{
 		"id": "ind_flora",
 		"name": "Health of Flora and Fauna",
 		"category_id": "ind_cat_environment",
-		"icon_name": "indicator_florafauna",
+		"icon_name": "ind_florafauna",
 		"general_description": "lorem ipsum Husbandry Conditions, Transport Conditions, Slaughtering Conditions"
 	},
 	{
 		"id": "ind_soil",
 		"name": "Soil Fertility",
 		"category_id": "ind_cat_environment",
-		"icon_name": "indicator_soilfertility",
+		"icon_name": "ind_soilfertility",
 		"general_description": "lorem ipsum Husbandry Conditions, Transport Conditions, Slaughtering Conditions"
 	},
 	{
 		"id": "ind_sovereignty",
 		"name": "Product Sovereignty",
 		"category_id": "ind_cat_economic",
-		"icon_name": "indicator_producersovereignty",
+		"icon_name": "ind_producersovereignty",
 		"general_description": "lorem ipsum Husbandry Conditions, Transport Conditions, Slaughtering Conditions"
 	},
 	{
 		"id": "ind_food",
 		"name": "Food Miles",
 		"category_id": "ind_cat_economic",
-		"icon_name": "indicator_foodmiles",
+		"icon_name": "ind_foodmiles",
 		"general_description": "lorem ipsum Husbandry Conditions, Transport Conditions, Slaughtering Conditions"
 	},
 	{
 		"id": "ind_localeco",
 		"name": "Local Economy",
 		"category_id": "ind_cat_economic",
-		"icon_name": "indicator_localeconomy",
+		"icon_name": "ind_localeconomy",
 		"general_description": "lorem ipsum Husbandry Conditions, Transport Conditions, Slaughtering Conditions"
 	},
 	{
 		"id": "ind_decent",
 		"name": "Decent Livelihoods",
 		"category_id": "ind_cat_social",
-		"icon_name": "indicator_decentlivelihood",
+		"icon_name": "ind_decentlivelihood",
 		"general_description": "lorem ipsum Husbandry Conditions, Transport Conditions, Slaughtering Conditions"
 	},
 	{
 		"id": "ind_equity",
 		"name": "Equity",
 		"category_id": "ind_cat_social",
-		"icon_name": "indicator_equity",
+		"icon_name": "ind_equity",
 		"general_description": "lorem ipsum Husbandry Conditions, Transport Conditions, Slaughtering Conditions"
 	},
 	{
 		"id": "ind_labour",
 		"name": "Labour Rights",
 		"category_id": "ind_cat_social",
-		"icon_name": "indicator_labourrights",
+		"icon_name": "ind_labourrights",
 		"general_description": "lorem ipsum Husbandry Conditions, Transport Conditions, Slaughtering Conditions"
 	},
 	{
 		"id": "ind_fair",
 		"name": "Fair Trade Practices",
 		"category_id": "ind_cat_social",
-		"icon_name": "indicator_fairtradepractices",
+		"icon_name": "ind_fairtradepractices",
 		"general_description": "lorem ipsum Husbandry Conditions, Transport Conditions, Slaughtering Conditions"
 	},
 	{
 		"id": "ind_transparency",
 		"name": "Transparency",
 		"category_id": "ind_cat_governance",
-		"icon_name": "indicator_transparency",
+		"icon_name": "ind_transparency",
 		"general_description": "lorem ipsum Husbandry Conditions, Transport Conditions, Slaughtering Conditions"
 	},
 	{
 		"id": "ind_participation",
 		"name": "Participation",
 		"category_id": "ind_cat_governance",
-		"icon_name": "indicator_participation",
+		"icon_name": "ind_participation",
 		"general_description": "lorem ipsum Husbandry Conditions, Transport Conditions, Slaughtering Conditions"
 	},
 	{
 		"id": "ind_sustainable",
 		"name": "Sustainable Management",
 		"category_id": "ind_cat_governance",
-		"icon_name": "indicator_sustainablemanagement",
+		"icon_name": "ind_sustainablemanagement",
 		"general_description": "lorem ipsum Husbandry Conditions, Transport Conditions, Slaughtering Conditions"
 	}
 ]

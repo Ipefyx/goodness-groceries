@@ -25,7 +25,7 @@ import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.Utils;
 import lu.uni.bicslab.greenbot.android.ui.fragment.indicator_category.IndicatorCategoryModel;
 
-public class SelectIndicatorsFragment extends Fragment {
+public class SelectIndicatorCategoriesFragment extends Fragment {
 	
 	@Override
 	public void onCreate(@Nullable Bundle savedInstanceState) {
