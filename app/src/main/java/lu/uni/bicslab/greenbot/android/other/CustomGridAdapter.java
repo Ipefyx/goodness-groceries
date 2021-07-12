@@ -15,13 +15,13 @@ import java.util.ArrayList;
 
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.ui.activity.onbord.OnbordSelectable;
-import lu.uni.bicslab.greenbot.android.ui.activity.selectgrid.SelectionActionCompleteListner;
+import lu.uni.bicslab.greenbot.android.ui.activity.onbord.SelectionActionCompleteListener;
 
 public class CustomGridAdapter extends RecyclerView.Adapter<CustomGridAdapter.MyViewHolder> {
 	
 	private final ArrayList<OnbordSelectable> dataModel;
 	private final Context mContext;
-	SelectionActionCompleteListner mSelectionActionCompleteListner;
+	SelectionActionCompleteListener mSelectionActionCompleteListner;
 	
 	public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 		
@@ -42,7 +42,7 @@ public class CustomGridAdapter extends RecyclerView.Adapter<CustomGridAdapter.My
 		}
 	}
 	
-	public CustomGridAdapter(Context mContext, ArrayList<OnbordSelectable> data, SelectionActionCompleteListner mSelectionActionCompleteListner) {
+	public CustomGridAdapter(Context mContext, ArrayList<OnbordSelectable> data, SelectionActionCompleteListener mSelectionActionCompleteListner) {
 		this.dataModel = data;
 		this.mContext = mContext;
 		this.mSelectionActionCompleteListner = mSelectionActionCompleteListner;

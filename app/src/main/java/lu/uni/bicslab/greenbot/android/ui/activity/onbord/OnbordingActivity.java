@@ -24,8 +24,7 @@ import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.Profile;
 import lu.uni.bicslab.greenbot.android.ui.activity.scan.SigninActivity;
 import lu.uni.bicslab.greenbot.android.databinding.OnbordingMainLayoutBinding;
-import lu.uni.bicslab.greenbot.android.barcoderead.transformers.Utils;
-import lu.uni.bicslab.greenbot.android.ui.activity.selectgrid.SelectGridOneActivity;
+import lu.uni.bicslab.greenbot.android.other.Utils;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -46,10 +45,10 @@ public class OnbordingActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		binding = OnbordingMainLayoutBinding.inflate(getLayoutInflater());
-		profile = lu.uni.bicslab.greenbot.android.other.Utils.readProfileData(getApplicationContext());
+		profile = Utils.readProfileData(getApplicationContext());
 		Log.e("isLogedin ", "" + profile.isLogedin());
 		// if user not logedin show the waiting page
-       /* if(profile.isLogedin() == lu.uni.bicslab.greenbot.android.other.Utils.user_notloggedin){
+       /* if(profile.isLogedin() == Utils.user_notloggedin){
             initLogin = true;
         }else{
             initLogin = false;
@@ -87,57 +86,36 @@ public class OnbordingActivity extends AppCompatActivity {
 		
 		binding.btnNext.setOnClickListener(v -> {
 			int current = binding.viewPager.getCurrentItem();
-			if (current < sliderAdapter.getItemCount()) {
+			if (current < sliderAdapter.getItemCount()-1) {
 				binding.viewPager.setCurrentItem(current+1);
 			} else {
-				launchHomeScreen(0);
+				launchHomeScreen();
 			}
 		});
 		
 		// adding bottom dots
 		updateBottomDots(0);
 		
-		if (profile.isLogedin() == lu.uni.bicslab.greenbot.android.other.Utils.user_notloggedin) {
-			binding.viewPager.setPageTransformer(Utils.getTransformer(0));
-			binding.viewPager.setCurrentItem(0);
-			binding.viewPager.getAdapter().notifyDataSetChanged();
-		} else {
-			binding.viewPager.setPageTransformer(Utils.getTransformer(1));
-			binding.viewPager.setCurrentItem(1);
-			binding.viewPager.getAdapter().notifyDataSetChanged();
-		}//scroll avoid
-		if (profile.isLogedin() == lu.uni.bicslab.greenbot.android.other.Utils.user_notloggedin) {
-			binding.viewPager.setUserInputEnabled(false);
-		} else {
-			binding.viewPager.setUserInputEnabled(true);
-		}
 	}
 	
-	private void launchHomeScreen(int count) {
-		if (profile.isLogedin() == lu.uni.bicslab.greenbot.android.other.Utils.user_notloggedin) {
-			Intent i = new Intent(this, SelectGridOneActivity.class);
-			i.putExtra("data", jsonObject.toString());//
-			startActivity(i);
-			finish();
-		} else if (profile.isLogedin() == lu.uni.bicslab.greenbot.android.other.Utils.user_loggedin_firsttime) {
-			if (count == 2) {
-				binding.viewPager.setCurrentItem(count + 1);
-			} else {
-				Profile profileData = lu.uni.bicslab.greenbot.android.other.Utils.readProfileData(getApplicationContext());
-				profileData.setLogedin(lu.uni.bicslab.greenbot.android.other.Utils.user_loggedin);
-				lu.uni.bicslab.greenbot.android.other.Utils.saveProfile(getApplicationContext(), profileData);
-				Intent i = new Intent(this, MainActivity.class);
-				startActivity(i);
-				finish();
-			}
-			
-		} else {
-			Intent i = new Intent(this, SigninActivity.class);
-			startActivity(i);
-			finish();
-		}
-		
-		
+	private void launchHomeScreen() {
+//		if (profile.isLogedin() == Utils.user_loggedin_firsttime) {
+//			Profile profileData = Utils.readProfileData(getApplicationContext());
+//			profileData.setLogedin(Utils.user_loggedin);
+//			Utils.saveProfile(getApplicationContext(), profileData);
+//			Intent i = new Intent(this, MainActivity.class);
+//			startActivity(i);
+//			finish();
+//		} else {
+//			Intent i = new Intent(this, SigninActivity.class);
+//			startActivity(i);
+//			finish();
+//		}
+
+		// Code above should be correct but will not work until logging-in works, so temporarily go to MainActivity by default.
+		Intent i = new Intent(this, MainActivity.class);
+		startActivity(i);
+		finish();
 	}
 	
 	
