@@ -63,7 +63,8 @@
                     android:id="@+id/imageview_origin"
                     card_view:layout_constraintStart_toStartOf="parent"
                     card_view:layout_constraintTop_toTopOf="parent"
-                    android:scaleType="fitCenter" />
+                    android:scaleType="fitCenter"
+                    android:visibility="gone" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
