@@ -15,10 +15,6 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -113,7 +109,7 @@ public class IndicatorFragment extends Fragment {
 		List<ProductModel> filteredProductList = productList.stream().filter(product -> 
 				product.indicators.stream().anyMatch(indicator -> 
 						indicator.category_id.equals(indicatorCategoryFilter))
-				&& product.prod_cat_icon.equals(productCategoryFilter) //TODO Temporary filtering of product category using the icon name
+				&& product.category.equals(productCategoryFilter) //TODO Temporary filtering of product category using the icon name
 		).collect(Collectors.toList());
 		
 		

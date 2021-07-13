@@ -104,7 +104,7 @@ public class IndicatorAdapter extends RecyclerView.Adapter<IndicatorAdapter.Indi
 		}
 		
 		Glide.with(context).load(product.getImage_url()).apply(RequestOptions.centerCropTransform()).error(R.drawable.ic_menu_gallery).into(holder.imageview_icon);
-		Glide.with(context).load(Utils.getDrawableImage(context, product.prod_cat_icon)).error(R.drawable.ic_menu_gallery).into(holder.imageview_origin);
+		Glide.with(context).load(Utils.getDrawableImage(context, product.category)).error(R.drawable.ic_menu_gallery).into(holder.imageview_origin);
 	}
 	
 	@Override

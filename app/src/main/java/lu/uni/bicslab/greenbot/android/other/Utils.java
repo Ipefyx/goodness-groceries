@@ -156,10 +156,10 @@ public class Utils {
 		
 		// Currently hardcoded
 		return Arrays.asList(
-				new ProductCategoryModel("prod_cat_localorganic", context.getResources().getString(R.string.biolocal), "prod_cat_localorganic", ""),
-				new ProductCategoryModel("prod_cat_importedorganic", context.getResources().getString(R.string.bioimporte), "prod_cat_importedorganic", ""),
-				new ProductCategoryModel("prod_cat_localconventional", context.getResources().getString(R.string.conlocal), "prod_cat_localconventional", ""),
-				new ProductCategoryModel("prod_cat_importedconventional", context.getResources().getString(R.string.conimporte), "prod_cat_importedconventional", "")
+			new ProductCategoryModel("local_organic", context.getResources().getString(R.string.biolocal), "prod_cat_localorganic", ""),
+			new ProductCategoryModel("imported_organic", context.getResources().getString(R.string.bioimporte), "prod_cat_importedorganic", ""),
+			new ProductCategoryModel("local_conventional", context.getResources().getString(R.string.conlocal), "prod_cat_localconventional", ""),
+			new ProductCategoryModel("imported_conventional", context.getResources().getString(R.string.conimporte), "prod_cat_importedconventional", "")
 		);
 	}
 	
