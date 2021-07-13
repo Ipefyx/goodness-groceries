@@ -1,18 +1,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:background="@color/white"
-    android:paddingTop="@dimen/activity_vertical_margin">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/top"
             android:layout_marginStart="@dimen/padding"
-            android:layout_marginEnd="@dimen/padding">
+            android:layout_marginEnd="@dimen/padding"
+            android:layout_marginTop="@dimen/padding">
 
         <ImageView
                 android:layout_width="wrap_content"
@@ -54,6 +53,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
     <androidx.recyclerview.widget.RecyclerView
 
             android:id="@+id/indicator_view"
@@ -61,16 +61,12 @@
             android:layout_height="match_parent"
             android:layout_below="@id/top"
             android:scrollbars="vertical"
-            android:layout_marginTop="@dimen/padding"
-            android:layout_marginStart="@dimen/padding"
-            android:layout_marginEnd="@dimen/padding"
-            android:layout_marginBottom="@dimen/padding" />
+            android:layout_marginTop="@dimen/padding" />
 
     <TextView
-        android:id="@+id/textviewloading"
-        android:layout_width="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_height="wrap_content"></TextView>
-
+            android:id="@+id/textviewloading"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"></TextView>
 
 </RelativeLayout>

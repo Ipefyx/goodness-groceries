@@ -39,7 +39,7 @@ public class IndicatorFragment extends Fragment {
 	public View onCreateView(@NonNull LayoutInflater inflater,
 									 ViewGroup container, Bundle savedInstanceState) {
 		
-		View root = inflater.inflate(R.layout.fragment_indicator, container, false);
+		View root = inflater.inflate(R.layout.fragment_items_main_layout, container, false);
 		recyclerView = root.findViewById(R.id.indicator_view);
 		textviewloading = root.findViewById(R.id.textviewloading);
 		//searchManager = (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);

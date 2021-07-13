@@ -9,7 +9,7 @@
         android:id="@+id/nav_home"
         android:name="lu.uni.bicslab.greenbot.android.ui.fragment.indicator_category.IndicatorCategoryFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_indicator_category">
+        tools:layout="@layout/fragment_items_main_layout">
         <action
                 android:id="@+id/goto_prod_cat"
                 app:destination="@id/productCategoryFragment"
@@ -21,7 +21,6 @@
     <fragment
         android:id="@+id/fragment_indicator"
         android:name="lu.uni.bicslab.greenbot.android.ui.fragment.indicator.IndicatorFragment"
-        tools:layout="@layout/fragment_indicator"
         />
     <fragment
         android:id="@+id/fragment_compare"

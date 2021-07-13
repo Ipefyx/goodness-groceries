@@ -16,19 +16,10 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.Utils;
-import lu.uni.bicslab.greenbot.android.ui.activity.onbord.OnbordSelectable;
-import lu.uni.bicslab.greenbot.android.ui.fragment.indicator_category.IndicatorCategoryAdapter;
-import lu.uni.bicslab.greenbot.android.ui.fragment.indicator_category.IndicatorCategoryModel;
 
 public class ProductCategoryFragment extends Fragment {
 	private RecyclerView recyclerView;
@@ -42,7 +33,7 @@ public class ProductCategoryFragment extends Fragment {
 	public View onCreateView(@NonNull LayoutInflater inflater,
 									 ViewGroup container, Bundle savedInstanceState) {
 		
-		View root = inflater.inflate(R.layout.fragment_indicator_category, container, false);
+		View root = inflater.inflate(R.layout.fragment_items_main_layout, container, false);
 		//ArrayList<IndicatorViewModel> itemList = new ArrayList<>();
 		recyclerView = root.findViewById(R.id.indicator_view);
 		textviewloading = root.findViewById(R.id.textviewloading);
