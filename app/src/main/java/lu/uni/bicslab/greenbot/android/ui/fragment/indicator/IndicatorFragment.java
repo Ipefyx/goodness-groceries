@@ -85,7 +85,7 @@ public class IndicatorFragment extends Fragment {
 		
 		Log.i("product receive", indicatorCategoryFilter + " " + productCategoryFilter);
 		
-		List<IndicatorModel> indicatorCategoryList = Utils.getIndicatorList(getActivity());
+		List<IndicatorModel> indicatorList = Utils.getIndicatorList(getActivity());
 		List<ProductModel> productList = Utils.getProductList(getActivity());
 		
 		// Feels hacky, but gets the job done (kinda had to work with the existing stuff)
@@ -96,7 +96,7 @@ public class IndicatorFragment extends Fragment {
 				String ind_id = product.indicators.get(i).getIndicator_id();
 				String ind_desc = product.indicators.get(i).getIndicator_description();
 				
-				Optional<IndicatorModel> matchingIndicator = indicatorCategoryList.stream().filter(ind -> ind.id.equals(ind_id)).findFirst();
+				Optional<IndicatorModel> matchingIndicator = indicatorList.stream().filter(ind -> ind.id.equals(ind_id)).findFirst();
 				if (matchingIndicator.isPresent()) {
 					product.indicators.set(i, matchingIndicator.get());
 					product.indicators.get(i).setIndicator_description(ind_desc);
@@ -109,8 +109,13 @@ public class IndicatorFragment extends Fragment {
 		List<ProductModel> filteredProductList = productList.stream().filter(product -> 
 				product.indicators.stream().anyMatch(indicator -> 
 						indicator.category_id.equals(indicatorCategoryFilter))
-				&& product.category.equals(productCategoryFilter) //TODO Temporary filtering of product category using the icon name
+				&& product.category.equals(productCategoryFilter)
 		).collect(Collectors.toList());
+		
+		// Remove all indicators that don't match the indicator category
+		for (ProductModel product : filteredProductList) {
+			product.indicators = product.indicators.stream().filter(ind -> ind.category_id.equals(indicatorCategoryFilter)).collect(Collectors.toList());
+		}
 		
 		
 		
