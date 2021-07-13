@@ -118,11 +118,11 @@ public class IndicatorFragment extends Fragment {
 		}
 		
 		// Filters the product list according to this logic:
-		// For each PRODUCT: there exists at least one INDICATOR from PRODUCT.INDICATORS where INDICATOR.CATEGORY == indicatorCategoryFilter
-		// TODO: Expand to also filter for origin
+		// For each PRODUCT: (there exists at least one INDICATOR from PRODUCT.INDICATORS where INDICATOR.CATEGORY == indicatorCategoryFilter) and PRODUCT.CATEGORY == productCategoryFilter
 		List<ProductModel> filteredProductList = productList.stream().filter(product -> 
 				product.indicators.stream().anyMatch(indicator -> 
 						indicator.category_id.equals(indicatorCategoryFilter))
+				&& product.prod_cat_icon.equals(productCategoryFilter) //TODO Temporary filtering of product category using the icon name
 		).collect(Collectors.toList());
 		
 		
