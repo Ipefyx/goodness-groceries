@@ -140,8 +140,8 @@ public class Utils {
 	
 	// Respective methods for loading the various JSON data files
 	public static List<IndicatorModel> getIndicatorList(Context context) {
-		if (indicatorList != null)
-			return indicatorList;
+//		if (indicatorList != null)
+//			return indicatorList;
 		
 		String jsonFileString = getJsonFromAssets(context, "indicators.json");
 		
@@ -153,8 +153,8 @@ public class Utils {
 	}
 	
 	public static List<IndicatorCategoryModel> getIndicatorCategoryList(Context context) {
-		if (indicatorCategoryList != null)
-			return indicatorCategoryList;
+//		if (indicatorCategoryList != null)
+//			return indicatorCategoryList;
 		
 		String jsonFileString = getJsonFromAssets(context, "indicator_categories.json");
 		
@@ -166,8 +166,8 @@ public class Utils {
 	}
 	
 	public static List<ProductCategoryModel> getProductCategoryList(Context context) {
-		if (productCategoryList != null)
-			return productCategoryList;
+//		if (productCategoryList != null)
+//			return productCategoryList;
 		
 		// Currently hardcoded
 		productCategoryList = Arrays.asList(
@@ -181,8 +181,8 @@ public class Utils {
 	}
 	
 	public static List<ProductModel> getProductList(Context context) {
-		if (productList != null)
-			return productList;
+//		if (productList != null)
+//			return productList;
 		
 		String jsonFileString = getJsonFromAssets(context, "products.json");
 		
