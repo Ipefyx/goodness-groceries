@@ -253,6 +253,8 @@ public class FeedbackMainActivity extends AppCompatActivity implements UpdateAct
 	}
 	
 	private void readData() {
+		// TODO: Refactor this using Utils functions
+		
 		String jsonFileString = lu.uni.bicslab.greenbot.android.other.Utils.getJsonFromAssets(getApplicationContext(), "products_to_review.json");
 		Gson gson = new Gson();
 		Type listUserType = new TypeToken<List<ProductToReview>>() {

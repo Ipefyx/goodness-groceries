@@ -90,13 +90,7 @@ public class ProductCategoryFragment extends Fragment {
 	private List<ProductCategoryModel> fillData() {
 		textviewloading.setText(R.string.loading);
 		
-		// No product_categories.json, so product indicators are hardcoded
-		List<ProductCategoryModel> productCategoryList = Arrays.asList(
-				new ProductCategoryModel("prod_cat_localorganic", getResources().getString(R.string.biolocal), "prod_cat_localorganic", ""),
-				new ProductCategoryModel("prod_cat_importedorganic", getResources().getString(R.string.bioimporte), "prod_cat_importedorganic", ""),
-				new ProductCategoryModel("prod_cat_localconventional", getResources().getString(R.string.conlocal), "prod_cat_localconventional", ""),
-				new ProductCategoryModel("prod_cat_importedconventional", getResources().getString(R.string.conimporte), "prod_cat_importedconventional", "")
-		);
+		List<ProductCategoryModel> productCategoryList = Utils.getProductCategoryList(getContext());
 		
 		if (productCategoryList.size() > 0) {
 			textviewloading.setVisibility(View.GONE);

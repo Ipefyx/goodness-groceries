@@ -84,24 +84,9 @@ public class IndicatorCategoryFragment extends Fragment {
 	}
 	
 	private List<IndicatorCategoryModel> fillData() {
-		//List<IndicatorViewModel>
-		//data = IndicatorViewModel.prepareDesserts(
-		//        getActivity().getResources().getStringArray(R.array.dessert_names),
-		//        getActivity().getResources().getStringArray(R.array.dessert_descriptions));
-		//return  data;
-		
 		textviewloading.setText(R.string.loading);
-		String jsonFileString = Utils.getJsonFromAssets(getActivity(), "indicator_categories.json");
-		Log.i("data", jsonFileString);
 		
-		Gson gson = new Gson();
-		Type listUserType = new TypeToken<List<IndicatorCategoryModel>>() {
-		}.getType();
-		
-		List<IndicatorCategoryModel> indicatorCategoryList = gson.fromJson(jsonFileString, listUserType);
-		//for (int i = 0; i < users.size(); i++) {
-		//    Log.i("data", "> Item " + i + "\n" + users.get(i));
-		//}
+		List<IndicatorCategoryModel> indicatorCategoryList = Utils.getIndicatorCategoryList(getActivity());
 		
 		
 		if (indicatorCategoryList.size() > 0) {

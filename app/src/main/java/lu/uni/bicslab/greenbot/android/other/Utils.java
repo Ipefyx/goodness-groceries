@@ -18,12 +18,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.List;
 
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.ui.fragment.indicator.IndicatorModel;
 import lu.uni.bicslab.greenbot.android.ui.fragment.indicator.ProductModel;
 import lu.uni.bicslab.greenbot.android.ui.fragment.indicator_category.IndicatorCategoryModel;
+import lu.uni.bicslab.greenbot.android.ui.fragment.product_category.ProductCategoryModel;
 
 public class Utils {
 	
@@ -129,38 +131,45 @@ public class Utils {
 		}
 	}
 	
-	public static List<IndicatorModel> getIndicatorsList(Context context) {
-		Gson gson = new Gson();
-		
-		String jsonFileStringIndicator = Utils.getJsonFromAssets(context, "indicators.json");
-		Type listUserTypeIndicator = new TypeToken<List<IndicatorModel>>() {
-		}.getType();
-		List<IndicatorModel> indicatorCategoryList = gson.fromJson(jsonFileStringIndicator, listUserTypeIndicator);
-		return indicatorCategoryList;
-	}
 	
-	public static List<ProductModel> getProductToReview(Context context) {
+	
+	// Respective methods for loading the various JSON data files
+	public static List<IndicatorModel> getIndicatorList(Context context) {
+		String jsonFileString = getJsonFromAssets(context, "indicators.json");
+		
 		Gson gson = new Gson();
+		Type type = new TypeToken<List<IndicatorModel>>() {}.getType();
 		
-		String jsonFileString = lu.uni.bicslab.greenbot.android.other.Utils.getJsonFromAssets(context, "products.json");
-		Type listProductModelTypeIndicator = new TypeToken<List<ProductModel>>() {
-		}.getType();
-		List<ProductModel> productModelList = gson.fromJson(jsonFileString, listProductModelTypeIndicator);
-		
-		return productModelList;
+		return gson.fromJson(jsonFileString, type);
 	}
 	
 	public static List<IndicatorCategoryModel> getIndicatorCategoryList(Context context) {
-		//category
-		String jsoncategory = Utils.getJsonFromAssets(context, "indicator_categories.json");
+		String jsonFileString = getJsonFromAssets(context, "indicator_categories.json");
 		
-		Gson gsoncategory = new Gson();
-		Type listUserTypecategory = new TypeToken<List<IndicatorCategoryModel>>() {
-		}.getType();
+		Gson gson = new Gson();
+		Type type = new TypeToken<List<IndicatorCategoryModel>>() {}.getType();
 		
-		List<IndicatorCategoryModel> mCategoryListmain = gsoncategory.fromJson(jsoncategory, listUserTypecategory);
+		return gson.fromJson(jsonFileString, type);
+	}
+	
+	public static List<ProductCategoryModel> getProductCategoryList(Context context) {
 		
-		return mCategoryListmain;
+		// Currently hardcoded
+		return Arrays.asList(
+				new ProductCategoryModel("prod_cat_localorganic", context.getResources().getString(R.string.biolocal), "prod_cat_localorganic", ""),
+				new ProductCategoryModel("prod_cat_importedorganic", context.getResources().getString(R.string.bioimporte), "prod_cat_importedorganic", ""),
+				new ProductCategoryModel("prod_cat_localconventional", context.getResources().getString(R.string.conlocal), "prod_cat_localconventional", ""),
+				new ProductCategoryModel("prod_cat_importedconventional", context.getResources().getString(R.string.conimporte), "prod_cat_importedconventional", "")
+		);
+	}
+	
+	public static List<ProductModel> getProductList(Context context) {
+		String jsonFileString = getJsonFromAssets(context, "products.json");
+		
+		Gson gson = new Gson();
+		Type type = new TypeToken<List<ProductModel>>() {}.getType();
+		
+		return gson.fromJson(jsonFileString, type);
 	}
 	
 	

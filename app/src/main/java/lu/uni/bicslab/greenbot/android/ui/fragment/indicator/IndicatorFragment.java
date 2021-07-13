@@ -89,17 +89,8 @@ public class IndicatorFragment extends Fragment {
 		
 		Log.i("product receive", indicatorCategoryFilter + " " + productCategoryFilter);
 		
-		String jsonFileStringIndicator = Utils.getJsonFromAssets(getActivity(), "indicators.json");
-		String jsonFileStringProduct = Utils.getJsonFromAssets(getActivity(), "products.json");
-		
-		Gson gson = new Gson();
-		Type listUserTypeIndicator = new TypeToken<List<IndicatorModel>>() {
-		}.getType();
-		Type listUserTypeProduct = new TypeToken<List<ProductModel>>() {
-		}.getType();
-		
-		List<IndicatorModel> indicatorCategoryList = gson.fromJson(jsonFileStringIndicator, listUserTypeIndicator);
-		List<ProductModel> productList = gson.fromJson(jsonFileStringProduct, listUserTypeProduct);
+		List<IndicatorModel> indicatorCategoryList = Utils.getIndicatorList(getActivity());
+		List<ProductModel> productList = Utils.getProductList(getActivity());
 		
 		// Feels hacky, but gets the job done (kinda had to work with the existing stuff)
 		// For each indicator id listed for the product, find the corresponding indicator, put it into the product, and fill in the indicator_description

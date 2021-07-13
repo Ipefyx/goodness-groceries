@@ -47,10 +47,7 @@ public class SelectIndicatorCategoriesFragment extends Fragment {
 		// Half hardcoded, half imported from the indicator_categories.json file
 		// due to lack of time and to make sure it fits within the existing code
 		
-		String jsonFileStringIndicator = Utils.getJsonFromAssets(getActivity(), "indicator_categories.json");
-		Gson gson = new Gson();
-		Type listUserTypeIndicator = new TypeToken<List<IndicatorCategoryModel>>() {}.getType();
-		List<IndicatorCategoryModel> indicatorCategories = gson.fromJson(jsonFileStringIndicator, listUserTypeIndicator);
+		List<IndicatorCategoryModel> indicatorCategories = Utils.getIndicatorCategoryList(getActivity());
 		
 		int[] colors = new int[] {R.color.palette_green2, R.color.palette_blue2, R.color.palette_yellow2, R.color.palette_violet2};
 		

@@ -1,21 +1,12 @@
 package lu.uni.bicslab.greenbot.android.ui.fragment.compare;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.gson.Gson;
@@ -26,12 +17,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lu.uni.bicslab.greenbot.android.R;
-import lu.uni.bicslab.greenbot.android.databinding.FeedbackMainBinding;
 import lu.uni.bicslab.greenbot.android.databinding.FragmentComareLayoutBinding;
-import lu.uni.bicslab.greenbot.android.databinding.OnbordingMainLayoutBinding;
 import lu.uni.bicslab.greenbot.android.other.CompareModel;
 import lu.uni.bicslab.greenbot.android.other.Utils;
-import lu.uni.bicslab.greenbot.android.ui.activity.feedback.FeedbackMainActivity;
 import lu.uni.bicslab.greenbot.android.ui.activity.feedback.ProductToReview;
 import lu.uni.bicslab.greenbot.android.ui.fragment.indicator.IndicatorModel;
 import lu.uni.bicslab.greenbot.android.ui.fragment.indicator.ProductModel;
@@ -167,68 +155,6 @@ public class CompareActivity extends AppCompatActivity {
 		
 	}
 	
-	private void readDataOld() {
-		String jsonFileString = lu.uni.bicslab.greenbot.android.other.Utils.getJsonFromAssets(getApplicationContext(), "products_to_review.json");
-		Gson gson = new Gson();
-		Type listUserType = new TypeToken<List<ProductToReview>>() {
-		}.getType();
-		List<ProductToReview> mProductToReview = gson.fromJson(jsonFileString, listUserType);
-		String jsonFileStringProduct = lu.uni.bicslab.greenbot.android.other.Utils.getJsonFromAssets(getApplicationContext(), "products.json");
-		Type listUserTypeProduct = new TypeToken<List<ProductModel>>() {
-		}.getType();
-		String jsonFileStringIndicator = Utils.getJsonFromAssets(getApplicationContext(), "indicators.json");
-		Type listUserTypeIndicator = new TypeToken<List<IndicatorModel>>() {
-		}.getType();
-		
-		List<ProductModel> productList = gson.fromJson(jsonFileStringProduct, listUserTypeProduct);
-		List<IndicatorModel> indicatorCategoryList = gson.fromJson(jsonFileStringIndicator, listUserTypeIndicator);
-		
-		List<IndicatorModel> indicatorlist = new ArrayList<IndicatorModel>();
-		for (IndicatorModel c : indicatorCategoryList) {
-			if (indicatorlist.equals(c.getCategory_id())) {
-				indicatorlist.add(c);
-			}
-		}
-		mProductToReviewlist = new ArrayList<ProductModel>();
-		
-		for (ProductToReview review : mProductToReview) {
-			for (ProductModel model : productList) {
-				if (review.getProduct_ean().equals(model.getCode())) {
-					mProductToReviewlist.add(model);
-					break;
-				}
-			}
-		}
-		int i = 0;
-		for (ProductModel c : mProductToReviewlist) {
-			List<IndicatorModel> mIndicatorModel = new ArrayList<IndicatorModel>();
-			for (IndicatorModel indicaor : c.getIndicators()) {
-				for (IndicatorModel indicaormain : indicatorCategoryList) {
-					if (indicaor.getIndicator_idForProduct().equals(indicaormain.getId())) {
-						mIndicatorModel.add(indicaormain);
-					}
-				}
-				
-			}
-			mProductToReviewlist.get(i).setIndicators(mIndicatorModel);
-			i++;
-		}
-		
-		//category
-		String jsoncategory = Utils.getJsonFromAssets(getApplicationContext(), "indicator_categories.json");
-		Log.i("data", jsonFileString);
-		
-		Gson gsoncategory = new Gson();
-		Type listUserTypecategory = new TypeToken<List<IndicatorCategoryModel>>() {
-		}.getType();
-		
-		List<IndicatorCategoryModel> mCategoryListmain = gsoncategory.fromJson(jsoncategory, listUserTypecategory);
-		
-		
-		setmAdapterViewpager(mCategoryListmain, null);
-		
-	}
-	
 	public void setmAdapterViewpager(List<IndicatorCategoryModel> mCategoryListmain, List<CompareModel> mCompareMdellist) {
 		layouts = new ArrayList<Integer>();
 		for (int i = 0; i < mCategoryListmain.size(); i++) {
@@ -243,9 +169,9 @@ public class CompareActivity extends AppCompatActivity {
 	
 	public void readData() {
 		
-		List<IndicatorModel> indicatorCategoryList = Utils.getIndicatorsList(getApplicationContext());
+		List<IndicatorModel> indicatorCategoryList = Utils.getIndicatorList(getApplicationContext());
 		
-		List<ProductModel> productModelList = Utils.getProductToReview(getApplicationContext());
+		List<ProductModel> productModelList = Utils.getProductList(getApplicationContext());
 		
 		//get the items for compare
 		List<CompareModel> compareViewModelList = new ArrayList<>();

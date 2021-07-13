@@ -162,32 +162,10 @@ public class ItemDetailsActivity extends AppCompatActivity {
 	}
 	
 	private List<IndicatorModel> getIndicators() {
-		String jsonFileStringIndicator = Utils.getJsonFromAssets(getApplicationContext(), "indicators.json");
-		String jsonFileStringProduct = Utils.getJsonFromAssets(getApplicationContext(), "products.json");
 		
-		Gson gson = new Gson();
-		Type listUserTypeIndicator = new TypeToken<List<IndicatorModel>>() {
-		}.getType();
-		Type listUserTypeProduct = new TypeToken<List<ProductModel>>() {
-		}.getType();
+		List<IndicatorModel> indicatorList = Utils.getIndicatorList(getApplicationContext());
+		List<ProductModel> productList = Utils.getProductList(getApplicationContext());
 		
-		List<IndicatorModel> indicatorCategoryList = gson.fromJson(jsonFileStringIndicator, listUserTypeIndicator);
-		List<ProductModel> productList = gson.fromJson(jsonFileStringProduct, listUserTypeProduct);
-		
-//		List<IndicatorModel> indicatorModel = new ArrayList<IndicatorModel>();
-//		for (ProductModel product : productList) {
-//			Log.e("product", "" + product.getIndicators());
-//			if (product.getCode().equals(value)) {
-//				productmodel = product;
-//				for (IndicatorModel main : product.getIndicators()) {
-//					for (IndicatorModel model : indicatorCategoryList) {
-//						if (model.getId().equals(main.getIndicator_idForProduct())) {
-//							indicatorModel.add(model);
-//						}
-//					}
-//				}
-//			}
-//		}
 		
 		Optional<ProductModel> matchingProduct = productList.stream().filter(product -> product.code.equals(value)).findFirst();
 		if (matchingProduct.isPresent()) {
@@ -198,7 +176,7 @@ public class ItemDetailsActivity extends AppCompatActivity {
 				String ind_id = productmodel.indicators.get(i).getIndicator_id();
 				String ind_desc = productmodel.indicators.get(i).getIndicator_description();
 				
-				Optional<IndicatorModel> matchingIndicator = indicatorCategoryList.stream().filter(ind -> ind.id.equals(ind_id)).findFirst();
+				Optional<IndicatorModel> matchingIndicator = indicatorList.stream().filter(ind -> ind.id.equals(ind_id)).findFirst();
 				if (matchingIndicator.isPresent()) {
 					productmodel.indicators.set(i, matchingIndicator.get());
 					productmodel.indicators.get(i).setIndicator_description(ind_desc);
