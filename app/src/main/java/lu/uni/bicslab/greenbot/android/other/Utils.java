@@ -133,43 +133,64 @@ public class Utils {
 	
 	
 	
+	private static List<IndicatorModel> indicatorList = null;
+	private static List<IndicatorCategoryModel> indicatorCategoryList = null;
+	private static List<ProductCategoryModel> productCategoryList = null;
+	private static List<ProductModel> productList = null;
+	
 	// Respective methods for loading the various JSON data files
 	public static List<IndicatorModel> getIndicatorList(Context context) {
+		if (indicatorList != null)
+			return indicatorList;
+		
 		String jsonFileString = getJsonFromAssets(context, "indicators.json");
 		
 		Gson gson = new Gson();
 		Type type = new TypeToken<List<IndicatorModel>>() {}.getType();
+		indicatorList = gson.fromJson(jsonFileString, type);
 		
-		return gson.fromJson(jsonFileString, type);
+		return indicatorList;
 	}
 	
 	public static List<IndicatorCategoryModel> getIndicatorCategoryList(Context context) {
+		if (indicatorCategoryList != null)
+			return indicatorCategoryList;
+		
 		String jsonFileString = getJsonFromAssets(context, "indicator_categories.json");
 		
 		Gson gson = new Gson();
 		Type type = new TypeToken<List<IndicatorCategoryModel>>() {}.getType();
+		indicatorCategoryList = gson.fromJson(jsonFileString, type);
 		
-		return gson.fromJson(jsonFileString, type);
+		return indicatorCategoryList;
 	}
 	
 	public static List<ProductCategoryModel> getProductCategoryList(Context context) {
+		if (productCategoryList != null)
+			return productCategoryList;
 		
 		// Currently hardcoded
-		return Arrays.asList(
-			new ProductCategoryModel("local_organic", context.getResources().getString(R.string.biolocal), "prod_cat_localorganic", ""),
-			new ProductCategoryModel("imported_organic", context.getResources().getString(R.string.bioimporte), "prod_cat_importedorganic", ""),
-			new ProductCategoryModel("local_conventional", context.getResources().getString(R.string.conlocal), "prod_cat_localconventional", ""),
-			new ProductCategoryModel("imported_conventional", context.getResources().getString(R.string.conimporte), "prod_cat_importedconventional", "")
+		productCategoryList = Arrays.asList(
+				new ProductCategoryModel("local_organic", context.getResources().getString(R.string.biolocal), "prod_cat_localorganic", ""),
+				new ProductCategoryModel("imported_organic", context.getResources().getString(R.string.bioimporte), "prod_cat_importedorganic", ""),
+				new ProductCategoryModel("local_conventional", context.getResources().getString(R.string.conlocal), "prod_cat_localconventional", ""),
+				new ProductCategoryModel("imported_conventional", context.getResources().getString(R.string.conimporte), "prod_cat_importedconventional", "")
 		);
+		
+		return productCategoryList;
 	}
 	
 	public static List<ProductModel> getProductList(Context context) {
+		if (productList != null)
+			return productList;
+		
 		String jsonFileString = getJsonFromAssets(context, "products.json");
 		
 		Gson gson = new Gson();
 		Type type = new TypeToken<List<ProductModel>>() {}.getType();
+		productList = gson.fromJson(jsonFileString, type);
 		
-		return gson.fromJson(jsonFileString, type);
+		return productList;
 	}
 	
 	
