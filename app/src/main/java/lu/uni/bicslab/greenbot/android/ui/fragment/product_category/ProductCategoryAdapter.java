@@ -1,8 +1,7 @@
-package lu.uni.bicslab.greenbot.android.ui.fragment.indicator_category;
+package lu.uni.bicslab.greenbot.android.ui.fragment.product_category;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,22 +20,23 @@ import java.util.function.Consumer;
 
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.Utils;
+import lu.uni.bicslab.greenbot.android.ui.fragment.indicator_category.ItemHolder;
 
-public class IndicatorCategoryAdapter extends RecyclerView.Adapter<ItemHolder> implements Filterable {
+public class ProductCategoryAdapter extends RecyclerView.Adapter<ItemHolder> implements Filterable {
 	
 	
-	private List<IndicatorCategoryModel> modelList;
-	private List<IndicatorCategoryModel> modelListFiltered;
+	private List<ProductCategoryModel> modelList;
+	private List<ProductCategoryModel> modelListFiltered;
+	
 	private Context context;
 	private Consumer<String> clickCallback;
 	
-	public IndicatorCategoryAdapter(Context context, Consumer<String> clickCallback) {
+	public ProductCategoryAdapter(Context context, Consumer<String> clickCallback) {
 		this.context = context;
 		this.clickCallback = clickCallback;
 	}
 	
-	
-	public void setModelList(final List<IndicatorCategoryModel> indCatList) {
+	public void setModelList(final List<ProductCategoryModel> indCatList) {
 		if (this.modelList == null) {
 			this.modelList = indCatList;
 			this.modelListFiltered = indCatList;
@@ -45,7 +45,7 @@ public class IndicatorCategoryAdapter extends RecyclerView.Adapter<ItemHolder> i
 			final DiffUtil.DiffResult result = DiffUtil.calculateDiff(new DiffUtil.Callback() {
 				@Override
 				public int getOldListSize() {
-					return IndicatorCategoryAdapter.this.modelList.size();
+					return ProductCategoryAdapter.this.modelList.size();
 				}
 				
 				@Override
@@ -55,17 +55,17 @@ public class IndicatorCategoryAdapter extends RecyclerView.Adapter<ItemHolder> i
 				
 				@Override
 				public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
-					return IndicatorCategoryAdapter.this.modelList.get(oldItemPosition).getIndicator_name() == indCatList.get(newItemPosition).getIndicator_name();
+					return ProductCategoryAdapter.this.modelList.get(oldItemPosition).getName() == indCatList.get(newItemPosition).getName();
 				}
 				
 				@Override
 				public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
 					
-					IndicatorCategoryModel newdata = IndicatorCategoryAdapter.this.modelList.get(oldItemPosition);
+					ProductCategoryModel newdata = ProductCategoryAdapter.this.modelList.get(oldItemPosition);
 					
-					IndicatorCategoryModel olddata = indCatList.get(newItemPosition);
+					ProductCategoryModel olddata = indCatList.get(newItemPosition);
 					
-					return newdata.getIndicator_name() == olddata.getIndicator_name();
+					return newdata.getName() == olddata.getName();
 				}
 			});
 			this.modelList = indCatList;
@@ -76,7 +76,6 @@ public class IndicatorCategoryAdapter extends RecyclerView.Adapter<ItemHolder> i
 	
 	@Override
 	public ItemHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-		
 		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.indicator_category_item_layout, parent, false);
 		return new ItemHolder(view);
 	}
@@ -84,8 +83,8 @@ public class IndicatorCategoryAdapter extends RecyclerView.Adapter<ItemHolder> i
 	@Override
 	public void onBindViewHolder(ItemHolder holder, int position) {
 		final int pos = position;
-		final IndicatorCategoryModel model = modelListFiltered.get(position);
-		holder.txtName.setText(model.getIndicator_name());
+		final ProductCategoryModel model = modelListFiltered.get(position);
+		holder.txtName.setText(model.getName());
 		holder.txtDoc.setText(model.getDescription());
 		holder.card_view.setOnClickListener(v -> clickCallback.accept(model.id));
 		
@@ -112,9 +111,9 @@ public class IndicatorCategoryAdapter extends RecyclerView.Adapter<ItemHolder> i
 				if (charString.isEmpty()) {
 					modelListFiltered = modelList;
 				} else {
-					List<IndicatorCategoryModel> filteredList = new ArrayList<>();
-					for (IndicatorCategoryModel movie : modelList) {
-						if (movie.getIndicator_name().toLowerCase().contains(charString.toLowerCase())) {
+					List<ProductCategoryModel> filteredList = new ArrayList<>();
+					for (ProductCategoryModel movie : modelList) {
+						if (movie.getName().toLowerCase().contains(charString.toLowerCase())) {
 							filteredList.add(movie);
 						}
 					}
@@ -128,7 +127,7 @@ public class IndicatorCategoryAdapter extends RecyclerView.Adapter<ItemHolder> i
 			
 			@Override
 			protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-				modelListFiltered = (ArrayList<IndicatorCategoryModel>) filterResults.values;
+				modelListFiltered = (List<ProductCategoryModel>) filterResults.values;
 				
 				notifyDataSetChanged();
 			}

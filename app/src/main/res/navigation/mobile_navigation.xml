@@ -10,14 +10,13 @@
         android:name="lu.uni.bicslab.greenbot.android.ui.fragment.indicator_category.IndicatorCategoryFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_indicator_category">
-    <action
-        android:id="@+id/goto_indicator"
-        app:destination="@id/fragment_indicator"
-        app:enterAnim="@anim/slide_in_right"
-        app:exitAnim="@anim/slide_out_left"
-        app:popEnterAnim="@anim/slide_in_left"
-        app:popExitAnim="@anim/slide_out_right"
-        />
+        <action
+                android:id="@+id/goto_prod_cat"
+                app:destination="@id/productCategoryFragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/fragment_indicator"
@@ -29,5 +28,16 @@
         android:name="lu.uni.bicslab.greenbot.android.ui.fragment.compare.CompareActivity"
         tools:layout="@layout/fragment_comare_layout"
         />
+    <fragment
+            android:id="@+id/productCategoryFragment"
+            android:name="lu.uni.bicslab.greenbot.android.ui.fragment.product_category.ProductCategoryFragment">
+        <action
+                android:id="@+id/goto_indicator"
+                app:destination="@id/fragment_indicator"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
 
 </navigation>

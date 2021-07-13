@@ -1,4 +1,4 @@
-package lu.uni.bicslab.greenbot.android.ui.fragment.indicator_category;
+package lu.uni.bicslab.greenbot.android.ui.fragment.product_category;
 
 import android.app.SearchManager;
 import android.os.Bundle;
@@ -6,12 +6,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import androidx.annotation.NonNull;
-
 import android.widget.SearchView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -22,16 +20,21 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.Utils;
+import lu.uni.bicslab.greenbot.android.ui.activity.onbord.OnbordSelectable;
+import lu.uni.bicslab.greenbot.android.ui.fragment.indicator_category.IndicatorCategoryAdapter;
+import lu.uni.bicslab.greenbot.android.ui.fragment.indicator_category.IndicatorCategoryModel;
 
-public class IndicatorCategoryFragment extends Fragment {
+public class ProductCategoryFragment extends Fragment {
 	private RecyclerView recyclerView;
 	
-	private IndicatorCategoryAdapter itemAdapter;
-	List<IndicatorCategoryModel> list;
+	private ProductCategoryAdapter itemAdapter;
+	List<ProductCategoryModel> list;
 	SearchManager searchManager;
 	SearchView searchView;
 	TextView textviewloading;
@@ -46,13 +49,14 @@ public class IndicatorCategoryFragment extends Fragment {
 		searchView = root.findViewById(R.id.search_src_text);
 		searchView.setMaxWidth(Integer.MAX_VALUE);
 		
-		itemAdapter = new IndicatorCategoryAdapter(getActivity(), id -> {
+		itemAdapter = new ProductCategoryAdapter(getActivity(), id -> {
 			// Callback used by the adapter to signal the user clicked on category to proceed
-			Bundle bundle = new Bundle();
-			bundle.putString("filter_indicator_category", "" + id);
+			Bundle bundle = getArguments();
+			bundle.putString("filter_product_category", "" + id);
 			Log.i("product send", "" + id);
-			Navigation.findNavController(container).navigate(R.id.goto_prod_cat, bundle);
+			Navigation.findNavController(container).navigate(R.id.goto_indicator, bundle);
 		});
+		
 		itemAdapter.setModelList(fillData());
 		
 		RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
@@ -83,28 +87,18 @@ public class IndicatorCategoryFragment extends Fragment {
 		return root;
 	}
 	
-	private List<IndicatorCategoryModel> fillData() {
-		//List<IndicatorViewModel>
-		//data = IndicatorViewModel.prepareDesserts(
-		//        getActivity().getResources().getStringArray(R.array.dessert_names),
-		//        getActivity().getResources().getStringArray(R.array.dessert_descriptions));
-		//return  data;
-		
+	private List<ProductCategoryModel> fillData() {
 		textviewloading.setText(R.string.loading);
-		String jsonFileString = Utils.getJsonFromAssets(getActivity(), "indicator_categories.json");
-		Log.i("data", jsonFileString);
 		
-		Gson gson = new Gson();
-		Type listUserType = new TypeToken<List<IndicatorCategoryModel>>() {
-		}.getType();
+		// No product_categories.json, so product indicators are hardcoded
+		List<ProductCategoryModel> productCategoryList = Arrays.asList(
+				new ProductCategoryModel("prod_cat_localorganic", getResources().getString(R.string.biolocal), "prod_cat_localorganic", ""),
+				new ProductCategoryModel("prod_cat_importedorganic", getResources().getString(R.string.bioimporte), "prod_cat_importedorganic", ""),
+				new ProductCategoryModel("prod_cat_localconventional", getResources().getString(R.string.conlocal), "prod_cat_localconventional", ""),
+				new ProductCategoryModel("prod_cat_importedconventional", getResources().getString(R.string.conimporte), "prod_cat_importedconventional", "")
+		);
 		
-		List<IndicatorCategoryModel> indicatorCategoryList = gson.fromJson(jsonFileString, listUserType);
-		//for (int i = 0; i < users.size(); i++) {
-		//    Log.i("data", "> Item " + i + "\n" + users.get(i));
-		//}
-		
-		
-		if (indicatorCategoryList.size() > 0) {
+		if (productCategoryList.size() > 0) {
 			textviewloading.setVisibility(View.GONE);
 			searchView.setVisibility(View.VISIBLE);
 		} else {
@@ -112,7 +106,8 @@ public class IndicatorCategoryFragment extends Fragment {
 			textviewloading.setText(R.string.nodata);
 			searchView.setVisibility(View.GONE);
 		}
-		return indicatorCategoryList;
+		return productCategoryList;
 		
 	}
+	
 }

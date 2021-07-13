@@ -2,6 +2,7 @@ package lu.uni.bicslab.greenbot.android.ui.fragment.indicator;
 
 import android.app.SearchManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +31,10 @@ public class IndicatorFragment extends Fragment {
 	private RecyclerView recyclerView;
 	
 	private IndicatorAdapter itemAdapter;
+	
 	private String indicatorCategoryFilter;
+	private String productCategoryFilter;
+	
 	SearchManager searchManager;
 	SearchView searchView;
 	TextView textviewloading;
@@ -45,15 +49,13 @@ public class IndicatorFragment extends Fragment {
 		//searchManager = (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
 		searchView = root.findViewById(R.id.search_src_text);
 		searchView.setMaxWidth(Integer.MAX_VALUE);
-		try {
-			indicatorCategoryFilter = getActivity().getIntent().getExtras().getString("value");
-		} catch (Exception e) {
-			indicatorCategoryFilter = Utils.id;
-		}
+		
+		indicatorCategoryFilter = getArguments().getString("filter_indicator_category");
+		productCategoryFilter = getArguments().getString("filter_product_category");
 		
 		list = new ArrayList<ProductModel>();
 		itemAdapter = new IndicatorAdapter();
-		list = fillDummyData();
+		list = fillData();
 		
 		
 		itemAdapter.setMovieList(getActivity(), list);
@@ -82,8 +84,10 @@ public class IndicatorFragment extends Fragment {
 		return root;
 	}
 	
-	private List<ProductModel> fillDummyData() {
+	private List<ProductModel> fillData() {
 		textviewloading.setText(R.string.loading);
+		
+		Log.i("product receive", indicatorCategoryFilter + " " + productCategoryFilter);
 		
 		String jsonFileStringIndicator = Utils.getJsonFromAssets(getActivity(), "indicators.json");
 		String jsonFileStringProduct = Utils.getJsonFromAssets(getActivity(), "products.json");
