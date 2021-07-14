@@ -33,8 +33,8 @@ import lu.uni.bicslab.greenbot.android.other.UpdateActionCompleteListener;
 import lu.uni.bicslab.greenbot.android.other.UpdateFeedbackListener;
 import lu.uni.bicslab.greenbot.android.other.Utils;
 import lu.uni.bicslab.greenbot.android.ui.activity.scan.SigninActivity;
-import lu.uni.bicslab.greenbot.android.ui.fragment.indicator.IndicatorModel;
-import lu.uni.bicslab.greenbot.android.ui.fragment.indicator.ProductModel;
+import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
+import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
 
 //feedback view
 public class FeedbackMainActivity extends AppCompatActivity implements UpdateActionCompleteListener {
@@ -167,7 +167,7 @@ public class FeedbackMainActivity extends AppCompatActivity implements UpdateAct
 		@Override
 		public void updateFeedbackAction(boolean isUpdated, List<IndicatorModel> mIndicatorModel, int pos, int itemposchnged) {
 			mProductToReviewlist.get(pos);
-			mProductToReviewlist.get(pos).setIndicators(mIndicatorModel);
+			mProductToReviewlist.get(pos).indicators = mIndicatorModel;
 			adapter.notifyDataSetChanged();
 		}
 		
@@ -192,16 +192,16 @@ public class FeedbackMainActivity extends AppCompatActivity implements UpdateAct
 			gridLayoutManager = new GridLayoutManager(mcontext, 2);
 			holder.my_recycler_view.setLayoutManager(gridLayoutManager);
 			holder.my_recycler_view.setItemAnimator(new DefaultItemAnimator());
-			List<IndicatorModel> indicatorslist = model.getIndicators();
+			List<IndicatorModel> indicatorslist = model.indicators;
 			// List<IndicatorModel> indi =  mProductToReviewlist.get(currentViewpagerPos).getIndicators();
-			IndicatorModel modeltoadd = new IndicatorModel("indicator_price", "Price", "Price",
-					"indicator_price", "category_id", "id",
-					"general_description", 0, false);
-			mProductToReviewlist.get(currentViewpagerPos).getIndicators().add(modeltoadd);
-			IndicatorModel modeltoaddedittext = new IndicatorModel("indicator_review", "Review", "Review",
-					"indicator_Review", "category_id", "id",
-					"general_description", 0, false);
-			mProductToReviewlist.get(currentViewpagerPos).getIndicators().add(modeltoaddedittext);
+//			IndicatorModel modeltoadd = new IndicatorModel("indicator_price", "Price", "Price",
+//					"indicator_price", "category_id", "id",
+//					"general_description", 0, false);
+//			mProductToReviewlist.get(currentViewpagerPos).indicators.add(modeltoadd);
+//			IndicatorModel modeltoaddedittext = new IndicatorModel("indicator_review", "Review", "Review",
+//					"indicator_Review", "category_id", "id",
+//					"general_description", 0, false);
+//			mProductToReviewlist.get(currentViewpagerPos).indicators.add(modeltoaddedittext);
 			
 			
 			//UpdateFeedbackListener mUpdateFeedbackListener;
@@ -213,7 +213,7 @@ public class FeedbackMainActivity extends AppCompatActivity implements UpdateAct
 					mProductToReviewlist.remove(currentViewpagerPos);
 					if (mProductToReviewlist.size() > 0) {
 						for (ProductModel model : mProductToReviewlist) {
-							for (IndicatorModel indicator : model.getIndicators()) {
+							for (IndicatorModel indicator : model.indicators) {
 								indicator.setSelectionnumber(0);
 							}
 						}
@@ -289,15 +289,15 @@ public class FeedbackMainActivity extends AppCompatActivity implements UpdateAct
 		int i = 0;
 		for (ProductModel c : mProductToReviewlist) {
 			List<IndicatorModel> mIndicatorModel = new ArrayList<IndicatorModel>();
-			for (IndicatorModel indicaor : c.getIndicators()) {
+			for (IndicatorModel indicaor : c.indicators) {
 				for (IndicatorModel indicaormain : indicatorCategoryList) {
-					if (indicaor.getIndicator_idForProduct().equals(indicaormain.getId())) {
-						mIndicatorModel.add(indicaormain);
-					}
+//					if (indicaor.getIndicator_idForProduct().equals(indicaormain.getId())) {
+//						mIndicatorModel.add(indicaormain);
+//					}
 				}
 				
 			}
-			mProductToReviewlist.get(i).setIndicators(mIndicatorModel);
+			mProductToReviewlist.get(i).indicators = mIndicatorModel;
 			i++;
 		}
 		

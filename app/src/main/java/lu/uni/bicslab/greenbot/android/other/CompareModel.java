@@ -1,10 +1,9 @@
 package lu.uni.bicslab.greenbot.android.other;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import lu.uni.bicslab.greenbot.android.ui.fragment.indicator.IndicatorModel;
-import lu.uni.bicslab.greenbot.android.ui.fragment.indicator.ProductModel;
+import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
+import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
 
 public class CompareModel {
 	

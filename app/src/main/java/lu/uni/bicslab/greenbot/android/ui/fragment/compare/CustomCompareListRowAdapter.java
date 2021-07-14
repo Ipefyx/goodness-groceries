@@ -21,7 +21,7 @@ import java.util.List;
 
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.Utils;
-import lu.uni.bicslab.greenbot.android.ui.fragment.indicator.IndicatorModel;
+import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
 
 public class CustomCompareListRowAdapter extends RecyclerView.Adapter<CustomCompareListRowAdapter.CompareCustomView> {
 	

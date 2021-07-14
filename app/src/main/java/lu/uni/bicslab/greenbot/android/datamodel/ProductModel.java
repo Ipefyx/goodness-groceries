@@ -1,21 +1,23 @@
-package lu.uni.bicslab.greenbot.android.ui.fragment.indicator;
+package lu.uni.bicslab.greenbot.android.datamodel;
 
 import java.io.Serializable;
 import java.util.List;
 
 public class ProductModel implements Serializable {
 	
-	public String code;
-	public String name;
-	public String description;
-	public String type;
-	public String category;
-	public String provider;
-	public String image_url;
+	private String code;
+	private String name;
+	private String description;
+	private String type;
+	private String category;
+	private String provider;
+	private String image_url;
+	
+	
 	public List<IndicatorModel> indicators;
 	
 	
-	public ProductModel(String code, String name, String description, String type, String category, String provider, String image_url, List<IndicatorModel> indicators) {
+	public ProductModel(String code, String name, String description, String type, String category, String provider, String image_url) {
 		this.code = code;
 		this.name = name;
 		this.description = description;
@@ -23,7 +25,6 @@ public class ProductModel implements Serializable {
 		this.category = category;
 		this.provider = provider;
 		this.image_url = image_url;
-		this.indicators = indicators;
 	}
 	
 	public String getCode() {
@@ -80,13 +81,5 @@ public class ProductModel implements Serializable {
 	
 	public void setImage_url(String image_url) {
 		this.image_url = image_url;
-	}
-	
-	public List<IndicatorModel> getIndicators() {
-		return indicators;
-	}
-	
-	public void setIndicators(List<IndicatorModel> indicators) {
-		this.indicators = indicators;
 	}
 }

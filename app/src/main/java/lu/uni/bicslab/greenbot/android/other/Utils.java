@@ -6,13 +6,8 @@ import android.graphics.drawable.Drawable;
 
 import androidx.core.content.ContextCompat;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,9 +18,9 @@ import java.util.Arrays;
 import java.util.List;
 
 import lu.uni.bicslab.greenbot.android.R;
-import lu.uni.bicslab.greenbot.android.ui.fragment.indicator.IndicatorModel;
-import lu.uni.bicslab.greenbot.android.ui.fragment.indicator.ProductModel;
-import lu.uni.bicslab.greenbot.android.ui.fragment.indicator_category.IndicatorCategoryModel;
+import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
+import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
+import lu.uni.bicslab.greenbot.android.datamodel.IndicatorCategoryModel;
 import lu.uni.bicslab.greenbot.android.ui.fragment.product_category.ProductCategoryModel;
 
 public class Utils {

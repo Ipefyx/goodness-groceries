@@ -2,17 +2,12 @@ package lu.uni.bicslab.greenbot.android.ui.fragment.compare;
 
 import android.os.Bundle;
 import android.text.Html;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,10 +15,9 @@ import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.databinding.FragmentComareLayoutBinding;
 import lu.uni.bicslab.greenbot.android.other.CompareModel;
 import lu.uni.bicslab.greenbot.android.other.Utils;
-import lu.uni.bicslab.greenbot.android.ui.activity.feedback.ProductToReview;
-import lu.uni.bicslab.greenbot.android.ui.fragment.indicator.IndicatorModel;
-import lu.uni.bicslab.greenbot.android.ui.fragment.indicator.ProductModel;
-import lu.uni.bicslab.greenbot.android.ui.fragment.indicator_category.IndicatorCategoryModel;
+import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
+import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
+import lu.uni.bicslab.greenbot.android.datamodel.IndicatorCategoryModel;
 
 public class CompareActivity extends AppCompatActivity {
 	
@@ -221,8 +215,8 @@ public class CompareActivity extends AppCompatActivity {
 				compareViewModelList.add(mCompareViewModel);
 				
 				//main
-				for (int j = 0; j < mProductModel.getIndicators().size(); j++) {
-					String indicator = mProductModel.getIndicators().get(j).getIndicator_id();
+				for (int j = 0; j < mProductModel.indicators.size(); j++) {
+					String indicator = mProductModel.indicators.get(j).getId();
 					String category = getCategoryIndicator(indicatorCategoryList, indicator);
 					if (category.equals(Utils.ind_cat_environment)) {
 						int n = 0;

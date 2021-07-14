@@ -1,4 +1,4 @@
-package lu.uni.bicslab.greenbot.android.ui.fragment.indicator_category;
+package lu.uni.bicslab.greenbot.android.datamodel;
 
 
 import java.util.ArrayList;
@@ -6,15 +6,16 @@ import java.util.List;
 
 public class IndicatorCategoryModel {
 	
-	String id;
-	String name;
-	String icon_name;
-	String description;
+	private String id;
+	private String name;
+	private String icon_name;
+	private String description;
 	
 	
-	public IndicatorCategoryModel(String name, String description) {
+	public IndicatorCategoryModel(String id, String name, String icon_name, String description) {
+		this.id = id;
 		this.name = name;
-		this.icon_name = String.valueOf(name.charAt(0));
+		this.icon_name = icon_name;
 		this.description = description;
 	}
 	
@@ -51,14 +52,4 @@ public class IndicatorCategoryModel {
 		this.description = description;
 	}
 	
-	public static List<IndicatorCategoryModel> prepareDesserts(String[] names, String[] descriptions) {
-		List<IndicatorCategoryModel> desserts = new ArrayList<>(names.length);
-		
-		for (int i = 0; i < names.length; i++) {
-			IndicatorCategoryModel dessert = new IndicatorCategoryModel(names[i], descriptions[i]);
-			desserts.add(dessert);
-		}
-		
-		return desserts;
-	}
 }

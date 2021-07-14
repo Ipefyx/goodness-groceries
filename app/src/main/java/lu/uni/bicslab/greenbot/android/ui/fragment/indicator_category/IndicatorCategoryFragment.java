@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import lu.uni.bicslab.greenbot.android.R;
+import lu.uni.bicslab.greenbot.android.datamodel.IndicatorCategoryModel;
 import lu.uni.bicslab.greenbot.android.other.Utils;
 
 public class IndicatorCategoryFragment extends Fragment {

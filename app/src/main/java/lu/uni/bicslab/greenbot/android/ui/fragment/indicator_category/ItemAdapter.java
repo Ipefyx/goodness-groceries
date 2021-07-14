@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import lu.uni.bicslab.greenbot.android.R;
+import lu.uni.bicslab.greenbot.android.datamodel.IndicatorCategoryModel;
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemHolder> {
 	

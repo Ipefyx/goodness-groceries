@@ -1,7 +1,6 @@
 package lu.uni.bicslab.greenbot.android.ui.fragment.indicator;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,8 +23,9 @@ import java.util.List;
 import java.util.function.Consumer;
 
 import lu.uni.bicslab.greenbot.android.R;
+import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
+import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
 import lu.uni.bicslab.greenbot.android.other.Utils;
-import lu.uni.bicslab.greenbot.android.ui.activity.itemmain.ItemDetailsActivity;
 
 public class IndicatorAdapter extends RecyclerView.Adapter<IndicatorAdapter.IndicatorItemHolder> implements Filterable {
 	
@@ -96,14 +96,14 @@ public class IndicatorAdapter extends RecyclerView.Adapter<IndicatorAdapter.Indi
 		
 		for (IndicatorModel ind : product.indicators) {
 			ImageView imageview = (ImageView) LayoutInflater.from(context).inflate(R.layout.indicator_item_layout_indicator_imageview, holder.indicator_layout, false);
-			Glide.with(context).load(Utils.getDrawableImage(context, ind.icon_name)).into(imageview);
+			Glide.with(context).load(Utils.getDrawableImage(context, ind.getIcon_name())).into(imageview);
 			imageview.setId(View.generateViewId());
 			holder.indicator_layout.addView(imageview);
 			holder.indicator_flow.addView(imageview);
 		}
 		
 		Glide.with(context).load(product.getImage_url()).apply(RequestOptions.centerCropTransform()).error(R.drawable.ic_menu_gallery).into(holder.imageview_icon);
-		Glide.with(context).load(Utils.getDrawableImage(context, product.category)).error(R.drawable.ic_menu_gallery).into(holder.imageview_origin);
+		Glide.with(context).load(Utils.getDrawableImage(context, product.getCategory())).error(R.drawable.ic_menu_gallery).into(holder.imageview_origin);
 	}
 	
 	@Override

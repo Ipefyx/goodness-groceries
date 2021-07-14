@@ -21,7 +21,7 @@ import java.util.List;
 
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.CompareModel;
-import lu.uni.bicslab.greenbot.android.ui.fragment.indicator_category.IndicatorCategoryModel;
+import lu.uni.bicslab.greenbot.android.datamodel.IndicatorCategoryModel;
 
 public class ViewSliderPagerAdapter extends RecyclerView.Adapter<ViewSliderPagerAdapter.SliderViewHolder> {
 	Context mcontext;

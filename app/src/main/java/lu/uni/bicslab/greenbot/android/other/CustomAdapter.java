@@ -10,12 +10,11 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
 import lu.uni.bicslab.greenbot.android.R;
-import lu.uni.bicslab.greenbot.android.ui.fragment.indicator.IndicatorModel;
+import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView> {
 	
@@ -40,7 +39,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 		IndicatorModel model = indicatorModel.get(position);
 		
 		//holder.mName.setText(model.getName());
-		holder.mDescription.setText(model.getIndicator_description());
+		holder.mDescription.setText(model.getName());
 		
 //		holder.txt_firstletter.setImageDrawable(Utils.getDrawableImage(context, model.getIcon_name()));
 		Glide.with(context).load(Utils.getDrawableImage(context, model.getIcon_name())).error(R.drawable.ic_menu_gallery).into(holder.txt_firstletter);

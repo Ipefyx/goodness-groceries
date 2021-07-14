@@ -23,8 +23,8 @@ import java.util.List;
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.UpdateFeedbackListener;
 import lu.uni.bicslab.greenbot.android.other.Utils;
-import lu.uni.bicslab.greenbot.android.ui.fragment.indicator.IndicatorModel;
-import lu.uni.bicslab.greenbot.android.ui.fragment.indicator.ProductModel;
+import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
+import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
 
 public class CustomindicatorAdapter extends RecyclerView.Adapter<CustomindicatorAdapter.CustomView> {
 	
@@ -38,7 +38,7 @@ public class CustomindicatorAdapter extends RecyclerView.Adapter<Customindicator
 	public CustomindicatorAdapter(Context context, List<ProductModel> mProductToReviewlist, int currentViewpagerPos, UpdateFeedbackListener mUpdateFeedbackListener) {
 		this.context = context;
 		this.mProductToReviewlist = mProductToReviewlist;
-		// this.indicatorModel = mProductToReviewlist.get(currentViewpagerPos).getIndicators();
+		// this.indicatorModel = mProductToReviewlist.get(currentViewpagerPos).indicators;
 		this.mUpdateFeedbackListener = mUpdateFeedbackListener;
 		this.currentViewpagerPos = currentViewpagerPos;
 	}
@@ -52,7 +52,7 @@ public class CustomindicatorAdapter extends RecyclerView.Adapter<Customindicator
 	
 	@Override
 	public void onBindViewHolder(final CustomView holder, int positionval) {
-		this.data = mProductToReviewlist.get(currentViewpagerPos).getIndicators().get(positionval);
+		this.data = mProductToReviewlist.get(currentViewpagerPos).indicators.get(positionval);
 		holder.txt_pos.setVisibility(View.GONE);
 		int clickPos = data.getSelectionnumber();
 		//price review
@@ -101,7 +101,7 @@ public class CustomindicatorAdapter extends RecyclerView.Adapter<Customindicator
 			@Override
 			public void onClick(View v) {
 				int position = Integer.parseInt("" + holder.txt_pos.getText().toString());
-				IndicatorModel data = mProductToReviewlist.get(currentViewpagerPos).getIndicators().get(position);
+				IndicatorModel data = mProductToReviewlist.get(currentViewpagerPos).indicators.get(position);
 				int clickPos = data.getSelectionnumber();
 				//check click
 				boolean oneadded = false;
@@ -109,7 +109,7 @@ public class CustomindicatorAdapter extends RecyclerView.Adapter<Customindicator
 				int i = 0;
 				int oneselectedPos = 0;
 				int twoselectedPos = 0;
-				for (IndicatorModel model : mProductToReviewlist.get(currentViewpagerPos).getIndicators()) {
+				for (IndicatorModel model : mProductToReviewlist.get(currentViewpagerPos).indicators) {
 					if (model.getSelectionnumber() == 1) {
 						oneadded = true;
 						oneselectedPos = i;
@@ -128,7 +128,7 @@ public class CustomindicatorAdapter extends RecyclerView.Adapter<Customindicator
 						Toast.makeText(context, "Max 2 only", Toast.LENGTH_SHORT).show();
 						data.setSelectionnumber(0);
 						IndicatorModel modeldata = data;
-						mProductToReviewlist.get(currentViewpagerPos).getIndicators().set(position, modeldata);
+						mProductToReviewlist.get(currentViewpagerPos).indicators.set(position, modeldata);
 						
 						holder.icon_select.setButtonTintList(context.getColorStateList(R.color.gray_dark));
 						holder.icon_select.setChecked(false);
@@ -138,13 +138,13 @@ public class CustomindicatorAdapter extends RecyclerView.Adapter<Customindicator
 						data.setSelectionnumber(2);
 						IndicatorModel modeldata = data;
 						//  indicatorModel.set(position, modeldata);
-						mProductToReviewlist.get(currentViewpagerPos).getIndicators().set(position, modeldata);
+						mProductToReviewlist.get(currentViewpagerPos).indicators.set(position, modeldata);
 						holder.icon_select.setButtonTintList(context.getColorStateList(R.color.lightgreen));
 						//  FeedbackMainActivity.ViewsSliderAdapter.adapter.notifyItemChanged(position);
 					} else {
 						data.setSelectionnumber(1);
 						IndicatorModel modeldata = data;
-						mProductToReviewlist.get(currentViewpagerPos).getIndicators().set(position, modeldata);
+						mProductToReviewlist.get(currentViewpagerPos).indicators.set(position, modeldata);
 						holder.icon_select.setButtonTintList(context.getColorStateList(R.color.blue));
 						// FeedbackMainActivity.ViewsSliderAdapter.adapter.notifyItemChanged(position);
 					}
@@ -153,40 +153,40 @@ public class CustomindicatorAdapter extends RecyclerView.Adapter<Customindicator
 					if (oneadded == true && twoadded == false && clickPos != 1) {
 						data.setSelectionnumber(2);
 						IndicatorModel modeldata = data;
-						mProductToReviewlist.get(currentViewpagerPos).getIndicators().set(position, modeldata);
+						mProductToReviewlist.get(currentViewpagerPos).indicators.set(position, modeldata);
 						holder.icon_select.setButtonTintList(context.getColorStateList(R.color.lightgreen));
 						// FeedbackMainActivity.ViewsSliderAdapter.adapter.notifyItemChanged(position);
 					} else if (oneadded == true && twoadded == false && clickPos == 1) {
 						data.setSelectionnumber(0);
 						IndicatorModel modeldata = data;
-						mProductToReviewlist.get(currentViewpagerPos).getIndicators().set(position, modeldata);
+						mProductToReviewlist.get(currentViewpagerPos).indicators.set(position, modeldata);
 						// FeedbackMainActivity.ViewsSliderAdapter.adapter.notifyItemChanged(position);
 						holder.icon_select.setButtonTintList(context.getColorStateList(R.color.gray_dark));
 						
 					} else if (oneadded == true && twoadded == true && clickPos == 1) {
 						data.setSelectionnumber(0);
 						IndicatorModel modeldata = data;
-						mProductToReviewlist.get(currentViewpagerPos).getIndicators().set(position, modeldata);
+						mProductToReviewlist.get(currentViewpagerPos).indicators.set(position, modeldata);
 						//FeedbackMainActivity.ViewsSliderAdapter.adapter.notifyItemChanged(position);
 						//two pos
-						IndicatorModel modeldatatwo = mProductToReviewlist.get(currentViewpagerPos).getIndicators().get(twoselectedPos);
+						IndicatorModel modeldatatwo = mProductToReviewlist.get(currentViewpagerPos).indicators.get(twoselectedPos);
 						modeldatatwo.setSelectionnumber(1);
 						//indicatorModel.set(twoselectedPos, modeldatatwo);
 						holder.icon_select.setButtonTintList(context.getColorStateList(R.color.blue));
-						mProductToReviewlist.get(currentViewpagerPos).getIndicators().set(twoselectedPos, modeldatatwo);
+						mProductToReviewlist.get(currentViewpagerPos).indicators.set(twoselectedPos, modeldatatwo);
 						
 						// FeedbackMainActivity.ViewsSliderAdapter.adapter.notifyItemChanged(twoselectedPos);
 						
 					} else if (oneadded == true && twoadded == true && clickPos == 2) {
 						data.setSelectionnumber(0);
 						IndicatorModel modeldata = data;
-						mProductToReviewlist.get(currentViewpagerPos).getIndicators().set(position, modeldata);
+						mProductToReviewlist.get(currentViewpagerPos).indicators.set(position, modeldata);
 						// FeedbackMainActivity.ViewsSliderAdapter.adapter.notifyItemChanged(position);
 						holder.icon_select.setButtonTintList(context.getColorStateList(R.color.gray_dark));
 						
 					}
 				}
-				mUpdateFeedbackListener.updateFeedbackAction(true, mProductToReviewlist.get(currentViewpagerPos).getIndicators(), currentViewpagerPos, position);
+				mUpdateFeedbackListener.updateFeedbackAction(true, mProductToReviewlist.get(currentViewpagerPos).indicators, currentViewpagerPos, position);
 				
 			}
 		});
@@ -194,7 +194,7 @@ public class CustomindicatorAdapter extends RecyclerView.Adapter<Customindicator
 	
 	@Override
 	public int getItemCount() {
-		return mProductToReviewlist.get(currentViewpagerPos).getIndicators() == null ? 0 : mProductToReviewlist.get(currentViewpagerPos).getIndicators().size();
+		return mProductToReviewlist.get(currentViewpagerPos).indicators == null ? 0 : mProductToReviewlist.get(currentViewpagerPos).indicators.size();
 	}
 	
 	public static class CustomView extends RecyclerView.ViewHolder {

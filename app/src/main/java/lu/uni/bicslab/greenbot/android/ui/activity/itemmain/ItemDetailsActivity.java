@@ -24,6 +24,7 @@ import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,8 +32,8 @@ import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.CustomAdapter;
 import lu.uni.bicslab.greenbot.android.other.Utils;
 import lu.uni.bicslab.greenbot.android.ui.fragment.compare.CompareActivity;
-import lu.uni.bicslab.greenbot.android.ui.fragment.indicator.IndicatorModel;
-import lu.uni.bicslab.greenbot.android.ui.fragment.indicator.ProductModel;
+import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
+import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
 
 public class ItemDetailsActivity extends AppCompatActivity {
 	
@@ -163,24 +164,26 @@ public class ItemDetailsActivity extends AppCompatActivity {
 		List<ProductModel> productList = Utils.getProductList(getApplicationContext());
 		
 		
-		Optional<ProductModel> matchingProduct = productList.stream().filter(product -> product.code.equals(productCode)).findFirst();
-		if (matchingProduct.isPresent()) {
-			productmodel = matchingProduct.get();
-			
-			// Copied from IndicatorFragment.java because it serves the same purpose
-			for (int i = 0; i < productmodel.indicators.size(); i++) {
-				String ind_id = productmodel.indicators.get(i).getIndicator_id();
-				String ind_desc = productmodel.indicators.get(i).getIndicator_description();
-				
-				Optional<IndicatorModel> matchingIndicator = indicatorList.stream().filter(ind -> ind.id.equals(ind_id)).findFirst();
-				if (matchingIndicator.isPresent()) {
-					productmodel.indicators.set(i, matchingIndicator.get());
-					productmodel.indicators.get(i).setIndicator_description(ind_desc);
-				}
-			}
-		}
+//		Optional<ProductModel> matchingProduct = productList.stream().filter(product -> product.code.equals(productCode)).findFirst();
+//		if (matchingProduct.isPresent()) {
+//			productmodel = matchingProduct.get();
+//			
+//			// Copied from IndicatorFragment.java because it serves the same purpose
+//			for (int i = 0; i < productmodel.indicators.size(); i++) {
+//				String ind_id = productmodel.indicators.get(i).getIndicator_id();
+//				String ind_desc = productmodel.indicators.get(i).getIndicator_description();
+//				
+//				Optional<IndicatorModel> matchingIndicator = indicatorList.stream().filter(ind -> ind.id.equals(ind_id)).findFirst();
+//				if (matchingIndicator.isPresent()) {
+//					productmodel.indicators.set(i, matchingIndicator.get());
+//					productmodel.indicators.get(i).setIndicator_description(ind_desc);
+//				}
+//			}
+//		}
+//		
+//		return productmodel.getIndicators();
 		
-		return productmodel.getIndicators();
+		return new ArrayList<>();
 	}
 	
 	private void setView(List<IndicatorModel> indicatorModel) {
@@ -190,11 +193,11 @@ public class ItemDetailsActivity extends AppCompatActivity {
 		adapter = new CustomAdapter(this, indicatorModel);
 		recyclerView.setAdapter(adapter);
 		
-		type_data.setText(productmodel.getType());
-		description.setText(productmodel.getDescription());
-		type_category.setText(productmodel.getCategory());
-		type_provider.setText(productmodel.getProvider());
+//		type_data.setText(productmodel.getType());
+//		description.setText(productmodel.getDescription());
+//		type_category.setText(productmodel.getCategory());
+//		type_provider.setText(productmodel.getProvider());
 		header = findViewById(R.id.header);
-		Glide.with(getApplicationContext()).load(productmodel.getImage_url()).apply(RequestOptions.centerCropTransform()).into(header);
+//		Glide.with(getApplicationContext()).load(productmodel.getImage_url()).apply(RequestOptions.centerCropTransform()).into(header);
 	}
 }

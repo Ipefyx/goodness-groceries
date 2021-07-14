@@ -14,13 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.CompareModel;
-import lu.uni.bicslab.greenbot.android.ui.fragment.indicator.IndicatorModel;
-import lu.uni.bicslab.greenbot.android.ui.fragment.indicator.ProductModel;
+import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
 
 public class CustomCompareGridAdapter extends RecyclerView.Adapter<CustomCompareGridAdapter.CustomViewHolder> {
 	
