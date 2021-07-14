@@ -3,6 +3,7 @@ quick description
 
 ## Pre-requisites
 * Android Studio >= 4.2.2 (tbc)
+* Android SDK Build-Tools 30.0.2
 * Android Version (tbd)
 
 ## Installation
