@@ -17,7 +17,6 @@
             android:layout_height="@dimen/icon_width"
             android:layout_marginTop="50dp"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/uni_icon"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -65,7 +64,7 @@
         <ImageView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 app:srcCompat="@drawable/uni_icon"
                 android:scaleType="fitCenter"
                 android:id="@+id/unilu"
@@ -76,7 +75,7 @@
         <ImageView
                 android:layout_width="0dp"
                 android:layout_height="90dp"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 app:srcCompat="@drawable/pall_center"
                 android:scaleType="fitCenter"
                 android:id="@+id/pallcenter"
