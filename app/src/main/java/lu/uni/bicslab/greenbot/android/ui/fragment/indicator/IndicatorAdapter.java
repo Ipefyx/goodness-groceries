@@ -21,6 +21,7 @@ import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.Utils;
@@ -31,9 +32,15 @@ public class IndicatorAdapter extends RecyclerView.Adapter<IndicatorAdapter.Indi
 	private List<ProductModel> indicatorList;
 	private List<ProductModel> indicatorListFiltered;
 	private Context context;
+	private Consumer<String> clickCallback;
 	
-	public void setMovieList(Context context, final List<ProductModel> indicatorList) {
+	public IndicatorAdapter(Context context, Consumer<String> clickCallback) {
 		this.context = context;
+		this.clickCallback = clickCallback;
+	}
+	
+	public void setMovieList(final List<ProductModel> indicatorList) {
+		
 		if (this.indicatorList == null) {
 			this.indicatorList = indicatorList;
 			this.indicatorListFiltered = indicatorList;
@@ -82,15 +89,7 @@ public class IndicatorAdapter extends RecyclerView.Adapter<IndicatorAdapter.Indi
 	public void onBindViewHolder(IndicatorItemHolder holder, int position) {
 		ProductModel product = indicatorListFiltered.get(position);
 		holder.txtName.setText(product.getName());
-		holder.card_view.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(context, ItemDetailsActivity.class);
-				intent.putExtra("code", product.getCode());
-				intent.putExtra("title", product.getName());
-				context.startActivity(intent);
-			}
-		});
+		holder.card_view.setOnClickListener(v -> clickCallback.accept(product.getCode()));
 		
 		// Assume Flow is element 0 and remove all of the ImageViews that may already be there
 		holder.indicator_layout.removeViewsInLayout(1, holder.indicator_layout.getChildCount()-1);

@@ -1,6 +1,7 @@
 package lu.uni.bicslab.greenbot.android.ui.fragment.indicator;
 
 import android.app.SearchManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,6 +23,7 @@ import java.util.stream.Collectors;
 
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.Utils;
+import lu.uni.bicslab.greenbot.android.ui.activity.itemmain.ItemDetailsActivity;
 
 public class IndicatorFragment extends Fragment {
 	private RecyclerView recyclerView;
@@ -49,12 +51,13 @@ public class IndicatorFragment extends Fragment {
 		indicatorCategoryFilter = getArguments().getString("filter_indicator_category");
 		productCategoryFilter = getArguments().getString("filter_product_category");
 		
-		list = new ArrayList<ProductModel>();
-		itemAdapter = new IndicatorAdapter();
-		list = fillData();
+		itemAdapter = new IndicatorAdapter(getActivity(), code -> {
+				Intent intent = new Intent(getActivity(), ItemDetailsActivity.class);
+				intent.putExtra("code", code);
+				startActivity(intent);
+		});
 		
-		
-		itemAdapter.setMovieList(getActivity(), list);
+		itemAdapter.setMovieList(fillData());
 		RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
 		recyclerView.setLayoutManager(mLayoutManager);
 		recyclerView.setItemAnimator(new DefaultItemAnimator());

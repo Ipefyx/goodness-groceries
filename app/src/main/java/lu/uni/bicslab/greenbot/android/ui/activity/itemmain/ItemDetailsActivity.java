@@ -44,7 +44,7 @@ public class ItemDetailsActivity extends AppCompatActivity {
 	
 	private Menu collapsedMenu;
 	private boolean appBarExpanded = true;
-	String value;
+	String productCode;
 	ProductModel productmodel;
 	TextView type_data, description, type_category, type_provider;
 	ImageView header, img_compare;
@@ -64,8 +64,7 @@ public class ItemDetailsActivity extends AppCompatActivity {
 		//  Use when your list size is constant for better performance
 		recyclerView.setHasFixedSize(true);
 		
-		String title = getIntent().getExtras().getString("title");
-		value = getIntent().getExtras().getString("code");
+		productCode = getIntent().getExtras().getString("code");
 		
 		final Toolbar toolbar = findViewById(R.id.anim_toolbar);
 		setSupportActionBar(toolbar);
@@ -75,7 +74,7 @@ public class ItemDetailsActivity extends AppCompatActivity {
 		appBarLayout = findViewById(R.id.appbar);
 		
 		collapsingToolbar = findViewById(R.id.collapsing_toolbar);
-		collapsingToolbar.setTitle(title);
+//		collapsingToolbar.setTitle(title);
 		
 		Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
 				R.drawable.header);
@@ -164,7 +163,7 @@ public class ItemDetailsActivity extends AppCompatActivity {
 		List<ProductModel> productList = Utils.getProductList(getApplicationContext());
 		
 		
-		Optional<ProductModel> matchingProduct = productList.stream().filter(product -> product.code.equals(value)).findFirst();
+		Optional<ProductModel> matchingProduct = productList.stream().filter(product -> product.code.equals(productCode)).findFirst();
 		if (matchingProduct.isPresent()) {
 			productmodel = matchingProduct.get();
 			
