@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -140,8 +141,8 @@ public class Utils {
 	
 	// Respective methods for loading the various JSON data files
 	public static List<IndicatorModel> getIndicatorList(Context context) {
-//		if (indicatorList != null)
-//			return indicatorList;
+		if (indicatorList != null)
+			return new ArrayList<>(indicatorList);
 		
 		String jsonFileString = getJsonFromAssets(context, "indicators.json");
 		
@@ -153,8 +154,8 @@ public class Utils {
 	}
 	
 	public static List<IndicatorCategoryModel> getIndicatorCategoryList(Context context) {
-//		if (indicatorCategoryList != null)
-//			return indicatorCategoryList;
+		if (indicatorCategoryList != null)
+			return new ArrayList<>(indicatorCategoryList);
 		
 		String jsonFileString = getJsonFromAssets(context, "indicator_categories.json");
 		
@@ -166,8 +167,8 @@ public class Utils {
 	}
 	
 	public static List<ProductCategoryModel> getProductCategoryList(Context context) {
-//		if (productCategoryList != null)
-//			return productCategoryList;
+		if (productCategoryList != null)
+			return new ArrayList<>(productCategoryList);
 		
 		// Currently hardcoded
 		productCategoryList = Arrays.asList(
@@ -181,8 +182,8 @@ public class Utils {
 	}
 	
 	public static List<ProductModel> getProductList(Context context) {
-//		if (productList != null)
-//			return productList;
+		if (productList != null)
+			return new ArrayList<>(productList);
 		
 		String jsonFileString = getJsonFromAssets(context, "products.json");
 		
