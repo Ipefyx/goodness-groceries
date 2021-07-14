@@ -31,8 +31,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemHolder> {
 	@Override
 	public void onBindViewHolder(ItemHolder holder, int position) {
 		IndicatorCategoryModel item = celebrityList.get(position);
-		holder.txtName.setText(item.getIndicator_name());
-		holder.txtDoc.setText(item.getIndicator_name());
+		holder.txtName.setText(item.getName());
+		holder.txtDoc.setText(item.getName());
 	}
 	
 	@Override

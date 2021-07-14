@@ -53,7 +53,7 @@ public class IndicatorCategoryAdapter extends RecyclerView.Adapter<ItemHolder> i
 				
 				@Override
 				public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
-					return IndicatorCategoryAdapter.this.modelList.get(oldItemPosition).getIndicator_name() == indCatList.get(newItemPosition).getIndicator_name();
+					return IndicatorCategoryAdapter.this.modelList.get(oldItemPosition).getName() == indCatList.get(newItemPosition).getName();
 				}
 				
 				@Override
@@ -63,7 +63,7 @@ public class IndicatorCategoryAdapter extends RecyclerView.Adapter<ItemHolder> i
 					
 					IndicatorCategoryModel olddata = indCatList.get(newItemPosition);
 					
-					return newdata.getIndicator_name() == olddata.getIndicator_name();
+					return newdata.getName() == olddata.getName();
 				}
 			});
 			this.modelList = indCatList;
@@ -83,7 +83,7 @@ public class IndicatorCategoryAdapter extends RecyclerView.Adapter<ItemHolder> i
 	public void onBindViewHolder(ItemHolder holder, int position) {
 		final int pos = position;
 		final IndicatorCategoryModel model = modelListFiltered.get(position);
-		holder.txtName.setText(model.getIndicator_name());
+		holder.txtName.setText(model.getName());
 		holder.txtDoc.setText(model.getDescription());
 		holder.card_view.setOnClickListener(v -> clickCallback.accept(model.getId()));
 		
@@ -112,7 +112,7 @@ public class IndicatorCategoryAdapter extends RecyclerView.Adapter<ItemHolder> i
 				} else {
 					List<IndicatorCategoryModel> filteredList = new ArrayList<>();
 					for (IndicatorCategoryModel movie : modelList) {
-						if (movie.getIndicator_name().toLowerCase().contains(charString.toLowerCase())) {
+						if (movie.getName().toLowerCase().contains(charString.toLowerCase())) {
 							filteredList.add(movie);
 						}
 					}

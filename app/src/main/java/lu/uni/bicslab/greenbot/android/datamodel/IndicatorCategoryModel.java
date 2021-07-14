@@ -1,10 +1,11 @@
 package lu.uni.bicslab.greenbot.android.datamodel;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class IndicatorCategoryModel {
+public class IndicatorCategoryModel implements Serializable {
 	
 	private String id;
 	private String name;
@@ -28,11 +29,11 @@ public class IndicatorCategoryModel {
 		this.id = id;
 	}
 	
-	public String getIndicator_name() {
+	public String getName() {
 		return name;
 	}
 	
-	public void setIndicator_name(String indicator_name) {
+	public void setName(String indicator_name) {
 		this.name = indicator_name;
 	}
 	

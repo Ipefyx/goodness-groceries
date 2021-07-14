@@ -98,12 +98,10 @@ public class IndicatorFragment extends Fragment {
 		for (ProductModel product : productList) {
 			for (int i = 0; i < product.indicators.size(); i++) {
 				String ind_id = product.indicators.get(i).getId();
-//				String ind_desc = product.indicators.get(i).getIndicator_description();
 				
 				Optional<IndicatorModel> matchingIndicator = indicatorList.stream().filter(ind -> ind.getId().equals(ind_id)).findFirst();
 				if (matchingIndicator.isPresent()) {
-					product.indicators.set(i, matchingIndicator.get());
-//					product.indicators.get(i).setIndicator_description(ind_desc);
+					product.indicators.get(i).mergeBaseIndicator(matchingIndicator.get());
 				}
 			}
 		}

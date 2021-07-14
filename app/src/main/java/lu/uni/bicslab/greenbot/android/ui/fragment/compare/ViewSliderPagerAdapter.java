@@ -51,8 +51,8 @@ public class ViewSliderPagerAdapter extends RecyclerView.Adapter<ViewSliderPager
 	@Override
 	public void onBindViewHolder(@NonNull SliderViewHolder holder, int position) {
 		//ProductModel model = mProductToReviewlist.get(position);
-		holder.txt_categoryname.setText(mCategoryList.get(position).getIndicator_name());
-		Log.e("dddd", "" + position + mCategoryList.get(position).getIndicator_name());
+		holder.txt_categoryname.setText(mCategoryList.get(position).getName());
+		Log.e("dddd", "" + position + mCategoryList.get(position).getName());
 		Glide.with(mcontext).load(mCategoryList.get(position).getIcon_name()).
 				apply(RequestOptions.centerCropTransform()).into(holder.img_product_icon);
 		

@@ -1,8 +1,7 @@
 package lu.uni.bicslab.greenbot.android.datamodel;
 
-import androidx.lifecycle.ViewModel;
-
 import java.io.Serializable;
+import java.util.List;
 
 public class IndicatorModel implements Serializable {
 	
@@ -11,6 +10,9 @@ public class IndicatorModel implements Serializable {
 	private String category_id;
 	private String icon_name;
 	private String general_description;
+	
+	private boolean applicable;
+	public List<SubIndicatorModel> sub_indicators;
 	
 	// TODO: Remove when reworking Feedback Page
 	private int selectionnumber = 0;
@@ -24,6 +26,13 @@ public class IndicatorModel implements Serializable {
 		this.category_id = category_id;
 		this.icon_name = icon_name;
 		this.general_description = general_description;
+	}
+	
+	public void mergeBaseIndicator(IndicatorModel base) {
+		name = base.name;
+		category_id = base.category_id;
+		icon_name = base.icon_name;
+		general_description = base.general_description;
 	}
 	
 	
