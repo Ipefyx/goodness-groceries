@@ -243,6 +243,11 @@ public class Utils {
 		return match.orElse(null);
 	}
 	
+	public static ProductCategoryModel getProductCategoryByID(Context context, String id) {
+		Optional<ProductCategoryModel> match = getProductCategoryList(context).stream().filter(p -> p.getId().equals(id)).findFirst();
+		return match.orElse(null);
+	}
+	
 	public static ProductModel getProductByCode(Context context, String code) {
 		Optional<ProductModel> match = getProductList(context).stream().filter(p -> p.getCode().equals(code)).findFirst();
 		return match.orElse(null);

@@ -19,6 +19,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
@@ -31,6 +33,7 @@ import lu.uni.bicslab.greenbot.android.other.Utils;
 import lu.uni.bicslab.greenbot.android.ui.fragment.compare.CompareActivity;
 import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
 import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
+import lu.uni.bicslab.greenbot.android.ui.fragment.product_category.ProductCategoryModel;
 
 public class ProductDetailsActivity extends AppCompatActivity {
 	
@@ -42,8 +45,9 @@ public class ProductDetailsActivity extends AppCompatActivity {
 	
 	private Menu collapsedMenu;
 	private boolean appBarExpanded = true;
+	
 	String productCode;
-	ProductModel productmodel;
+	
 	TextView type_data, description, type_category, type_provider;
 	ImageView header, img_compare;
 	
@@ -72,7 +76,6 @@ public class ProductDetailsActivity extends AppCompatActivity {
 		appBarLayout = findViewById(R.id.appbar);
 		
 		collapsingToolbar = findViewById(R.id.collapsing_toolbar);
-//		collapsingToolbar.setTitle(title);
 		
 		Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
 				R.drawable.header);
@@ -93,7 +96,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 			public void onClick(View v) {
 				//finish();
 				Intent mIntent = new Intent(getApplicationContext(), CompareActivity.class);
-				mIntent.putExtra("key_product", productmodel);
+				mIntent.putExtra("key_product", productCode);
 				startActivity(mIntent);
 				
 			}
@@ -115,7 +118,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 		});
 		
 		
-		setView(getIndicators());
+		setView(Utils.getProductByCode(this, productCode));
 	}
 	
 	@Override
@@ -155,46 +158,47 @@ public class ProductDetailsActivity extends AppCompatActivity {
 		return super.onOptionsItemSelected(item);
 	}
 	
-	private List<IndicatorModel> getIndicators() {
-		
-		List<IndicatorModel> indicatorList = Utils.getIndicatorList(getApplicationContext());
-		List<ProductModel> productList = Utils.getProductList(getApplicationContext());
-		
-		
-//		Optional<ProductModel> matchingProduct = productList.stream().filter(product -> product.code.equals(productCode)).findFirst();
-//		if (matchingProduct.isPresent()) {
-//			productmodel = matchingProduct.get();
-//			
-//			// Copied from IndicatorFragment.java because it serves the same purpose
-//			for (int i = 0; i < productmodel.indicators.size(); i++) {
-//				String ind_id = productmodel.indicators.get(i).getIndicator_id();
-//				String ind_desc = productmodel.indicators.get(i).getIndicator_description();
-//				
-//				Optional<IndicatorModel> matchingIndicator = indicatorList.stream().filter(ind -> ind.id.equals(ind_id)).findFirst();
-//				if (matchingIndicator.isPresent()) {
-//					productmodel.indicators.set(i, matchingIndicator.get());
-//					productmodel.indicators.get(i).setIndicator_description(ind_desc);
-//				}
-//			}
-//		}
+//	private List<IndicatorModel> fillData() {
 //		
-//		return productmodel.getIndicators();
-		
-		return new ArrayList<>();
-	}
+//		ProductModel product = ;
+//		
+////		Optional<ProductModel> matchingProduct = productList.stream().filter(product -> product.code.equals(productCode)).findFirst();
+////		if (matchingProduct.isPresent()) {
+////			productmodel = matchingProduct.get();
+////			
+////			// Copied from IndicatorFragment.java because it serves the same purpose
+////			for (int i = 0; i < productmodel.indicators.size(); i++) {
+////				String ind_id = productmodel.indicators.get(i).getIndicator_id();
+////				String ind_desc = productmodel.indicators.get(i).getIndicator_description();
+////				
+////				Optional<IndicatorModel> matchingIndicator = indicatorList.stream().filter(ind -> ind.id.equals(ind_id)).findFirst();
+////				if (matchingIndicator.isPresent()) {
+////					productmodel.indicators.set(i, matchingIndicator.get());
+////					productmodel.indicators.get(i).setIndicator_description(ind_desc);
+////				}
+////			}
+////		}
+////		
+////		return productmodel.getIndicators();
+//		
+//		return new ArrayList<>();
+//	}
 	
-	private void setView(List<IndicatorModel> indicatorModel) {
+	private void setView(ProductModel product) {
+		ProductCategoryModel category = Utils.getProductCategoryByID(this, product.getCategory());
+		
 		LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
 		recyclerView.setLayoutManager(linearLayoutManager);
 		
-		adapter = new CustomAdapter(this, indicatorModel);
+		adapter = new CustomAdapter(this, product.indicators);
 		recyclerView.setAdapter(adapter);
+		collapsingToolbar.setTitle(product.getName());
 		
-//		type_data.setText(productmodel.getType());
-//		description.setText(productmodel.getDescription());
-//		type_category.setText(productmodel.getCategory());
-//		type_provider.setText(productmodel.getProvider());
+		type_data.setText(product.getType());
+		description.setText(product.getDescription());
+		type_category.setText(category.getName());
+		type_provider.setText(product.getProvider());
 		header = findViewById(R.id.header);
-//		Glide.with(getApplicationContext()).load(productmodel.getImage_url()).apply(RequestOptions.centerCropTransform()).into(header);
+		Glide.with(getApplicationContext()).load(product.getImage_url()).apply(RequestOptions.centerCropTransform()).into(header);
 	}
 }
