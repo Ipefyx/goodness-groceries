@@ -89,22 +89,7 @@ public class IndicatorFragment extends Fragment {
 		
 		Log.i("product receive", indicatorCategoryFilter + " " + productCategoryFilter);
 		
-		List<IndicatorModel> indicatorList = Utils.getIndicatorList(getActivity());
 		List<ProductModel> productList = Utils.getProductList(getActivity());
-		
-		// Feels hacky, but gets the job done (kinda had to work with the existing stuff)
-		// For each indicator id listed for the product, find the corresponding indicator, put it into the product, and fill in the indicator_description
-		// Surprisingly doing this also simplifies filtering drastically (a little further below)
-		for (ProductModel product : productList) {
-			for (int i = 0; i < product.indicators.size(); i++) {
-				String ind_id = product.indicators.get(i).getId();
-				
-				Optional<IndicatorModel> matchingIndicator = indicatorList.stream().filter(ind -> ind.getId().equals(ind_id)).findFirst();
-				if (matchingIndicator.isPresent()) {
-					product.indicators.get(i).mergeBaseIndicator(matchingIndicator.get());
-				}
-			}
-		}
 		
 		// Filters the product list according to this logic:
 		// For each PRODUCT: (there exists at least one INDICATOR from PRODUCT.INDICATORS where INDICATOR.CATEGORY == indicatorCategoryFilter) and PRODUCT.CATEGORY == productCategoryFilter

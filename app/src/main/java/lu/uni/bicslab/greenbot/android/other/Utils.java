@@ -16,6 +16,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
@@ -25,7 +26,6 @@ import lu.uni.bicslab.greenbot.android.ui.fragment.product_category.ProductCateg
 
 public class Utils {
 	
-	public static String id = "";
 	public static final String PREF_NAME = "GREENBOT_PREFERENCES";
 	public static final int MODE = Context.MODE_PRIVATE;
 	
@@ -177,8 +177,15 @@ public class Utils {
 	}
 	
 	public static List<ProductModel> getProductList(Context context) {
-		if (productList != null)
-			return new ArrayList<>(productList);
+		if (productList != null) {
+			// Deep copy product list to avoid reference problems with the nested indicator instances
+			
+			List<ProductModel> productListCopy = new ArrayList<>();
+			for (ProductModel p : productList) {
+				productListCopy.add(new ProductModel(p));
+			}
+			return productListCopy;
+		}
 		
 		String jsonFileString = getJsonFromAssets(context, "products.json");
 		
@@ -186,7 +193,26 @@ public class Utils {
 		Type type = new TypeToken<List<ProductModel>>() {}.getType();
 		productList = gson.fromJson(jsonFileString, type);
 		
+		// Merge the indicator with sub-indicators with the actual indicator data
+		for (ProductModel product : productList) {
+			product.indicators.forEach(ind ->
+					ind.mergeBaseIndicator(getIndicatorByID(context, ind.getId()))
+			);
+		}
+		
 		return productList;
+	}
+	
+	
+	
+	public static IndicatorModel getIndicatorByID(Context context, String id) {
+		Optional<IndicatorModel> match = getIndicatorList(context).stream().filter(ind -> ind.getId().equals(id)).findFirst();
+		return match.orElse(null);
+	}
+	
+	public static ProductModel getProductByCode(Context context, String code) {
+		Optional<ProductModel> match = getProductList(context).stream().filter(p -> p.getCode().equals(code)).findFirst();
+		return match.orElse(null);
 	}
 	
 	

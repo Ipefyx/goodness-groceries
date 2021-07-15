@@ -1,6 +1,7 @@
 package lu.uni.bicslab.greenbot.android.datamodel;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class IndicatorModel implements Serializable {
@@ -26,6 +27,20 @@ public class IndicatorModel implements Serializable {
 		this.category_id = category_id;
 		this.icon_name = icon_name;
 		this.general_description = general_description;
+	}
+	
+	public IndicatorModel(IndicatorModel other) {
+		// Copy constructor for deep copy
+		
+		this.id = other.id;
+		this.name = other.name;
+		this.category_id = other.category_id;
+		this.icon_name = other.icon_name;
+		this.general_description = other.general_description;
+		
+		this.applicable = other.applicable;
+		
+		sub_indicators = new ArrayList<>(other.sub_indicators);
 	}
 	
 	public void mergeBaseIndicator(IndicatorModel base) {
