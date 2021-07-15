@@ -30,6 +30,7 @@ public class Utils {
 	public static final String PREF_NAME = "GREENBOT_PREFERENCES";
 	public static final int MODE = Context.MODE_PRIVATE;
 	
+	public static final String PRODUCT_IMAGE_PREFIX = "product_";
 	
 	public static final String name = "name";
 	public static final String shrprofilename = "profile";
@@ -213,19 +214,18 @@ public class Utils {
 		productList = gson.fromJson(jsonFileString, type);
 		
 		// Merge the indicator with sub-indicators with the actual indicator data
-		for (ProductModel product : productList) {
-			for (IndicatorModel ind : product.indicators) {
-				ind.mergeBaseIndicator(getIndicatorByID(context, ind.getId()));
-			}
-		}
-		
-		//Translate strings
+		// Translate strings
+		// And adjust image_url
 		for (ProductModel product : productList) {
 			product.setName(getStringByResName(context, product.getName()));
 			product.setDescription(getStringByResName(context, product.getDescription()));
 			product.setType(getStringByResName(context, product.getType()));
 			
+			product.setImage_url(PRODUCT_IMAGE_PREFIX + product.getImage_url());
+			
 			for (IndicatorModel ind : product.indicators) {
+				ind.mergeBaseIndicator(getIndicatorByID(context, ind.getId()));
+				
 				for (SubIndicatorModel sub : ind.sub_indicators) {
 					sub.setName(getStringByResName(context, sub.getName()));
 					sub.setDescription(getStringByResName(context, sub.getDescription()));

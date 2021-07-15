@@ -274,13 +274,16 @@ pour chaque produit.</string>
     <string name="IND_TRANSPARENCY_SUBIND_SPECIFICATIONS_NAME">Specifications</string>
     
     
-    
+<!--    4, Douwe Egberts-->
     <string name="PRODUCT_COFFEE_IC_DESCRIPTION">Composition of Robusta and Arabica coffees with beans from Rainforest Alliance and UTZ Certified™ farms only.  Coffee does not contain any additives.</string>
     <string name="PRODUCT_COFFEE_IC_NAME">Aroma Rood Ground Coffee, 250g</string>
+<!--    3, Ethiquable-->
     <string name="PRODUCT_COFFEE_IO_DESCRIPTION">Bean coffee from Congo from organic farming and fair trade</string>
     <string name="PRODUCT_COFFEE_IO_NAME">Café Kivu en grains</string>
+<!--    2, Knopes-->
     <string name="PRODUCT_COFFEE_LC_DESCRIPTION">Origin 100% Brazil Isidro Pereira, ground, 250g</string>
     <string name="PRODUCT_COFFEE_LC_NAME">Roasted coffee 1936</string>
+<!--    1, Moulin J.P. Dieschbourg-->
     <string name="PRODUCT_COFFEE_LO_DESCRIPTION">100% organic and Fairtrade certified Arabica coffee from Ethiopia, grown in the Sidamo region in heights between 1400 and 2200 m, and roasted at the Moulin J.P. Dieschbourg in Echternach, Luxembourg.</string>
     <string name="PRODUCT_COFFEE_LO_NAME">Café Sidamo Bio</string>
     
