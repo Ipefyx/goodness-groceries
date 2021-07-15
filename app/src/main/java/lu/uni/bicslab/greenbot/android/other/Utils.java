@@ -138,9 +138,41 @@ public class Utils {
 	
 	// Respective methods for loading the various JSON data files
 	public static List<IndicatorModel> getIndicatorList(Context context) {
-		if (indicatorList != null)
-			return new ArrayList<>(indicatorList);
+		if (indicatorList == null)
+			readIndicatorList(context);
 		
+		return new ArrayList<>(indicatorList);
+	}
+	
+	public static List<IndicatorCategoryModel> getIndicatorCategoryList(Context context) {
+		if (indicatorCategoryList == null)
+			readIndicatorCategoryList(context);
+		
+		return new ArrayList<>(indicatorCategoryList);
+	}
+	
+	public static List<ProductCategoryModel> getProductCategoryList(Context context) {
+		if (productCategoryList == null)
+			readProductCategoryList(context);
+		
+		return new ArrayList<>(productCategoryList);
+	}
+	
+	public static List<ProductModel> getProductList(Context context) {
+		if (productList == null)
+			readProductList(context);
+		
+		// Deep copy product list to avoid reference problems with the nested indicator instances
+		List<ProductModel> productListCopy = new ArrayList<>();
+		for (ProductModel p : productList) {
+			productListCopy.add(new ProductModel(p));
+		}
+		return productListCopy;
+	}
+	
+	
+	
+	private static void readIndicatorList(Context context) {
 		String jsonFileString = getJsonFromAssets(context, "indicators.json");
 		
 		Gson gson = new Gson();
@@ -154,21 +186,14 @@ public class Utils {
 			ind.setName(getStringByResName(context, ind.getName()));
 			ind.setGeneral_description(getStringByResName(context, ind.getGeneral_description()));
 		}
-		
-		return indicatorList;
 	}
 	
-	public static List<IndicatorCategoryModel> getIndicatorCategoryList(Context context) {
-		if (indicatorCategoryList != null)
-			return new ArrayList<>(indicatorCategoryList);
-		
+	private static void readIndicatorCategoryList(Context context) {
 		String jsonFileString = getJsonFromAssets(context, "indicator_categories.json");
 		
 		Gson gson = new Gson();
 		Type type = new TypeToken<List<IndicatorCategoryModel>>() {}.getType();
 		indicatorCategoryList = gson.fromJson(jsonFileString, type);
-		
-		indicatorCategoryList.forEach(ind -> ind.setIcon_name(ind.getIcon_name().toLowerCase()));
 		
 		//Translate strings and lowercase icon names
 		for (IndicatorCategoryModel ind : indicatorCategoryList) {
@@ -177,14 +202,9 @@ public class Utils {
 			ind.setName(getStringByResName(context, ind.getName()));
 			ind.setDescription(getStringByResName(context, ind.getDescription()));
 		}
-		
-		return indicatorCategoryList;
 	}
 	
-	public static List<ProductCategoryModel> getProductCategoryList(Context context) {
-		if (productCategoryList != null)
-			return new ArrayList<>(productCategoryList);
-		
+	private static void readProductCategoryList(Context context) {
 		// Currently hardcoded
 		productCategoryList = Arrays.asList(
 				new ProductCategoryModel("local_organic", context.getResources().getString(R.string.PRODUCT_CATEGORY_LOCAL_ORGANIC), "prod_cat_localorganic", ""),
@@ -192,21 +212,9 @@ public class Utils {
 				new ProductCategoryModel("local_conventional", context.getResources().getString(R.string.PRODUCT_CATEGORY_LOCAL_CONVENTIONAL), "prod_cat_localconventional", ""),
 				new ProductCategoryModel("imported_conventional", context.getResources().getString(R.string.PRODUCT_CATEGORY_IMPORTED_CONVENTIONAL), "prod_cat_importedconventional", "")
 		);
-		
-		return productCategoryList;
 	}
 	
-	public static List<ProductModel> getProductList(Context context) {
-		if (productList != null) {
-			// Deep copy product list to avoid reference problems with the nested indicator instances
-			
-			List<ProductModel> productListCopy = new ArrayList<>();
-			for (ProductModel p : productList) {
-				productListCopy.add(new ProductModel(p));
-			}
-			return productListCopy;
-		}
-		
+	private static void readProductList(Context context) {
 		String jsonFileString = getJsonFromAssets(context, "products.json");
 		
 		Gson gson = new Gson();
@@ -241,8 +249,6 @@ public class Utils {
 			
 			product.indicators = newIndicators;
 		}
-		
-		return productList;
 	}
 	
 	
