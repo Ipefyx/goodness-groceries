@@ -26,6 +26,7 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.CustomAdapter;
@@ -158,39 +159,14 @@ public class ProductDetailsActivity extends AppCompatActivity {
 		return super.onOptionsItemSelected(item);
 	}
 	
-//	private List<IndicatorModel> fillData() {
-//		
-//		ProductModel product = ;
-//		
-////		Optional<ProductModel> matchingProduct = productList.stream().filter(product -> product.code.equals(productCode)).findFirst();
-////		if (matchingProduct.isPresent()) {
-////			productmodel = matchingProduct.get();
-////			
-////			// Copied from IndicatorFragment.java because it serves the same purpose
-////			for (int i = 0; i < productmodel.indicators.size(); i++) {
-////				String ind_id = productmodel.indicators.get(i).getIndicator_id();
-////				String ind_desc = productmodel.indicators.get(i).getIndicator_description();
-////				
-////				Optional<IndicatorModel> matchingIndicator = indicatorList.stream().filter(ind -> ind.id.equals(ind_id)).findFirst();
-////				if (matchingIndicator.isPresent()) {
-////					productmodel.indicators.set(i, matchingIndicator.get());
-////					productmodel.indicators.get(i).setIndicator_description(ind_desc);
-////				}
-////			}
-////		}
-////		
-////		return productmodel.getIndicators();
-//		
-//		return new ArrayList<>();
-//	}
-	
 	private void setView(ProductModel product) {
 		ProductCategoryModel category = Utils.getProductCategoryByID(this, product.getCategory());
 		
 		LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
 		recyclerView.setLayoutManager(linearLayoutManager);
 		
-		adapter = new CustomAdapter(this, product.indicators);
+		adapter = new CustomAdapter(this, product.indicators.stream().filter(ind -> ind.isApplicable() && ind.sub_indicators.size() > 0).collect(Collectors.toList()));
+		
 		recyclerView.setAdapter(adapter);
 		collapsingToolbar.setTitle(product.getName());
 		

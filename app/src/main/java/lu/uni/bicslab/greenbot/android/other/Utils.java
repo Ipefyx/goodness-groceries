@@ -232,13 +232,7 @@ public class Utils {
 			
 			product.setImage_url(PRODUCT_IMAGE_PREFIX + product.getImage_url());
 			
-			List<IndicatorModel> newIndicators = new ArrayList<>();
 			for (IndicatorModel ind : product.indicators) {
-				if (!ind.isApplicable())
-					continue;
-				
-				newIndicators.add(ind);
-				
 				ind.mergeBaseIndicator(getIndicatorByID(context, ind.getId()));
 				
 				for (SubIndicatorModel sub : ind.sub_indicators) {
@@ -246,8 +240,6 @@ public class Utils {
 					sub.setDescription(getStringByResName(context, sub.getDescription()));
 				}
 			}
-			
-			product.indicators = newIndicators;
 		}
 	}
 	
