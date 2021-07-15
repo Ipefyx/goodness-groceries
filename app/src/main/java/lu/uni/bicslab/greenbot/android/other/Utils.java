@@ -145,6 +145,8 @@ public class Utils {
 		Type type = new TypeToken<List<IndicatorModel>>() {}.getType();
 		indicatorList = gson.fromJson(jsonFileString, type);
 		
+		indicatorList.forEach(ind -> ind.setIcon_name(ind.getIcon_name().toLowerCase()));
+		
 		return indicatorList;
 	}
 	
@@ -157,6 +159,8 @@ public class Utils {
 		Gson gson = new Gson();
 		Type type = new TypeToken<List<IndicatorCategoryModel>>() {}.getType();
 		indicatorCategoryList = gson.fromJson(jsonFileString, type);
+		
+		indicatorCategoryList.forEach(ind -> ind.setIcon_name(ind.getIcon_name().toLowerCase()));
 		
 		return indicatorCategoryList;
 	}
