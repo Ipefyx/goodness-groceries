@@ -15,8 +15,15 @@ import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import lu.uni.bicslab.greenbot.android.R;
+import lu.uni.bicslab.greenbot.android.datamodel.IndicatorCategoryModel;
+import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
 import lu.uni.bicslab.greenbot.android.other.Utils;
+import lu.uni.bicslab.greenbot.android.ui.fragment.product_category.ProductCategoryAdapter;
+import lu.uni.bicslab.greenbot.android.ui.fragment.product_category.ProductCategoryModel;
 
 public class SelectProductCategoriesFragment extends Fragment {
 	
@@ -38,30 +45,62 @@ public class SelectProductCategoriesFragment extends Fragment {
 		super.onActivityCreated(savedInstanceState);
 		
 		LinearLayout selectorLayout = getView().findViewById(R.id.selector_layout);
+//		
+//		// Product categories are fully hardcoded, because there is no product_categories.json in the first place
+//		OnbordSelectable[] selectables = new OnbordSelectable[] {
+//				new OnbordSelectable(getResources().getString(R.string.biolocal), "prod_cat_localorganic", R.color.palette_green2),
+//				new OnbordSelectable(getResources().getString(R.string.bioimporte), "prod_cat_importedorganic", R.color.palette_green2),
+//				new OnbordSelectable(getResources().getString(R.string.conlocal), "prod_cat_localconventional", R.color.palette_green2),
+//				new OnbordSelectable(getResources().getString(R.string.conimporte), "prod_cat_importedconventional", R.color.palette_green2),
+//		};
 		
-		// Product categories are fully hardcoded, because there is no product_categories.json in the first place
-		OnbordSelectable[] selectables = new OnbordSelectable[] {
-				new OnbordSelectable(getResources().getString(R.string.biolocal), "prod_cat_localorganic", R.color.palette_green2),
-				new OnbordSelectable(getResources().getString(R.string.bioimporte), "prod_cat_importedorganic", R.color.palette_green2),
-				new OnbordSelectable(getResources().getString(R.string.conlocal), "prod_cat_localconventional", R.color.palette_green2),
-				new OnbordSelectable(getResources().getString(R.string.conimporte), "prod_cat_importedconventional", R.color.palette_green2),
-		};
 		// Sorry for this hacky mess, but technically it's not wrong (just keeps the Activity and the Fragment tightly coupled),
 		// much simpler for this use than trying to serialize the data through the bundle
-		((OnbordingActivity) getActivity()).selectableProductCategories = selectables;
+//		((OnbordingActivity) getActivity()).selectableProductCategories = selectables;
+//		
+//		for (OnbordSelectable selectable : selectables) {
+//			
+//			View view = LayoutInflater.from(selectorLayout.getContext()).inflate(R.layout.onbording_cardview_row, selectorLayout, false);
+//			((TextView) view.findViewById(R.id.text_title)).setText(selectable.getDescription());
+//			
+//			Glide.with(getActivity()).load(Utils.getDrawableImage(getActivity(), selectable.getImage())).error(R.drawable.ic_menu_gallery).into((ImageView) view.findViewById(R.id.imageview_icon));
+//			
+//			view.setOnClickListener(new View.OnClickListener() {
+//				@Override
+//				public void onClick(View view) {
+//					selectable.setSelected(!selectable.isSelected());
+//					view.findViewById(R.id.card_view).setBackgroundColor(ResourcesCompat.getColor(getResources(), selectable.isSelected() ? selectable.getColor() : R.color.white, null));
+//				}
+//			});
+//			
+//			selectorLayout.addView(view);
+//		}
 		
-		for (OnbordSelectable selectable : selectables) {
+		List<ProductCategoryModel> productCategories = Utils.getProductCategoryList(getActivity());
+		
+		int[] colors = new int[] {R.color.palette_green2, R.color.palette_green2, R.color.palette_green2, R.color.palette_green2};
+		
+		OnbordSelectable[] selectables = new OnbordSelectable[productCategories.size()];
+		// Sorry for this hacky mess, but technically it's not wrong (just keeps the Activity and the Fragment tightly coupled),
+		// much simpler for this use than trying to serialize the data through the bundle
+		((OnbordingActivity) getActivity()).selectableIndicatorCategories = selectables;
+		
+		for (int i = 0; i < productCategories.size(); i++) {
+			
+			ProductCategoryModel prodCat = productCategories.get(i);
+			selectables[i] = new OnbordSelectable(prodCat.getName(), prodCat.getIcon_name(), colors[i]);
 			
 			View view = LayoutInflater.from(selectorLayout.getContext()).inflate(R.layout.onbording_cardview_row, selectorLayout, false);
-			((TextView) view.findViewById(R.id.text_title)).setText(selectable.getDescription());
+			((TextView) view.findViewById(R.id.text_title)).setText(selectables[i].getDescription());
 			
-			Glide.with(getActivity()).load(Utils.getDrawableImage(getActivity(), selectable.getImage())).error(R.drawable.ic_menu_gallery).into((ImageView) view.findViewById(R.id.imageview_icon));
+			Glide.with(getActivity()).load(Utils.getDrawableImage(getActivity(), selectables[i].getImage())).error(R.drawable.ic_menu_gallery).into((ImageView) view.findViewById(R.id.imageview_icon));
 			
+			int localPosition = i;
 			view.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View view) {
-					selectable.setSelected(!selectable.isSelected());
-					view.findViewById(R.id.card_view).setBackgroundColor(ResourcesCompat.getColor(getResources(), selectable.isSelected() ? selectable.getColor() : R.color.white, null));
+					selectables[localPosition].setSelected(!selectables[localPosition].isSelected());
+					view.findViewById(R.id.card_view).setBackgroundColor(ResourcesCompat.getColor(getResources(), selectables[localPosition].isSelected() ? selectables[localPosition].getColor() : R.color.white, null));
 				}
 			});
 			

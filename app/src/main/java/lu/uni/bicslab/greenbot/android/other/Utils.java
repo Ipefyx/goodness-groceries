@@ -186,10 +186,10 @@ public class Utils {
 		
 		// Currently hardcoded
 		productCategoryList = Arrays.asList(
-				new ProductCategoryModel("local_organic", context.getResources().getString(R.string.PRODUCT_CATEGORY_LOCAL_ORGANIC), "prod_cat_localorganic", "desc"),
-				new ProductCategoryModel("imported_organic", context.getResources().getString(R.string.PRODUCT_CATEGORY_IMPORTED_ORGANIC), "prod_cat_importedorganic", "desc"),
-				new ProductCategoryModel("local_conventional", context.getResources().getString(R.string.PRODUCT_CATEGORY_LOCAL_CONVENTIONAL), "prod_cat_localconventional", "desc"),
-				new ProductCategoryModel("imported_conventional", context.getResources().getString(R.string.PRODUCT_CATEGORY_IMPORTED_CONVENTIONAL), "prod_cat_importedconventional", "desc")
+				new ProductCategoryModel("local_organic", context.getResources().getString(R.string.PRODUCT_CATEGORY_LOCAL_ORGANIC), "prod_cat_localorganic", ""),
+				new ProductCategoryModel("imported_organic", context.getResources().getString(R.string.PRODUCT_CATEGORY_IMPORTED_ORGANIC), "prod_cat_importedorganic", ""),
+				new ProductCategoryModel("local_conventional", context.getResources().getString(R.string.PRODUCT_CATEGORY_LOCAL_CONVENTIONAL), "prod_cat_localconventional", ""),
+				new ProductCategoryModel("imported_conventional", context.getResources().getString(R.string.PRODUCT_CATEGORY_IMPORTED_CONVENTIONAL), "prod_cat_importedconventional", "")
 		);
 		
 		return productCategoryList;
