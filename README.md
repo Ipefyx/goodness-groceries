@@ -5,6 +5,7 @@ quick description
 * Android Studio >= 4.2.2 (tbc)
 * Android SDK Build-Tools 30.0.2
 * Android Version >= API Level 24 (Android 7.0 Nougat)
+* Java Version == 1.8 (Java 8)
 
 ## Installation
 Download Android Studio from:
