@@ -19,14 +19,11 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.CustomAdapter;
@@ -35,7 +32,7 @@ import lu.uni.bicslab.greenbot.android.ui.fragment.compare.CompareActivity;
 import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
 import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
 
-public class ItemDetailsActivity extends AppCompatActivity {
+public class ProductDetailsActivity extends AppCompatActivity {
 	
 	private CollapsingToolbarLayout collapsingToolbar;
 	private AppBarLayout appBarLayout;
@@ -54,7 +51,7 @@ public class ItemDetailsActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		setContentView(R.layout.activity_itemdetails);
+		setContentView(R.layout.activity_productdetails);
 		recyclerView = findViewById(R.id.scrollableview);
 		type_data = findViewById(R.id.type_data);
 		description = findViewById(R.id.description);
@@ -104,7 +101,7 @@ public class ItemDetailsActivity extends AppCompatActivity {
 		appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
 			@Override
 			public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-				Log.d(ItemDetailsActivity.class.getSimpleName(), "onOffsetChanged: verticalOffset: " + verticalOffset);
+				Log.d(ProductDetailsActivity.class.getSimpleName(), "onOffsetChanged: verticalOffset: " + verticalOffset);
 				
 				//  Vertical offset == 0 indicates appBar is fully expanded.
 				if (Math.abs(verticalOffset) > 200) {

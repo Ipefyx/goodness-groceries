@@ -11,10 +11,8 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import lu.uni.bicslab.greenbot.android.MainActivity;
 import lu.uni.bicslab.greenbot.android.R;
-import lu.uni.bicslab.greenbot.android.ui.activity.itemmain.ItemDetailsActivity;
-import lu.uni.bicslab.greenbot.android.ui.activity.scan.SigninActivity;
+import lu.uni.bicslab.greenbot.android.ui.activity.itemmain.ProductDetailsActivity;
 import lu.uni.bicslab.greenbot.android.ui.activity.scan.SigninSelectActivity;
 
 public class ScanSelectedItemActivity extends AppCompatActivity {
@@ -49,7 +47,7 @@ public class ScanSelectedItemActivity extends AppCompatActivity {
 					
 					//todo: bruh why is this hardcoded
 					//goto item details activity
-					Intent intent = new Intent(getApplicationContext(), ItemDetailsActivity.class);
+					Intent intent = new Intent(getApplicationContext(), ProductDetailsActivity.class);
 					intent.putExtra("code", "2354896578459");
 					intent.putExtra("title", "Honey from Ourdaller");
 					startActivity(intent);

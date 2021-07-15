@@ -17,14 +17,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import lu.uni.bicslab.greenbot.android.R;
-import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
 import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
 import lu.uni.bicslab.greenbot.android.other.Utils;
-import lu.uni.bicslab.greenbot.android.ui.activity.itemmain.ItemDetailsActivity;
+import lu.uni.bicslab.greenbot.android.ui.activity.itemmain.ProductDetailsActivity;
 
 public class IndicatorFragment extends Fragment {
 	private RecyclerView recyclerView;
@@ -53,7 +51,7 @@ public class IndicatorFragment extends Fragment {
 		productCategoryFilter = getArguments().getString("filter_product_category");
 		
 		itemAdapter = new IndicatorAdapter(getActivity(), code -> {
-				Intent intent = new Intent(getActivity(), ItemDetailsActivity.class);
+				Intent intent = new Intent(getActivity(), ProductDetailsActivity.class);
 				intent.putExtra("code", code);
 				startActivity(intent);
 		});

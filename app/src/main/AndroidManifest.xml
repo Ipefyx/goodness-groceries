@@ -47,7 +47,7 @@
             android:label="@string/title_activity_onbording"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.activity.itemmain.ItemDetailsActivity"
+            android:name=".ui.activity.itemmain.ProductDetailsActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_onbording"
             android:theme="@style/AppTheme.NoActionBar" />
