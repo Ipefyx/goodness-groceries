@@ -25,7 +25,6 @@
     <string name="permission_camera_rationale">Access to the camera is needed for detection</string>
     <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
     <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
-    <string name="title_activity_main">Barcode Reader Sample</string>
     <string name="barcode_header">Click &quot;Read Barcode&quot; to read a barcode</string>
     <string name="read_barcode">Read Barcode</string>
     <string name="auto_focus">Auto Focus</string>
@@ -120,5 +119,188 @@ pour chaque produit.</string>
 
     <string name="requested">requested</string>
     <string name="valid">ind_cat_economic</string>
+
+
+
+
+
+
+
+
+
+
+    <string name="NOT_APPLICABLE">Non applicable</string>
+    <string name="NO_EVIDENCE">Pas de données</string>
+    
+    
+    
+    
+
+
+
+    <string name="PRODUCT_CATEGORY_IMPORTED_CONVENTIONAL">Conventionel importé</string>
+    <string name="PRODUCT_CATEGORY_IMPORTED_ORGANIC">Bio importé</string>
+    <string name="PRODUCT_CATEGORY_LOCAL_CONVENTIONAL">Conventionel local</string>
+    <string name="PRODUCT_CATEGORY_LOCAL_ORGANIC">Bio local</string>
+    
+    
+    
+    
+    <string name="IND_CAT_ECONOMIC_DESCRIPTION">Toutes les personnes travaillant dans le secteur alimentaire ont une sécurité financière actuelle et future. Les activités de production alimentaire, en générant non seulement des gains financiers mais aussi des gains sociaux, permettent aux sociétés de prospérer dans leur ensemble. Pour y parvenir, une production alimentaire plus locale, circulaire et solidaire est encouragée.</string>
+    <string name="IND_CAT_ECONOMIC_NAME">Bien-être économique</string>
+    <string name="IND_CAT_ENVIRONMENT_DESCRIPTION">Tout au cours des différentes phases de production, de transformation et de consommation des aliments, des efforts sont faits pour minimiser les impacts négatifs sur l’environnement, voire pour créer des effets secondaires positifs. Cela rend notre système alimentaire plus durable sur le plan écologique.</string>
+    <string name="IND_CAT_ENVIRONMENT_NAME">Environnement</string>
+    <string name="IND_CAT_GOVERNANCE_DESCRIPTION">La façon dont les entreprises mènent leurs activités, gèrent leurs ressources et leurs actifs, et organisent leurs interactions et processus de décision a le but d’augmenter la durabilité. Toutes les informations sur les produits sont transparentes et facilement accessibles. Les entreprises utilisent des approches participatives et associent les producteurs aux décisions. En fin de compte, les entreprises peuvent être tenues responsables de leurs déclarations.</string>
+    <string name="IND_CAT_GOVERNANCE_NAME">Bonne gouvernance</string>
+    <string name="IND_CAT_SOCIAL_DESCRIPTION">Chaque être humain est capable de satisfaire ses besoins humains fondamentaux et a le droit et la liberté de poursuivre ses aspirations à une vie meilleure, sans compromettre la capacité des autres et des générations futures à en faire de même.</string>
+    <string name="IND_CAT_SOCIAL_NAME">Bien-être social</string>
+
+
+
+    
+    
+    
+    <string name="IND_ANIMAL_DESCRIPTION">Le bien-être physique et psychologique des animaux est surveillé afin qu\'ils puissent vivre de manière appropriée à leur espèce et être en bonne santé, confortables, en sécurité, bien nourris et exister sans peur ni souffrance. Cela comprend l\'élevage, le transport, l\'alimentation et l\'abattage.</string>
+    <string name="IND_ANIMAL_NAME">Bien-être animal</string>
+    <string name="IND_BIODIV_DESCRIPTION">Les plantes, les animaux et les micro-organismes dans la nature doivent exister dans la plus grande diversité possible et avoir une large variété génétique au sein des différentes espèces pour garantir la vie à long terme. Dans la production alimentaire, la conservation et l\'amélioration des écosystèmes sont une priorité. Les variétés et races anciennes sont réintroduites et la domination d\'un nombre limité de variétés est évitée. La biodiversité du paysage naturel est conservée autant que possible.</string>
+    <string name="IND_BIODIV_NAME">Biodiversité</string>
+    <string name="IND_BIODIV_SUBIND_DIVERSITYOFPRODUCTION_COFFEE_IC_DESCRIPTION">Le café est cultivé dans des systèmes agroforestiers avec d\'autres cultures de rente (comme la banane) et des cultures d\'autosuffisance (comme le manioc).</string>
+    <string name="IND_BIODIV_SUBIND_DIVERSITYOFPRODUCTION_NAME">Diversité de la production</string>
+    <string name="IND_BIODIV_SUBIND_LANDCONSERVATIONANDREHABILITATION_COFFEE_IC_DESCRIPTION">Il n’y a pas de production dans des zones protégées.</string>
+    <string name="IND_BIODIV_SUBIND_LANDCONSERVATIONANDREHABILITATION_NAME">Conservation de paysages et d\'espèces</string>
+    <string name="IND_BIODIV_SUBIND_SAVINGOFSEEDSANDBREEDS_COFFEE_IC_DESCRIPTION">La production de différentes variétés est mandataires, y inclus au moins une variété ancienne.</string>
+    <string name="IND_BIODIV_SUBIND_SAVINGOFSEEDSANDBREEDS_NAME">Préservation de semences et de races</string>
+    <string name="IND_DECENT_DESCRIPTION">Les personnes qui gagnent leur vie en produisant de la nourriture sont habilitées à établir des niveaux de vie sûrs, décents et résilients en augmentant leurs atouts, leurs capacités et leurs activités. Idéalement, la qualité de leur vie et celle de leur famille, tant actuelle que future, peut être améliorée.</string>
+    <string name="IND_DECENT_NAME">Conditions de vie décentes</string>
+    <string name="IND_DECENT_SUBIND_CAPACITYDEVELOPMENT_COFFEE_IC_DESCRIPTION">Des formations agricoles, financières et d\'alphabétisation sont offertes aux producteurs.</string>
+    <string name="IND_DECENT_SUBIND_CAPACITYDEVELOPMENT_NAME">Développement des capacités</string>
+    <string name="IND_DECENT_SUBIND_FAIRACCESSTOMEANSOFPRODUCTIONANDTOLAND_COFFEE_IC_DESCRIPTION">Des accords avec les autorités locales garantissent que les producteurs sont propriétaires de leurs terres et du matériel agricole leur est fourni.</string>
+    <string name="IND_DECENT_SUBIND_FAIRACCESSTOMEANSOFPRODUCTIONANDTOLAND_NAME">Accès équitable aux moyens de production et à la terre</string>
+    <string name="IND_DECENT_SUBIND_QUALITYOFLIFE_COFFEE_IC_DESCRIPTION">Un logement propre, sûr et décent est fourni aux producteurs. Les enfants ont accès gratuitement à une éducation de qualité.</string>
+    <string name="IND_DECENT_SUBIND_QUALITYOFLIFE_COFFEE_IO_DESCRIPTION">Les standards de la certification Fairtrade® sont poursuivis afin d’améliorer les conditions de vie des producteurs.</string>
+    <string name="IND_DECENT_SUBIND_QUALITYOFLIFE_COFFEE_LO_DESCRIPTION">Les standards Fairtrade® sont suivies pour améliorer les conditions de vie des producteurs.</string>
+    <string name="IND_DECENT_SUBIND_QUALITYOFLIFE_NAME">Qualité de vie</string>
+    <string name="IND_EQUITY_DESCRIPTION">Toutes les personnes travaillant dans le système alimentaire sont traitées sur un pied d\'égalité et sans discrimination, quels que soient leur sexe, leur origine ethnique, leur âge, leur religion, leurs handicaps potentiels, etc. Toutes les personnes ont des chances égales d\'entrer dans la production alimentaire et ne sont pas exclues pour des raisons discriminatoires.</string>
+    <string name="IND_EQUITY_NAME">Egalité sociale</string>
+    <string name="IND_EQUITY_SUBIND_GENDEREQUALITY_COFFEE_IC_DESCRIPTION">Des politiques sont en place pour lutter contre la discrimination de genre et promouvoir l\'autonomisation des femmes.</string>
+    <string name="IND_EQUITY_SUBIND_GENDEREQUALITY_NAME">Egalité des sexes</string>
+    <string name="IND_EQUITY_SUBIND_SUPPORTTOVULNERABLEPEOPLE_COFFEE_IC_DESCRIPTION">Des projets spéciaux encouragent l\'inclusion des jeunes agriculteurs et des ménages dirigés par des femmes.</string>
+    <string name="IND_EQUITY_SUBIND_SUPPORTTOVULNERABLEPEOPLE_NAME">Prise en charge de personnes vulnérabéles</string>
+    <string name="IND_FAIR_DESCRIPTION">Les producteurs sont rémunérés de façon équitable. Ils sont payés à un prix stable, équitablement négocié et basé sur des coûts réels, avec des contrats à long terme leur permettant de planifier leur futur de manière fiable et prospective. Les producteurs ne sont pas contraints – pour quelque raison que ce soit – de vendre leurs produits en-dessous de leur valeur. Cela s\'applique en particulier, mais pas exclusivement, aux petits exploitants des régions marginales ou à ceux soumis à des prix du marché mondial très volatils.</string>
+    <string name="IND_FAIR_NAME">Pratiques de commerce équitables</string>
+    <string name="IND_FAIR_SUBIND_FAIRPRICINGANDTRANSPARENTCONTRACTS_COFFEE_IC_DESCRIPTION">Les standards UTZ™ et Rain Forest Alliance™ sont poursuivis.</string>
+    <string name="IND_FAIR_SUBIND_FAIRPRICINGANDTRANSPARENTCONTRACTS_COFFEE_IO_DESCRIPTION">Les standards de la certification Fairtrade® sont poursuivis.</string>
+    <string name="IND_FAIR_SUBIND_FAIRPRICINGANDTRANSPARENTCONTRACTS_COFFEE_LO_DESCRIPTION">Les standards Fairtrade® sont poursuivis pour supporter les producteurs à obtenir des salaires équitables.</string>
+    <string name="IND_FAIR_SUBIND_FAIRPRICINGANDTRANSPARENTCONTRACTS_NAME">Prix équitables et contrats transparents</string>
+    <string name="IND_FAIR_SUBIND_FREEDOMOFASSOCIATIONANDRIGHTTOBARGAINING_COFFEE_IC_DESCRIPTION">Des accords internationaux sont appliqués pour la liberté d\'association et le droit de négociation des producteurs.</string>
+    <string name="IND_FAIR_SUBIND_FREEDOMOFASSOCIATIONANDRIGHTTOBARGAINING_COFFEE_IO_DESCRIPTION">Les standards de la certification Fairtrade® sont poursuivis.</string>
+    <string name="IND_FAIR_SUBIND_FREEDOMOFASSOCIATIONANDRIGHTTOBARGAINING_COFFEE_LO_DESCRIPTION">Les standards Fairtrade® sont poursuivis pour supporter les producteurs dans leur droit à la liberté d\'association.</string>
+    <string name="IND_FAIR_SUBIND_FREEDOMOFASSOCIATIONANDRIGHTTOBARGAINING_NAME">Liberté d\'association et droit de négociation</string>
+    <string name="IND_FAIR_SUBIND_INDIGENOUSKNOWLEDGE_COFFEE_IC_DESCRIPTION">Les systèmes de production sont basés sur les savoirs indigènes.</string>
+    <string name="IND_FAIR_SUBIND_INDIGENOUSKNOWLEDGE_COFFEE_IO_DESCRIPTION">Les standards de la certification Fairtrade® sont poursuivis.</string>
+    <string name="IND_FAIR_SUBIND_INDIGENOUSKNOWLEDGE_COFFEE_LO_DESCRIPTION">Les standards Fairtrade® sont poursuivis pour protéger le savoir et les droits de propriété des communautés autochtones.</string>
+    <string name="IND_FAIR_SUBIND_INDIGENOUSKNOWLEDGE_NAME">Savoir indigène</string>
+    <string name="IND_FAIR_SUBIND_WAGELEVEL_COFFEE_IC_DESCRIPTION">Les producteurs obtiennent le salaire minimum national ou un salaire plus élevé.</string>
+    <string name="IND_FAIR_SUBIND_WAGELEVEL_COFFEE_IO_DESCRIPTION">Les standards de la certification Fairtrade® sont poursuivis.</string>
+    <string name="IND_FAIR_SUBIND_WAGELEVEL_NAME">Niveau de salaire</string>
+    <string name="IND_FLORA_DESCRIPTION">Les ravageurs et les maladies des plantes sont gérés et contrôlés par des méthodes plus naturelles (amélioration du biote bénéfique, maximisation des insectes bénéfiques, recyclage des nutriments ou minimisation des perturbations du sol). Le bétail est protégé contre les maladies, idéalement sans utilisation excessive d\'antibiotiques et d\'autres médicaments (car ils peuvent provoquer des résistances, contaminer les eaux et diminuer la présence naturelle de micro-organismes).</string>
+    <string name="IND_FLORA_NAME">Santé de la flore et de la faune</string>
+    <string name="IND_FLORA_SUBIND_ANIMALDRUGUSE_NAME">Médicaments vétérinaires</string>
+    <string name="IND_FLORA_SUBIND_FURTHEREFFORTS_COFFEE_IC_DESCRIPTION">Les eaux usées sont uniquement jetées dans les écosystèmes aquatiques ou les systèmes de drainage après un traitement de réduction des toxines et de l\'acidité.</string>
+    <string name="IND_FLORA_SUBIND_FURTHEREFFORTS_NAME">Autres efforts</string>
+    <string name="IND_FLORA_SUBIND_PESTICIDES_COFFEE_IC_DESCRIPTION">L’utilisation de pesticides est réduite par le recours à la lutte intégrée contre les ravageurs parasites et aux techniques.</string>
+    <string name="IND_FLORA_SUBIND_PESTICIDES_COFFEE_IO_DESCRIPTION">Les parasites et les maladies des plantes sont contrôlés en utilisant des techniques de culture appropriées tandis que les pesticides sont réduits au strict minimum tel qu’autorisé par la réglementation officielle de l\'UE pour l’agriculture biologique.</string>
+    <string name="IND_FLORA_SUBIND_PESTICIDES_COFFEE_LO_DESCRIPTION">Les parasites et les maladies des plantes sont contrôlés en utilisant des techniques de culture communs dans l’agriculture biologique tandis que les pesticides sont réduits au strict minimum tel qu’autorisé par la réglementation de l\'UE pour l’agriculture biologique.</string>
+    <string name="IND_FLORA_SUBIND_PESTICIDES_NAME">Pesticides</string>
+    <string name="IND_FOOD_DESCRIPTION">L’empreinte carbone du transport d’un produit est mesurée par la distance entre les lieux où les aliments sont produits et transformés, et le lieu où ils sont consommés.</string>
+    <string name="IND_FOOD_NAME">Distance de transport</string>
+    <string name="IND_LABOUR_DESCRIPTION">Les producteurs d’aliments sont protégés par les normes internationales du travail, garantissant des contrats de travail transparents et juridiquement contraignants, protégeant du travail forcé ou des enfants, et permettant la liberté de réunion et de négociation. Les entreprises du système alimentaire doivent garantir ces droits même dans les pays où les normes internationales sont difficiles à contrôler.</string>
+    <string name="IND_LABOUR_NAME">Conditions de travail</string>
+    <string name="IND_LABOUR_SUBIND_CHILDLABOUR_COFFEE_IC_DESCRIPTION">Les lois nationales sont suivies pour éviter le travail des enfants.</string>
+    <string name="IND_LABOUR_SUBIND_CHILDLABOUR_COFFEE_IO_DESCRIPTION">Les standards Fairtrade® sont suivies pour éviter le travail des enfants.</string>
+    <string name="IND_LABOUR_SUBIND_CHILDLABOUR_NAME">Travail des enfants</string>
+    <string name="IND_LABOUR_SUBIND_EMPLOYMENTRELATIONS_COFFEE_IC_DESCRIPTION">Les droits et devoirs des travailleurs sont inscrits dans des contrats de travail.</string>
+    <string name="IND_LABOUR_SUBIND_EMPLOYMENTRELATIONS_COFFEE_IO_DESCRIPTION">En plus des normes OIT, les standards Fairtrade® sont suivies et les contrats écrits sont la norme.</string>
+    <string name="IND_LABOUR_SUBIND_EMPLOYMENTRELATIONS_NAME">Relations de travail</string>
+    <string name="IND_LABOUR_SUBIND_FORCEDLABOUR_COFFEE_IC_DESCRIPTION">Des politiques uniques à l\'entreprise, contrôlées de manière indépendante, interdisent tout travail forcé.</string>
+    <string name="IND_LABOUR_SUBIND_FORCEDLABOUR_COFFEE_IO_DESCRIPTION">Les standards Fairtrade® sont suivies pour éviter tout travail forcé.</string>
+    <string name="IND_LABOUR_SUBIND_FORCEDLABOUR_NAME">Travail forcé</string>
+    <string name="IND_LABOUR_SUBIND_RIGHTSOFNEGOTIATION_COFFEE_IC_DESCRIPTION">Ensemble avec les coopératives agricoles, les contrats sont adaptés en fonction des besoins (y inclus indemnisations en cas de catastrophes naturelles).</string>
+    <string name="IND_LABOUR_SUBIND_RIGHTSOFNEGOTIATION_COFFEE_IO_DESCRIPTION">Les standards Fairtrade® sont suivies pour garantir le droit des producteurs de négocier les conditions de leur emploi.</string>
+    <string name="IND_LABOUR_SUBIND_RIGHTSOFNEGOTIATION_NAME">Droit de négociation</string>
+    <string name="IND_LOCALECO_DESCRIPTION">Producteurs et consommateurs sont rapprochés à travers la production locale et les marchés locaux. Cela peut se produire dans les circuits économiques classiques, mais aussi à travers l’économie circulaire et solidaire où les besoins, les ressources et les capacités locales sont davantage pris en compte, créant par là des marchés plus équitables et durables, un développement local et des prix justes pour les consommateurs et les producteurs.</string>
+    <string name="IND_LOCALECO_NAME">Économie locale</string>
+    <string name="IND_LOCALECO_SUBIND_COMMUNITYINVESTMENT_COFFEE_IC_DESCRIPTION">Des crédits pour démarrer des petites entreprises non-agricoles et artisanales sont fournis aux producteurs.</string>
+    <string name="IND_LOCALECO_SUBIND_COMMUNITYINVESTMENT_COFFEE_LO_DESCRIPTION">En suivant les réglementations UE sur l’agriculture biologique et les standards Fairtrade® sur les sites de production de café, Moulin Dieschbourg soutient l\'économie locale à Sidoma, Éthiopie.</string>
+    <string name="IND_LOCALECO_SUBIND_COMMUNITYINVESTMENT_NAME">Investissement communautaire</string>
+    <string name="IND_LOCALECO_SUBIND_LOCALPROCUREMENT_COFFEE_IC_DESCRIPTION">La transformation du café est effectuée de plus en plus dans les régions productrices.</string>
+    <string name="IND_LOCALECO_SUBIND_LOCALPROCUREMENT_NAME">Approvisionnement local</string>
+    <string name="IND_LOCALECO_SUBIND_LOCALWORKFORCE_COFFEE_IC_DESCRIPTION">Tous les employés dans la production, la collecte, l\'emballage et l\'expédition sont des locaux, y compris les superviseurs.</string>
+    <string name="IND_LOCALECO_SUBIND_LOCALWORKFORCE_COFFEE_LO_DESCRIPTION">Le café est torréfié à Echternach (label Made in Luxembourg) par l’emploi et l’artisanat local, et soutenant les Mellerdaler Regionalproduzenten.</string>
+    <string name="IND_LOCALECO_SUBIND_LOCALWORKFORCE_NAME">Main d’œuvre locale</string>
+    <string name="IND_PARTICIPATION_DESCRIPTION">Toutes les personnes participant à la production alimentaire peuvent s’engager dans les prises de décision, le partage des connaissances et la création de partenariats. Les acteurs plus vulnérables, moins puissantes ou autrement défavorisées ont des possibilités concrètes de participer activement et d\'une voix égale. Les entreprises doivent identifier toutes les personnes participant au processus de production et s\'efforcer de surmonter les obstacles qui peuvent entraver la participation de chacun et chacune. Les personnes vivant sur des terres où les aliments sont produits ou transformés ont les moyens pour prévenir des impacts négatifs potentiels sur leur environnement ou leur santé.</string>
+    <string name="IND_PARTICIPATION_NAME">Participation</string>
+    <string name="IND_PARTICIPATION_SUBIND_CONFLICTRESOLUTION_COFFEE_IC_DESCRIPTION">Des anthropologues locaux aident à identifier les stratégies de gestion des conflits.</string>
+    <string name="IND_PARTICIPATION_SUBIND_CONFLICTRESOLUTION_NAME">Résolution de conflits</string>
+    <string name="IND_PARTICIPATION_SUBIND_EFFECTIVEPARTICIPATION_COFFEE_IC_DESCRIPTION">Les responsables des coopérations sont échangés de façon démocratique chaque année.</string>
+    <string name="IND_PARTICIPATION_SUBIND_EFFECTIVEPARTICIPATION_NAME">Participation efficace</string>
+    <string name="IND_PARTICIPATION_SUBIND_ENGAGEMENTBARRIERS_COFFEE_IC_DESCRIPTION">Les producteurs sont représentés dans les coopératives quel que soit leur statut social.</string>
+    <string name="IND_PARTICIPATION_SUBIND_ENGAGEMENTBARRIERS_NAME">Obstacles à l\'engagement</string>
+    <string name="IND_PARTICIPATION_SUBIND_STAKEHOLDERENGAGEMENT_COFFEE_IC_DESCRIPTION">Tous les producteurs sont entendus lors de la création de coopératives et la consolidation du pouvoir évitée.</string>
+    <string name="IND_PARTICIPATION_SUBIND_STAKEHOLDERENGAGEMENT_NAME">Engagement des parties prenantes</string>
+    <string name="IND_SOIL_DESCRIPTION">Des mesures sont prises pour empêcher la dégradation des terres et des sols, et des pratiques spécifiques sont utilisées pour améliorer les propriétés physiques, chimiques et biologiques du sol (telles que la densité apparente, la concentration de métaux lourds ou la quantité de micro-organismes).</string>
+    <string name="IND_SOIL_NAME">Fertilité des sols</string>
+    <string name="IND_SOIL_SUBIND_LANDCONSERVATIONANDREHABILITATION_COFFEE_IC_DESCRIPTION">Les anciennes monocultures sont reconverties en forêts secondaires ou en production de café basée sur l\'agroforesterie.</string>
+    <string name="IND_SOIL_SUBIND_LANDCONSERVATIONANDREHABILITATION_NAME">Conservation et réhabilitation des sols</string>
+    <string name="IND_SOIL_SUBIND_SOILIMPROVEMENTPRACTICES_COFFEE_IC_DESCRIPTION">Les techniques agroécologiques basées sur les savoirs indigènes sont privilégiées et les engrais minéraux réduits au minimum.</string>
+    <string name="IND_SOIL_SUBIND_SOILIMPROVEMENTPRACTICES_COFFEE_IO_DESCRIPTION">L\'utilisation d\'engrais est limitée aux produits autorisés par la réglementation  de l\'UE pour l’agriculture biologique. Les techniques agroécologiques et les échanges entre agriculteurs  sont favorisés pour trouver des mesures de protection des sols adaptées localement.</string>
+    <string name="IND_SOIL_SUBIND_SOILIMPROVEMENTPRACTICES_NAME">Pratiques d\'amélioration des sols</string>
+    <string name="IND_SOVEREIGNITY_DESCRIPTION">Les agriculteurs sont en contrôle de leurs propres décisions économiques et techniques. Ils ne dépendent pas de cultures limitées ni d’une gamme restreinte de produits alimentaires, ni de subventions extérieures. Pour atteindre la souveraineté des producteurs, les agriculteurs peuvent créer des coopératives pour unir leurs forces et leurs intérêts, ainsi que ceux des communautés dans lesquelles ils vivent.</string>
+    <string name="IND_SOVEREIGNITY_NAME">Souveraineté de producteurs</string>
+    <string name="IND_SOVEREIGNTY_SUBIND_COMMUNITYSUPPORTED_COFFEE_IC_DESCRIPTION">Les coopératives agricoles représentent les besoins de toute la communauté.</string>
+    <string name="IND_SOVEREIGNTY_SUBIND_COMMUNITYSUPPORTED_NAME">Soutien pour la communauté</string>
+    <string name="IND_SOVEREIGNTY_SUBIND_FARMERCOOPERATIVE_COFFEE_IC_DESCRIPTION">Les producteurs sont organisés en coopératives et bénéficient de formations variées, y compris en gestion financière.</string>
+    <string name="IND_SOVEREIGNTY_SUBIND_FARMERCOOPERATIVE_COFFEE_LO_DESCRIPTION">Les standards de certification Fairtrade® sont suivis pour soutenir la souveraineté des producteurs en travaillant avec des coopératives d\'agriculteurs et pour mettre en place la politique des prix.</string>
+    <string name="IND_SOVEREIGNTY_SUBIND_FARMERCOOPERATIVE_NAME">Coopérative agricole</string>
+    <string name="IND_SOVEREIGNTY_SUBIND_PRODUCTDIVERSIFICATION_COFFEE_IC_DESCRIPTION">Les producteurs sont encouragés à réduire leur dépendance d’une seule culture en combinant la production de café avec d\'autres cultures (bananiers, manioc, maïs).</string>
+    <string name="IND_SOVEREIGNTY_SUBIND_PRODUCTDIVERSIFICATION_NAME">Diversification des produits</string>
+    <string name="IND_SUSTAINABLEMANAGEMENT_DESCRIPTION">Tous les acteurs de l\'alimentation s\'engagent dans des actions pour améliorer la durabilité de leurs opérations dans les quatre catégories de durabilité (environnement, économie, société et gouvernance). Les entreprises doivent avoir des plans d\'action détaillés et sont tenues responsables si elles ne les mettent pas en œuvre. Des organismes indépendants contrôlent la mise en œuvre et les résultats de ces plans d\'action.</string>
+    <string name="IND_SUSTAINABLEMANAGEMENT_NAME">Gestion durable</string>
+    <string name="IND_SUSTAINABLEMANAGEMENT_SUBIND_CIVICRESPONSIBILITY_COFFEE_IC_DESCRIPTION">Douwe Egberts pousse des normes strictes dans la production de café, en particulier environnementales et sociales.</string>
+    <string name="IND_SUSTAINABLEMANAGEMENT_SUBIND_CIVICRESPONSIBILITY_NAME">Responsabilité civique</string>
+    <string name="IND_SUSTAINABLEMANAGEMENT_SUBIND_DUEDILIGENCE_COFFEE_IC_DESCRIPTION">Douwe Egberts accepte d\'être tenu responsable par la loi de tout objectif revendiqué non atteint.</string>
+    <string name="IND_SUSTAINABLEMANAGEMENT_SUBIND_DUEDILIGENCE_NAME">Diligence raisonnable</string>
+    <string name="IND_SUSTAINABLEMANAGEMENT_SUBIND_HOLISTICAUDITS_COFFEE_IC_DESCRIPTION">Tous les objectifs sont contrôlés annuellement par des auditeurs externes et indépendants.</string>
+    <string name="IND_SUSTAINABLEMANAGEMENT_SUBIND_HOLISTICAUDITS_NAME">Audits holistiques</string>
+    <string name="IND_SUSTAINABLEMANAGEMENT_SUBIND_SUSTAINABILITYMANAGEMENTPLAN_COFFEE_IC_DESCRIPTION">La stratégie Common Grounds vise un café 100% responsable d\'ici 2025.</string>
+    <string name="IND_SUSTAINABLEMANAGEMENT_SUBIND_SUSTAINABILITYMANAGEMENTPLAN_NAME">Plan de gestion de la durabilité</string>
+    <string name="IND_TRANSPARENCY_DESCRIPTION">Les acteurs de la production alimentaire s\'engagent dans une communication confiante, ouverte et respectueuse les uns avec les autres, quelle que soit leur position hiérarchique. Les employés ont accès aux procédures, politiques, décisions et processus de décision de leurs employeurs. Les consommateurs peuvent facilement trouver des informations vérifiées et publics sur les produits.</string>
+    <string name="IND_TRANSPARENCY_NAME">Transparence</string>
+    <string name="IND_TRANSPARENCY_SUBIND_PRODUCTINFORMATION_COFFEE_IC_DESCRIPTION">Deux fois par année, un documentaire sur le quotidien des producteurs est publié.</string>
+    <string name="IND_TRANSPARENCY_SUBIND_PRODUCTINFORMATION_NAME">Informations sur les produits</string>
+    <string name="IND_TRANSPARENCY_SUBIND_PUBLICCOMMUNICATION_COFFEE_IC_DESCRIPTION">Les rapports par pays UTZ™ et Rain Forest Alliance™ sont publiés chaque année.</string>
+    <string name="IND_TRANSPARENCY_SUBIND_PUBLICCOMMUNICATION_COFFEE_LO_DESCRIPTION">En suivant les mécanismes de contrôle officiels des réglementations sur l’agriculture biologique de l’UE et de Fairtrade®, les clients bénéficient indirectement de la transparence offerte par ces labels.</string>
+    <string name="IND_TRANSPARENCY_SUBIND_PUBLICCOMMUNICATION_NAME">Communication transparante</string>
+    <string name="IND_TRANSPARENCY_SUBIND_SPECIFICATIONS_COFFEE_IC_DESCRIPTION">Les cahiers de charge sont disponibles en ligne.</string>
+    <string name="IND_TRANSPARENCY_SUBIND_SPECIFICATIONS_NAME">Cahiers de charges</string>
+    
+    
+    
+    
+    <string name="PRODUCT_COFFEE_IC_DESCRIPTION">Composition des cafés Robusta et Arabica en provenance de fermes Rainforest Alliance et UTZ Certified™ uniquement. Le café ne contient aucun additif.</string>
+    <string name="PRODUCT_COFFEE_IC_NAME">Douwe Egberts Aroma Rood Café moulu, 250g</string>
+    <string name="PRODUCT_COFFEE_IO_DESCRIPTION">Café en grains du Congo issu de l\'agriculture biologique et du commerce équitable</string>
+    <string name="PRODUCT_COFFEE_IO_NAME">Café Kivu en grains</string>
+    <string name="PRODUCT_COFFEE_LC_DESCRIPTION">Origine 100% Brésil Isidro Pereira, moulu, 250g</string>
+    <string name="PRODUCT_COFFEE_LC_NAME">Café moulu 1936</string>
+    <string name="PRODUCT_COFFEE_LO_DESCRIPTION">Produit dans la région Sidamo en Ethiopie dans des hauteurs entre 1400 et 2200, ce café Arabica est à 100% certifié d’agriculture biologique et Fairtrade et torréfié au Moulin J.P. Dieschbourg à Echternach, Luxembourg.</string>
+    <string name="PRODUCT_COFFEE_LO_NAME">Café Sidamo Bio</string>
+
+
+
+
+
+    <string name="TYPE_COFFEE">Café</string>
+    
 </resources>
 

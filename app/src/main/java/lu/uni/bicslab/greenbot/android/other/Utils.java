@@ -22,6 +22,7 @@ import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
 import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
 import lu.uni.bicslab.greenbot.android.datamodel.IndicatorCategoryModel;
+import lu.uni.bicslab.greenbot.android.datamodel.SubIndicatorModel;
 import lu.uni.bicslab.greenbot.android.ui.fragment.product_category.ProductCategoryModel;
 
 public class Utils {
@@ -145,7 +146,13 @@ public class Utils {
 		Type type = new TypeToken<List<IndicatorModel>>() {}.getType();
 		indicatorList = gson.fromJson(jsonFileString, type);
 		
-		indicatorList.forEach(ind -> ind.setIcon_name(ind.getIcon_name().toLowerCase()));
+		//Translate strings and lowercase icon names
+		for (IndicatorModel ind : indicatorList) {
+			ind.setIcon_name(ind.getIcon_name().toLowerCase());
+			
+			ind.setName(getStringByResName(context, ind.getName()));
+			ind.setGeneral_description(getStringByResName(context, ind.getGeneral_description()));
+		}
 		
 		return indicatorList;
 	}
@@ -162,6 +169,14 @@ public class Utils {
 		
 		indicatorCategoryList.forEach(ind -> ind.setIcon_name(ind.getIcon_name().toLowerCase()));
 		
+		//Translate strings and lowercase icon names
+		for (IndicatorCategoryModel ind : indicatorCategoryList) {
+			ind.setIcon_name(ind.getIcon_name().toLowerCase());
+			
+			ind.setName(getStringByResName(context, ind.getName()));
+			ind.setDescription(getStringByResName(context, ind.getDescription()));
+		}
+		
 		return indicatorCategoryList;
 	}
 	
@@ -171,10 +186,10 @@ public class Utils {
 		
 		// Currently hardcoded
 		productCategoryList = Arrays.asList(
-				new ProductCategoryModel("local_organic", context.getResources().getString(R.string.biolocal), "prod_cat_localorganic", ""),
-				new ProductCategoryModel("imported_organic", context.getResources().getString(R.string.bioimporte), "prod_cat_importedorganic", ""),
-				new ProductCategoryModel("local_conventional", context.getResources().getString(R.string.conlocal), "prod_cat_localconventional", ""),
-				new ProductCategoryModel("imported_conventional", context.getResources().getString(R.string.conimporte), "prod_cat_importedconventional", "")
+				new ProductCategoryModel("local_organic", context.getResources().getString(R.string.PRODUCT_CATEGORY_LOCAL_ORGANIC), "prod_cat_localorganic", "desc"),
+				new ProductCategoryModel("imported_organic", context.getResources().getString(R.string.PRODUCT_CATEGORY_IMPORTED_ORGANIC), "prod_cat_importedorganic", "desc"),
+				new ProductCategoryModel("local_conventional", context.getResources().getString(R.string.PRODUCT_CATEGORY_LOCAL_CONVENTIONAL), "prod_cat_localconventional", "desc"),
+				new ProductCategoryModel("imported_conventional", context.getResources().getString(R.string.PRODUCT_CATEGORY_IMPORTED_CONVENTIONAL), "prod_cat_importedconventional", "desc")
 		);
 		
 		return productCategoryList;
@@ -199,9 +214,23 @@ public class Utils {
 		
 		// Merge the indicator with sub-indicators with the actual indicator data
 		for (ProductModel product : productList) {
-			product.indicators.forEach(ind ->
-					ind.mergeBaseIndicator(getIndicatorByID(context, ind.getId()))
-			);
+			for (IndicatorModel ind : product.indicators) {
+				ind.mergeBaseIndicator(getIndicatorByID(context, ind.getId()));
+			}
+		}
+		
+		//Translate strings
+		for (ProductModel product : productList) {
+			product.setName(getStringByResName(context, product.getName()));
+			product.setDescription(getStringByResName(context, product.getDescription()));
+			product.setType(getStringByResName(context, product.getType()));
+			
+			for (IndicatorModel ind : product.indicators) {
+				for (SubIndicatorModel sub : ind.sub_indicators) {
+					sub.setName(getStringByResName(context, sub.getName()));
+					sub.setDescription(getStringByResName(context, sub.getDescription()));
+				}
+			}
 		}
 		
 		return productList;
@@ -217,6 +246,18 @@ public class Utils {
 	public static ProductModel getProductByCode(Context context, String code) {
 		Optional<ProductModel> match = getProductList(context).stream().filter(p -> p.getCode().equals(code)).findFirst();
 		return match.orElse(null);
+	}
+	
+	
+	
+	public static String getStringByResName(Context ctx, String str) {
+		int resID = ctx.getResources().getIdentifier(str, "string", ctx.getPackageName());
+		
+		if (resID == 0) {
+			throw new RuntimeException("String Resource \""+str+"\" could not be found.");
+		}
+		
+		return ctx.getString(resID);
 	}
 	
 	

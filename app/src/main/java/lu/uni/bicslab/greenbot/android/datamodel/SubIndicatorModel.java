@@ -13,12 +13,12 @@ public class SubIndicatorModel implements Serializable {
 		this.description = description;
 	}
 	
-	public String getIndicator_name() {
+	public String getName() {
 		return name;
 	}
 	
-	public void setIndicator_name(String indicator_name) {
-		this.name = indicator_name;
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	public String getDescription() {
@@ -28,5 +28,4 @@ public class SubIndicatorModel implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
 }

@@ -120,5 +120,180 @@ pour chaque produit.</string>
     <string name="ind_cat_economic">ind_cat_economic</string>
     <string name="requested">requested</string>
     <string name="valid">ind_cat_economic</string>
+
+
+
+
+
+
+
+
+
+
+    <string name="NOT_APPLICABLE">Not applicable</string>
+    <string name="NO_EVIDENCE">No evidence</string>
+
+
+
+
+    <!--Product and indicator categories-->
+    <string name="PRODUCT_CATEGORY_IMPORTED_CONVENTIONAL">Imported conventional</string>
+    <string name="PRODUCT_CATEGORY_IMPORTED_ORGANIC">Imported organic</string>
+    <string name="PRODUCT_CATEGORY_LOCAL_CONVENTIONAL">Local conventional</string>
+    <string name="PRODUCT_CATEGORY_LOCAL_ORGANIC">Local organic</string>
+
+    <string name="IND_CAT_ECONOMIC_DESCRIPTION">All the people working in the food sector have present and future financial security. Societies as a whole prosper through their food production activities, which build not only financial gains but also social ones. To achieve this, more local, circular and solidarity-based food production is fostered.</string>
+    <string name="IND_CAT_ECONOMIC_NAME">Economic well-being</string>
+    <string name="IND_CAT_ENVIRONMENT_DESCRIPTION">Efforts are made, during the various phases of production, processing and consumption of food, to minimise negative impacts on nature and even create positive side effects. This makes our food system more ecologically sustainable.</string>
+    <string name="IND_CAT_ENVIRONMENT_NAME">Environment</string>
+    <string name="IND_CAT_GOVERNANCE_DESCRIPTION">The way companies conduct business, manage their resources and assets, shape their interactions and decision-making processes is directed towards increasing sustainability . All product information is transparent and easily accessible. Enterprises use participatory approaches and include producers in decisions. Ultimately, enterprises can be held accountable for their claims.</string>
+    <string name="IND_CAT_GOVERNANCE_NAME">Good governance</string>
+    <string name="IND_CAT_SOCIAL_DESCRIPTION">Every human being is able to fulfil their basic human needs, and has the right and freedom to pursue their aspirations for a better life, without compromising the ability of others and of future generations to do the same.</string>
+    <string name="IND_CAT_SOCIAL_NAME">Social well-being</string>
+
+
+    
+    <!--Indicators-->
+    <string name="IND_ANIMAL_DESCRIPTION">The physical and psychological well-being of animals is monitored so that they may live in their species-specific way and be healthy, comfortable, safe, well-nourished, and exist without fear or suffering. This includes housing, rearing, transport, feed, and slaughter.</string>
+    <string name="IND_ANIMAL_NAME">Animal welfare</string>
+    <string name="IND_BIODIV_DESCRIPTION">Plants, animals and microorganisms in nature must exist in the greatest possible diversity, and have wide genetic variety within the various species to guarantee life in the long-term. In food production, the conservation and improvement of ecosystems is prioritised. Ancient varieties and breeds are reintroduced and the dominance of a limited number of varieties is avoided. The biodiversity of the surrounding natural landscape is conserved as much as possible.</string>
+    <string name="IND_BIODIV_NAME">Biodiversity</string>
+    <string name="IND_BIODIV_SUBIND_DIVERSITYOFPRODUCTION_COFFEE_IC_DESCRIPTION">Coffee is grown in agroforestry systems with other cash crops (like bananas) and self-sufficiency crops (like manioc).</string>
+    <string name="IND_BIODIV_SUBIND_DIVERSITYOFPRODUCTION_NAME">Diversity of Production</string>
+    <string name="IND_BIODIV_SUBIND_LANDCONSERVATIONANDREHABILITATION_COFFEE_IC_DESCRIPTION">There is no production in protected zones.</string>
+    <string name="IND_BIODIV_SUBIND_LANDCONSERVATIONANDREHABILITATION_NAME">Land Conservation and Rehabilitation</string>
+    <string name="IND_BIODIV_SUBIND_SAVINGOFSEEDSANDBREEDS_COFFEE_IC_DESCRIPTION">The production of different varieties is mandatory, plus at least one ancient variety.</string>
+    <string name="IND_BIODIV_SUBIND_SAVINGOFSEEDSANDBREEDS_NAME">Saving of Seeds and Breeds</string>
+    <string name="IND_DECENT_DESCRIPTION">People gaining their living by producing food are empowered to build safe, decent and resilient standards of living by increasing their assets, capabilities and activities. Ideally, the quality of their lives, and their families’ lives, both current and future, can be improved.</string>
+    <string name="IND_DECENT_NAME">Decent Livelihoods</string>
+    <string name="IND_DECENT_SUBIND_CAPACITYDEVELOPMENT_COFFEE_IC_DESCRIPTION">Training in farming, financial and literacy is offered to every producer.</string>
+    <string name="IND_DECENT_SUBIND_CAPACITYDEVELOPMENT_NAME">Capacity Development</string>
+    <string name="IND_DECENT_SUBIND_FAIRACCESSTOMEANSOFPRODUCTIONANDTOLAND_COFFEE_IC_DESCRIPTION">Local authority agreements are encouraged to ensure that producers own their land. Farm equipment is supplied to producers.</string>
+    <string name="IND_DECENT_SUBIND_FAIRACCESSTOMEANSOFPRODUCTIONANDTOLAND_NAME">Fair Access to Means of Production and to Land</string>
+    <string name="IND_DECENT_SUBIND_QUALITYOFLIFE_COFFEE_IC_DESCRIPTION">Clean, safe and decent accommodation is provided on-farm or near processing facilities. Children have free access to quality education.</string>
+    <string name="IND_DECENT_SUBIND_QUALITYOFLIFE_COFFEE_IO_DESCRIPTION">Fairtrade® certification guidelines are followed to pursue better livelihoods for producers.</string>
+    <string name="IND_DECENT_SUBIND_QUALITYOFLIFE_COFFEE_LO_DESCRIPTION">Fairtrade® certification guidelines are followed to pursue better livelihoods for producers.</string>
+    <string name="IND_DECENT_SUBIND_QUALITYOFLIFE_NAME">Quality of Life</string>
+    <string name="IND_EQUITY_DESCRIPTION">All people working in the food system are treated equally and without discrimination, regardless of gender, ethnic origin, age, religion, potential disabilities etc. All people are given equal opportunity to enter into food production, and are not excluded for any discriminatory reasons.</string>
+    <string name="IND_EQUITY_NAME">Social equity</string>
+    <string name="IND_EQUITY_SUBIND_GENDEREQUALITY_COFFEE_IC_DESCRIPTION">Policies are in place for gender discrimination and women empowerment.</string>
+    <string name="IND_EQUITY_SUBIND_GENDEREQUALITY_NAME">Gender Equality</string>
+    <string name="IND_EQUITY_SUBIND_SUPPORTTOVULNERABLEPEOPLE_COFFEE_IC_DESCRIPTION">Special projects push the inclusion of young farmers and female-led households.</string>
+    <string name="IND_EQUITY_SUBIND_SUPPORTTOVULNERABLEPEOPLE_NAME">Support to Vulnerable People</string>
+    <string name="IND_FAIR_DESCRIPTION">Producers are fairly remunerated. They are paid a price that is stable, equitably negotiated and based on true costs, with long-term agreements that provide planning security. Producers are not forced – by any reason – to sell their products below value.  This applies especially, but not exclusively, to smallholders in marginal regions or those submitted to highly volatile world market prices.</string>
+    <string name="IND_FAIR_NAME">Fair trade practices</string>
+    <string name="IND_FAIR_SUBIND_FAIRPRICINGANDTRANSPARENTCONTRACTS_COFFEE_IC_DESCRIPTION">UTZ™ and Rain Forest Alliance™ standards are followed to set price policies.</string>
+    <string name="IND_FAIR_SUBIND_FAIRPRICINGANDTRANSPARENTCONTRACTS_COFFEE_IO_DESCRIPTION">Fairtrade® regulations and practices are followed.</string>
+    <string name="IND_FAIR_SUBIND_FAIRPRICINGANDTRANSPARENTCONTRACTS_COFFEE_LO_DESCRIPTION">Fairtrade® regulations support producers in gaining fair wages.</string>
+    <string name="IND_FAIR_SUBIND_FAIRPRICINGANDTRANSPARENTCONTRACTS_NAME">Fair Pricing and Transparent Contracts</string>
+    <string name="IND_FAIR_SUBIND_FREEDOMOFASSOCIATIONANDRIGHTTOBARGAINING_COFFEE_IC_DESCRIPTION">International agreements are applied to ensure producers’ freedom of association and right to bargaining.</string>
+    <string name="IND_FAIR_SUBIND_FREEDOMOFASSOCIATIONANDRIGHTTOBARGAINING_COFFEE_IO_DESCRIPTION">Fairtrade® regulations and practices are followed.</string>
+    <string name="IND_FAIR_SUBIND_FREEDOMOFASSOCIATIONANDRIGHTTOBARGAINING_COFFEE_LO_DESCRIPTION">Fairtrade® regulations support producers in their right to freedom of association.</string>
+    <string name="IND_FAIR_SUBIND_FREEDOMOFASSOCIATIONANDRIGHTTOBARGAINING_NAME">Freedom of Association and Right to Bargaining</string>
+    <string name="IND_FAIR_SUBIND_INDIGENOUSKNOWLEDGE_COFFEE_IC_DESCRIPTION">Farm production systems are preferably based on local indigenous knowledge.</string>
+    <string name="IND_FAIR_SUBIND_INDIGENOUSKNOWLEDGE_COFFEE_IO_DESCRIPTION">Fairtrade® regulations and practices are followed.</string>
+    <string name="IND_FAIR_SUBIND_INDIGENOUSKNOWLEDGE_COFFEE_LO_DESCRIPTION">Fairtrade® regulations protect the knowledge and property rights of indigenous communities.</string>
+    <string name="IND_FAIR_SUBIND_INDIGENOUSKNOWLEDGE_NAME">Indigenous Knowledge</string>
+    <string name="IND_FAIR_SUBIND_WAGELEVEL_COFFEE_IC_DESCRIPTION">Producers obtain minimum national wage, or a higher wage agreed upon by collective bargaining agreements.</string>
+    <string name="IND_FAIR_SUBIND_WAGELEVEL_COFFEE_IO_DESCRIPTION">Fairtrade® regulations and practices are followed.</string>
+    <string name="IND_FAIR_SUBIND_WAGELEVEL_NAME">Wage Level</string>
+    <string name="IND_FLORA_DESCRIPTION">Plant pests and diseases are managed and controlled through the use of more natural methods (enhancing beneficial biota, maximising beneficial insects, recycling nutrients, or minimising disturbance to soil). Livestock is protected against diseases, ideally without excessive use of antibiotics and other drugs (as they can cause resistances, contaminate waters and diminish natural microorganism presence).</string>
+    <string name="IND_FLORA_NAME">Health of Flora and Fauna</string>
+    <string name="IND_FLORA_SUBIND_ANIMALDRUGUSE_NAME">Animal Drug Use</string>
+    <string name="IND_FLORA_SUBIND_FURTHEREFFORTS_COFFEE_IC_DESCRIPTION">Wastewater is not discharged into aquatic ecosystems or drainage systems unless treated to remove toxins and reduce acidity.</string>
+    <string name="IND_FLORA_SUBIND_FURTHEREFFORTS_NAME">Further efforts</string>
+    <string name="IND_FLORA_SUBIND_PESTICIDES_COFFEE_IC_DESCRIPTION">Pesticides are reduced by using Integrated Pest Management and other agroecological cropping practices.</string>
+    <string name="IND_FLORA_SUBIND_PESTICIDES_COFFEE_IO_DESCRIPTION">Plant pests and diseases controlled by appropriated cropping techniques, pesticides reduced to minimum allowed by EU organic regulation.</string>
+    <string name="IND_FLORA_SUBIND_PESTICIDES_COFFEE_LO_DESCRIPTION">Plant pests and diseases controlled by using organic cropping techniques, pesticides reduced to the minimum allowed by EU organic regulation.</string>
+    <string name="IND_FLORA_SUBIND_PESTICIDES_NAME">Pesticides</string>
+    <string name="IND_FOOD_DESCRIPTION">The carbon footprint of a product’s transportation is measured by the distance between the places where food is produced and processed, and the place where it is eaten.</string>
+    <string name="IND_FOOD_NAME">Food miles</string>
+    <string name="IND_LABOUR_DESCRIPTION">Food producers are protected by international labour standards. They ensure transparent and legally-binding work contracts, protect from forced or child labour, and allow freedom of assembly and of bargaining. Food-system enterprises have to ensure these rights even in countries where international standards are difficult to control.</string>
+    <string name="IND_LABOUR_NAME">Labour rights</string>
+    <string name="IND_LABOUR_SUBIND_CHILDLABOUR_COFFEE_IC_DESCRIPTION">National laws are followed to avoid child labour.</string>
+    <string name="IND_LABOUR_SUBIND_CHILDLABOUR_COFFEE_IO_DESCRIPTION">Fairtrade® regulations are followed to avoid child labour.</string>
+    <string name="IND_LABOUR_SUBIND_CHILDLABOUR_NAME">Child Labour</string>
+    <string name="IND_LABOUR_SUBIND_EMPLOYMENTRELATIONS_COFFEE_IC_DESCRIPTION">Workers\' rights and duties are written in employment contracts.</string>
+    <string name="IND_LABOUR_SUBIND_EMPLOYMENTRELATIONS_COFFEE_IO_DESCRIPTION">In addition to ILO Standards, Fairtrade® regulations are followed and written contracts assure producers’ rights.</string>
+    <string name="IND_LABOUR_SUBIND_EMPLOYMENTRELATIONS_NAME">Employment Relations</string>
+    <string name="IND_LABOUR_SUBIND_FORCEDLABOUR_COFFEE_IC_DESCRIPTION">Enterprise-unique, independently controlled policy to forbid all types of forced labour.</string>
+    <string name="IND_LABOUR_SUBIND_FORCEDLABOUR_COFFEE_IO_DESCRIPTION">Fairtrade® regulations are followed to avoid exploitation.</string>
+    <string name="IND_LABOUR_SUBIND_FORCEDLABOUR_NAME">Forced Labour</string>
+    <string name="IND_LABOUR_SUBIND_RIGHTSOFNEGOTIATION_COFFEE_IC_DESCRIPTION">Quarterly meetings with farmer cooperatives review contracts according to producers’ realities, including compensations in case of natural disasters.</string>
+    <string name="IND_LABOUR_SUBIND_RIGHTSOFNEGOTIATION_COFFEE_IO_DESCRIPTION">Fairtrade® regulations are followed to assure producers’ right to negotiate the terms of their employment.</string>
+    <string name="IND_LABOUR_SUBIND_RIGHTSOFNEGOTIATION_NAME">Rights of Negotiation</string>
+    <string name="IND_LOCALECO_DESCRIPTION">Producers and customers are brought closer together, by supporting local production and local markets. This can happen in classical economic circuits, but also in circular and solidarity economies where local needs, resources and capacities are prioritised, allowing for more equitable and sustainable markets, local development, and fair prices for both consumers and producers.</string>
+    <string name="IND_LOCALECO_NAME">Local economy</string>
+    <string name="IND_LOCALECO_SUBIND_COMMUNITYINVESTMENT_COFFEE_IC_DESCRIPTION">Credit to start small non-farm businesses and craft to multiplying household income sources is provided to producers.</string>
+    <string name="IND_LOCALECO_SUBIND_COMMUNITYINVESTMENT_COFFEE_LO_DESCRIPTION">By following EU organic and Fairtrade® regulations at the coffee production sites, Moulin Dieschbourg supports the local economy in Sidoma, Ethiopia.</string>
+    <string name="IND_LOCALECO_SUBIND_COMMUNITYINVESTMENT_NAME">Community Investment</string>
+    <string name="IND_LOCALECO_SUBIND_LOCALPROCUREMENT_COFFEE_IC_DESCRIPTION">Coffee processing facilities are built in the producer regions to broaden local procurement.</string>
+    <string name="IND_LOCALECO_SUBIND_LOCALPROCUREMENT_NAME">Local Procurement</string>
+    <string name="IND_LOCALECO_SUBIND_LOCALWORKFORCE_COFFEE_IC_DESCRIPTION">All employees in production, collecting, packaging and shipping processes are local people including supervision.</string>
+    <string name="IND_LOCALECO_SUBIND_LOCALWORKFORCE_COFFEE_LO_DESCRIPTION">The coffee is 100% roasted in Echternach (Label Made in Luxembourg), using local craftsmanship and employment, and supporting the Mellerdaler Regionalproduzenten.</string>
+    <string name="IND_LOCALECO_SUBIND_LOCALWORKFORCE_NAME">Local Workforce</string>
+    <string name="IND_PARTICIPATION_DESCRIPTION">All people taking part in food production are empowered to join decision-making, knowledge sharing, and partnership building alongside each other. More vulnerable, less powerful or otherwise disadvantaged stakeholders have real possibilities to actively participate and with an equal voice. Enterprises must identify all the people taking part in the production process and make efforts to overcome barriers that may hinder their participation. People who live on land where food is produced and processed have the possibility to prevent potential negative impacts on their environment or health.</string>
+    <string name="IND_PARTICIPATION_NAME">Participation</string>
+    <string name="IND_PARTICIPATION_SUBIND_CONFLICTRESOLUTION_COFFEE_IC_DESCRIPTION">Local anthropologists help identifying conflict addressing strategies.</string>
+    <string name="IND_PARTICIPATION_SUBIND_CONFLICTRESOLUTION_NAME">Conflict Resolution</string>
+    <string name="IND_PARTICIPATION_SUBIND_EFFECTIVEPARTICIPATION_COFFEE_IC_DESCRIPTION">Cooperation leaders are replaced yearly, via a democratic electoral system.</string>
+    <string name="IND_PARTICIPATION_SUBIND_EFFECTIVEPARTICIPATION_NAME">Effective Participation</string>
+    <string name="IND_PARTICIPATION_SUBIND_ENGAGEMENTBARRIERS_COFFEE_IC_DESCRIPTION">Producers are represented in cooperatives regardless of their social status in the community.</string>
+    <string name="IND_PARTICIPATION_SUBIND_ENGAGEMENTBARRIERS_NAME">Engagement Barriers</string>
+    <string name="IND_PARTICIPATION_SUBIND_STAKEHOLDERENGAGEMENT_COFFEE_IC_DESCRIPTION">The needs of all producers are heard and power consolidation by village leaders avoided when building producer cooperatives.</string>
+    <string name="IND_PARTICIPATION_SUBIND_STAKEHOLDERENGAGEMENT_NAME">Stakeholder Engagement</string>
+    <string name="IND_SOIL_DESCRIPTION">Actions are taken to prevent land and soil degradation, and specific practices are used to improve physical, chemical and biological soil properties (such as bulk density, heavy metal concentration or the amount of microorganisms).</string>
+    <string name="IND_SOIL_NAME">Soil Fertility</string>
+    <string name="IND_SOIL_SUBIND_LANDCONSERVATIONANDREHABILITATION_COFFEE_IC_DESCRIPTION">Previous mono-cropping land is reconverted into secondary forests or into agroforestry-based coffee production.</string>
+    <string name="IND_SOIL_SUBIND_LANDCONSERVATIONANDREHABILITATION_NAME">Land Conservation and Rehabilitation</string>
+    <string name="IND_SOIL_SUBIND_SOILIMPROVEMENTPRACTICES_COFFEE_IC_DESCRIPTION">Agroecological techniques based on indigenous knowledge are favoured and mineral fertilisers reduced to a minimum.</string>
+    <string name="IND_SOIL_SUBIND_SOILIMPROVEMENTPRACTICES_COFFEE_IO_DESCRIPTION">Fertilisers approved by EU organic regulation. Efforts made to use agroecological techniques and favour farmer-farmer and farmer-agronomist exchanges to find locally-adapted soil protection measures.</string>
+    <string name="IND_SOIL_SUBIND_SOILIMPROVEMENTPRACTICES_NAME">Soil Improvement Practices</string>
+    <string name="IND_SOVEREIGNITY_DESCRIPTION">Farmers are in control of their own economic and technical decisions. They are not dependent on limited crops or a narrow range of food products nor on external subsidies. To achieve producer sovereignty, farmers can build cooperatives to join their forces and interests and those of the communities they live in.</string>
+    <string name="IND_SOVEREIGNITY_NAME">Producer sovereignty</string>
+    <string name="IND_SOVEREIGNTY_SUBIND_COMMUNITYSUPPORTED_COFFEE_IC_DESCRIPTION">Farmer cooperatives represent the needs of the entire community.</string>
+    <string name="IND_SOVEREIGNTY_SUBIND_COMMUNITYSUPPORTED_NAME">Community-supported</string>
+    <string name="IND_SOVEREIGNTY_SUBIND_FARMERCOOPERATIVE_COFFEE_IC_DESCRIPTION">Producers are organised in cooperatives and benefit from varied training, including financial management.</string>
+    <string name="IND_SOVEREIGNTY_SUBIND_FARMERCOOPERATIVE_COFFEE_LO_DESCRIPTION">Fairtrade® certification guidelines support producer sovereignty, specifically by working with farmer cooperatives and the use of Fairtrade® guidelines for price policy.</string>
+    <string name="IND_SOVEREIGNTY_SUBIND_FARMERCOOPERATIVE_NAME">Farmer Cooperative</string>
+    <string name="IND_SOVEREIGNTY_SUBIND_PRODUCTDIVERSIFICATION_COFFEE_IC_DESCRIPTION">Producers are encouraged to reduce single crop dependency by combining coffee plants with banana trees and others, like manioc and maize.</string>
+    <string name="IND_SOVEREIGNTY_SUBIND_PRODUCTDIVERSIFICATION_NAME">Product Diversification</string>
+    <string name="IND_SUSTAINABLEMANAGEMENT_DESCRIPTION">All food actors engage in actions to improve the sustainability of their operations in the four sustainability categories (environment, economy, society and governance). Enterprises must have detailed action plans and are held accountable if they do not put these into practice. Independent bodies control the implementation and results of these action plans.</string>
+    <string name="IND_SUSTAINABLEMANAGEMENT_NAME">Sustainability management</string>
+    <string name="IND_SUSTAINABLEMANAGEMENT_SUBIND_CIVICRESPONSIBILITY_COFFEE_IC_DESCRIPTION">Douwe Egberts pushes stringent standards in coffee production, especially environmental and social.</string>
+    <string name="IND_SUSTAINABLEMANAGEMENT_SUBIND_CIVICRESPONSIBILITY_NAME">Civic Responsibility</string>
+    <string name="IND_SUSTAINABLEMANAGEMENT_SUBIND_DUEDILIGENCE_COFFEE_IC_DESCRIPTION">Douwe Egberts agrees to be held responsible by law for any claimed goals not met.</string>
+    <string name="IND_SUSTAINABLEMANAGEMENT_SUBIND_DUEDILIGENCE_NAME">Due Diligence</string>
+    <string name="IND_SUSTAINABLEMANAGEMENT_SUBIND_HOLISTICAUDITS_COFFEE_IC_DESCRIPTION">All claims are annually controlled by external, independent auditors.</string>
+    <string name="IND_SUSTAINABLEMANAGEMENT_SUBIND_HOLISTICAUDITS_NAME">Holistic Audits</string>
+    <string name="IND_SUSTAINABLEMANAGEMENT_SUBIND_SUSTAINABILITYMANAGEMENTPLAN_COFFEE_IC_DESCRIPTION">The Common Grounds strategy aims for 100% Responsibly Sourced Coffee by 2025.</string>
+    <string name="IND_SUSTAINABLEMANAGEMENT_SUBIND_SUSTAINABILITYMANAGEMENTPLAN_NAME">Sustainability Management Plan</string>
+    <string name="IND_TRANSPARENCY_SUBIND_PRODUCTINFORMATION_COFFEE_IC_DESCRIPTION">Fact-based documentaries of producers’ daily life are published bi-annually.</string>
+    <string name="IND_TRANSPARENCY_SUBIND_PUBLICCOMMUNICATION_COFFEE_IC_DESCRIPTION">UTZ™ and Rain Forest Alliance™ country reports are published once a year.</string>
+    <string name="IND_TRANSPARENCY_SUBIND_PUBLICCOMMUNICATION_COFFEE_LO_DESCRIPTION">Official controlling mechanisms of EU organic and international Fairtrade® regulations benefit customers indirectly by the transparency provided by these labels.</string>
+    <string name="IND_TRANSPARENCY_SUBIND_PUBLICCOMMUNICATION_NAME">Public Communication</string>
+    <string name="IND_TRANSPARENCY_SUBIND_SPECIFICATIONS_COFFEE_IC_DESCRIPTION">Specification sheets are publicly available on a website.</string>
+    <string name="IND_TRANSPARENCY_DESCRIPTION">People within food production engage in trustful, open and respectful communication with each other, no matter their hierarchical status. Employees have access to procedures, policies, decisions and decision-making processes of their employers. Consumers can easily find verified publicly-accessible information about products.</string>
+    <string name="IND_TRANSPARENCY_NAME">Transparency</string>
+    <string name="IND_TRANSPARENCY_SUBIND_PRODUCTINFORMATION_NAME">Product Information</string>
+    <string name="IND_TRANSPARENCY_SUBIND_SPECIFICATIONS_NAME">Specifications</string>
+    
+    
+    
+    <string name="PRODUCT_COFFEE_IC_DESCRIPTION">Composition of Robusta and Arabica coffees with beans from Rainforest Alliance and UTZ Certified™ farms only.  Coffee does not contain any additives.</string>
+    <string name="PRODUCT_COFFEE_IC_NAME">Aroma Rood Ground Coffee, 250g</string>
+    <string name="PRODUCT_COFFEE_IO_DESCRIPTION">Bean coffee from Congo from organic farming and fair trade</string>
+    <string name="PRODUCT_COFFEE_IO_NAME">Café Kivu en grains</string>
+    <string name="PRODUCT_COFFEE_LC_DESCRIPTION">Origin 100% Brazil Isidro Pereira, ground, 250g</string>
+    <string name="PRODUCT_COFFEE_LC_NAME">Roasted coffee 1936</string>
+    <string name="PRODUCT_COFFEE_LO_DESCRIPTION">100% organic and Fairtrade certified Arabica coffee from Ethiopia, grown in the Sidamo region in heights between 1400 and 2200 m, and roasted at the Moulin J.P. Dieschbourg in Echternach, Luxembourg.</string>
+    <string name="PRODUCT_COFFEE_LO_NAME">Café Sidamo Bio</string>
+    
+    
+    
+    
+    
+    <string name="TYPE_COFFEE">Coffee</string>
+    
 </resources>
 
