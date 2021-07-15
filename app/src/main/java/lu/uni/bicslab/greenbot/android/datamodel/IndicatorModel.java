@@ -92,6 +92,13 @@ public class IndicatorModel implements Serializable {
 		this.general_description = general_description;
 	}
 	
+	public boolean isApplicable() {
+		return applicable;
+	}
+	
+	public void setApplicable(boolean applicable) {
+		this.applicable = applicable;
+	}
 	
 	
 	
