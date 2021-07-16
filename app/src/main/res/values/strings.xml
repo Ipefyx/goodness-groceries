@@ -86,10 +86,6 @@ pour chaque produit.</string>
     <string name="recompenses"> Récompenses</string>
     <string name="termes"> Termes et conditions d’utilisation</string>
 
-    <string name="type"> Type:</string>
-    <string name="category"> Category"</string>
-    <string name="provider"> Provider"</string>
-
     <string name="privilege"> Privilégier des
     méthodes
     agricoles éthiques</string>
@@ -119,13 +115,21 @@ pour chaque produit.</string>
 
 
 
-
+    
+<!--    Product details screen-->
     <string name="compare_button">Compare</string>
+    <string name="product">Product</string>
+
+    <string name="type">Type</string>
+    <string name="category">Category</string>
+    <string name="provider">Company</string>
 
 
 
 
-
+    
+    
+<!--    Product data-->
     <string name="NOT_APPLICABLE">Not applicable</string>
     <string name="NO_EVIDENCE">No evidence</string>
 

@@ -89,7 +89,7 @@ pour chaque produit.</string>
 
     <string name="type"> Type</string>
     <string name="category"> Category</string>
-    <string name="provider"> Provider</string>
+    <string name="provider">Entreprise</string>
 
 
 
@@ -297,6 +297,7 @@ pour chaque produit.</string>
 
     <string name="TYPE_COFFEE">Café</string>
     <string name="compare_button">Comparer</string>
+    <string name="product">Produit</string>
 
 </resources>
 
