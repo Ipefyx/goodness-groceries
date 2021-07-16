@@ -296,6 +296,7 @@ pour chaque produit.</string>
 
 
     <string name="TYPE_COFFEE">Café</string>
-    
+    <string name="compare_button">Comparer</string>
+
 </resources>
 
