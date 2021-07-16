@@ -38,21 +38,10 @@ import lu.uni.bicslab.greenbot.android.ui.fragment.product_category.ProductCateg
 
 public class ProductDetailsActivity extends AppCompatActivity {
 	
-	private CollapsingToolbarLayout collapsingToolbar;
-	private Toolbar toolbar;
-	private AppBarLayout appBarLayout;
 	private RecyclerView recyclerView;
 	
-	private CustomAdapter adapter;
-	
-	private Menu collapsedMenu;
-	private boolean appBarExpanded = false;
-	
 	String productCode;
-	
 	TextView type_data, description, type_category, type_provider;
-//	ImageView header;
-	ImageView img_compare;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -64,86 +53,25 @@ public class ProductDetailsActivity extends AppCompatActivity {
 		description = findViewById(R.id.description);
 		type_category = findViewById(R.id.type_category);
 		type_provider = findViewById(R.id.type_provider);
-//		header = findViewById(R.id.header);
-		img_compare = findViewById(R.id.img_compare);
+		
 		//  Use when your list size is constant for better performance
 		recyclerView.setHasFixedSize(true);
 		
 		productCode = getIntent().getExtras().getString("code");
 		
-		toolbar = findViewById(R.id.anim_toolbar);
+		Toolbar toolbar = findViewById(R.id.anim_toolbar);
 		setSupportActionBar(toolbar);
-		if (getSupportActionBar() != null)
-			getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		
-		appBarLayout = findViewById(R.id.appbar);
-		
-		collapsingToolbar = findViewById(R.id.collapsing_toolbar);
-		
-		Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
-				R.drawable.header);
-		
-		Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
-			@SuppressWarnings("ResourceType")
-			@Override
-			public void onGenerated(Palette palette) {
-				int vibrantColor = palette.getVibrantColor(R.color.blue);
-				collapsingToolbar.setContentScrimColor(vibrantColor);
-				collapsingToolbar.setStatusBarScrimColor(R.color.gray_dark);
-			}
-		});
-		
-		
-		img_compare.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				//finish();
-				Intent mIntent = new Intent(getApplicationContext(), CompareActivity.class);
-				mIntent.putExtra("key_product", productCode);
-				startActivity(mIntent);
-				
-			}
-		});
-		appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
-			@Override
-			public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-//				Log.d(ProductDetailsActivity.class.getSimpleName(), "onOffsetChanged: verticalOffset: " + verticalOffset);
-//				
-//				//  Vertical offset == 0 indicates appBar is fully expanded.
-//				if (Math.abs(verticalOffset) > 200) {
-//					appBarExpanded = false;
-//					invalidateOptionsMenu();
-//				} else {
-//					appBarExpanded = true;
-//					invalidateOptionsMenu();
-//				}
-			}
-		});
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		
 		
 		setView(Utils.getProductByCode(this, productCode));
 	}
 	
 	@Override
-	public boolean onPrepareOptionsMenu(Menu menu) {
-		if (collapsedMenu != null
-				&& (!appBarExpanded || collapsedMenu.size() != 1)) {
-			//collapsed
-//			collapsedMenu.add("Add")
-//					.setIcon(R.drawable.ic_action_add)
-//					.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
-		} else {
-			//expanded
-		}
-		return super.onPrepareOptionsMenu(collapsedMenu);
-	}
-	
-	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);
 		
-		collapsedMenu = menu;
-		collapsedMenu.add(R.string.compare_button)
+		menu.add(0, 0, 0, R.string.compare_button)
 				.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
 		
 		return true;
@@ -155,11 +83,11 @@ public class ProductDetailsActivity extends AppCompatActivity {
 			case android.R.id.home:
 				finish();
 				return true;
-//			case R.id.action_settings:
-//				return true;
-		}
-		if (item.getTitle() == "Add") {
-			Toast.makeText(this, "clicked add", Toast.LENGTH_SHORT).show();
+			case 0:
+				Intent mIntent = new Intent(getApplicationContext(), CompareActivity.class);
+				mIntent.putExtra("key_product", productCode);
+				startActivity(mIntent);
+				return true;
 		}
 		
 		return super.onOptionsItemSelected(item);
@@ -171,16 +99,14 @@ public class ProductDetailsActivity extends AppCompatActivity {
 		LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
 		recyclerView.setLayoutManager(linearLayoutManager);
 		
-		adapter = new CustomAdapter(this, product.indicators.stream().filter(ind -> ind.isApplicable() && ind.sub_indicators.size() > 0).collect(Collectors.toList()));
-		
+		CustomAdapter adapter = new CustomAdapter(this, product.indicators.stream().filter(ind -> ind.isApplicable() && ind.sub_indicators.size() > 0).collect(Collectors.toList()));
 		recyclerView.setAdapter(adapter);
+		
 		getSupportActionBar().setTitle(product.getName());
 		
 		type_data.setText(product.getType());
 		description.setText(product.getDescription());
 		type_category.setText(category.getName());
 		type_provider.setText(product.getProvider());
-//		header = findViewById(R.id.header);
-//		Glide.with(getApplicationContext()).load(product.getImage_url()).apply(RequestOptions.centerCropTransform()).into(header);
 	}
 }
