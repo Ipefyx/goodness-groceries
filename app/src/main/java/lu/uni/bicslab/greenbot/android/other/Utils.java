@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
@@ -258,6 +259,10 @@ public class Utils {
 	public static ProductModel getProductByCode(Context context, String code) {
 		Optional<ProductModel> match = getProductList(context).stream().filter(p -> p.getCode().equals(code)).findFirst();
 		return match.orElse(null);
+	}
+	
+	public static List<ProductModel> getProductsByType(Context context, String type) {
+		return getProductList(context).stream().filter(p -> p.getType().equals(type)).collect(Collectors.toList());
 	}
 	
 	

@@ -37,6 +37,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
 	TextView show_more_text;
 	ImageView show_more_icon;
 	
+	LinearLayout similar_product_list;
+	
 	boolean indicatorsExpanded = false;
 	
 	@Override
@@ -69,6 +71,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
 			indicatorsExpanded = !indicatorsExpanded;
 			updateHiddenIndicators();
 		});
+		
+		similar_product_list = findViewById(R.id.similar_product_list);
 		
 		productCode = getIntent().getExtras().getString("code");
 		indicatorCategoryFilter = getIntent().getExtras().getString("filter_indicator_category");
@@ -145,7 +149,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 		}
 		
 		for (IndicatorModel ind : indicators) {
-			View view = this.getLayoutInflater().inflate(R.layout.item_row, null, false);
+			View view = this.getLayoutInflater().inflate(R.layout.item_row, indicator_list1, false);
 			
 			((TextView) view.findViewById(R.id.indicator_name)).setText(ind.getName());
 			Glide.with(this).load(Utils.getDrawableImage(this, ind.getIcon_name())).error(R.drawable.ic_menu_gallery).into((ImageView) view.findViewById(R.id.indicator_image));
@@ -157,6 +161,27 @@ public class ProductDetailsActivity extends AppCompatActivity {
 				
 				show_more.setVisibility(View.VISIBLE);
 			}
+		}
+		
+		for (ProductModel simProduct : Utils.getProductsByType(this, product.getType())) {
+			if (simProduct.getCode().equals(productCode))
+				continue;
+			
+			View view = this.getLayoutInflater().inflate(R.layout.item_collumn, similar_product_list, false);
+			String catIcon = Utils.getProductCategoryByID(this, simProduct.getCategory()).getIcon_name();
+			
+			((TextView) view.findViewById(R.id.txtName)).setText(simProduct.getName());
+			Glide.with(this).load(Utils.getDrawableImage(this, simProduct.getImage_url())).error(R.drawable.ic_menu_gallery).into((ImageView) view.findViewById(R.id.imageview_icon));
+			Glide.with(this).load(Utils.getDrawableImage(this, catIcon)).error(R.drawable.ic_menu_gallery).into((ImageView) view.findViewById(R.id.imageview_origin));
+			
+			view.setOnClickListener(v -> {
+				Intent intent = new Intent(this, ProductDetailsActivity.class);
+				intent.putExtra("code", simProduct.getCode());
+				intent.putExtra("filter_indicator_category", indicatorCategoryFilter);
+				startActivity(intent);
+			});
+			
+			similar_product_list.addView(view);
 		}
 	}
 }
