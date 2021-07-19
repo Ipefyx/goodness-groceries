@@ -129,12 +129,6 @@ public class ProductDetailsActivity extends AppCompatActivity {
 		ProductCategoryModel category = Utils.getProductCategoryByID(this, product.getCategory());
 		List<IndicatorModel> indicators = product.indicators.stream().filter(ind -> ind.isApplicable() && ind.sub_indicators.size() > 0).collect(Collectors.toList());
 		
-//		LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-//		recyclerView.setLayoutManager(linearLayoutManager);
-//		
-//		CustomAdapter adapter = new CustomAdapter(this, product.indicators.stream().filter(ind -> ind.isApplicable() && ind.sub_indicators.size() > 0).collect(Collectors.toList()));
-//		recyclerView.setAdapter(adapter);
-		
 		title.setText(product.getName());
 		description.setText(product.getDescription());
 		type_data.setText(product.getType());
