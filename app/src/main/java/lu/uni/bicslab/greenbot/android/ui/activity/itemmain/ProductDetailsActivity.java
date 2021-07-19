@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +14,11 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import lu.uni.bicslab.greenbot.android.R;
+import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
 import lu.uni.bicslab.greenbot.android.other.Utils;
 import lu.uni.bicslab.greenbot.android.ui.fragment.compare.CompareActivity;
 import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
@@ -21,8 +27,17 @@ import lu.uni.bicslab.greenbot.android.ui.fragment.product_category.ProductCateg
 public class ProductDetailsActivity extends AppCompatActivity {
 	
 	String productCode;
+	String indicatorCategoryFilter;
+	
 	TextView title, description, type_data, provider_data, category_data;
 	ImageView product_image, category_icon;
+	
+	LinearLayout indicator_list1, indicator_list2;
+	View indicators_section, show_more;
+	TextView show_more_text;
+	ImageView show_more_icon;
+	
+	boolean indicatorsExpanded = false;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +54,24 @@ public class ProductDetailsActivity extends AppCompatActivity {
 		product_image = findViewById(R.id.product_image);
 		category_icon = findViewById(R.id.category_icon);
 		
+		indicators_section = findViewById(R.id.indicators_section);
+		
+		indicator_list1 = findViewById(R.id.indicator_list1);
+		indicator_list2 = findViewById(R.id.indicator_list2);
+		
+		show_more = findViewById(R.id.show_more);
+		show_more_text = findViewById(R.id.show_more_text);
+		show_more_icon = findViewById(R.id.show_more_icon);
+		
+		// Set GONE by default, make VISIBLE when at least one indicator is added
+		show_more.setVisibility(View.GONE);
+		show_more.setOnClickListener(v -> {
+			indicatorsExpanded = !indicatorsExpanded;
+			updateHiddenIndicators();
+		});
+		
 		productCode = getIntent().getExtras().getString("code");
+		indicatorCategoryFilter = getIntent().getExtras().getString("filter_indicator_category");
 		
 		Toolbar toolbar = findViewById(R.id.anim_toolbar);
 		setSupportActionBar(toolbar);
@@ -47,6 +79,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
 		getSupportActionBar().setTitle(R.string.product);
 		
 		setView(Utils.getProductByCode(this, productCode));
+		
+		updateHiddenIndicators();
 	}
 	
 	@Override
@@ -75,8 +109,21 @@ public class ProductDetailsActivity extends AppCompatActivity {
 		return super.onOptionsItemSelected(item);
 	}
 	
+	private void updateHiddenIndicators() {
+		if (indicatorsExpanded) {
+			show_more_text.setText(R.string.show_less);
+			indicator_list2.setVisibility(View.VISIBLE);
+			show_more_icon.setRotation(90);
+		} else {
+			show_more_text.setText(R.string.show_more);
+			indicator_list2.setVisibility(View.GONE);
+			show_more_icon.setRotation(0);
+		}
+	}
+	
 	private void setView(ProductModel product) {
 		ProductCategoryModel category = Utils.getProductCategoryByID(this, product.getCategory());
+		List<IndicatorModel> indicators = product.indicators.stream().filter(ind -> ind.isApplicable() && ind.sub_indicators.size() > 0).collect(Collectors.toList());
 		
 //		LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
 //		recyclerView.setLayoutManager(linearLayoutManager);
@@ -92,5 +139,24 @@ public class ProductDetailsActivity extends AppCompatActivity {
 		
 		Glide.with(this).load(Utils.getDrawableImage(this, product.getImage_url())).error(R.drawable.ic_menu_gallery).into(product_image);
 		Glide.with(this).load(Utils.getDrawableImage(this, category.getIcon_name())).error(R.drawable.ic_menu_gallery).into(category_icon);
+		
+		if (indicators.size() == 0) {
+			indicators_section.setVisibility(View.GONE);
+		}
+		
+		for (IndicatorModel ind : indicators) {
+			View view = this.getLayoutInflater().inflate(R.layout.item_row, null, false);
+			
+			((TextView) view.findViewById(R.id.indicator_name)).setText(ind.getName());
+			Glide.with(this).load(Utils.getDrawableImage(this, ind.getIcon_name())).error(R.drawable.ic_menu_gallery).into((ImageView) view.findViewById(R.id.indicator_image));
+			
+			if (ind.getCategory_id().equals(indicatorCategoryFilter)) {
+				indicator_list1.addView(view);
+			} else {
+				indicator_list2.addView(view);
+				
+				show_more.setVisibility(View.VISIBLE);
+			}
+		}
 	}
 }

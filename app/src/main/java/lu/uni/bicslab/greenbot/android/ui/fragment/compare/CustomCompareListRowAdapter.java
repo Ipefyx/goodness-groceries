@@ -82,7 +82,7 @@ public class CustomCompareListRowAdapter extends RecyclerView.Adapter<CustomComp
 			
 			Log.e("model", "inside");
 			mName = itemView.findViewById(R.id.txt_name);
-			txt_firstletter = itemView.findViewById(R.id.txt_firstletter);
+			txt_firstletter = itemView.findViewById(R.id.indicator_image);
 			layout_main_compare = itemView.findViewById(R.id.layout_main_compare);
 		}
 	}

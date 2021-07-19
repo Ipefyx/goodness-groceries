@@ -61,8 +61,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 			super(itemView);
 			
 			mName = itemView.findViewById(R.id.txt_name);
-			mDescription = itemView.findViewById(R.id.txt_desc);
-			txt_firstletter = itemView.findViewById(R.id.txt_firstletter);
+			mDescription = itemView.findViewById(R.id.indicator_name);
+			txt_firstletter = itemView.findViewById(R.id.indicator_image);
 		}
 	}
 }

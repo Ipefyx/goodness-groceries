@@ -53,6 +53,7 @@ public class IndicatorFragment extends Fragment {
 		itemAdapter = new IndicatorAdapter(getActivity(), code -> {
 				Intent intent = new Intent(getActivity(), ProductDetailsActivity.class);
 				intent.putExtra("code", code);
+				intent.putExtra("filter_indicator_category", indicatorCategoryFilter);
 				startActivity(intent);
 		});
 		

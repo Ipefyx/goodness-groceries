@@ -24,7 +24,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:id="@+id/title_section"
                 android:layout_marginTop="@dimen/small_padding"
                 android:layout_marginBottom="@dimen/small_padding">
@@ -83,7 +83,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:id="@+id/info_section"
                 android:layout_marginTop="@dimen/small_padding"
                 android:layout_marginBottom="@dimen/small_padding">
@@ -260,20 +260,113 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/indicators_section"
+                android:layout_marginTop="@dimen/small_padding"
+                android:layout_marginBottom="@dimen/small_padding">
+
+            <TextView
+                    android:text="@string/indicators"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    card_view:layout_constraintTop_toTopOf="parent"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    style="@style/Textprofile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textStyle="bold"
+                    android:id="@+id/indicators_text" />
+
+            <LinearLayout
+                    android:id="@+id/indicator_list1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:visibility="visible"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/indicators_text">
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/show_more"
+                    app:layout_constraintTop_toBottomOf="@id/indicator_list1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:paddingTop="@dimen/padding"
+                    android:paddingBottom="@dimen/padding"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                <TextView
+                        android:text="@string/show_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/show_more_text"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="@dimen/small_padding" />
+
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        card_view:srcCompat="@drawable/arrow_right"
+                        android:id="@+id/show_more_icon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/show_more_text"
+                        app:layout_constraintBottom_toBottomOf="@+id/show_more_text"
+                        android:layout_marginEnd="@dimen/small_padding"
+                        android:scaleType="fitCenter" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                    android:id="@+id/indicator_list2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:visibility="visible"
+                    android:orientation="vertical"
+                    card_view:layout_constraintStart_toStartOf="parent"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/show_more" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/similar_section"
+                android:layout_marginTop="@dimen/small_padding">
+
+            <TextView
+                    android:text="@string/similar_products"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    card_view:layout_constraintTop_toTopOf="parent"
+                    card_view:layout_constraintEnd_toEndOf="parent"
+                    style="@style/Textprofile"
+                    card_view:layout_constraintStart_toStartOf="parent"
+                    android:textStyle="bold"
+                    android:id="@+id/similar_products" />
+
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/similar_products"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="@dimen/padding"
+                    android:id="@+id/similar_product_list"></LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </LinearLayout>
-
-    <LinearLayout
-            android:id="@+id/scrollableview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:visibility="visible"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="parent"
-            android:orientation="vertical" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

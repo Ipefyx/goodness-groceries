@@ -123,8 +123,13 @@ pour chaque produit.</string>
     <string name="type">Type</string>
     <string name="category">Category</string>
     <string name="provider">Company</string>
+    
+    <string name="indicators">Indicators</string>
 
-
+    <string name="show_less">Show less</string>
+    <string name="show_more">Show more</string>
+    
+    <string name="similar_products">Similar products</string>
 
 
     
