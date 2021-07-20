@@ -113,10 +113,13 @@ pour chaque produit.</string>
     <string name="valid">ind_cat_economic</string>
 
 
-
+<!--    General stuff-->
+    <string name="general_error">An error has occurred</string>
 
     
-<!--    Product details screen-->
+
+
+    <!--    Product details screen-->
     <string name="compare_button">Compare</string>
     <string name="product">Product</string>
 

@@ -302,6 +302,7 @@ pour chaque produit.</string>
     <string name="show_less">Voir moins</string>
     <string name="show_more">Voir plus</string>
     <string name="similar_products">Produits similaires</string>
+    <string name="general_error">Une erreur est survenue</string>
 
 </resources>
 

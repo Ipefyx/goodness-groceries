@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -77,12 +78,21 @@ public class ProductDetailsActivity extends AppCompatActivity {
 		productCode = getIntent().getExtras().getString("code");
 		indicatorCategoryFilter = getIntent().getExtras().getString("filter_indicator_category");
 		
+		ProductModel product = Utils.getProductByCode(this, productCode);
+		
+		if (productCode == null || product == null) {
+			Toast toast = Toast.makeText(getApplicationContext(), R.string.general_error, Toast.LENGTH_SHORT);
+			toast.show();
+			finish();
+			return;
+		}
+		
 		Toolbar toolbar = findViewById(R.id.anim_toolbar);
 		setSupportActionBar(toolbar);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setTitle(R.string.product);
 		
-		setView(Utils.getProductByCode(this, productCode));
+		setView(product);
 		
 		updateHiddenIndicators();
 	}
@@ -142,13 +152,15 @@ public class ProductDetailsActivity extends AppCompatActivity {
 			indicators_section.setVisibility(View.GONE);
 		}
 		
+		// Fill in indicators
+		// If the category id matches the search filter, put in indicator_list1, else in indicator_list2 (collapsible)
 		for (IndicatorModel ind : indicators) {
 			View view = this.getLayoutInflater().inflate(R.layout.item_row, indicator_list1, false);
 			
 			((TextView) view.findViewById(R.id.indicator_name)).setText(ind.getName());
 			Glide.with(this).load(Utils.getDrawableImage(this, ind.getIcon_name())).error(R.drawable.ic_menu_gallery).into((ImageView) view.findViewById(R.id.indicator_image));
 			
-			if (ind.getCategory_id().equals(indicatorCategoryFilter)) {
+			if (ind.getCategory_id().equals(indicatorCategoryFilter) || indicatorCategoryFilter == null) {
 				indicator_list1.addView(view);
 			} else {
 				indicator_list2.addView(view);
@@ -157,6 +169,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 			}
 		}
 		
+		// Fill in similar products
 		for (ProductModel simProduct : Utils.getProductsByType(this, product.getType())) {
 			if (simProduct.getCode().equals(productCode))
 				continue;
