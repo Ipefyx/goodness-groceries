@@ -22,7 +22,7 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <activity
-            android:name=".ui.activity.onbord.OnbordStartActivity"
+            android:name=".ui.activity.StartActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
@@ -42,7 +42,7 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.activity.onbord.OnbordingActivity"
+            android:name=".ui.activity.onbord.WelcomeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_onbording"
             android:theme="@style/AppTheme.NoActionBar" />

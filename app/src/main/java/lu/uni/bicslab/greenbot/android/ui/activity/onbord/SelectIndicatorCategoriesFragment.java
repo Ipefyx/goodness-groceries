@@ -47,15 +47,15 @@ public class SelectIndicatorCategoriesFragment extends Fragment {
 		
 		int[] colors = new int[] {R.color.palette_green2, R.color.palette_blue2, R.color.palette_yellow2, R.color.palette_violet2};
 		
-		OnbordSelectable[] selectables = new OnbordSelectable[indicatorCategories.size()];
+		WelcomeSelectable[] selectables = new WelcomeSelectable[indicatorCategories.size()];
 		// Sorry for this hacky mess, but technically it's not wrong (just keeps the Activity and the Fragment tightly coupled),
 		// much simpler for this use than trying to serialize the data through the bundle
-		((OnbordingActivity) getActivity()).selectableIndicatorCategories = selectables;
+		((WelcomeActivity) getActivity()).selectableIndicatorCategories = selectables;
 		
 		for (int i = 0; i < indicatorCategories.size(); i++) {
 			
 			IndicatorCategoryModel indCat = indicatorCategories.get(i);
-			selectables[i] = new OnbordSelectable(indCat.getDescription(), indCat.getIcon_name(), colors[i]);
+			selectables[i] = new WelcomeSelectable(indCat.getDescription(), indCat.getIcon_name(), colors[i]);
 			
 			View view = LayoutInflater.from(selectorLayout.getContext()).inflate(R.layout.onbording_cardview_row, selectorLayout, false);
 			((TextView) view.findViewById(R.id.text_title)).setText(selectables[i].getDescription());

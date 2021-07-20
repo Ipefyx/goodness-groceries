@@ -1,4 +1,4 @@
-package lu.uni.bicslab.greenbot.android.ui.activity.onbord;
+package lu.uni.bicslab.greenbot.android.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,55 +10,71 @@ import android.widget.Button;
 
 import lu.uni.bicslab.greenbot.android.MainActivity;
 import lu.uni.bicslab.greenbot.android.R;
-import lu.uni.bicslab.greenbot.android.other.Profile;
 import lu.uni.bicslab.greenbot.android.other.ServerConnection;
 import lu.uni.bicslab.greenbot.android.other.UserData;
-import lu.uni.bicslab.greenbot.android.other.Utils;
 import lu.uni.bicslab.greenbot.android.ui.activity.scan.SigninActivity;
-import lu.uni.bicslab.greenbot.android.ui.activity.ui.WaitingPageActivity;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class OnbordStartActivity extends AppCompatActivity implements ServerConnection.ServerConnectionListner {
+public class StartActivity extends AppCompatActivity implements ServerConnection.ServerConnectionListner {
 	
-	Button btn_start;
 	ServerConnection.ServerConnectionListner mServerConnectionListner;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		setContentView(R.layout.activity_onbord_start);
-		btn_start = findViewById(R.id.btn_start);
-		mServerConnectionListner = this;
+		// Redirect to correct activities or show correct layout based on the user status
+		String userStatus = UserData.getStatus(this);
 		
-		// Set up the user interaction to manually show or hide the system UI.
-		btn_start.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
+		if (userStatus.equals(UserData.USER_VALID)) {
+			if (UserData.getFirstTime(getApplicationContext())) {
+				// Show first-time screen 1 or 2
 				
-				String userStatus = UserData.getStatus(getApplicationContext());
+				int firstTimePage = getIntent().getIntExtra("first_time_page", 1);
 				
-				if (userStatus.equals(UserData.USER_VALID)) {
-					if (UserData.getFirstTime(getApplicationContext())) {
-						//TODO: Show both first-time screens
-					}
+				if (firstTimePage == 1) {
+					setContentView(R.layout.activity_firsttime1);
 					
-					Intent i = new Intent(OnbordStartActivity.this, MainActivity.class);
-					startActivity(i);
+					Button continue_button = findViewById(R.id.button_continue);
+					continue_button.setOnClickListener(v -> {
+						Intent i = new Intent(this, StartActivity.class);
+						i.putExtra("first_time_page", 2);
+						startActivity(i);
+					});
 					
-				} else if (userStatus.equals(UserData.USER_REQUESTED) || userStatus.equals(UserData.USER_ARCHIVED)) {
+				} else if (firstTimePage == 2) {
+					setContentView(R.layout.activity_firsttime2);
 					
-					//TODO: Show requested screen
-					
-				} else {
-					Intent i = new Intent(OnbordStartActivity.this, SigninActivity.class);
-					startActivity(i);
+					Button continue_button = findViewById(R.id.button_continue);
+					continue_button.setOnClickListener(v -> {
+						UserData.setFirstTime(this, false);
+						startActivity(new Intent(this, StartActivity.class));
+					});
 				}
+				
+			} else {
+				// Go to main view
+				
+				Intent i = new Intent(this, MainActivity.class);
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+				startActivity(i);
 			}
-		});
+			
+		} else if (userStatus.equals(UserData.USER_REQUESTED) || userStatus.equals(UserData.USER_ARCHIVED)) {
+			// Show requested/survey screen
+			setContentView(R.layout.activity_waitingpage_layout);
+			
+		} else {
+			// User invalid, show welcome+login screen
+			Intent i = new Intent(StartActivity.this, SigninActivity.class);
+			startActivity(i);
+			finish();
+		}
+		
+		mServerConnectionListner = this;
 		
 		
 	}

@@ -16,18 +16,14 @@ import androidx.fragment.app.Fragment;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import lu.uni.bicslab.greenbot.android.R;
-import lu.uni.bicslab.greenbot.android.datamodel.IndicatorCategoryModel;
-import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
 import lu.uni.bicslab.greenbot.android.other.Utils;
-import lu.uni.bicslab.greenbot.android.ui.fragment.product_category.ProductCategoryAdapter;
 import lu.uni.bicslab.greenbot.android.ui.fragment.product_category.ProductCategoryModel;
 
 public class SelectProductCategoriesFragment extends Fragment {
 	
-	private OnbordSelectable[] selectables;
+	private WelcomeSelectable[] selectables;
 	
 	@Override
 	public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -80,15 +76,15 @@ public class SelectProductCategoriesFragment extends Fragment {
 		
 		int[] colors = new int[] {R.color.palette_green2, R.color.palette_green2, R.color.palette_green2, R.color.palette_green2};
 		
-		OnbordSelectable[] selectables = new OnbordSelectable[productCategories.size()];
+		WelcomeSelectable[] selectables = new WelcomeSelectable[productCategories.size()];
 		// Sorry for this hacky mess, but technically it's not wrong (just keeps the Activity and the Fragment tightly coupled),
 		// much simpler for this use than trying to serialize the data through the bundle
-		((OnbordingActivity) getActivity()).selectableIndicatorCategories = selectables;
+		((WelcomeActivity) getActivity()).selectableIndicatorCategories = selectables;
 		
 		for (int i = 0; i < productCategories.size(); i++) {
 			
 			ProductCategoryModel prodCat = productCategories.get(i);
-			selectables[i] = new OnbordSelectable(prodCat.getName(), prodCat.getIcon_name(), colors[i]);
+			selectables[i] = new WelcomeSelectable(prodCat.getName(), prodCat.getIcon_name(), colors[i]);
 			
 			View view = LayoutInflater.from(selectorLayout.getContext()).inflate(R.layout.onbording_cardview_row, selectorLayout, false);
 			((TextView) view.findViewById(R.id.text_title)).setText(selectables[i].getDescription());

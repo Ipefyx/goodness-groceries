@@ -26,15 +26,15 @@ import lu.uni.bicslab.greenbot.android.databinding.OnbordingMainLayoutBinding;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class OnbordingActivity extends AppCompatActivity {
+public class WelcomeActivity extends AppCompatActivity {
 	
 	private OnbordFragmentStateAdapter sliderAdapter;
 	private TextView[] dots;
 	private OnbordingMainLayoutBinding binding;
 	JSONObject jsonObject;
 	
-	public OnbordSelectable[] selectableIndicatorCategories;
-	public OnbordSelectable[] selectableProductCategories;
+	public WelcomeSelectable[] selectableIndicatorCategories;
+	public WelcomeSelectable[] selectableProductCategories;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

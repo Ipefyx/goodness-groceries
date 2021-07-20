@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -16,12 +15,8 @@ import com.google.gson.JsonObject;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import lu.uni.bicslab.greenbot.android.MainActivity;
 import lu.uni.bicslab.greenbot.android.R;
-import lu.uni.bicslab.greenbot.android.other.Profile;
-import lu.uni.bicslab.greenbot.android.other.ServerConnection;
-import lu.uni.bicslab.greenbot.android.other.Utils;
-import lu.uni.bicslab.greenbot.android.ui.activity.onbord.OnbordingActivity;
+import lu.uni.bicslab.greenbot.android.ui.activity.onbord.WelcomeActivity;
 
 public class SigninActivity extends AppCompatActivity {
 	
@@ -61,7 +56,7 @@ public class SigninActivity extends AppCompatActivity {
 //					profile.setSerialscanner(id);
 //					profile.setLogedin(Utils.user_notloggedin);
 //					Utils.saveProfile(getApplicationContext(), profile);
-					Intent intent = new Intent(SigninActivity.this, OnbordingActivity.class);
+					Intent intent = new Intent(SigninActivity.this, WelcomeActivity.class);
 					intent.putExtra("logintype", false);//
 					intent.putExtra("data", onJsonObjectSet(signin_id.getText().toString()).toString());//
 					// startActivityForResult(intent, RC_BARCODE_CAPTURE);

@@ -1,6 +1,6 @@
 package lu.uni.bicslab.greenbot.android.ui.activity.onbord;
 
-public class OnbordSelectable {
+public class WelcomeSelectable {
 	
 	private String description;
 	private String image;
@@ -8,7 +8,7 @@ public class OnbordSelectable {
 	private boolean selected = false;
 	
 	
-	public OnbordSelectable(String description, String image, int color) {
+	public WelcomeSelectable(String description, String image, int color) {
 		this.description = description;
 		this.image = image;
 		this.color = color;
