@@ -3,7 +3,6 @@ package lu.uni.bicslab.greenbot.android.ui.activity.onbord;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,9 +20,7 @@ import org.json.JSONObject;
 
 import lu.uni.bicslab.greenbot.android.MainActivity;
 import lu.uni.bicslab.greenbot.android.R;
-import lu.uni.bicslab.greenbot.android.other.Profile;
 import lu.uni.bicslab.greenbot.android.databinding.OnbordingMainLayoutBinding;
-import lu.uni.bicslab.greenbot.android.other.Utils;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -34,7 +31,6 @@ public class OnbordingActivity extends AppCompatActivity {
 	private OnbordFragmentStateAdapter sliderAdapter;
 	private TextView[] dots;
 	private OnbordingMainLayoutBinding binding;
-	Profile profile = null;
 	JSONObject jsonObject;
 	
 	public OnbordSelectable[] selectableIndicatorCategories;
@@ -44,14 +40,8 @@ public class OnbordingActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		binding = OnbordingMainLayoutBinding.inflate(getLayoutInflater());
-		profile = Utils.readProfileData(getApplicationContext());
-		Log.e("isLogedin ", "" + profile.isLogedin());
-		// if user not logedin show the waiting page
-       /* if(profile.isLogedin() == Utils.user_notloggedin){
-            initLogin = true;
-        }else{
-            initLogin = false;
-        }*/
+		
+		
 		String data = getIntent().getStringExtra("data");
 		try {
 			jsonObject = new JSONObject(data);
@@ -88,7 +78,7 @@ public class OnbordingActivity extends AppCompatActivity {
 			if (current < sliderAdapter.getItemCount()-1) {
 				binding.viewPager.setCurrentItem(current+1);
 			} else {
-				launchHomeScreen();
+				finishWelcome();
 			}
 		});
 		
@@ -97,7 +87,10 @@ public class OnbordingActivity extends AppCompatActivity {
 		
 	}
 	
-	private void launchHomeScreen() {
+	private void finishWelcome() {
+		
+		// TODO: Post user request to server and go to requested screen
+		
 //		if (profile.isLogedin() == Utils.user_loggedin_firsttime) {
 //			Profile profileData = Utils.readProfileData(getApplicationContext());
 //			profileData.setLogedin(Utils.user_loggedin);

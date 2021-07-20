@@ -12,6 +12,7 @@ import lu.uni.bicslab.greenbot.android.MainActivity;
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.Profile;
 import lu.uni.bicslab.greenbot.android.other.ServerConnection;
+import lu.uni.bicslab.greenbot.android.other.UserData;
 import lu.uni.bicslab.greenbot.android.other.Utils;
 import lu.uni.bicslab.greenbot.android.ui.activity.scan.SigninActivity;
 import lu.uni.bicslab.greenbot.android.ui.activity.ui.WaitingPageActivity;
@@ -37,23 +38,22 @@ public class OnbordStartActivity extends AppCompatActivity implements ServerConn
 		btn_start.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				//Intent i = new Intent(OnbordStartActivity.this, SelectImpotlocalFragment.class);
 				
-				Profile profile = Utils.readProfileData(getApplicationContext());
-				if (profile != null && profile.isLogedin() == Utils.user_loggedin) {
+				String userStatus = UserData.getStatus(getApplicationContext());
+				
+				if (userStatus.equals(UserData.USER_VALID)) {
+					if (UserData.getFirstTime(getApplicationContext())) {
+						//TODO: Show both first-time screens
+					}
+					
 					Intent i = new Intent(OnbordStartActivity.this, MainActivity.class);
 					startActivity(i);
-				} else if (profile != null && profile.isLogedin() == Utils.user_requested) {
-					postRequestUserAccess();
-				} else if (profile != null && profile.isLogedin() == Utils.user_loggedin_firsttime) {
-					// OnbordingActivity.initLogin=false;//true - first time login //false - first time going to main page after response from server
-					Intent intent = new Intent(getApplicationContext(), OnbordingActivity.class);
-					startActivity(intent);
+					
+				} else if (userStatus.equals(UserData.USER_REQUESTED) || userStatus.equals(UserData.USER_ARCHIVED)) {
+					
+					//TODO: Show requested screen
 					
 				} else {
-					Profile profiledata = new Profile();
-					profiledata.setLogedin(Utils.user_notloggedin);
-					Utils.saveProfile(getApplicationContext(), profiledata);
 					Intent i = new Intent(OnbordStartActivity.this, SigninActivity.class);
 					startActivity(i);
 				}
@@ -65,9 +65,9 @@ public class OnbordStartActivity extends AppCompatActivity implements ServerConn
 	
 	public void postRequestUserAccess() {
 		//ServerConnection.postRequestUserAccess(OnbordStartActivity.this,null);//working
-		Profile profile = Utils.readProfileData(getApplicationContext());
-		
-		ServerConnection.getDataFetchUserStatus(mServerConnectionListner, OnbordStartActivity.this, profile.getSerialscanner());//working
+//		Profile profile = Utils.readProfileData(getApplicationContext());
+//		
+//		ServerConnection.getDataFetchUserStatus(mServerConnectionListner, OnbordStartActivity.this, profile.getSerialscanner());//working
 		//ServerConnection.getDataGetBoughtProducts(OnbordStartActivity.this,"12345678");//working
 		//ServerConnection.postPostMonitoringData(OnbordStartActivity.this);//working
 		//ServerConnection.postPostProductReview(OnbordStartActivity.this);//working
@@ -76,17 +76,17 @@ public class OnbordStartActivity extends AppCompatActivity implements ServerConn
 	@Override
 	public void onServerConnectionActionComplete(String value) {
 		
-		Profile profile = Utils.readProfileData(getApplicationContext());
-		if (profile != null && profile.isLogedin() == Utils.user_requested) {
-			Intent i = new Intent(OnbordStartActivity.this, WaitingPageActivity.class);
-			startActivity(i);
-		} else {
-			Profile profileData = Utils.readProfileData(getApplicationContext());
-			profileData.setLogedin(Utils.user_loggedin_firsttime);
-			Utils.saveProfile(getApplicationContext(), profileData);
-			Intent intent = new Intent(getApplicationContext(), OnbordingActivity.class);
-			startActivity(intent);
-		}
+//		Profile profile = Utils.readProfileData(getApplicationContext());
+//		if (profile != null && profile.isLogedin() == Utils.user_requested) {
+//			Intent i = new Intent(OnbordStartActivity.this, WaitingPageActivity.class);
+//			startActivity(i);
+//		} else {
+//			Profile profileData = Utils.readProfileData(getApplicationContext());
+//			profileData.setLogedin(Utils.user_loggedin_firsttime);
+//			Utils.saveProfile(getApplicationContext(), profileData);
+//			Intent intent = new Intent(getApplicationContext(), OnbordingActivity.class);
+//			startActivity(intent);
+//		}
 		
 	}
 }

@@ -56,10 +56,11 @@ public class SigninActivity extends AppCompatActivity {
 					startActivityForResult(intent, RC_BARCODE_CAPTURE);
 					
 				} else {
-					Profile profile = new Profile();
-					profile.setSerialscanner(id);
-					profile.setLogedin(Utils.user_notloggedin);
-					Utils.saveProfile(getApplicationContext(), profile);
+					
+//					Profile profile = new Profile();
+//					profile.setSerialscanner(id);
+//					profile.setLogedin(Utils.user_notloggedin);
+//					Utils.saveProfile(getApplicationContext(), profile);
 					Intent intent = new Intent(SigninActivity.this, OnbordingActivity.class);
 					intent.putExtra("logintype", false);//
 					intent.putExtra("data", onJsonObjectSet(signin_id.getText().toString()).toString());//

@@ -102,13 +102,13 @@ public class ServerConnection {
 						JSONObject object = new JSONObject(response);
 						String status = object.optString("status");
 						Log.e("status", status);
-						Profile profileData = Utils.readProfileData(mContext);
-						if (status.equalsIgnoreCase(mContext.getResources().getString(R.string.requested))) {
-							profileData.setLogedin(Utils.user_requested);
-						} else {
-							profileData.setLogedin(Utils.user_loggedin);
-						}
-						Utils.saveProfile(mContext, profileData);
+//						Profile profileData = Utils.readProfileData(mContext);
+//						if (status.equalsIgnoreCase(mContext.getResources().getString(R.string.requested))) {
+//							profileData.setLogedin(Utils.user_requested);
+//						} else {
+//							profileData.setLogedin(Utils.user_loggedin);
+//						}
+//						Utils.saveProfile(mContext, profileData);
 						mServerConnectionListner.onServerConnectionActionComplete(status);
 						//https://www.tutorialspoint.com/how-to-read-volley-json-array-object-elements-in-android
 					} catch (JSONException e) {
