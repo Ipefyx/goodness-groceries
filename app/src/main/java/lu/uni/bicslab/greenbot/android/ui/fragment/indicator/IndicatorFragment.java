@@ -94,7 +94,10 @@ public class IndicatorFragment extends Fragment {
 		// For each PRODUCT: (there exists at least one INDICATOR from PRODUCT.INDICATORS where INDICATOR.CATEGORY == indicatorCategoryFilter) and PRODUCT.CATEGORY == productCategoryFilter
 		List<ProductModel> filteredProductList = productList.stream().filter(product -> 
 				product.indicators.stream().anyMatch(indicator -> 
-						indicator.getCategory_id().equals(indicatorCategoryFilter))
+						indicator.getCategory_id().equals(indicatorCategoryFilter)
+						&& indicator.isApplicable()
+						&& indicator.sub_indicators.size() > 0
+				)
 				&& product.getCategory().equals(productCategoryFilter)
 		).collect(Collectors.toList());
 		
@@ -110,7 +113,7 @@ public class IndicatorFragment extends Fragment {
 			searchView.setVisibility(View.VISIBLE);
 		} else {
 			textviewloading.setVisibility(View.VISIBLE);
-			textviewloading.setText(R.string.nodata);
+			textviewloading.setText(R.string.no_products_found);
 			searchView.setVisibility(View.GONE);
 		}
 		
