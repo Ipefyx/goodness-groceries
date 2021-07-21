@@ -25,22 +25,6 @@ public class StartActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		
 		
-		ServerConnection.requestUserAccess(this, "1112223334444", new String[]{"local_organic", "imported_conventional"}, new String[]{"ind_cat_environment"}, status -> {
-			Log.i("server test", status);
-		}, Throwable::printStackTrace);
-		
-		ServerConnection.fetchUserStatus(this, "1112223334444", status -> {
-			Log.i("server test", status);
-		}, Throwable::printStackTrace);
-		
-		ServerConnection.fetchProductsBought(this, "1112223334444", products -> {
-			
-		}, Throwable::printStackTrace);
-		
-		ServerConnection.sendProductFeedback(this, "1112223334444", "1", "ind_animal", "ind_biodiv", "test string", true, a -> {}, b -> {});
-//		ServerConnection.sendDeviceToken(this, "1112223334444", "token");
-		
-		
 		// Redirect to correct activities or show correct layout based on the user status
 		String userStatus = UserData.getStatus(this);
 		
