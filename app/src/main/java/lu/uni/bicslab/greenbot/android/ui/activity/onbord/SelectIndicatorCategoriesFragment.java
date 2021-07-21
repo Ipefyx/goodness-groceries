@@ -55,7 +55,7 @@ public class SelectIndicatorCategoriesFragment extends Fragment {
 		for (int i = 0; i < indicatorCategories.size(); i++) {
 			
 			IndicatorCategoryModel indCat = indicatorCategories.get(i);
-			selectables[i] = new WelcomeSelectable(indCat.getDescription(), indCat.getIcon_name(), colors[i]);
+			selectables[i] = new WelcomeSelectable(indCat.getId(), indCat.getDescription(), indCat.getIcon_name(), colors[i]);
 			
 			View view = LayoutInflater.from(selectorLayout.getContext()).inflate(R.layout.onbording_cardview_row, selectorLayout, false);
 			((TextView) view.findViewById(R.id.text_title)).setText(selectables[i].getDescription());

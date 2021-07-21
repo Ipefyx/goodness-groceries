@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 
 
@@ -17,13 +18,28 @@ import lu.uni.bicslab.greenbot.android.ui.activity.scan.SigninActivity;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class StartActivity extends AppCompatActivity implements ServerConnection.ServerConnectionListner {
-	
-	ServerConnection.ServerConnectionListner mServerConnectionListner;
+public class StartActivity extends AppCompatActivity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		
+		ServerConnection.requestUserAccess(this, "1112223334444", new String[]{"local_organic", "imported_conventional"}, new String[]{"ind_cat_environment"}, status -> {
+			Log.i("server test", status);
+		}, Throwable::printStackTrace);
+		
+		ServerConnection.fetchUserStatus(this, "1112223334444", status -> {
+			Log.i("server test", status);
+		}, Throwable::printStackTrace);
+		
+		ServerConnection.fetchProductsBought(this, "1112223334444", products -> {
+			
+		}, Throwable::printStackTrace);
+		
+		ServerConnection.sendProductFeedback(this, "1112223334444", "1", "ind_animal", "ind_biodiv", "test string", true, a -> {}, b -> {});
+//		ServerConnection.sendDeviceToken(this, "1112223334444", "token");
+		
 		
 		// Redirect to correct activities or show correct layout based on the user status
 		String userStatus = UserData.getStatus(this);
@@ -73,35 +89,6 @@ public class StartActivity extends AppCompatActivity implements ServerConnection
 			finish();
 		}
 		
-		mServerConnectionListner = this;
-		
-		
-	}
-	
-	public void postRequestUserAccess() {
-		//ServerConnection.postRequestUserAccess(OnbordStartActivity.this,null);//working
-//		Profile profile = Utils.readProfileData(getApplicationContext());
-//		
-//		ServerConnection.getDataFetchUserStatus(mServerConnectionListner, OnbordStartActivity.this, profile.getSerialscanner());//working
-		//ServerConnection.getDataGetBoughtProducts(OnbordStartActivity.this,"12345678");//working
-		//ServerConnection.postPostMonitoringData(OnbordStartActivity.this);//working
-		//ServerConnection.postPostProductReview(OnbordStartActivity.this);//working
-	}
-	
-	@Override
-	public void onServerConnectionActionComplete(String value) {
-		
-//		Profile profile = Utils.readProfileData(getApplicationContext());
-//		if (profile != null && profile.isLogedin() == Utils.user_requested) {
-//			Intent i = new Intent(OnbordStartActivity.this, WaitingPageActivity.class);
-//			startActivity(i);
-//		} else {
-//			Profile profileData = Utils.readProfileData(getApplicationContext());
-//			profileData.setLogedin(Utils.user_loggedin_firsttime);
-//			Utils.saveProfile(getApplicationContext(), profileData);
-//			Intent intent = new Intent(getApplicationContext(), OnbordingActivity.class);
-//			startActivity(intent);
-//		}
 		
 	}
 }

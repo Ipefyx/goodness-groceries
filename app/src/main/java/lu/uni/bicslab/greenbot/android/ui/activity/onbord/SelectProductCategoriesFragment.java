@@ -84,7 +84,7 @@ public class SelectProductCategoriesFragment extends Fragment {
 		for (int i = 0; i < productCategories.size(); i++) {
 			
 			ProductCategoryModel prodCat = productCategories.get(i);
-			selectables[i] = new WelcomeSelectable(prodCat.getName(), prodCat.getIcon_name(), colors[i]);
+			selectables[i] = new WelcomeSelectable(prodCat.getId(), prodCat.getName(), prodCat.getIcon_name(), colors[i]);
 			
 			View view = LayoutInflater.from(selectorLayout.getContext()).inflate(R.layout.onbording_cardview_row, selectorLayout, false);
 			((TextView) view.findViewById(R.id.text_title)).setText(selectables[i].getDescription());

@@ -2,16 +2,26 @@ package lu.uni.bicslab.greenbot.android.ui.activity.onbord;
 
 public class WelcomeSelectable {
 	
+	private String id;
 	private String description;
 	private String image;
 	private int color;
 	private boolean selected = false;
 	
 	
-	public WelcomeSelectable(String description, String image, int color) {
+	public WelcomeSelectable(String id, String description, String image, int color) {
+		this.id = id;
 		this.description = description;
 		this.image = image;
 		this.color = color;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	
+	public void setId(String id) {
+		this.id = id;
 	}
 	
 	public String getDescription() {

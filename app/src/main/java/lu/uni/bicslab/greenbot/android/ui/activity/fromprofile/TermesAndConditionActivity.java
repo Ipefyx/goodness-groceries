@@ -8,7 +8,7 @@ import androidx.appcompat.widget.Toolbar;
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.ServerConnection;
 
-public class TermesAndConditionActivity extends AppCompatActivity implements ServerConnection.ServerConnectionListner {
+public class TermesAndConditionActivity extends AppCompatActivity {
 	
 	@Override
 	public void onCreate(Bundle icicle) {
@@ -19,10 +19,5 @@ public class TermesAndConditionActivity extends AppCompatActivity implements Ser
 		getSupportActionBar().setDisplayShowHomeEnabled(true);
 		
 		getSupportActionBar().setTitle(getResources().getString(R.string.termes));
-	}
-	
-	@Override
-	public void onServerConnectionActionComplete(String value) {
-		
 	}
 }

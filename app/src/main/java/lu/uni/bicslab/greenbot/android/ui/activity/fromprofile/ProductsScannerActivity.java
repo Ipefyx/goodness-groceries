@@ -8,7 +8,7 @@ import androidx.appcompat.widget.Toolbar;
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.ServerConnection;
 
-public class ProductsScannerActivity extends AppCompatActivity implements ServerConnection.ServerConnectionListner {
+public class ProductsScannerActivity extends AppCompatActivity {
 	
 	
 	@Override
@@ -19,10 +19,5 @@ public class ProductsScannerActivity extends AppCompatActivity implements Server
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setDisplayShowHomeEnabled(true);
 		getSupportActionBar().setTitle(getResources().getString(R.string.productscanner));
-	}
-	
-	@Override
-	public void onServerConnectionActionComplete(String value) {
-		
 	}
 }
