@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 
@@ -30,7 +29,7 @@ public class StartActivity extends AppCompatActivity implements ServerConnection
 		String userStatus = UserData.getStatus(this);
 		
 		if (userStatus.equals(UserData.USER_VALID)) {
-			if (UserData.getFirstTime(getApplicationContext())) {
+			if (UserData.isFirstTimeVisit(getApplicationContext())) {
 				// Show first-time screen 1 or 2
 				
 				int firstTimePage = getIntent().getIntExtra("first_time_page", 1);
@@ -50,7 +49,7 @@ public class StartActivity extends AppCompatActivity implements ServerConnection
 					
 					Button continue_button = findViewById(R.id.button_continue);
 					continue_button.setOnClickListener(v -> {
-						UserData.setFirstTime(this, false);
+						UserData.setFirstTimeVisit(this, false);
 						startActivity(new Intent(this, StartActivity.class));
 					});
 				}

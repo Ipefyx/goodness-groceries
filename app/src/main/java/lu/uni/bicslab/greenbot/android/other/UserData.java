@@ -19,6 +19,7 @@ public class UserData {
 	
 	
 	
+	// The Status of the user, matching with the API statuses
 	public static void setStatus(Context context, String status) {
 		getPrefs(context).edit().putString("user_status", status).apply();
 	}
@@ -29,16 +30,18 @@ public class UserData {
 	
 	
 	
-	public static void setFirstTime(Context context, boolean firstTime) {
-		getPrefs(context).edit().putBoolean("first_time", firstTime).apply();
+	// Whether or not the two first-time screens should be shown
+	public static void setFirstTimeVisit(Context context, boolean firstTimeVisit) {
+		getPrefs(context).edit().putBoolean("first_time_visit", firstTimeVisit).apply();
 	}
 	
-	public static boolean getFirstTime(Context context) {
-		return getPrefs(context).getBoolean("first_time", true);
+	public static boolean isFirstTimeVisit(Context context) {
+		return getPrefs(context).getBoolean("first_time_visit", true);
 	}
 	
 	
 	
+	// The participant ID of the user
 	public static void setID(Context context, String id) {
 		getPrefs(context).edit().putString("user_id", id).apply();
 	}
