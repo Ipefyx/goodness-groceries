@@ -1,4 +1,4 @@
-package lu.uni.bicslab.greenbot.android.ui.activity.onbord;
+package lu.uni.bicslab.greenbot.android.ui.activity.welcome;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

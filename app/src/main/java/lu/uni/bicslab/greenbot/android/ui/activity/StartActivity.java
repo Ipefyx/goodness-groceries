@@ -12,7 +12,8 @@ import lu.uni.bicslab.greenbot.android.MainActivity;
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.ServerConnection;
 import lu.uni.bicslab.greenbot.android.other.UserData;
-import lu.uni.bicslab.greenbot.android.ui.activity.scan.SigninActivity;
+import lu.uni.bicslab.greenbot.android.ui.activity.welcome.SignInFragment;
+import lu.uni.bicslab.greenbot.android.ui.activity.welcome.WelcomeActivity;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -27,6 +28,7 @@ public class StartActivity extends AppCompatActivity {
 		
 		// Redirect to correct activities or show correct layout based on the user status
 		String userStatus = UserData.getStatus(this);
+		Log.i("STATUS", userStatus);
 		
 		if (userStatus.equals(UserData.USER_VALID)) {
 			if (UserData.isFirstTimeVisit(getApplicationContext())) {
@@ -68,8 +70,7 @@ public class StartActivity extends AppCompatActivity {
 			
 		} else {
 			// User invalid, show welcome+login screen
-			Intent i = new Intent(StartActivity.this, SigninActivity.class);
-			startActivity(i);
+			startActivity(new Intent(StartActivity.this, WelcomeActivity.class));
 			finish();
 		}
 		

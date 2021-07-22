@@ -1,4 +1,4 @@
-package lu.uni.bicslab.greenbot.android.ui.activity.onbord;
+package lu.uni.bicslab.greenbot.android.ui.activity.welcome;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -41,36 +41,6 @@ public class SelectProductCategoriesFragment extends Fragment {
 		super.onActivityCreated(savedInstanceState);
 		
 		LinearLayout selectorLayout = getView().findViewById(R.id.selector_layout);
-//		
-//		// Product categories are fully hardcoded, because there is no product_categories.json in the first place
-//		OnbordSelectable[] selectables = new OnbordSelectable[] {
-//				new OnbordSelectable(getResources().getString(R.string.biolocal), "prod_cat_localorganic", R.color.palette_green2),
-//				new OnbordSelectable(getResources().getString(R.string.bioimporte), "prod_cat_importedorganic", R.color.palette_green2),
-//				new OnbordSelectable(getResources().getString(R.string.conlocal), "prod_cat_localconventional", R.color.palette_green2),
-//				new OnbordSelectable(getResources().getString(R.string.conimporte), "prod_cat_importedconventional", R.color.palette_green2),
-//		};
-		
-		// Sorry for this hacky mess, but technically it's not wrong (just keeps the Activity and the Fragment tightly coupled),
-		// much simpler for this use than trying to serialize the data through the bundle
-//		((OnbordingActivity) getActivity()).selectableProductCategories = selectables;
-//		
-//		for (OnbordSelectable selectable : selectables) {
-//			
-//			View view = LayoutInflater.from(selectorLayout.getContext()).inflate(R.layout.onbording_cardview_row, selectorLayout, false);
-//			((TextView) view.findViewById(R.id.text_title)).setText(selectable.getDescription());
-//			
-//			Glide.with(getActivity()).load(Utils.getDrawableImage(getActivity(), selectable.getImage())).error(R.drawable.ic_menu_gallery).into((ImageView) view.findViewById(R.id.imageview_icon));
-//			
-//			view.setOnClickListener(new View.OnClickListener() {
-//				@Override
-//				public void onClick(View view) {
-//					selectable.setSelected(!selectable.isSelected());
-//					view.findViewById(R.id.card_view).setBackgroundColor(ResourcesCompat.getColor(getResources(), selectable.isSelected() ? selectable.getColor() : R.color.white, null));
-//				}
-//			});
-//			
-//			selectorLayout.addView(view);
-//		}
 		
 		List<ProductCategoryModel> productCategories = Utils.getProductCategoryList(getActivity());
 		
@@ -79,7 +49,7 @@ public class SelectProductCategoriesFragment extends Fragment {
 		WelcomeSelectable[] selectables = new WelcomeSelectable[productCategories.size()];
 		// Sorry for this hacky mess, but technically it's not wrong (just keeps the Activity and the Fragment tightly coupled),
 		// much simpler for this use than trying to serialize the data through the bundle
-		((WelcomeActivity) getActivity()).selectableIndicatorCategories = selectables;
+		((WelcomeActivity) getActivity()).selectableProductCategories = selectables;
 		
 		for (int i = 0; i < productCategories.size(); i++) {
 			

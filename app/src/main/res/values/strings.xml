@@ -115,6 +115,7 @@ pour chaque produit.</string>
 
 <!--    General stuff-->
     <string name="general_error">An error has occurred</string>
+    <string name="general_error_try_again">An error has occurred. Please try again later.</string>
     <string name="no_products_found">Sorry, no products found</string>
 
     

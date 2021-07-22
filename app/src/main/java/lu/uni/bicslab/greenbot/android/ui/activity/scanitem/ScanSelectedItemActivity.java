@@ -28,7 +28,7 @@ public class ScanSelectedItemActivity extends AppCompatActivity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		setContentView(R.layout.activity_siginin);
+		setContentView(R.layout.onbording_signin);
 		login = findViewById(R.id.tx_login);
 		signin_id = findViewById(R.id.signin_id);
 		login.setOnClickListener(new View.OnClickListener() {

@@ -44,6 +44,7 @@ import lu.uni.bicslab.greenbot.android.barcoderead.BarcodeTrackerFactory;
 import lu.uni.bicslab.greenbot.android.barcoderead.CameraSource;
 import lu.uni.bicslab.greenbot.android.barcoderead.CameraSourcePreview;
 import lu.uni.bicslab.greenbot.android.barcoderead.GraphicOverlay;
+import lu.uni.bicslab.greenbot.android.ui.activity.welcome.SignInFragment;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -436,7 +437,7 @@ public class SigninSelectActivity extends AppCompatActivity implements BarcodeGr
 		Log.e(TAG, "Barcode read: got " + barcode.displayValue);
 		Intent intent = getIntent();
 		intent.putExtra("barcode", barcode.displayValue);
-		setResult(SigninActivity.RC_BARCODE_CAPTURE, intent);
+		setResult(SignInFragment.RC_BARCODE_CAPTURE, intent);
 		finish();
 	}
 	

@@ -14,8 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import lu.uni.bicslab.greenbot.android.R;
-import lu.uni.bicslab.greenbot.android.ui.activity.onbord.WelcomeSelectable;
-import lu.uni.bicslab.greenbot.android.ui.activity.onbord.SelectionActionCompleteListener;
+import lu.uni.bicslab.greenbot.android.ui.activity.welcome.WelcomeSelectable;
+import lu.uni.bicslab.greenbot.android.ui.activity.welcome.SelectionActionCompleteListener;
 
 public class CustomGridAdapter extends RecyclerView.Adapter<CustomGridAdapter.MyViewHolder> {
 	

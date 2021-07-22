@@ -15,14 +15,15 @@
                 android:layout_width="@dimen/icon_width"
                 android:layout_height="@dimen/icon_width"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/uni_icon"
                 android:visibility="visible"
                 app:layout_constraintBottom_toTopOf="@+id/view_pager"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginTop="@dimen/padding2"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/gg_logo_1"
+                android:adjustViewBounds="true" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -76,7 +77,9 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/bottomControls"
-                app:layout_constraintTop_toBottomOf="@+id/uniLogo" />
+                app:layout_constraintTop_toBottomOf="@+id/uniLogo"
+                android:focusable="false"
+                android:focusableInTouchMode="false" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

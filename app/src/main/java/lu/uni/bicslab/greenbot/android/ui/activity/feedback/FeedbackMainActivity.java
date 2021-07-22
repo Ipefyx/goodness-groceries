@@ -32,7 +32,7 @@ import lu.uni.bicslab.greenbot.android.databinding.FeedbackMainBinding;
 import lu.uni.bicslab.greenbot.android.other.UpdateActionCompleteListener;
 import lu.uni.bicslab.greenbot.android.other.UpdateFeedbackListener;
 import lu.uni.bicslab.greenbot.android.other.Utils;
-import lu.uni.bicslab.greenbot.android.ui.activity.scan.SigninActivity;
+import lu.uni.bicslab.greenbot.android.ui.activity.welcome.SignInFragment;
 import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
 import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
 
@@ -95,7 +95,7 @@ public class FeedbackMainActivity extends AppCompatActivity implements UpdateAct
 	private void launchHomeScreen() {
 		//Toast.makeText(this, "slides_ended", Toast.LENGTH_LONG).show();
 		finish();
-		Intent i = new Intent(this, SigninActivity.class);
+		Intent i = new Intent(this, SignInFragment.class);
 		startActivity(i);
 	}
 	

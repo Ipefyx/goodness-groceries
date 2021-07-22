@@ -43,7 +43,7 @@ import lu.uni.bicslab.greenbot.android.barcoderead.BarcodeTrackerFactory;
 import lu.uni.bicslab.greenbot.android.barcoderead.CameraSource;
 import lu.uni.bicslab.greenbot.android.barcoderead.CameraSourcePreview;
 import lu.uni.bicslab.greenbot.android.barcoderead.GraphicOverlay;
-import lu.uni.bicslab.greenbot.android.ui.activity.scan.SigninActivity;
+import lu.uni.bicslab.greenbot.android.ui.activity.welcome.SignInFragment;
 
 public class SelectscanActivity extends AppCompatActivity implements BarcodeGraphicTracker.BarcodeUpdateListener {
 	private static final String TAG = "Barcode-reader";
@@ -431,7 +431,7 @@ public class SelectscanActivity extends AppCompatActivity implements BarcodeGrap
 		Log.e(TAG, "Barcode read: got " + barcode.displayValue);
 		Intent intent = getIntent();
 		intent.putExtra("barcode", barcode.displayValue);
-		setResult(SigninActivity.RC_BARCODE_CAPTURE, intent);
+		setResult(SignInFragment.RC_BARCODE_CAPTURE, intent);
 		finish();
 	}
 	

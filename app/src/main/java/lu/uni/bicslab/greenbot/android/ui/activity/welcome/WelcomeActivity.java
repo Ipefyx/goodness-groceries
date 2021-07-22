@@ -1,12 +1,16 @@
-package lu.uni.bicslab.greenbot.android.ui.activity.onbord;
+package lu.uni.bicslab.greenbot.android.ui.activity.welcome;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,9 +22,15 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import lu.uni.bicslab.greenbot.android.MainActivity;
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.databinding.OnbordingMainLayoutBinding;
+import lu.uni.bicslab.greenbot.android.other.ServerConnection;
+import lu.uni.bicslab.greenbot.android.other.UserData;
+import lu.uni.bicslab.greenbot.android.ui.activity.StartActivity;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -35,6 +45,9 @@ public class WelcomeActivity extends AppCompatActivity {
 	
 	public WelcomeSelectable[] selectableIndicatorCategories;
 	public WelcomeSelectable[] selectableProductCategories;
+	public String id;
+	
+	private int currentPage = 0;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,21 +68,15 @@ public class WelcomeActivity extends AppCompatActivity {
 	}
 	
 	private void init() {
-		// layouts of all welcome sliders
-		// add few more layouts if you want
-//		pages = new Fragment[] {
-//				onbordingOneFragment,
-//				onbordingTwoFragment,
-//				onbordingThreeFragment,
-//		};
-		
 		sliderAdapter = new OnbordFragmentStateAdapter(this);
+		
 		binding.viewPager.setAdapter(sliderAdapter);
 		binding.viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
 			@Override
 			public void onPageSelected(int position) {
 				super.onPageSelected(position);
-				updateBottomDots(position);
+				currentPage = position;
+				updatePage();
 			}
 		});
 		
@@ -83,38 +90,36 @@ public class WelcomeActivity extends AppCompatActivity {
 		});
 		
 		// adding bottom dots
-		updateBottomDots(0);
-		
+		updatePage();
 	}
 	
 	private void finishWelcome() {
 		
-		// TODO: Post user request to server and go to requested screen
+		// TODO: Post user request to server and go back to StartActivity
+		List<String> selectedIndicators = new ArrayList<>();
+		List<String> selectedProducts = new ArrayList<>();
 		
-//		if (profile.isLogedin() == Utils.user_loggedin_firsttime) {
-//			Profile profileData = Utils.readProfileData(getApplicationContext());
-//			profileData.setLogedin(Utils.user_loggedin);
-//			Utils.saveProfile(getApplicationContext(), profileData);
-//			Intent i = new Intent(this, MainActivity.class);
-//			startActivity(i);
-//			finish();
-//		} else {
-//			Intent i = new Intent(this, SigninActivity.class);
-//			startActivity(i);
-//			finish();
-//		}
-
-		// Code above should be correct but will not work until logging-in works, so temporarily go to MainActivity by default.
-		Intent i = new Intent(this, MainActivity.class);
-		startActivity(i);
-		finish();
+		for (WelcomeSelectable w : selectableIndicatorCategories) selectedIndicators.add(w.getId());
+		for (WelcomeSelectable w : selectableProductCategories) selectedProducts.add(w.getId());
+		
+		ServerConnection.requestUserAccess(this, id, selectedProducts.toArray(new String[]{}), selectedIndicators.toArray(new String[]{}), status -> {
+			UserData.setStatus(this, status);
+			startActivity(new Intent(this, StartActivity.class));
+			finish();
+		}, error -> {
+			Toast.makeText(this, R.string.general_error_try_again, Toast.LENGTH_SHORT).show();
+		});
+		
+		
 	}
 	
 	
 	/*
 	 * Adds bottom dots indicator
 	 * */
-	private void updateBottomDots(int currentPage) {
+	private void updatePage() {
+		
+		// Manage the bottom dots
 		dots = new TextView[sliderAdapter.getItemCount()];
 		
 		int colorActive = getResources().getColor(R.color.onbord_dot_active, null);
@@ -131,6 +136,21 @@ public class WelcomeActivity extends AppCompatActivity {
 		
 		if (dots.length > 0)
 			dots[currentPage].setTextColor(colorActive);
+		
+		if (id == null)
+			setIDValid(false);
+	}
+	
+	public void setIDValid(boolean valid) {
+		if (currentPage == sliderAdapter.getIDLockPosition()) {
+			binding.btnNext.setEnabled(valid);
+			binding.viewPager.setUserInputEnabled(valid);
+			if (valid) {
+				binding.btnNext.getBackground().setColorFilter(null);
+			} else {
+				binding.btnNext.getBackground().setColorFilter(Color.GRAY, PorterDuff.Mode.MULTIPLY);
+			}
+		}
 	}
 	
 	
@@ -151,19 +171,26 @@ public class WelcomeActivity extends AppCompatActivity {
 				case 0:
 					return new SimpleLayoutFragment(R.layout.onbording_one_layout);
 				case 1:
-					return new SelectIndicatorCategoriesFragment();
+					return new SignInFragment();
 				case 2:
-					return new SelectProductCategoriesFragment();
-				case 3:
 					return new SimpleLayoutFragment(R.layout.onbording_two_layout);
+				case 3:
+					return new SelectProductCategoriesFragment();
 				case 4:
+					return new SelectIndicatorCategoriesFragment();
+				case 5:
 					return new SimpleLayoutFragment(R.layout.onbording_three_layout);
 			}
 		}
 		
 		@Override
 		public int getItemCount() {
-			return 5;
+			return 6;
+		}
+		
+		// Return the position of the SignInFragment
+		public int getIDLockPosition() {
+			return 1;
 		}
 	}
 	
@@ -182,41 +209,5 @@ public class WelcomeActivity extends AppCompatActivity {
 			return inflater.inflate(layoutID, container, false);
 		}
 	}
-	
-	
-//	public class ViewsSliderAdapter extends RecyclerView.Adapter<ViewsSliderAdapter.SliderViewHolder> {
-//		
-//		public ViewsSliderAdapter() {
-//		}
-//		
-//		@NonNull
-//		@Override
-//		public ViewsSliderAdapter.SliderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//			View view = LayoutInflater.from(parent.getContext())
-//					.inflate(viewType, parent, false);
-//			return new SliderViewHolder(view);
-//		}
-//		
-//		public void onBindViewHolder(@NonNull SliderViewHolder holder, int position) {
-//			
-//		}
-//		
-//		@Override
-//		public int getItemViewType(int position) {
-//			return pages[position];
-//		}
-//		
-//		@Override
-//		public int getItemCount() {
-//			return pages.length;
-//		}
-//		
-//		public class SliderViewHolder extends RecyclerView.ViewHolder {
-//			
-//			public SliderViewHolder(View view) {
-//				super(view);
-//			}
-//		}
-//	}
 	
 }
