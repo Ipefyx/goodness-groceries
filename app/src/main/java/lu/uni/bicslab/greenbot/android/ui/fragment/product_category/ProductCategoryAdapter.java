@@ -1,14 +1,12 @@
 package lu.uni.bicslab.greenbot.android.ui.fragment.product_category;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
 
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,6 +17,7 @@ import java.util.List;
 import java.util.function.Consumer;
 
 import lu.uni.bicslab.greenbot.android.R;
+import lu.uni.bicslab.greenbot.android.datamodel.ProductCategoryModel;
 import lu.uni.bicslab.greenbot.android.other.Utils;
 import lu.uni.bicslab.greenbot.android.ui.fragment.indicator_category.ItemHolder;
 
@@ -86,7 +85,7 @@ public class ProductCategoryAdapter extends RecyclerView.Adapter<ItemHolder> imp
 		final ProductCategoryModel model = modelListFiltered.get(position);
 		holder.txtName.setText(model.getName());
 		holder.txtDoc.setText(model.getDescription());
-		holder.card_view.setOnClickListener(v -> clickCallback.accept(model.id));
+		holder.card_view.setOnClickListener(v -> clickCallback.accept(model.getId()));
 		
 //		holder.imageview_icon.setImageDrawable(Utils.getDrawableImage(context, model.getIcon_name()));
 		Glide.with(context).load(Utils.getDrawableImage(context, model.getIcon_name())).error(R.drawable.ic_menu_gallery).into(holder.imageview_icon);

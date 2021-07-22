@@ -98,7 +98,6 @@ public class WelcomeActivity extends AppCompatActivity {
 	
 	private void finishWelcome() {
 		
-		// TODO: Post user request to server and go back to StartActivity
 		List<String> selectedIndicators = new ArrayList<>();
 		List<String> selectedProducts = new ArrayList<>();
 		

@@ -1,12 +1,12 @@
-package lu.uni.bicslab.greenbot.android.ui.fragment.product_category;
+package lu.uni.bicslab.greenbot.android.datamodel;
 
 
 public class ProductCategoryModel {
 	
-	String id;
-	String name;
-	String icon_name;
-	String description;
+	private String id;
+	private String name;
+	private String icon_name;
+	private String description;
 	
 	
 	public ProductCategoryModel(String id, String name, String icon_name, String description) {

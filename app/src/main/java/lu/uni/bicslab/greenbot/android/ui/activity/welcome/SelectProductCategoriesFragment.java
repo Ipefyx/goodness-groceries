@@ -19,7 +19,7 @@ import java.util.List;
 
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.Utils;
-import lu.uni.bicslab.greenbot.android.ui.fragment.product_category.ProductCategoryModel;
+import lu.uni.bicslab.greenbot.android.datamodel.ProductCategoryModel;
 
 public class SelectProductCategoriesFragment extends Fragment {
 	

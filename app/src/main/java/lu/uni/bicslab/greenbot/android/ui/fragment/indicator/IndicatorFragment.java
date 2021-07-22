@@ -118,9 +118,6 @@ public class IndicatorFragment extends Fragment {
 		}
 		
 		return filteredProductList;
-
-//		Log.e("productfinallist", "" + productfinallist);
-//		return productfinallist;
 		
 	}
 }

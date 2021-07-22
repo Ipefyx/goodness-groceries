@@ -23,7 +23,7 @@ import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
 import lu.uni.bicslab.greenbot.android.other.Utils;
 import lu.uni.bicslab.greenbot.android.ui.fragment.compare.CompareActivity;
 import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
-import lu.uni.bicslab.greenbot.android.ui.fragment.product_category.ProductCategoryModel;
+import lu.uni.bicslab.greenbot.android.datamodel.ProductCategoryModel;
 
 public class ProductDetailsActivity extends AppCompatActivity {
 	
