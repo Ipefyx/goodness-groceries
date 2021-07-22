@@ -20,6 +20,9 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.android.volley.NoConnectionError;
+import com.android.volley.TimeoutError;
+
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -107,7 +110,11 @@ public class WelcomeActivity extends AppCompatActivity {
 			startActivity(new Intent(this, StartActivity.class));
 			finish();
 		}, error -> {
-			Toast.makeText(this, R.string.general_error_try_again, Toast.LENGTH_SHORT).show();
+			if (error instanceof TimeoutError || error instanceof NoConnectionError) {
+				Toast.makeText(this, R.string.network_error, Toast.LENGTH_SHORT).show();
+			} else {
+				Toast.makeText(this, R.string.general_error_try_again, Toast.LENGTH_SHORT).show();
+			}
 		});
 		
 		
