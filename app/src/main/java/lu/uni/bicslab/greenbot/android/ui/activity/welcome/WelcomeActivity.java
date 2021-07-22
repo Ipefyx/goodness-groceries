@@ -107,6 +107,7 @@ public class WelcomeActivity extends AppCompatActivity {
 		
 		ServerConnection.requestUserAccess(this, id, selectedProducts.toArray(new String[]{}), selectedIndicators.toArray(new String[]{}), status -> {
 			UserData.setStatus(this, status);
+			UserData.setID(this, id);
 			startActivity(new Intent(this, StartActivity.class));
 			finish();
 		}, error -> {
