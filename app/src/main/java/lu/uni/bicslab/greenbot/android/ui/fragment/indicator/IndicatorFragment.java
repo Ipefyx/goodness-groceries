@@ -54,6 +54,7 @@ public class IndicatorFragment extends Fragment {
 				Intent intent = new Intent(getActivity(), ProductDetailsActivity.class);
 				intent.putExtra("code", code);
 				intent.putExtra("filter_indicator_category", indicatorCategoryFilter);
+				intent.putExtra("slide_transition", true);
 				startActivity(intent);
 				getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 		});

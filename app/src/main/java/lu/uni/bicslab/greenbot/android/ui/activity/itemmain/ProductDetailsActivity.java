@@ -42,6 +42,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
 	
 	boolean indicatorsExpanded = false;
 	
+	boolean slideTransition = false;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -77,6 +79,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 		
 		productCode = getIntent().getExtras().getString("code");
 		indicatorCategoryFilter = getIntent().getExtras().getString("filter_indicator_category");
+		slideTransition = getIntent().getExtras().getBoolean("slide_transition", false);
 		
 		ProductModel product = Utils.getProductByCode(this, productCode);
 		
@@ -98,6 +101,13 @@ public class ProductDetailsActivity extends AppCompatActivity {
 	}
 	
 	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		if (slideTransition)
+			overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+	}
+	
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);
 		
@@ -112,6 +122,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
 		switch (item.getItemId()) {
 			case android.R.id.home:
 				finish();
+				if (slideTransition)
+					overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
 				return true;
 			case 0:
 				Intent mIntent = new Intent(getApplicationContext(), CompareActivity.class);
