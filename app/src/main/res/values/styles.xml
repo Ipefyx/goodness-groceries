@@ -57,15 +57,7 @@
         <item name="android:textSize">@dimen/product_title_size</item>
         <item name="android:textStyle">bold</item>
     </style>
-
-    <style name="bluebuton" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@color/white</item>
-        <item name="android:background">@drawable/btn_bg_blue</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:paddingLeft">@dimen/padding2</item>
-        <item name="android:paddingRight">@dimen/padding2</item>
-    </style>
-
+    
 
 
     <style name="BetterButton" parent="TextAppearance.AppCompat">

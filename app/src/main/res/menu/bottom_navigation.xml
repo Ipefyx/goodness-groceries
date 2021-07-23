@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
             android:id="@+id/homemain"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_baseline_home"
             android:title="@string/menu_home" />
     <item
-        android:id="@+id/scanner"
-        android:icon="@drawable/ic_menu_camera"
-        android:title="@string/scanner"/>
+            android:id="@+id/scanner"
+            android:icon="@drawable/ic_baseline_qr_code_scanner"
+            android:title="@string/menu_scan" />
 
     <item
-        android:id="@+id/profile"
-        android:icon="@drawable/ic_menu_camera"
-        android:title="@string/profile"/>
+            android:id="@+id/profile"
+            android:icon="@drawable/ic_baseline_account_circle"
+            android:title="@string/menu_profile" />
+    <item
+            android:title="@string/menu_help"
+            android:icon="@drawable/ic_baseline_info"
+            android:id="@+id/help" />
 
 </menu>

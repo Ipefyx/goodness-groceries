@@ -35,12 +35,13 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:background="@color/gray"
-                app:itemIconTint="@color/black"
-                app:itemTextColor="@color/black"
+                app:itemIconTint="@color/bottom_nav_selector"
                 app:menu="@menu/bottom_navigation"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:labelVisibilityMode="labeled"
+                app:itemTextColor="@color/bottom_nav_selector" />
 
         <include
                 layout="@layout/content_main"
