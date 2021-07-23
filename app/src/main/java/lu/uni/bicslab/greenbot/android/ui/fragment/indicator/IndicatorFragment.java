@@ -55,6 +55,7 @@ public class IndicatorFragment extends Fragment {
 				intent.putExtra("code", code);
 				intent.putExtra("filter_indicator_category", indicatorCategoryFilter);
 				startActivity(intent);
+				getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 		});
 		
 		itemAdapter.setMovieList(fillData());
