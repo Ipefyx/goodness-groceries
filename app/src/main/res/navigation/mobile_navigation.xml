@@ -19,12 +19,13 @@
                 app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
-        android:id="@+id/fragment_indicator"
-        android:name="lu.uni.bicslab.greenbot.android.ui.fragment.indicator.IndicatorFragment"
-        />
+            android:id="@+id/fragment_indicator"
+            android:name="lu.uni.bicslab.greenbot.android.ui.fragment.indicator.IndicatorFragment"
+            android:label="@string/menu_products" />
     <fragment
             android:id="@+id/productCategoryFragment"
-            android:name="lu.uni.bicslab.greenbot.android.ui.fragment.product_category.ProductCategoryFragment">
+            android:name="lu.uni.bicslab.greenbot.android.ui.fragment.product_category.ProductCategoryFragment"
+            android:label="@string/menu_product_categories">
         <action
                 android:id="@+id/goto_indicator"
                 app:destination="@id/fragment_indicator"

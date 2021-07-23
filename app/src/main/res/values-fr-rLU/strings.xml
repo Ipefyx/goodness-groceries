@@ -72,8 +72,6 @@ pour chaque produit.</string>
     <string name="login_failed">"Login failed"</string>
 
     <string name="title_activity_signin_select">SigninSelectActivity</string>
-    <string name="scanner">Scanner</string>
-    <string name="profile">Profile</string>
     <string name="loading">Loading..</string>
     <string name="nodata">No Data!</string>
     <string name="continueff">Continue</string>
@@ -307,6 +305,8 @@ pour chaque produit.</string>
     <string name="no_products_found">Désolé, aucun produit trouvé</string>
     <string name="general_error_try_again">Une erreur s\'est produite. Veuillez réessayer plus tard.</string>
     <string name="network_error">Veuillez vérifier votre connexion Internet et réessayer plus tard.</string>
+    <string name="menu_products">Produits</string>
+    <string name="menu_product_categories">Catégories</string>
 
 </resources>
 

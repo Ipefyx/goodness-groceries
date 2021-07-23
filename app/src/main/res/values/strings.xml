@@ -122,6 +122,9 @@ pour chaque produit.</string>
     <string name="menu_scan">Scan</string>
     <string name="menu_profile">Profile</string>
     <string name="menu_help">Help</string>
+
+    <string name="menu_product_categories">Categories</string>
+    <string name="menu_products">Products</string>
     
 
     
