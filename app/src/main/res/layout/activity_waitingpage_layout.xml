@@ -27,7 +27,7 @@
             android:layout_below="@+id/text_wait"
             android:layout_marginTop="@dimen/padding"
             android:text="Retry"
-            style="@style/bluebuton"
+            style="@style/BetterButton"
             android:visibility="gone"></Button>
 
 </RelativeLayout>

@@ -57,7 +57,7 @@
                 android:layout_below="@+id/onbord_doc"
                 android:layout_marginTop="50dp"
                 android:text="@string/next"
-                style="@style/bluebuton" />
+                style="@style/BetterButton" />
     </RelativeLayout>
 
 

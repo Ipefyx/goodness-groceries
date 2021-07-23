@@ -162,7 +162,7 @@
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
             android:text="Confirm"
-            style="@style/bluebuton"></Button>
+            style="@style/BetterButton"></Button>
     </RelativeLayout>
 
 </LinearLayout>
