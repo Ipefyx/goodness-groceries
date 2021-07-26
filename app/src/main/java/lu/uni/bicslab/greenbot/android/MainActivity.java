@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -20,12 +21,16 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import lu.uni.bicslab.greenbot.android.other.ServerConnection;
+import lu.uni.bicslab.greenbot.android.other.UserData;
 import lu.uni.bicslab.greenbot.android.ui.activity.scanitem.ScanSelectedItemActivity;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, NavigationView.OnNavigationItemSelectedListener {
 	
 	private AppBarConfiguration mAppBarConfiguration;
-	TextView gallery;
+	private BottomNavigationView navigation;
+	
+	private String[] productsToReview;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +44,30 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 		NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 		NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
 		
-		//getting bottom navigation view and attaching the listener
-		BottomNavigationView navigation = findViewById(R.id.bottomNavigation);
+		
+		navigation = findViewById(R.id.bottomNavigation);
 		navigation.setOnNavigationItemSelectedListener(this);
 		
 	}
 	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+		// Get list of bought products from the API and show the notification badge
+		ServerConnection.fetchProductsBought(this, UserData.getID(this), products -> {
+			productsToReview = products;
+			BadgeDrawable badge = navigation.getOrCreateBadge(R.id.profile);
+			
+			if (productsToReview.length > 0) {
+				badge.setVisible(true);
+				badge.setNumber(productsToReview.length);
+			} else {
+				badge.setVisible(false);
+			}
+		}, error -> Log.e("Err", error.toString()));
+		
+	}
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -74,7 +97,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 				return false;
 				
 			case R.id.profile:
-				Navigation.findNavController(this, R.id.nav_host_fragment).navigate(R.id.action_global_profileFragment);
+				Bundle bundle = new Bundle();
+				bundle.putStringArray("products_to_review", productsToReview);
+				Navigation.findNavController(this, R.id.nav_host_fragment).navigate(R.id.action_global_profileFragment, bundle);
 				return true;
 			
 			case R.id.help:
