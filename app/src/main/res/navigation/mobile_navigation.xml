@@ -36,7 +36,9 @@
     </fragment>
     <action
             android:id="@+id/action_global_nav_home"
-            app:destination="@id/nav_home" />
+            app:destination="@id/nav_home"
+            app:popUpTo="@id/profileFragment"
+            app:popUpToInclusive="true" />
     <fragment
             android:id="@+id/profileFragment"
             android:name="lu.uni.bicslab.greenbot.android.ui.fragment.profile.ProfileFragment"
