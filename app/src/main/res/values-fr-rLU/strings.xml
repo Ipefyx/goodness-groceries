@@ -307,6 +307,9 @@ pour chaque produit.</string>
     <string name="network_error">Veuillez vérifier votre connexion Internet et réessayer plus tard.</string>
     <string name="menu_products">Produits</string>
     <string name="menu_product_categories">Catégories</string>
+    <string name="client_id">ID client Pall Center</string>
+    <string name="products">Produits</string>
+    <string name="review_products">Avis sur produits</string>
 
 </resources>
 

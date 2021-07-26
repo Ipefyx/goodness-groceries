@@ -142,7 +142,13 @@ pour chaque produit.</string>
     <string name="show_more">Show more</string>
     
     <string name="similar_products">Similar products</string>
-
+    
+    
+    
+<!--    Profile page-->
+    <string name="client_id">Pall Center client ID</string>
+    <string name="products">Products</string>
+    <string name="review_products">Review products</string>
 
     
     

@@ -2,16 +2,21 @@ package lu.uni.bicslab.greenbot.android.ui.fragment.profile;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import lu.uni.bicslab.greenbot.android.R;
+import lu.uni.bicslab.greenbot.android.other.UserData;
+import lu.uni.bicslab.greenbot.android.ui.activity.feedback.FeedbackMainActivity;
 import lu.uni.bicslab.greenbot.android.ui.activity.fromprofile.ProductConsultActivity;
 import lu.uni.bicslab.greenbot.android.ui.activity.fromprofile.ProductsScannerActivity;
 import lu.uni.bicslab.greenbot.android.ui.activity.fromprofile.RecompensesActivity;
@@ -20,53 +25,19 @@ import lu.uni.bicslab.greenbot.android.ui.activity.fromprofile.TermesAndConditio
 
 public class ProfileFragment extends Fragment {
 	
-	RelativeLayout layout_produitsscanner, layout_produitsconsultes, layout_retourclient, layout_recompenses, layout_teams;
-	
+	private TextView profile_id;
+	private Button review_products;
 	
 	public View onCreateView(@NonNull LayoutInflater inflater,
 									 ViewGroup container, Bundle savedInstanceState) {
 		View root = inflater.inflate(R.layout.fragment_profile, container, false);
-		layout_produitsscanner = root.findViewById(R.id.layout_produitsscanner);
-		layout_produitsconsultes = root.findViewById(R.id.layout_produitsconsultes);
-		layout_retourclient = root.findViewById(R.id.layout_retourclient);
-		layout_recompenses = root.findViewById(R.id.layout_recompenses);
-		layout_teams = root.findViewById(R.id.layout_teams);
 		
-		layout_produitsscanner.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(getContext(), ProductsScannerActivity.class);
-				startActivity(intent);
-			}
-		});
-		layout_produitsconsultes.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(getContext(), ProductConsultActivity.class);
-				startActivity(intent);
-			}
-		});
+		profile_id = root.findViewById(R.id.profile_id);
+		review_products = root.findViewById(R.id.review_products);
 		
-		layout_retourclient.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(getContext(), RetourClientActivity.class);
-				startActivity(intent);
-			}
-		});
-		layout_recompenses.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(getContext(), RecompensesActivity.class);
-				startActivity(intent);
-			}
-		});
-		layout_teams.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(getContext(), TermesAndConditionActivity.class);
-				startActivity(intent);
-			}
+		profile_id.setText(UserData.getID(getContext()));
+		review_products.setOnClickListener(v -> {
+			startActivity(new Intent(getActivity(), FeedbackMainActivity.class));
 		});
 		
 		return root;

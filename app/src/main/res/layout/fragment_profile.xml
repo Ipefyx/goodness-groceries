@@ -1,197 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    android:orientation="vertical">
-    <RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:id="@+id/tileview"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:orientation="vertical">
-            <ImageView
-                android:layout_marginTop="45dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/profile_icon"/>
-            <TextView
-                android:id="@+id/txtName"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/padding">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/constraintLayout3">
+
+        <androidx.constraintlayout.widget.Guideline
+                android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Wiliam Snoe"
-                style="@style/textdatastyle"
-                android:textStyle="bold"/>
-        </LinearLayout>
-        <androidx.cardview.widget.CardView
+                android:id="@+id/guideline7"
+                app:layout_constraintGuide_percent="0.3" />
+
+        <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_baseline_account_circle"
+                android:id="@+id/profile_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                app:tint="#000000" />
+
+        <TextView
+                android:text="@string/client_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/profile_text"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/profile_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/padding"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="#000000"
+                android:layout_marginEnd="50dp"
+                android:textSize="30sp" />
+
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/profile_id"
+                android:layout_marginTop="@dimen/small_padding"
+                app:layout_constraintTop_toBottomOf="@+id/profile_text"
+                app:layout_constraintStart_toStartOf="@+id/profile_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="#000000"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="18sp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/tileview"
-            android:layout_marginTop="@dimen/padding">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                >
-                <TextView
-                    android:id="@+id/txtid"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0027908642"
-                    style="@style/textdatastyle"
-                    android:textStyle="bold"/>
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_height="wrap_content">
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+            android:layout_marginTop="@dimen/padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-                    <TextView
-                        android:id="@+id/txtscanner"
-                        android:layout_gravity="center_vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:text="@string/serialscanner"
-                        style="@style/textdatastyle"
-                        android:textStyle="bold"/>
-                    <TextView
-                        android:id="@+id/txtscanner_text"
-                        android:layout_gravity="center_vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/padding"
-                        android:gravity="center_vertical"
-                        android:text="Wiliam Snoe"
-                        android:layout_toRightOf="@+id/txtscanner"
-                        style="@style/textdatastyle"/>
-                </RelativeLayout>
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="@dimen/slide_title"
-        >
-        <RelativeLayout
-            android:id="@+id/layout_produitsscanner"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_marginTop="30dp"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/produitsscanner"
-                android:layout_gravity="center_vertical"
+        <TextView
+                android:text="@string/products"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/productscanner"
-                style="@style/Textprofile"/>
-            <ImageView
-                android:layout_width="@dimen/profilearrowsize"
-                android:layout_height="@dimen/profilearrowsize"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/arrow_right"/>
+                android:id="@+id/products"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        </RelativeLayout>
-        <RelativeLayout
-            android:id="@+id/layout_produitsconsultes"
-            android:layout_marginTop="25dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/produitsconsultes"
-                android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content"
+        <Button
+                android:text="@string/review_products"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/productconsult"
-                style="@style/Textprofile"/>
-            <ImageView
-                android:layout_width="@dimen/profilearrowsize"
-                android:layout_height="@dimen/profilearrowsize"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/arrow_right"/>
-        </RelativeLayout>
-        <RelativeLayout
-            android:id="@+id/layout_retourclient"
-            android:layout_marginTop="25dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                android:id="@+id/review_products"
+                app:layout_constraintTop_toBottomOf="@+id/products"
+                android:layout_marginTop="@dimen/small_padding"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="viewStart" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/retourclient"
-                android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/Textprofile"
-                android:text="@string/retourclient"/>
-            <ImageView
-                android:layout_width="@dimen/profilearrowsize"
-                android:layout_height="@dimen/profilearrowsize"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/arrow_right"/>
-        </RelativeLayout>
-        <RelativeLayout
-            android:id="@+id/layout_recompenses"
-            android:layout_marginTop="25dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_width="@dimen/profilearrowsize"
-                android:layout_height="@dimen/profilearrowsize"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/arrow_right"/>
-            <TextView
-                android:id="@+id/recompenses"
-                android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/Textprofile"
-                android:text="@string/recompenses"/>
-        </RelativeLayout>
-        <RelativeLayout
-            android:id="@+id/layout_teams"
-            android:layout_marginTop="25dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_width="@dimen/profilearrowsize"
-                android:layout_height="@dimen/profilearrowsize"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/arrow_right"/>
-            <TextView
-                android:id="@+id/teams"
-                android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/Textprofile"
-                android:text="@string/termes"/>
-        </RelativeLayout>
-    </LinearLayout>
-
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
