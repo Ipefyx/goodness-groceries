@@ -21,8 +21,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import lu.uni.bicslab.greenbot.android.ui.activity.scanitem.ScanSelectedItemActivity;
-import lu.uni.bicslab.greenbot.android.ui.fragment.home.HomeFragment;
-import lu.uni.bicslab.greenbot.android.ui.fragment.profile.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, NavigationView.OnNavigationItemSelectedListener {
 	
