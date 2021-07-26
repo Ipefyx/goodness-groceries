@@ -48,5 +48,14 @@
             app:destination="@id/profileFragment"
             app:popUpTo="@id/nav_home"
             app:popUpToInclusive="true" />
+    <fragment
+            android:id="@+id/helpFragment"
+            android:name="lu.uni.bicslab.greenbot.android.ui.fragment.help.HelpFragment"
+            android:label="@string/menu_help" />
+    <action
+            android:id="@+id/action_global_helpFragment"
+            app:destination="@id/helpFragment"
+            app:popUpTo="@id/nav_home"
+            app:popUpToInclusive="true" />
 
 </navigation>

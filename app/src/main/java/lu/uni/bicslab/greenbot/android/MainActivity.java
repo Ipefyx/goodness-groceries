@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 		setSupportActionBar(toolbar);
 		
 		
-		mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.profileFragment).build();
+		mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.profileFragment, R.id.helpFragment).build();
 		NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 		NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
 		
@@ -78,8 +78,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 				return true;
 			
 			case R.id.help:
-				Toast.makeText(this, "not yet implemented", Toast.LENGTH_SHORT).show();
-				return false;
+//				Toast.makeText(this, "not fully implemented yet", Toast.LENGTH_SHORT).show();
+				Navigation.findNavController(this, R.id.nav_host_fragment).navigate(R.id.action_global_helpFragment);
+				return true;
 		}
 		
 		return false;
