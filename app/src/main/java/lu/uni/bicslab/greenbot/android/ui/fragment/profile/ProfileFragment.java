@@ -20,14 +20,11 @@ import lu.uni.bicslab.greenbot.android.ui.activity.fromprofile.TermesAndConditio
 
 public class ProfileFragment extends Fragment {
 	
-	private ProfileViewModel homeViewModel;
 	RelativeLayout layout_produitsscanner, layout_produitsconsultes, layout_retourclient, layout_recompenses, layout_teams;
 	
 	
 	public View onCreateView(@NonNull LayoutInflater inflater,
 									 ViewGroup container, Bundle savedInstanceState) {
-		homeViewModel =
-				ViewModelProviders.of(this).get(ProfileViewModel.class);
 		View root = inflater.inflate(R.layout.fragment_profile, container, false);
 		layout_produitsscanner = root.findViewById(R.id.layout_produitsscanner);
 		layout_produitsconsultes = root.findViewById(R.id.layout_produitsconsultes);
