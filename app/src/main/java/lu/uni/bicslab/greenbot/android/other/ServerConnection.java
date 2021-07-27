@@ -105,7 +105,7 @@ public class ServerConnection {
 		JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, response -> {
 			String[] products = new String[response.length()];
 			for (int i = 0; i < response.length(); i++) {
-				products[i] = response.optString(i);
+				products[i] = response.optJSONObject(i).optString("product_ean"); // Only take the product ID, ignore timestamp
 			}
 			
 			callback.callback(products);

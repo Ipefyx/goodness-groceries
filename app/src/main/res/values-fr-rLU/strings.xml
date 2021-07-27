@@ -76,7 +76,6 @@ pour chaque produit.</string>
     <string name="nodata">No Data!</string>
     <string name="continueff">Continue</string>
     <string name="serialscanner"> Serial Scanner</string>
-    <string name="price">Price</string>
 
     <!-- profile -->
     <string name="productscanner"> Produits scannés</string>
@@ -98,7 +97,6 @@ pour chaque produit.</string>
     <string name= "Connaitre" > Connaître les lois qui régissent une filière.</string>
     <string name="Soutenir" >Soutenir les producteurs au juste prix.</string>
     <string name="review">Review</string>
-    <string name="Price">Price</string>
     <string name="accountconsideration">Your account is under consideration</string>
 
     <string name="local_organic">local_organic</string>
@@ -310,6 +308,9 @@ pour chaque produit.</string>
     <string name="client_id">ID client Pall Center</string>
     <string name="products">Produits</string>
     <string name="review_products">Avis sur produits</string>
+    <string name="feedback_page_text">Vous avez récemment acheté le produit suivant, quels indicateurs vous ont amené à le choisir?</string>
+    <string name="price">Prix</string>
+    <string name="other_reason">Autre raison…</string>
 
 </resources>
 

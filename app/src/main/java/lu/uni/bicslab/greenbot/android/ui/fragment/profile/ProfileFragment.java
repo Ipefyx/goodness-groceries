@@ -35,7 +35,9 @@ public class ProfileFragment extends Fragment {
 		profile_id.setText(UserData.getID(getContext()));
 		
 		review_products.setOnClickListener(v -> {
-			startActivity(new Intent(getActivity(), FeedbackMainActivity.class));
+				Intent i = new Intent(getActivity(), FeedbackMainActivity.class);
+				i.putExtra("product_id", productsToReview[0]);
+				startActivity(i);
 		});
 		
 		// TODO: Add badge with number of products to the review_products button

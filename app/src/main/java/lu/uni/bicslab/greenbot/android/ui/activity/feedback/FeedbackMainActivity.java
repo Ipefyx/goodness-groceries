@@ -1,307 +1,135 @@
 package lu.uni.bicslab.greenbot.android.ui.activity.feedback;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.widget.ViewPager2;
+import androidx.constraintlayout.helper.widget.Flow;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.android.volley.NoConnectionError;
+import com.android.volley.TimeoutError;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
 import lu.uni.bicslab.greenbot.android.R;
-import lu.uni.bicslab.greenbot.android.databinding.FeedbackMainBinding;
-import lu.uni.bicslab.greenbot.android.other.UpdateActionCompleteListener;
-import lu.uni.bicslab.greenbot.android.other.UpdateFeedbackListener;
-import lu.uni.bicslab.greenbot.android.other.Utils;
-import lu.uni.bicslab.greenbot.android.ui.activity.welcome.SignInFragment;
 import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
 import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
+import lu.uni.bicslab.greenbot.android.other.ServerConnection;
+import lu.uni.bicslab.greenbot.android.other.UserData;
+import lu.uni.bicslab.greenbot.android.other.Utils;
 
-//feedback view
-public class FeedbackMainActivity extends AppCompatActivity implements UpdateActionCompleteListener {
-	private FeedbackMainActivity.ViewsSliderAdapter mAdapter;
-	private TextView[] dots;
-	static ArrayList<Integer> layouts;
-	private FeedbackMainBinding binding;
-	List<ProductModel> mProductToReviewlist;
+public class FeedbackMainActivity extends AppCompatActivity {
 	
-	UpdateActionCompleteListener mUpdateActionCompleteListener;
+	private String productID;
+	private List<String> selectedIndicators = new ArrayList<>();
+	private List<CompoundButton> selectedCheckboxes = new ArrayList<>();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		binding = FeedbackMainBinding.inflate(getLayoutInflater());
-		setContentView(binding.getRoot());
-		mUpdateActionCompleteListener = this;
-		readData();
+		setContentView(R.layout.feedback_main);
 		
-	}
-	
-	private void init() {
-		// layouts of all welcome sliders
-		// add few more layouts if you want
 		getSupportActionBar().setTitle("Feedback");
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		getSupportActionBar().setDisplayShowHomeEnabled(true);
+//		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//		getSupportActionBar().setDisplayShowHomeEnabled(true);
 		
-		setmAdapterViewpager();
-	}
-	
-	public void setmAdapterViewpager() {
-		if (mProductToReviewlist.size() == 0) {
-			finish();
-		} else {
-			layouts = new ArrayList<Integer>();
-			for (int i = 0; i < mProductToReviewlist.size(); i++) {
-				layouts.add(R.layout.feedback_row_layout);
-			}
+		productID = getIntent().getStringExtra("product_id");
+		
+		TextView txtName = findViewById(R.id.txtName);
+		ConstraintLayout indicator_layout = findViewById(R.id.indicator_layout);
+		Flow indicator_flow = findViewById(R.id.indicator_flow);
+		ImageView imageview_icon = findViewById(R.id.imageview_icon);
+		ImageView imageview_origin = findViewById(R.id.imageview_origin);
+		
+		LinearLayout indicators = findViewById(R.id.indicators);
+		CheckBox price_checkbox = findViewById(R.id.price_checkbox);
+		CheckBox other_reason_checkbox = findViewById(R.id.other_reason_checkbox);
+		EditText other_reason_text = findViewById(R.id.other_reason_text);
+		
+		Button btn_next = findViewById(R.id.btn_next);
+		
+		
+		
+		other_reason_checkbox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+			other_reason_text.setEnabled(isChecked);
+		});
+		
+		
+		// Fill in the product info, below code taken partially from IndicatorAdapter
+		ProductModel product = Utils.getProductByCode(this, productID);
+		txtName.setText(product.getName());
+		
+		// Assume Flow is element 0 and remove all of the ImageViews that may already be there
+		indicator_layout.removeViewsInLayout(1, indicator_layout.getChildCount()-1);
+		
+		for (IndicatorModel ind : product.indicators) {
+			if (!ind.isApplicable() || ind.sub_indicators.size() == 0)
+				continue;
 			
-			mAdapter = new FeedbackMainActivity.ViewsSliderAdapter(FeedbackMainActivity.this, mProductToReviewlist, mUpdateActionCompleteListener);
-			binding.viewPager.setAdapter(mAdapter);
-			binding.viewPager.registerOnPageChangeCallback(pageChangeCallback);
+			// Inflate the indicator icons on the product
+			ImageView imageview = (ImageView) LayoutInflater.from(this).inflate(R.layout.indicator_item_layout_indicator_imageview, indicator_layout, false);
+			Glide.with(this).load(Utils.getDrawableImage(this, ind.getIcon_name())).into(imageview);
+			imageview.setId(View.generateViewId());
+			indicator_layout.addView(imageview);
+			indicator_flow.addView(imageview);
 			
-			binding.btnNext.setVisibility(View.GONE);
-			binding.btnSkip.setVisibility(View.GONE);
-			binding.viewPager.setUserInputEnabled(false);
+			// Inflate the indicator checkboxes in the LinearLayout
+			View indicatorRow = LayoutInflater.from(this).inflate(R.layout.feedback_indicator_row, indicators, false);
+			Glide.with(this).load(Utils.getDrawableImage(this, ind.getIcon_name())).into((ImageView) indicatorRow.findViewById(R.id.imageview_indicator));
 			
-			// adding bottom dots
-			addBottomDots(0);
-		}
-	}
-	
-	private int getItem(int i) {
-		return binding.viewPager.getCurrentItem() + i;
-	}
-	
-	private void launchHomeScreen() {
-		//Toast.makeText(this, "slides_ended", Toast.LENGTH_LONG).show();
-		finish();
-		Intent i = new Intent(this, SignInFragment.class);
-		startActivity(i);
-	}
-	
-	/*
-	 * ViewPager page change listener
-	 */
-	ViewPager2.OnPageChangeCallback pageChangeCallback = new ViewPager2.OnPageChangeCallback() {
-		@Override
-		public void onPageSelected(int position) {
-			super.onPageSelected(position);
-			addBottomDots(position);
-			
-			// changing the next button text 'NEXT' / 'GOT IT'
-			if (position == 0) {
-				// last page. make button text to GOT IT
-				binding.btnNext.setText("start");
-				binding.btnSkip.setVisibility(View.GONE);
-			} else {
-				// still pages are left
-				binding.btnNext.setText("next");
-				binding.btnSkip.setVisibility(View.VISIBLE);
-			}
-		}
-	};
-	
-	/*
-	 * Adds bottom dots indicator
-	 * */
-	private void addBottomDots(int currentPage) {
-		dots = new TextView[layouts.size()];
-		
-		int[] colorsActive = getResources().getIntArray(R.array.array_dot_active);
-		int[] colorsInactive = getResources().getIntArray(R.array.array_dot_inactive);
-		
-		binding.layoutDots.removeAllViews();
-		for (int i = 0; i < dots.length; i++) {
-			dots[i] = new TextView(this);
-			dots[i].setText(Html.fromHtml("&#8226;"));
-			dots[i].setTextSize(35);
-			dots[i].setTextColor(colorsInactive[currentPage]);
-			binding.layoutDots.addView(dots[i]);
-		}
-		
-		if (dots.length > 0)
-			dots[currentPage].setTextColor(colorsActive[currentPage]);
-	}
-	
-	@Override
-	public void updateAction(boolean isUpdated) {
-		setmAdapterViewpager();
-	}
-	
-	
-	public static class ViewsSliderAdapter extends RecyclerView.Adapter<FeedbackMainActivity.ViewsSliderAdapter.SliderViewHolder> implements UpdateFeedbackListener {
-		Context mcontext;
-		UpdateActionCompleteListener mUpdateActionCompleteListener;
-		List<ProductModel> mProductToReviewlist;
-		CustomindicatorAdapter adapter;
-		UpdateFeedbackListener mUpdateFeedbackListener;
-		int currentViewpagerPos;
-		
-		public ViewsSliderAdapter(Context mcontext, List<ProductModel> mProductToReviewlist, UpdateActionCompleteListener mUpdateActionCompleteListener) {
-			this.mcontext = mcontext;
-			this.mUpdateActionCompleteListener = mUpdateActionCompleteListener;
-			this.mProductToReviewlist = mProductToReviewlist;
-			mUpdateFeedbackListener = this;
-		}
-		
-		@Override
-		public void updateFeedbackAction(boolean isUpdated, List<IndicatorModel> mIndicatorModel, int pos, int itemposchnged) {
-			mProductToReviewlist.get(pos);
-			mProductToReviewlist.get(pos).indicators = mIndicatorModel;
-			adapter.notifyDataSetChanged();
-		}
-		
-		@NonNull
-		@Override
-		public FeedbackMainActivity.ViewsSliderAdapter.SliderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-			View view = LayoutInflater.from(parent.getContext())
-					.inflate(viewType, parent, false);
-			return new FeedbackMainActivity.ViewsSliderAdapter.SliderViewHolder(view);
-		}
-		
-		public void onBindViewHolder(@NonNull FeedbackMainActivity.ViewsSliderAdapter.SliderViewHolder holder, int position) {
-			currentViewpagerPos = position;
-			ProductModel model = mProductToReviewlist.get(position);
-			//holder.slide_one_title.setText(model.getCategory());
-			//holder.slide_one_title.setVisibility(View.INVISIBLE);
-			holder.slide_one_doc.setText(model.getDescription());
-			holder.txtName.setText(model.getName());
-			Glide.with(mcontext).load(model.getImage_url()).apply(RequestOptions.centerCropTransform()).into(holder.img_icon);
-			
-			GridLayoutManager gridLayoutManager;
-			gridLayoutManager = new GridLayoutManager(mcontext, 2);
-			holder.my_recycler_view.setLayoutManager(gridLayoutManager);
-			holder.my_recycler_view.setItemAnimator(new DefaultItemAnimator());
-			List<IndicatorModel> indicatorslist = model.indicators;
-			// List<IndicatorModel> indi =  mProductToReviewlist.get(currentViewpagerPos).getIndicators();
-//			IndicatorModel modeltoadd = new IndicatorModel("indicator_price", "Price", "Price",
-//					"indicator_price", "category_id", "id",
-//					"general_description", 0, false);
-//			mProductToReviewlist.get(currentViewpagerPos).indicators.add(modeltoadd);
-//			IndicatorModel modeltoaddedittext = new IndicatorModel("indicator_review", "Review", "Review",
-//					"indicator_Review", "category_id", "id",
-//					"general_description", 0, false);
-//			mProductToReviewlist.get(currentViewpagerPos).indicators.add(modeltoaddedittext);
-			
-			
-			//UpdateFeedbackListener mUpdateFeedbackListener;
-			adapter = new CustomindicatorAdapter(mcontext, mProductToReviewlist, currentViewpagerPos, mUpdateFeedbackListener);
-			holder.my_recycler_view.setAdapter(adapter);
-			holder.btn_start.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					mProductToReviewlist.remove(currentViewpagerPos);
-					if (mProductToReviewlist.size() > 0) {
-						for (ProductModel model : mProductToReviewlist) {
-							for (IndicatorModel indicator : model.indicators) {
-								indicator.setSelectionnumber(0);
-							}
-						}
+			CheckBox indicator_checkbox = indicatorRow.findViewById(R.id.indicator_checkbox);
+			indicator_checkbox.setText(ind.getName());
+			indicator_checkbox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+				// ! Is also called when programmatically calling setChecked()
+				
+				if (isChecked) {
+					selectedIndicators.add(ind.getId());
+					selectedCheckboxes.add(buttonView);
+					
+					if (selectedIndicators.size() > 2) {
+						selectedCheckboxes.get(0).setChecked(false);
 					}
-					mUpdateActionCompleteListener.updateAction(true);
+				} else {
+					selectedIndicators.remove(ind.getId());
+					selectedCheckboxes.remove(buttonView);
 				}
+				
+				Log.i("IND", ""+selectedIndicators.size());
+				Log.i("CHECK", ""+selectedCheckboxes.size());
 			});
-		}
-		
-		@Override
-		public int getItemViewType(int position) {
-			return layouts.get(position);
-		}
-		
-		@Override
-		public int getItemCount() {
-			return layouts.size();
-		}
-		
-		public class SliderViewHolder extends RecyclerView.ViewHolder {
-			public TextView slide_one_title, slide_one_doc, txtName;
-			ImageView img_icon;
-			RecyclerView my_recycler_view;
-			Button btn_start;
 			
-			public SliderViewHolder(View view) {
-				super(view);
-				
-				slide_one_title = view.findViewById(R.id.slide_one_title);
-				slide_one_doc = view.findViewById(R.id.slide_one_doc);
-				txtName = view.findViewById(R.id.txtName);
-				img_icon = view.findViewById(R.id.img_icon);
-				my_recycler_view = view.findViewById(R.id.my_recycler_view);
-				btn_start = view.findViewById(R.id.btn_start);
-			}
-		}
-	}
-	
-	private void readData() {
-		// TODO: Refactor this using Utils functions
-		
-		String jsonFileString = lu.uni.bicslab.greenbot.android.other.Utils.getJsonFromAssets(getApplicationContext(), "products_to_review.json");
-		Gson gson = new Gson();
-		Type listUserType = new TypeToken<List<ProductToReview>>() {
-		}.getType();
-		List<ProductToReview> mProductToReview = gson.fromJson(jsonFileString, listUserType);
-		String jsonFileStringProduct = lu.uni.bicslab.greenbot.android.other.Utils.getJsonFromAssets(getApplicationContext(), "products.json");
-		Type listUserTypeProduct = new TypeToken<List<ProductModel>>() {
-		}.getType();
-		String jsonFileStringIndicator = Utils.getJsonFromAssets(getApplicationContext(), "indicators.json");
-		Type listUserTypeIndicator = new TypeToken<List<IndicatorModel>>() {
-		}.getType();
-		
-		List<ProductModel> productList = gson.fromJson(jsonFileStringProduct, listUserTypeProduct);
-		List<IndicatorModel> indicatorCategoryList = gson.fromJson(jsonFileStringIndicator, listUserTypeIndicator);
-		
-		List<IndicatorModel> indicatorlist = new ArrayList<IndicatorModel>();
-		for (IndicatorModel c : indicatorCategoryList) {
-			if (indicatorlist.equals(c.getCategory_id())) {
-				indicatorlist.add(c);
-			}
-		}
-		mProductToReviewlist = new ArrayList<ProductModel>();
-		
-		for (ProductToReview review : mProductToReview) {
-			for (ProductModel model : productList) {
-				if (review.getProduct_ean().equals(model.getCode())) {
-					mProductToReviewlist.add(model);
-					break;
-				}
-			}
-		}
-		int i = 0;
-		for (ProductModel c : mProductToReviewlist) {
-			List<IndicatorModel> mIndicatorModel = new ArrayList<IndicatorModel>();
-			for (IndicatorModel indicaor : c.indicators) {
-				for (IndicatorModel indicaormain : indicatorCategoryList) {
-//					if (indicaor.getIndicator_idForProduct().equals(indicaormain.getId())) {
-//						mIndicatorModel.add(indicaormain);
-//					}
-				}
-				
-			}
-			mProductToReviewlist.get(i).indicators = mIndicatorModel;
-			i++;
+			indicators.addView(indicatorRow);
 		}
 		
-		init();
+		Glide.with(this).load(Utils.getDrawableImage(this, product.getImage_url())).error(R.drawable.ic_menu_gallery).into(imageview_icon);
+		Glide.with(this).load(Utils.getDrawableImage(this, product.getCategory())).error(R.drawable.ic_menu_gallery).into(imageview_origin);
 		
+		btn_next.setOnClickListener(v -> {
+			ServerConnection.sendProductFeedback(this, UserData.getID(this), productID,
+					selectedIndicators.size() > 0 ? selectedIndicators.get(0) : null,
+					selectedIndicators.size() > 1 ? selectedIndicators.get(1) : null,
+					other_reason_text.getText().toString(), price_checkbox.isChecked(), object -> {
+						finish();
+					}, error -> {
+						if (error instanceof TimeoutError || error instanceof NoConnectionError) {
+							Toast.makeText(this, R.string.network_error, Toast.LENGTH_SHORT).show();
+						} else {
+							Toast.makeText(this, R.string.general_error_try_again, Toast.LENGTH_SHORT).show();
+						}
+					});
+		});
 	}
 }

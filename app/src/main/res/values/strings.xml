@@ -71,7 +71,6 @@ pour chaque produit.</string>
     <string name="nodata">No Data!</string>
     <string name="continueff">Continue</string>
     <string name="serialscanner"> Serial Scanner</string>
-    <string name="price">Price</string>
 
     <!-- profile -->
     <string name="productscanner"> Produits scannés</string>
@@ -93,7 +92,6 @@ pour chaque produit.</string>
     producteurs au
         juste prix.</string>
 <string name="review">Review</string>
-<string name="Price">Price</string>
     <string name="accountconsideration">Your account is under consideration</string>
     <string name="local_organic">local_organic</string>
     <string name="local_conventional">local_conventional</string>
@@ -126,6 +124,12 @@ pour chaque produit.</string>
     <string name="menu_product_categories">Categories</string>
     <string name="menu_products">Products</string>
     
+    
+    
+<!--    Feedback screen-->
+    <string name="feedback_page_text">You recently bought the following product, which indicators led you to choose it?</string>
+    <string name="price">Price</string>
+    <string name="other_reason">Other reason…</string>
 
     
     <!--    Product details screen-->
