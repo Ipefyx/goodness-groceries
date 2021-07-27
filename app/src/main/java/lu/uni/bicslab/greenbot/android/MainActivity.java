@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 			} else {
 				badge.setVisible(false);
 			}
-		}, error -> Log.e("Err", error.toString()));
+		}, error -> {});
 		
 	}
 	
