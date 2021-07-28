@@ -66,6 +66,7 @@
     <!--    Product details screen-->
     <string name="compare_button">Compare</string>
     <string name="product">Product</string>
+    <string name="product_not_found">Product not found</string>
 
     <string name="type">Type</string>
     <string name="category">Category</string>

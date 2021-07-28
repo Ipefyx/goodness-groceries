@@ -84,7 +84,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 		ProductModel product = Utils.getProductByCode(this, productCode);
 		
 		if (productCode == null || product == null) {
-			Toast toast = Toast.makeText(getApplicationContext(), R.string.general_error, Toast.LENGTH_SHORT);
+			Toast toast = Toast.makeText(getApplicationContext(), product == null ? R.string.product_not_found : R.string.general_error, Toast.LENGTH_SHORT);
 			toast.show();
 			finish();
 			return;

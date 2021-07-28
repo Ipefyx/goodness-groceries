@@ -23,6 +23,8 @@ import androidx.appcompat.widget.Toolbar;
 
 import lu.uni.bicslab.greenbot.android.other.ServerConnection;
 import lu.uni.bicslab.greenbot.android.other.UserData;
+import lu.uni.bicslab.greenbot.android.ui.activity.itemmain.ProductDetailsActivity;
+import lu.uni.bicslab.greenbot.android.ui.activity.scan.SigninSelectActivity;
 import lu.uni.bicslab.greenbot.android.ui.activity.scanitem.ScanSelectedItemActivity;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, NavigationView.OnNavigationItemSelectedListener {
@@ -31,6 +33,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 	private BottomNavigationView navigation;
 	
 	private String[] productsToReview;
+	
+	public static final int BARCODE_CAPTURE = 1;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -92,8 +96,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 				return true;
 				
 			case R.id.scanner:
-				Intent i = new Intent(this, ScanSelectedItemActivity.class);
-				startActivity(i);
+				Intent i = new Intent(this, SigninSelectActivity.class);
+				startActivityForResult(i, BARCODE_CAPTURE);
 				return false;
 				
 			case R.id.profile:
@@ -109,5 +113,24 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 		}
 		
 		return false;
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		
+		if (requestCode == BARCODE_CAPTURE) {
+			if (data != null) {
+				String barcode = data.getStringExtra("barcode");
+				Log.e("TAG", "Barcode read:final " + barcode);
+				
+				Intent intent = new Intent(this, ProductDetailsActivity.class);
+				intent.putExtra("code", barcode);
+				startActivity(intent);
+			} else {
+				Log.e("TAG", "No barcode captured, intent data is null");
+			}
+			
+		}
 	}
 }
