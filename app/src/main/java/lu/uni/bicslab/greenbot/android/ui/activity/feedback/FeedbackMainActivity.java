@@ -30,6 +30,7 @@ import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
 import lu.uni.bicslab.greenbot.android.other.ServerConnection;
 import lu.uni.bicslab.greenbot.android.other.UserData;
 import lu.uni.bicslab.greenbot.android.other.Utils;
+import lu.uni.bicslab.greenbot.android.ui.fragment.profile.ProfileFragment;
 
 public class FeedbackMainActivity extends AppCompatActivity {
 	
@@ -122,6 +123,7 @@ public class FeedbackMainActivity extends AppCompatActivity {
 					selectedIndicators.size() > 0 ? selectedIndicators.get(0) : null,
 					selectedIndicators.size() > 1 ? selectedIndicators.get(1) : null,
 					other_reason_text.getText().toString(), price_checkbox.isChecked(), object -> {
+						setResult(ProfileFragment.FEEDBACK_RESULT_OK);
 						finish();
 					}, error -> {
 						if (error instanceof TimeoutError || error instanceof NoConnectionError) {
