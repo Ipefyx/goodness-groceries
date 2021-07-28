@@ -35,8 +35,20 @@ import lu.uni.bicslab.greenbot.android.ui.fragment.profile.ProfileFragment;
 public class FeedbackMainActivity extends AppCompatActivity {
 	
 	private String productID;
-	private List<String> selectedIndicators = new ArrayList<>();
-	private List<CompoundButton> selectedCheckboxes = new ArrayList<>();
+	private List<SelectableFeedback> selectedCheckboxes = new ArrayList<>();
+	
+	public CheckBox price_checkbox;
+	public CheckBox other_reason_checkbox;
+	
+	private class SelectableFeedback {
+		public CompoundButton checkbox;
+		public String indicator;
+		
+		public SelectableFeedback(CompoundButton checkbox, String indicator) {
+			this.checkbox = checkbox;
+			this.indicator = indicator;
+		}
+	}
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -56,16 +68,21 @@ public class FeedbackMainActivity extends AppCompatActivity {
 		ImageView imageview_origin = findViewById(R.id.imageview_origin);
 		
 		LinearLayout indicators = findViewById(R.id.indicators);
-		CheckBox price_checkbox = findViewById(R.id.price_checkbox);
-		CheckBox other_reason_checkbox = findViewById(R.id.other_reason_checkbox);
+		price_checkbox = findViewById(R.id.price_checkbox);
+		other_reason_checkbox = findViewById(R.id.other_reason_checkbox);
 		EditText other_reason_text = findViewById(R.id.other_reason_text);
 		
 		Button btn_next = findViewById(R.id.btn_next);
 		
+		SelectableFeedback s1 = new SelectableFeedback(price_checkbox, null);
+		price_checkbox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+			onCheckedChange(s1, isChecked);
+		});
 		
-		
+		SelectableFeedback s2 = new SelectableFeedback(other_reason_checkbox, null);
 		other_reason_checkbox.setOnCheckedChangeListener((buttonView, isChecked) -> {
 			other_reason_text.setEnabled(isChecked);
+			onCheckedChange(s2, isChecked);
 		});
 		
 		
@@ -93,23 +110,11 @@ public class FeedbackMainActivity extends AppCompatActivity {
 			
 			CheckBox indicator_checkbox = indicatorRow.findViewById(R.id.indicator_checkbox);
 			indicator_checkbox.setText(ind.getName());
+			
+			SelectableFeedback selectable = new SelectableFeedback(indicator_checkbox, ind.getId());
 			indicator_checkbox.setOnCheckedChangeListener((buttonView, isChecked) -> {
 				// ! Is also called when programmatically calling setChecked()
-				
-				if (isChecked) {
-					selectedIndicators.add(ind.getId());
-					selectedCheckboxes.add(buttonView);
-					
-					if (selectedIndicators.size() > 2) {
-						selectedCheckboxes.get(0).setChecked(false);
-					}
-				} else {
-					selectedIndicators.remove(ind.getId());
-					selectedCheckboxes.remove(buttonView);
-				}
-				
-				Log.i("IND", ""+selectedIndicators.size());
-				Log.i("CHECK", ""+selectedCheckboxes.size());
+				onCheckedChange(selectable, isChecked);
 			});
 			
 			indicators.addView(indicatorRow);
@@ -120,8 +125,8 @@ public class FeedbackMainActivity extends AppCompatActivity {
 		
 		btn_next.setOnClickListener(v -> {
 			ServerConnection.sendProductFeedback(this, UserData.getID(this), productID,
-					selectedIndicators.size() > 0 ? selectedIndicators.get(0) : null,
-					selectedIndicators.size() > 1 ? selectedIndicators.get(1) : null,
+					selectedCheckboxes.size() > 0 ? selectedCheckboxes.get(0).indicator : null,
+					selectedCheckboxes.size() > 1 ? selectedCheckboxes.get(1).indicator : null,
 					other_reason_text.getText().toString(), price_checkbox.isChecked(), object -> {
 						setResult(ProfileFragment.FEEDBACK_RESULT_OK);
 						finish();
@@ -133,5 +138,19 @@ public class FeedbackMainActivity extends AppCompatActivity {
 						}
 					});
 		});
+	}
+	
+	private void onCheckedChange(SelectableFeedback selectable, boolean isChecked) {
+		if (isChecked) {
+			selectedCheckboxes.add(selectable);
+			
+			if (selectedCheckboxes.size() > 2) {
+				selectedCheckboxes.get(0).checkbox.setChecked(false);
+			}
+		} else {
+			selectedCheckboxes.remove(selectable);
+		}
+		
+		Log.i("CHECK", ""+selectedCheckboxes.size());
 	}
 }

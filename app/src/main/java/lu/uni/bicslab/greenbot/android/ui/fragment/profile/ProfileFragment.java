@@ -118,8 +118,7 @@ public class ProfileFragment extends Fragment {
 		
 		badge.setVerticalOffset(review_products_button.getHeight() / 2);
 		badge.setHorizontalOffset(review_products_button.getHeight() / 2);
-
-//		review_products.setCompoundDrawablesWithIntrinsicBounds(null, null, badge, null);
+		
 		BadgeUtils.attachBadgeDrawable(badge, review_products_button, review_products_button.findViewById(R.id.frame_layout));
 	}
 }
