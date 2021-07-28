@@ -1,5 +1,6 @@
 package lu.uni.bicslab.greenbot.android.ui.fragment.profile;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.badge.BadgeDrawable;
+import com.google.android.material.badge.BadgeUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,7 +28,7 @@ import lu.uni.bicslab.greenbot.android.ui.activity.feedback.FeedbackMainActivity
 
 public class ProfileFragment extends Fragment {
 	
-	private Button review_products;
+	private Button review_products_button;
 	private BadgeDrawable badge;
 	
 	private List<String> productsToReview;
@@ -38,7 +40,7 @@ public class ProfileFragment extends Fragment {
 		View root = inflater.inflate(R.layout.fragment_profile, container, false);
 		
 		TextView profile_id = root.findViewById(R.id.profile_id);
-		review_products = root.findViewById(R.id.review_products);
+		review_products_button = root.findViewById(R.id.review_products_button);
 		
 		String[] arg = getArguments().getStringArray("products_to_review");
 		if (arg == null)
@@ -47,7 +49,7 @@ public class ProfileFragment extends Fragment {
 		
 		profile_id.setText(UserData.getID(getContext()));
 		
-		review_products.setOnClickListener(v -> {
+		review_products_button.setOnClickListener(v -> {
 			reviewNextProduct();
 		});
 		
@@ -106,13 +108,18 @@ public class ProfileFragment extends Fragment {
 		
 	}
 	
+	@SuppressLint("RestrictedApi")
 	public void updateElements() {
-		review_products.setEnabled(productsToReview.size() > 0);
+		review_products_button.setEnabled(productsToReview.size() > 0);
 		
 		// TODO: Add badge with number of products to the review_products button
-//		badge.setVisible(productsToReview.size() > 0);
-//		badge.setNumber(productsToReview.size());
-//		
-//		review_products.setCompoundDrawables(null, null, badge, null);
+		badge.setVisible(productsToReview.size() > 0);
+		badge.setNumber(productsToReview.size());
+		
+		badge.setVerticalOffset(review_products_button.getHeight() / 2);
+		badge.setHorizontalOffset(review_products_button.getHeight() / 2);
+
+//		review_products.setCompoundDrawablesWithIntrinsicBounds(null, null, badge, null);
+		BadgeUtils.attachBadgeDrawable(badge, review_products_button, review_products_button.findViewById(R.id.frame_layout));
 	}
 }

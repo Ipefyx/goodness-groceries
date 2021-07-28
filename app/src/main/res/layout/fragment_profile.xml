@@ -80,16 +80,25 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-                android:text="@string/review_products"
+        <FrameLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/review_products"
                 app:layout_constraintTop_toBottomOf="@+id/products"
                 android:layout_marginTop="@dimen/small_padding"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:textAlignment="viewStart" />
+                android:id="@+id/frame_layout">
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/review_products"
+                    android:id="@+id/review_products_button"
+                    android:textAlignment="viewStart" />
+        </FrameLayout>
+
+        
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
