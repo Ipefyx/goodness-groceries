@@ -135,7 +135,7 @@ public class SigninSelectActivity extends AppCompatActivity implements BarcodeGr
 		};
 		
 		findViewById(R.id.topLayout).setOnClickListener(listener);
-		Snackbar.make(mGraphicOverlay, R.string.permission_camera_rationale,
+		Snackbar.make(mGraphicOverlay, R.string.permissions_modal_camera_description,
 				Snackbar.LENGTH_INDEFINITE)
 				.setAction(R.string.ok, listener)
 				.show();
@@ -189,8 +189,8 @@ public class SigninSelectActivity extends AppCompatActivity implements BarcodeGr
 			boolean hasLowStorage = registerReceiver(null, lowstorageFilter) != null;
 			
 			if (hasLowStorage) {
-				Toast.makeText(this, R.string.low_storage_error, Toast.LENGTH_LONG).show();
-				Log.w(TAG, getString(R.string.low_storage_error));
+				Toast.makeText(this, R.string.scan_low_storage_error, Toast.LENGTH_LONG).show();
+				Log.w(TAG, getString(R.string.scan_low_storage_error));
 			}
 		}
 		
@@ -296,7 +296,7 @@ public class SigninSelectActivity extends AppCompatActivity implements BarcodeGr
 		
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setTitle("Multitracker sample")
-				.setMessage(R.string.no_camera_permission)
+				.setMessage(R.string.camera_not_allowed)
 				.setPositiveButton(R.string.ok, listener)
 				.show();
 	}

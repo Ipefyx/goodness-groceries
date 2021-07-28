@@ -28,7 +28,7 @@
             android:id="@+id/slide_three_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/onbording_three_title"
+            android:text="@string/welcome_page_notifications_title"
             android:textColor="@android:color/black"
             android:layout_gravity="center_horizontal"
             android:layout_centerHorizontal="true"
@@ -44,7 +44,7 @@
             android:layout_centerHorizontal="true"
             android:gravity="center_horizontal"
             android:layout_marginTop="@dimen/padding2"
-            android:text="@string/onbording_three_doc"
+            android:text="@string/welcome_page_notifications_text"
             android:textAlignment="center"
             style="@style/textdatastyle"
             android:layout_below="@+id/slide_three_title"/>

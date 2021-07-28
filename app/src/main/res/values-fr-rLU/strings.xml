@@ -1,88 +1,21 @@
 <resources>
     <string name="app_name">GreenBot</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
 
     <string name="menu_home">Accueil2</string>
     <string name="menu_scan">Scanner</string>
     <string name="menu_profile">Profil</string>
     <string name="menu_help">Aide</string>
 
-    <string name="home_second">Home Second</string>
-
-
-    <string name="title_activity_onbording">OnbordingActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
-
-    <string name="title_activity_signin">SigninActivity</string>
 
 
     <string name="ok">OK</string>
-    <string name="permission_camera_rationale">Access to the camera is needed for detection</string>
-    <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
-    <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
-    <string name="barcode_header">Click &quot;Read Barcode&quot; to read a barcode</string>
-    <string name="read_barcode">Read Barcode</string>
-    <string name="auto_focus">Auto Focus</string>
-    <string name="use_flash">Use Flash</string>
-    <string name="barcode_success">Barcode read successfully</string>
-    <string name="barcode_failure">No barcode captured</string>
-    <string name="barcode_error">"Error reading barcode: %1$s"</string>
-<!--onbording-->
-    <string name="onbording_one_title">Quel consommateur \n êtes-vous?</string>
-    <string name="onbording_one_doc">Dites-nous ce qui compte pour vous afin de
-personnaliser votre expérience.</string>
-    <string name="onbording_title">  Bienvenue dans GreenBot!</string>
-    <string name="onbording_doc"> Nous voulons être transparents et vous permettre
-d’acheter les produits qui vous correspondent.
-C’est pourquoi nous avons développé l’application
-GreenBot. Celle-ci vous permettra de consulter
-une multitude de données spécifiques à un produit
-et de le comparer à d’autres avant d’effectuer
-vos achats..</string>
-    <string name="onbording_two_title">Scannez un produit</string>
-    <string name="onbording_two_doc">Munissez vous de votre Smartphone durant vos
-courses afin de scanner les QR Code présents sur
-une sélection de produits et obtenez des
-récompenses.</string>
-    <string name="onbording_three_title">Consultez les indicateurs qui
-comptent pour vous</string>
-    <string name="onbording_three_doc">Pour des achats plus responsables, il ne vous reste
-plus qu’à profiter des informations disponibles
-pour chaque produit.</string>
-    <string name="next">SUIVANT</string>
-    <string name="continue_btn">Suivant</string>
+    <string name="next">Suivant</string>
     
     
 
-    <string name="title_activity_onbord_start">OnbordStartActivity</string>
-    <string name="title_activity_siginin_select">Sign in</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
-
-    <string name="title_activity_signin_select">SigninSelectActivity</string>
     <string name="loading">Loading..</string>
     <string name="nodata">No Data!</string>
-    <string name="continueff">Continue</string>
-    <string name="serialscanner"> Serial Scanner</string>
 
-    <!-- profile -->
-    <string name="productscanner"> Produits scannés</string>
-    <string name="productconsult"> Produits consultés</string>
-    <string name="retourclient"> Retour client</string>
-    <string name="recompenses"> Récompenses</string>
-    <string name="termes"> Termes et conditions d’utilisation</string>
 
 
     <string name="type"> Type</string>
@@ -91,26 +24,7 @@ pour chaque produit.</string>
 
 
 
-
-    <string name="privilege"> Privilégier des méthodes agricoles éthiques</string>
-    <string name="Encourager" >Encourager une production équitable</string>
-    <string name= "Connaitre" > Connaître les lois qui régissent une filière.</string>
-    <string name="Soutenir" >Soutenir les producteurs au juste prix.</string>
-    <string name="review">Review</string>
     <string name="accountconsideration">Your account is under consideration</string>
-
-    <string name="local_organic">local_organic</string>
-    <string name="local_conventional">local_conventional</string>
-    <string name="imported_organic">imported_organic</string>
-    <string name="imported_conventional">imported_conventional</string>
-
-    <string name="ind_cat_environment">ind_cat_environment</string>
-    <string name="ind_cat_social">ind_cat_social</string>
-    <string name="ind_cat_governance">ind_cat_governance</string>
-    <string name="ind_cat_economic">ind_cat_economic</string>
-
-    <string name="requested">requested</string>
-    <string name="valid">ind_cat_economic</string>
 
 
 
@@ -314,6 +228,21 @@ pour chaque produit.</string>
     <string name="feedback_thank_you">Merci!</string>
     <string name="feedback_thank_you_message">Merci d\'avoir évalué le(s) produit(s) que vous avez acheté(s). Vos commentaires permettent à l\'équipe de recherche de comprendre vos choix de produits alimentaires et de détecter des pistes vers des achats plus durables.</string>
 
+    <string name="permissions_modal_camera_description">Goodness Groceries a besoin d’accéder à votre caméra pour scanner les codes QR.</string>
+    <string name="camera_not_allowed">Goodness Groceries n’a pas pu accéder à votre caméra pour scanner les codes QR. Veuillez activer les autorisations dans les paramètres. Merci.</string>
+    <string name="welcome_page_4_title">Qu’est-ce qui vous tient le plus à cœur lors de vos courses?</string>
+    <string name="welcome_page_5_title">Quels types de produits avez-vous tendance à acheter? (jusqu\'à 4)</string>
+    <string name="welcome_page_6_title">Scannez un produit</string>
+    <string name="welcome_page_6_text">Utilisez votre smartphone pendant que vous faites vos courses pour scanner les codes QR sur une sélection de produits.</string>
+    <string name="welcome_page_7_title">Consultez les indicateurs qui comptent pour vous</string>
+    <string name="welcome_page_7_text">Chaque produit sera présenté avec ses indicateurs de durabilité pertinents. Lisez plus sur chaque indicateur en cliquant dessus, et effectuez vos achats en fonction des informations disponibles.</string>
+    <string name="scan_low_storage_error">Les dépendances de détection ne peuvent pas être téléchargées pour cause d\'espace de stockage faible</string>
+    <string name="welcome_page_1_title">Bienvenue dans Goodness Groceries!</string>
+    <string name="welcome_page_1_text">Cette application vous permettra de comparer les caractéristiques éthiques et éco-responsables de certains produits alimentaires pendant que vous faites vos courses au Pall Center.</string>
+    <string name="welcome_page_3_title">Qu\'est-ce qui vous importe lorsque vous faites vos courses?</string>
+    <string name="welcome_page_3_text">Dites-nous ce qui compte pour vous afin de personnaliser votre expérience.</string>
+    <string name="welcome_page_notifications_text">Veuillez autoriser les notifications de Goodness Groceries pour être informé lorsque votre compte a été vérifié et pour recevoir les enquêtes sur les produits et l’application.\\n\\nVos commentaires permettent à l’équipe de recherche de comprendre vos choix de produits alimentaires et de détecter des pistes vers des achats plus durables. Vu qu’il s’agit d’un projet pilote, nous avons également besoin de vos commentaires pour améliorer l’application dans le futur.</string>
+    <string name="welcome_page_notifications_title">Notifications</string>
 
 </resources>
 

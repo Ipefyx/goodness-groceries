@@ -169,7 +169,7 @@
                 android:id="@+id/btn_next"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/continue_btn"
+                android:text="@string/next"
                 app:layout_constraintEnd_toEndOf="parent"
                 style="@style/BetterButton"
                 app:layout_constraintStart_toStartOf="parent"
