@@ -41,6 +41,7 @@
     <string name="welcome_page_7_text">Each product will be presented with its relevant sustainability indicators. Read more about each indicator by clicking on them, and make your purchases based on the information available.</string>
 
     <string name="accountconsideration">Your account is under consideration</string>
+    <string name="id_digit_alert">The client ID must have exactly 13 digits</string>
     
     <!--    Home menu-->
     <string name="menu_home">Home</string>

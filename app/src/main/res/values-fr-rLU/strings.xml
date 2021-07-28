@@ -243,6 +243,7 @@
     <string name="welcome_page_3_text">Dites-nous ce qui compte pour vous afin de personnaliser votre expérience.</string>
     <string name="welcome_page_notifications_text">Veuillez autoriser les notifications de Goodness Groceries pour être informé lorsque votre compte a été vérifié et pour recevoir les enquêtes sur les produits et l’application.\\n\\nVos commentaires permettent à l’équipe de recherche de comprendre vos choix de produits alimentaires et de détecter des pistes vers des achats plus durables. Vu qu’il s’agit d’un projet pilote, nous avons également besoin de vos commentaires pour améliorer l’application dans le futur.</string>
     <string name="welcome_page_notifications_title">Notifications</string>
+    <string name="id_digit_alert">L\'identifiant doit avoir exactement 13 chiffres</string>
 
 </resources>
 

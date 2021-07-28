@@ -54,7 +54,7 @@ public class SignInFragment extends Fragment {
 				WelcomeActivity activity = ((WelcomeActivity) getActivity());
 				
 				if (s.length() != 13) {
-					signin_id.setError("id must be 13 digits long");
+					signin_id.setError(getResources().getString(R.string.id_digit_alert));
 					activity.setIDValid(false);
 				} else {
 					signin_id.setError(null);
