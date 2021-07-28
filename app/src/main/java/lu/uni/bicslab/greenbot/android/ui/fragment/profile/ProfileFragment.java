@@ -1,5 +1,6 @@
 package lu.uni.bicslab.greenbot.android.ui.fragment.profile;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -59,7 +60,16 @@ public class ProfileFragment extends Fragment {
 			productsToReview.remove(0);
 		}
 		
-		reviewNextProduct();
+		if (productsToReview.size() == 0) {
+			AlertDialog dialog = new AlertDialog.Builder(getActivity())
+					.setTitle(R.string.feedback_thank_you)
+					.setMessage(R.string.feedback_thank_you_message)
+					.setPositiveButton(R.string.ok, (dialog1, which) -> {})
+					.create();
+			dialog.show();
+		} else {
+			reviewNextProduct();
+		}
 	}
 	
 	public void reviewNextProduct() {
@@ -81,8 +91,9 @@ public class ProfileFragment extends Fragment {
 			if (products == null)
 				products = new String[]{};
 			productsToReview = new ArrayList<>(Arrays.asList(products));
+			
+			review_products.setEnabled(productsToReview.size() > 0);
 		}, error -> {});
 		
-		review_products.setEnabled(productsToReview.size() > 0);
 	}
 }

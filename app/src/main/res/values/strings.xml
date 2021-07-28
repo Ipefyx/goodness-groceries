@@ -17,7 +17,6 @@
     <string name="title_activity_signin">SigninActivity</string>
 
 
-    <string name="ok">OK</string>
     <string name="permission_camera_rationale">Access to the camera is needed for detection</string>
     <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
     <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
@@ -113,6 +112,7 @@ pour chaque produit.</string>
     <string name="general_error_try_again">An error has occurred. Please try again later.</string>
     <string name="network_error">Please check your internet connection and try again later.</string>
     <string name="no_products_found">Sorry, no products found</string>
+    <string name="ok">OK</string>
 
     
     <!--    Home menu-->
@@ -130,8 +130,11 @@ pour chaque produit.</string>
     <string name="feedback_page_text">You recently bought the following product, which indicators led you to choose it?</string>
     <string name="price">Price</string>
     <string name="other_reason">Other reason…</string>
+    <string name="feedback_thank_you">Thank you!</string>
+    <string name="feedback_thank_you_message">Thank you for reviewing the product(s) you purchased. Your feedback allows the research team to understand your food choices and to find out how grocery shopping can be made more sustainable.</string>
 
-    
+
+
     <!--    Product details screen-->
     <string name="compare_button">Compare</string>
     <string name="product">Product</string>

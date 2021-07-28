@@ -311,6 +311,9 @@ pour chaque produit.</string>
     <string name="feedback_page_text">Vous avez récemment acheté le produit suivant, quels indicateurs vous ont amené à le choisir?</string>
     <string name="price">Prix</string>
     <string name="other_reason">Autre raison…</string>
+    <string name="feedback_thank_you">Merci!</string>
+    <string name="feedback_thank_you_message">Merci d\'avoir évalué le(s) produit(s) que vous avez acheté(s). Vos commentaires permettent à l\'équipe de recherche de comprendre vos choix de produits alimentaires et de détecter des pistes vers des achats plus durables.</string>
+
 
 </resources>
 
