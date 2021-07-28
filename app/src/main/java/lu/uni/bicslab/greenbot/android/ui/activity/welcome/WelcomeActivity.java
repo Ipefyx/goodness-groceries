@@ -182,9 +182,9 @@ public class WelcomeActivity extends AppCompatActivity {
 				case 2:
 					return new SimpleLayoutFragment(R.layout.onbording_two_layout);
 				case 3:
-					return new SelectProductCategoriesFragment();
-				case 4:
 					return new SelectIndicatorCategoriesFragment();
+				case 4:
+					return new SelectProductCategoriesFragment();
 				case 5:
 					return new SimpleLayoutFragment(R.layout.onbording_three_layout);
 			}
