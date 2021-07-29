@@ -20,6 +20,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import lu.uni.bicslab.greenbot.android.other.ServerConnection;
 import lu.uni.bicslab.greenbot.android.other.UserData;
+import lu.uni.bicslab.greenbot.android.other.Utils;
 import lu.uni.bicslab.greenbot.android.ui.activity.itemmain.ProductDetailsActivity;
 import lu.uni.bicslab.greenbot.android.ui.activity.scan.SigninSelectActivity;
 

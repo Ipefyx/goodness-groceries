@@ -50,4 +50,15 @@ public class UserData {
 		return getPrefs(context).getString("user_id", null);
 	}
 	
+	
+	
+	// The language/locale chosen by the user
+	public static void setLanguage(Context context, String language) {
+		getPrefs(context).edit().putString("user_lang", language).apply();
+	}
+	
+	public static String getLanguage(Context context) {
+		return getPrefs(context).getString("user_lang", null);
+	}
+	
 }

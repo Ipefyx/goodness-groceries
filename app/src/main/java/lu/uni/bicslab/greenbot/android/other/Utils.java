@@ -1,7 +1,15 @@
 package lu.uni.bicslab.greenbot.android.other;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 
@@ -15,6 +23,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -36,6 +45,71 @@ public class Utils {
 	public static final String ind_cat_good_gevernance = "ind_cat_good_gevernance";
 	public static final String ind_cat_economic = "ind_cat_economic";
 	
+	
+	
+	public interface DialogCallback {
+		void callBack();
+	}
+	
+	public static void showLanguageDialog(Context context, DialogCallback callback) {
+		LayoutInflater factory = LayoutInflater.from(context);
+		
+		View dialogView = factory.inflate(R.layout.dialog_choose_language, null);
+		AlertDialog dialog = new AlertDialog.Builder(context).create();
+		dialog.setCanceledOnTouchOutside(false);
+		dialog.setView(dialogView);
+		
+		ImageButton btn_fr = dialogView.findViewById(R.id.btn_fr);
+		ImageButton btn_en = dialogView.findViewById(R.id.btn_en);
+		TextView title_text = dialogView.findViewById(R.id.title_text);
+		TextView desc_text = dialogView.findViewById(R.id.desc_text);
+		Button btn_next = dialogView.findViewById(R.id.btn_next);
+		
+		btn_fr.setOnClickListener(v -> {
+			btn_fr.setBackgroundResource(R.drawable.flag_style);
+			btn_en.setBackgroundResource(0);
+			
+			setLocale(context, "fr");
+			//Manually update the dialog text to reflect locale change
+			title_text.setText(R.string.language);
+			desc_text.setText(R.string.language_change_later);
+		});
+		
+		btn_en.setOnClickListener(v -> {
+			btn_en.setBackgroundResource(R.drawable.flag_style);
+			btn_fr.setBackgroundResource(0);
+			
+			setLocale(context, "en");
+			//Manually update the dialog text to reflect locale change
+			title_text.setText(R.string.language);
+			desc_text.setText(R.string.language_change_later);
+		});
+		
+		btn_next.setOnClickListener(v -> {
+			dialog.dismiss();
+			UserData.setLanguage(context, Locale.getDefault().getLanguage());
+			callback.callBack();
+		});
+		
+		// Need this to reset the flag styling correctly, couldn't figure out how to do it properly in the layout
+		btn_fr.setBackgroundResource(R.drawable.flag_style);
+		btn_fr.setBackgroundResource(0);
+		
+		// Set the english language selected by default
+		btn_en.callOnClick();
+		
+		dialog.show();
+	}
+	
+	
+	public static void setLocale(Context context, String languageCode) {
+		Locale locale = new Locale(languageCode);
+		Locale.setDefault(locale);
+		Resources resources = context.getResources();
+		Configuration config = resources.getConfiguration();
+		config.setLocale(locale);
+		resources.updateConfiguration(config, resources.getDisplayMetrics());
+	}
 	
 	
 	public static String getJsonFromAssets(Context context, String fileName) {

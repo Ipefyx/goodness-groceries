@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">GreenBot</string>
 
-    <string name="menu_home">Accueil2</string>
+    <string name="menu_home">Accueil</string>
     <string name="menu_scan">Scanner</string>
     <string name="menu_profile">Profil</string>
     <string name="menu_help">Aide</string>
@@ -245,6 +245,8 @@
     <string name="welcome_page_notifications_title">Notifications</string>
     <string name="id_digit_alert">L\'identifiant doit avoir exactement 13 chiffres</string>
     <string name="product_not_found">Product introuvable</string>
+    <string name="language">Langue</string>
+    <string name="language_change_later">Vous pouvez changer la langue dans les paramètres plus tard.</string>
 
 </resources>
 

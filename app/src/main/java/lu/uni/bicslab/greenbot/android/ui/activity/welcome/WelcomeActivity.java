@@ -33,6 +33,7 @@ import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.databinding.OnbordingMainLayoutBinding;
 import lu.uni.bicslab.greenbot.android.other.ServerConnection;
 import lu.uni.bicslab.greenbot.android.other.UserData;
+import lu.uni.bicslab.greenbot.android.other.Utils;
 import lu.uni.bicslab.greenbot.android.ui.activity.StartActivity;
 
 /**
@@ -68,6 +69,12 @@ public class WelcomeActivity extends AppCompatActivity {
 		setContentView(binding.getRoot());
 		init();
 		
+		// Ask for language and restart the app
+		if (UserData.getLanguage(this) == null)
+			Utils.showLanguageDialog(this, () -> {
+				finish();
+				startActivity(new Intent(this, StartActivity.class));
+			});
 	}
 	
 	private void init() {

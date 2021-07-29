@@ -16,6 +16,7 @@ import lu.uni.bicslab.greenbot.android.MainActivity;
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.ServerConnection;
 import lu.uni.bicslab.greenbot.android.other.UserData;
+import lu.uni.bicslab.greenbot.android.other.Utils;
 import lu.uni.bicslab.greenbot.android.ui.activity.welcome.SignInFragment;
 import lu.uni.bicslab.greenbot.android.ui.activity.welcome.WelcomeActivity;
 
@@ -32,6 +33,10 @@ public class StartActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
+		// Always reset the app locale when it is restarted
+		String lang = UserData.getLanguage(this);
+		if (lang != null)
+			Utils.setLocale(this, lang);
 		
 		// Redirect to correct activities or show correct layout based on the user status
 		String userStatus = UserData.getStatus(this);

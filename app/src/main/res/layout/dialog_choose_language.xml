@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:padding="@dimen/padding">
+
+    <TextView
+            android:text="@string/language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/title_text"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textAppearance="@style/texttitlestyle" />
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/title_text"
+            android:id="@+id/flags_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/small_padding"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/flag_fr"
+                android:id="@+id/btn_fr"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:layout_margin="@dimen/padding2"
+                style="@style/Widget.AppCompat.ImageButton"
+                android:background="#FFFFFF" />
+
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/flag_en"
+                android:id="@+id/btn_en"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:layout_margin="@dimen/padding2"
+                style="@style/Widget.AppCompat.ImageButton"
+                android:background="#FFFFFF" />
+    </LinearLayout>
+
+    <TextView
+            android:text="@string/language_change_later"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/desc_text"
+            app:layout_constraintTop_toBottomOf="@+id/flags_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/small_padding"
+            android:textAppearance="@style/textdatastyle" />
+
+    <Button
+            android:id="@+id/btn_next"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/BetterButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/desc_text"
+            android:layout_marginTop="@dimen/padding" />
+</androidx.constraintlayout.widget.ConstraintLayout>

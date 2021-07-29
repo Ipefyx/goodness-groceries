@@ -43,6 +43,13 @@
     <string name="accountconsideration">Your account is under consideration</string>
     <string name="id_digit_alert">The client ID must have exactly 13 digits</string>
     
+    
+    
+<!--    Language dialog-->
+    <string name="language">Language</string>
+    <string name="language_change_later">You can change the language in the settings later.</string>
+    
+    
     <!--    Home menu-->
     <string name="menu_home">Home</string>
     <string name="menu_scan">Scan</string>
