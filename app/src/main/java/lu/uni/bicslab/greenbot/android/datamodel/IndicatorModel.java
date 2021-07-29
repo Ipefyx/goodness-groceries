@@ -15,9 +15,6 @@ public class IndicatorModel implements Serializable {
 	private boolean applicable;
 	public List<SubIndicatorModel> sub_indicators;
 	
-	// TODO: Remove when reworking Feedback Page
-	private int selectionnumber = 0;
-	
 	// TODO: Remove when reworking Compare Page
 	private boolean isSelected = false;
 	
@@ -101,14 +98,6 @@ public class IndicatorModel implements Serializable {
 	}
 	
 	
-	
-	public int getSelectionnumber() {
-		return selectionnumber;
-	}
-	
-	public void setSelectionnumber(int selectionnumber) {
-		this.selectionnumber = selectionnumber;
-	}
 	
 	public boolean isSelected() {
 		return isSelected;

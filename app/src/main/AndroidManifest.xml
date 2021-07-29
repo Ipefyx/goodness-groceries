@@ -54,11 +54,6 @@
             android:windowSoftInputMode="adjustPan"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".ui.activity.scanitem.ScanSelectedItemActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".ui.activity.scanitem.SelectscanActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
@@ -68,26 +63,6 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme" />
 
-        <activity
-            android:name=".ui.activity.fromprofile.ProductConsultActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".ui.activity.fromprofile.ProductsScannerActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".ui.activity.fromprofile.RecompensesActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".ui.activity.fromprofile.RetourClientActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".ui.activity.fromprofile.TermesAndConditionActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

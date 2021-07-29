@@ -112,7 +112,6 @@ public class ProfileFragment extends Fragment {
 	public void updateElements() {
 		review_products_button.setEnabled(productsToReview.size() > 0);
 		
-		// TODO: Add badge with number of products to the review_products button
 		badge.setVisible(productsToReview.size() > 0);
 		badge.setNumber(productsToReview.size());
 		
