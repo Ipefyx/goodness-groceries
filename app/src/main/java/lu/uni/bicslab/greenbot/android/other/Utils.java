@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -99,9 +100,16 @@ public class Utils {
 		// Need this to reset the flag styling correctly, couldn't figure out how to do it properly in the layout
 		btn_fr.setBackgroundResource(R.drawable.flag_style);
 		btn_fr.setBackgroundResource(0);
+		btn_en.setBackgroundResource(R.drawable.flag_style);
+		btn_en.setBackgroundResource(0);
 		
-		// Set the english language selected by default
-		btn_en.callOnClick();
+		// Set the language selected by default
+		String currentLang = UserData.getLanguage(context);
+		if (currentLang != null && currentLang.equals("fr")) {
+			btn_fr.callOnClick();
+		} else {
+			btn_en.callOnClick();
+		}
 		
 		dialog.show();
 	}
