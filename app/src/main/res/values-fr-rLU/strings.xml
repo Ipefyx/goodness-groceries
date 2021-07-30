@@ -247,6 +247,8 @@
     <string name="product_not_found">Product introuvable</string>
     <string name="language">Langue</string>
     <string name="language_change_later">Vous pouvez changer la langue dans les paramètres plus tard.</string>
+    <string name="or">ou</string>
+    <string name="scan_directly">Scannez votre carte client Pall Center</string>
 
 </resources>
 

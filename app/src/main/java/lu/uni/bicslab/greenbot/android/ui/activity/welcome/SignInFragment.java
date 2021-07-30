@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,10 +22,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import lu.uni.bicslab.greenbot.android.R;
+import lu.uni.bicslab.greenbot.android.ui.activity.itemmain.ProductDetailsActivity;
+import lu.uni.bicslab.greenbot.android.ui.activity.scan.BarcodeScannerActivity;
 
 public class SignInFragment extends Fragment {
 	
-	public static final int RC_BARCODE_CAPTURE = 9001;
+	public static final int BARCODE_CAPTURE = 1;
 	
 	private EditText signin_id;
 	
@@ -44,6 +47,11 @@ public class SignInFragment extends Fragment {
 	@Override
 	public void onActivityCreated(@Nullable Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
+		
+		TextView scan_directly = getView().findViewById(R.id.scan_directly);
+		scan_directly.setOnClickListener(v -> {
+			startActivityForResult(new Intent(getActivity(), BarcodeScannerActivity.class), BARCODE_CAPTURE);
+		});
 		
 		signin_id = getView().findViewById(R.id.signin_id);
 		signin_id.addTextChangedListener(new TextWatcher() {
@@ -71,5 +79,22 @@ public class SignInFragment extends Fragment {
 			@Override public void afterTextChanged(Editable s) {}
 			@Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 		});
+	}
+	
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		
+		if (requestCode == BARCODE_CAPTURE) {
+			if (data != null) {
+				String barcode = data.getStringExtra("barcode");
+				Log.e("TAG", "Barcode read:final " + barcode);
+				
+				signin_id.setText(barcode);
+			} else {
+				Log.e("TAG", "No barcode captured, intent data is null");
+			}
+			
+		}
 	}
 }

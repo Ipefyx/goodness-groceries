@@ -53,6 +53,8 @@ import lu.uni.bicslab.greenbot.android.ui.activity.welcome.SignInFragment;
 public class BarcodeScannerActivity extends AppCompatActivity implements BarcodeGraphicTracker.BarcodeUpdateListener {
 	private static final String TAG = "Barcode-reader";
 	
+	private static final int BARCODE_SUCCESS = 1;
+	
 	// intent request code to handle updating play services if needed.
 	private static final int RC_HANDLE_GMS = 9001;
 	
@@ -437,7 +439,7 @@ public class BarcodeScannerActivity extends AppCompatActivity implements Barcode
 		Log.e(TAG, "Barcode read: got " + barcode.displayValue);
 		Intent intent = getIntent();
 		intent.putExtra("barcode", barcode.displayValue);
-		setResult(SignInFragment.RC_BARCODE_CAPTURE, intent);
+		setResult(BARCODE_SUCCESS, intent);
 		finish();
 	}
 	
