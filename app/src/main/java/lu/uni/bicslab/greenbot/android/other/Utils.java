@@ -51,7 +51,7 @@ public class Utils {
 		void callBack();
 	}
 	
-	public static void showLanguageDialog(Context context, DialogCallback callback) {
+	public static void showLanguageDialog(Context context, boolean showDesc, DialogCallback callback) {
 		LayoutInflater factory = LayoutInflater.from(context);
 		
 		View dialogView = factory.inflate(R.layout.dialog_choose_language, null);
@@ -65,7 +65,10 @@ public class Utils {
 		TextView desc_text = dialogView.findViewById(R.id.desc_text);
 		Button btn_next = dialogView.findViewById(R.id.btn_next);
 		
-		btn_fr.setOnClickListener(v -> {
+		if (!showDesc)
+			desc_text.setVisibility(View.GONE);
+			
+			btn_fr.setOnClickListener(v -> {
 			btn_fr.setBackgroundResource(R.drawable.flag_style);
 			btn_en.setBackgroundResource(0);
 			

@@ -24,6 +24,7 @@ import java.util.List;
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.ServerConnection;
 import lu.uni.bicslab.greenbot.android.other.UserData;
+import lu.uni.bicslab.greenbot.android.other.Utils;
 import lu.uni.bicslab.greenbot.android.ui.activity.feedback.FeedbackMainActivity;
 
 public class ProfileFragment extends Fragment {
@@ -41,6 +42,7 @@ public class ProfileFragment extends Fragment {
 		
 		TextView profile_id = root.findViewById(R.id.profile_id);
 		review_products_button = root.findViewById(R.id.review_products_button);
+		Button change_language_button = root.findViewById(R.id.change_language_button);
 		
 		String[] arg = getArguments().getStringArray("products_to_review");
 		if (arg == null)
@@ -53,6 +55,11 @@ public class ProfileFragment extends Fragment {
 			reviewNextProduct();
 		});
 		
+		change_language_button.setOnClickListener(v -> {
+			Utils.showLanguageDialog(getContext(), false, () -> {
+				getActivity().recreate();
+			});
+		});
 		
 		badge = BadgeDrawable.create(getContext());
 		

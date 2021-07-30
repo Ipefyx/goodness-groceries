@@ -71,7 +71,7 @@ public class WelcomeActivity extends AppCompatActivity {
 		
 		// Ask for language and restart the app
 		if (UserData.getLanguage(this) == null)
-			Utils.showLanguageDialog(this, () -> {
+			Utils.showLanguageDialog(this, true, () -> {
 				finish();
 				startActivity(new Intent(this, StartActivity.class));
 			});
