@@ -73,6 +73,7 @@ public class Utils {
 			//Manually update the dialog text to reflect locale change
 			title_text.setText(R.string.language);
 			desc_text.setText(R.string.language_change_later);
+			btn_next.setText(R.string.next);
 		});
 		
 		btn_en.setOnClickListener(v -> {
@@ -83,6 +84,7 @@ public class Utils {
 			//Manually update the dialog text to reflect locale change
 			title_text.setText(R.string.language);
 			desc_text.setText(R.string.language_change_later);
+			btn_next.setText(R.string.next);
 		});
 		
 		btn_next.setOnClickListener(v -> {
