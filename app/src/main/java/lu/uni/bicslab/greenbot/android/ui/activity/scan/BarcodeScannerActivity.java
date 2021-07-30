@@ -50,7 +50,7 @@ import lu.uni.bicslab.greenbot.android.ui.activity.welcome.SignInFragment;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class SigninSelectActivity extends AppCompatActivity implements BarcodeGraphicTracker.BarcodeUpdateListener {
+public class BarcodeScannerActivity extends AppCompatActivity implements BarcodeGraphicTracker.BarcodeUpdateListener {
 	private static final String TAG = "Barcode-reader";
 	
 	// intent request code to handle updating play services if needed.
@@ -100,8 +100,8 @@ public class SigninSelectActivity extends AppCompatActivity implements BarcodeGr
 			requestCameraPermission();
 		}
 		
-		gestureDetector = new GestureDetector(this, new SigninSelectActivity.CaptureGestureListener());
-		scaleGestureDetector = new ScaleGestureDetector(this, new SigninSelectActivity.ScaleListener());
+		gestureDetector = new GestureDetector(this, new BarcodeScannerActivity.CaptureGestureListener());
+		scaleGestureDetector = new ScaleGestureDetector(this, new BarcodeScannerActivity.ScaleListener());
 		
 		Snackbar.make(mGraphicOverlay, "Tap to capture. Pinch/Stretch to zoom",
 				Snackbar.LENGTH_LONG)

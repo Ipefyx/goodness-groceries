@@ -20,9 +20,8 @@ import androidx.appcompat.widget.Toolbar;
 
 import lu.uni.bicslab.greenbot.android.other.ServerConnection;
 import lu.uni.bicslab.greenbot.android.other.UserData;
-import lu.uni.bicslab.greenbot.android.other.Utils;
 import lu.uni.bicslab.greenbot.android.ui.activity.itemmain.ProductDetailsActivity;
-import lu.uni.bicslab.greenbot.android.ui.activity.scan.SigninSelectActivity;
+import lu.uni.bicslab.greenbot.android.ui.activity.scan.BarcodeScannerActivity;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, NavigationView.OnNavigationItemSelectedListener {
 	
@@ -93,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 				return true;
 				
 			case R.id.scanner:
-				Intent i = new Intent(this, SigninSelectActivity.class);
+				Intent i = new Intent(this, BarcodeScannerActivity.class);
 				startActivityForResult(i, BARCODE_CAPTURE);
 				return false;
 				
