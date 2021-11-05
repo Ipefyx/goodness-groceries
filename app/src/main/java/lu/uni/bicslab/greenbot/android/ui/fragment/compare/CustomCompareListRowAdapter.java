@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,13 +26,13 @@ import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
 
 public class CustomCompareListRowAdapter extends RecyclerView.Adapter<CustomCompareListRowAdapter.CompareCustomView> {
 	
-	private final List<IndicatorModel> indicatorModel;
+	private final List<IndicatorModel> indicatorModels;
 	private final Context context;
 	
-	public CustomCompareListRowAdapter(Context context, int positionViewpager, List<IndicatorModel> indicatorModel) {
+	public CustomCompareListRowAdapter(Context context, int positionViewpager, List<IndicatorModel> indicatorModels) {
 		this.context = context;
-		this.indicatorModel = indicatorModel;
-		Log.e("sizzee", "" + indicatorModel.size());
+		this.indicatorModels = indicatorModels;
+		Log.e("sizzee", "" + indicatorModels.size());
 		
 	}
 	
@@ -44,13 +45,19 @@ public class CustomCompareListRowAdapter extends RecyclerView.Adapter<CustomComp
 	
 	@Override
 	public void onBindViewHolder(CustomCompareListRowAdapter.CompareCustomView holder, int position) {
-		IndicatorModel model = indicatorModel.get(position);
+		IndicatorModel model = indicatorModels.get(position);
 		Log.e("model", "" + model.getName());
 		
 		holder.mName.setText(model.getName());
 		holder.layout_main_compare.setVisibility(View.INVISIBLE);
-		
-		Glide.with(context).load(Utils.getDrawableImage(context, model.getIcon_name())).apply(RequestOptions.centerCropTransform()).into(holder.txt_firstletter);
+
+		////////
+		holder.txt_firstletter = new ImageView(context);
+
+		String icon_name = model.getIcon_name();
+		Drawable image = Utils.getDrawableImage(context, icon_name);
+		///////
+		Glide.with(context).load(image).apply(RequestOptions.centerCropTransform()).into(holder.txt_firstletter);
 		if (model.isSelected() == false) {
 			holder.mName.setTextColor(Color.GRAY);
 			// Apply grayscale filter
@@ -67,14 +74,14 @@ public class CustomCompareListRowAdapter extends RecyclerView.Adapter<CustomComp
 	
 	@Override
 	public int getItemCount() {
-		Log.e("model", "" + indicatorModel.size());
-		return indicatorModel == null ? 0 : indicatorModel.size();
+		Log.e("model", "" + indicatorModels.size());
+		return (indicatorModels == null) ? 0 : indicatorModels.size();
 	}
 	
 	public static class CompareCustomView extends RecyclerView.ViewHolder {
 		
 		private final TextView mName;
-		private final ImageView txt_firstletter;
+		private ImageView txt_firstletter;
 		private final RelativeLayout layout_main_compare;
 		
 		public CompareCustomView(View itemView) {

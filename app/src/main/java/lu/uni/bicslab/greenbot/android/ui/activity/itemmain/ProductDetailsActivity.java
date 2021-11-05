@@ -127,7 +127,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
 				return true;
 			case 0:
 				Intent mIntent = new Intent(getApplicationContext(), CompareActivity.class);
-				mIntent.putExtra("key_product", productCode);
+				ProductModel product = Utils.getProductByCode(this, productCode);
+				mIntent.putExtra("key_product", product);
 				startActivity(mIntent);
 				return true;
 		}

@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/gg_goodgovernance.xml" value="0.2635416666666667" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/rectangle.xml" value="0.2635416666666667" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/menu/bottom_navigation.xml" value="0.42916666666666664" />
+        <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/menu/main.xml" value="0.24739583333333334" />
+        <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/menu/pager_transformers.xml" value="0.24739583333333334" />
       </map>
     </option>
   </component>
