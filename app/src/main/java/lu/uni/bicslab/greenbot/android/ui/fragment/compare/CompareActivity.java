@@ -140,10 +140,10 @@ public class CompareActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View v) {
 				int cout = 0;
-				binding.viewPager.setCurrentItem(currentPagemain + 1);
 				if (binding.btnNext.getText().equals("Finish")) {
 					finish();
 				}
+				binding.viewPager.setCurrentItem(currentPagemain + 1);
 			}
 		});
 		

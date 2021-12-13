@@ -25,7 +25,7 @@ import lu.uni.bicslab.greenbot.android.other.Utils;
 import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
 
 public class CustomCompareListRowAdapter extends RecyclerView.Adapter<CustomCompareListRowAdapter.CompareCustomView> {
-	
+
 	private final List<IndicatorModel> indicatorModels;
 	private final Context context;
 	
@@ -35,7 +35,7 @@ public class CustomCompareListRowAdapter extends RecyclerView.Adapter<CustomComp
 		Log.e("sizzee", "" + indicatorModels.size());
 		
 	}
-	
+
 	@Override
 	public CustomCompareListRowAdapter.CompareCustomView onCreateViewHolder(ViewGroup parent, int viewType) {
 		LayoutInflater inflater = LayoutInflater.from(parent.getContext());
@@ -45,18 +45,23 @@ public class CustomCompareListRowAdapter extends RecyclerView.Adapter<CustomComp
 	
 	@Override
 	public void onBindViewHolder(CustomCompareListRowAdapter.CompareCustomView holder, int position) {
+
 		IndicatorModel model = indicatorModels.get(position);
 		Log.e("model", "" + model.getName());
 		
 		holder.mName.setText(model.getName());
+
 		holder.layout_main_compare.setVisibility(View.INVISIBLE);
 
 		////////
-		holder.txt_firstletter = new ImageView(context);
+		holder.txt_firstletter = new ImageView(this.context);
 
 		String icon_name = model.getIcon_name();
 		Drawable image = Utils.getDrawableImage(context, icon_name);
+
+		holder.txt_firstletter.setBackground(image);
 		///////
+
 		Glide.with(context).load(image).apply(RequestOptions.centerCropTransform()).into(holder.txt_firstletter);
 		if (model.isSelected() == false) {
 			holder.mName.setTextColor(Color.GRAY);
@@ -70,6 +75,8 @@ public class CustomCompareListRowAdapter extends RecyclerView.Adapter<CustomComp
 			holder.mName.setTextColor(Color.BLACK);
 			
 		}
+
+
 	}
 	
 	@Override
@@ -77,9 +84,9 @@ public class CustomCompareListRowAdapter extends RecyclerView.Adapter<CustomComp
 		Log.e("model", "" + indicatorModels.size());
 		return (indicatorModels == null) ? 0 : indicatorModels.size();
 	}
-	
+
 	public static class CompareCustomView extends RecyclerView.ViewHolder {
-		
+
 		private final TextView mName;
 		private ImageView txt_firstletter;
 		private final RelativeLayout layout_main_compare;
@@ -89,8 +96,11 @@ public class CustomCompareListRowAdapter extends RecyclerView.Adapter<CustomComp
 			
 			Log.e("model", "inside");
 			mName = itemView.findViewById(R.id.txt_name);
-			txt_firstletter = itemView.findViewById(R.id.indicator_image);
+			txt_firstletter = itemView.findViewById(R.id.indicator_image); // Return null ???
 			layout_main_compare = itemView.findViewById(R.id.layout_main_compare);
 		}
+
 	}
+
+
 }
