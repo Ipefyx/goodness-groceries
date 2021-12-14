@@ -26,15 +26,18 @@
             android:id="@+id/img_product_icon"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:background="@drawable/ic_menu_gallery"></ImageView>
+            card_view:srcCompat="@drawable/ic_menu_gallery"
+            >
+        </ImageView>
 
         </androidx.cardview.widget.CardView>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/indicator_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/padding"
             android:layout_below="@+id/img_main"
+            android:layout_marginTop="@dimen/padding"
             android:layout_marginBottom="@dimen/padding"
             android:scrollbars="vertical" />
 

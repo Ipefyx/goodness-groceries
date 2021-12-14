@@ -157,8 +157,10 @@ public class ProductDetailsActivity extends AppCompatActivity {
 		type_data.setText(product.getType());
 		provider_data.setText(product.getProvider());
 		category_data.setText(category.getName());
-		
+
+		// Product picture
 		Glide.with(this).load(Utils.getDrawableImage(this, product.getImage_url())).error(R.drawable.ic_menu_gallery).into(product_image);
+		// Category picture
 		Glide.with(this).load(Utils.getDrawableImage(this, category.getIcon_name())).error(R.drawable.ic_menu_gallery).into(category_icon);
 		
 		if (indicators.size() == 0) {

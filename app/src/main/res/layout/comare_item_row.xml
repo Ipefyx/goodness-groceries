@@ -35,6 +35,7 @@
             android:layout_toRightOf="@+id/txt_firstletter"
             android:visibility="visible"
             android:fontFamily="sans-serif-medium"
+            android:text="[INDIC. NAME]"
             tools:targetApi="jelly_bean"
             tools:text="Nougat"/>
         </RelativeLayout>

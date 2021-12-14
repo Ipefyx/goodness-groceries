@@ -1,6 +1,7 @@
 package lu.uni.bicslab.greenbot.android.ui.fragment.compare;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +20,7 @@ import java.util.List;
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.CompareModel;
 import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
+import lu.uni.bicslab.greenbot.android.other.Utils;
 
 public class CustomCompareGridAdapter extends RecyclerView.Adapter<CustomCompareGridAdapter.CustomViewHolder> {
 	
@@ -77,9 +79,11 @@ public class CustomCompareGridAdapter extends RecyclerView.Adapter<CustomCompare
 		RecyclerView recycler_viewindicator = holder.recycler_viewindicator;
 		Log.e("eee position", "" + positionViewpager);
 		//imageview_icon.setBackground(dataModel.get(position).getImage());
-		Glide.with(mcontext).load(compareModel.get(position).getProductModelForcompare().getImage_url()).
-				apply(RequestOptions.centerCropTransform()).into(imageview_icon);
-		
+
+		Drawable image = Utils.getDrawableImage(mcontext, compareModel.get(position).getProductModelForcompare().getImage_url());
+		Glide.with(mcontext).load(image).apply(RequestOptions.centerCropTransform()).into(imageview_icon);
+		//Glide.with(mcontext).load(image).error(R.drawable.ic_menu_gallery).into(imageview_icon);
+
 		CustomCompareListRowAdapter adapter = new CustomCompareListRowAdapter(mcontext, positionViewpager, modelIndicatorModel);
 		recycler_viewindicator.setAdapter(adapter);
 		recycler_viewindicator.setLayoutManager(new LinearLayoutManager(mcontext));
