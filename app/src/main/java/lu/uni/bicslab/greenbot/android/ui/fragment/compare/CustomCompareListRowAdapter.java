@@ -48,21 +48,15 @@ public class CustomCompareListRowAdapter extends RecyclerView.Adapter<CustomComp
 
 		IndicatorModel model = indicatorModels.get(position);
 		Log.e("model", "" + model.getName());
-		
+
 		holder.mName.setText(model.getName());
 
 		holder.layout_main_compare.setVisibility(View.INVISIBLE);
 
-		////////
-		holder.txt_firstletter = new ImageView(this.context);
-
-		String icon_name = model.getIcon_name();
-		Drawable image = Utils.getDrawableImage(context, icon_name);
-
-		holder.txt_firstletter.setBackground(image);
-		///////
-
+		Drawable image = Utils.getDrawableImage(context, model.getIcon_name());
 		Glide.with(context).load(image).apply(RequestOptions.centerCropTransform()).into(holder.txt_firstletter);
+
+
 		if (model.isSelected() == false) {
 			holder.mName.setTextColor(Color.GRAY);
 			// Apply grayscale filter
@@ -75,7 +69,6 @@ public class CustomCompareListRowAdapter extends RecyclerView.Adapter<CustomComp
 			holder.mName.setTextColor(Color.BLACK);
 			
 		}
-
 
 	}
 	
@@ -96,7 +89,7 @@ public class CustomCompareListRowAdapter extends RecyclerView.Adapter<CustomComp
 			
 			Log.e("model", "inside");
 			mName = itemView.findViewById(R.id.txt_name);
-			txt_firstletter = itemView.findViewById(R.id.indicator_image); // Return null ???
+			txt_firstletter = itemView.findViewById(R.id.txt_firstletter); // Return null ???
 			layout_main_compare = itemView.findViewById(R.id.layout_main_compare);
 		}
 
