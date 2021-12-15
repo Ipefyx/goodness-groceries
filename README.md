@@ -15,7 +15,7 @@ https://developer.android.com/studio
 
 Clone the repository to your computer:
 ```
-git clone https://github.com/LeoLuxo/goodness-groceries.git
+git clone https://github.com/Ipefyx/goodness-groceries.git
 ```
 
 ## Build and simulate

@@ -5,7 +5,8 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class CompareViewModel extends ViewModel {
-	
+	// UNUSED ?
+	/*
 	private final MutableLiveData<String> mText;
 	
 	public CompareViewModel() {
@@ -15,5 +16,5 @@ public class CompareViewModel extends ViewModel {
 	
 	public LiveData<String> getText() {
 		return mText;
-	}
+	}*/
 }

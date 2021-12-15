@@ -111,7 +111,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);
 		
-		menu.add(0, 0, 0, R.string.compare_button)
+		menu.add(R.string.compare_button)
 				.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
 		
 		return true;

@@ -2,6 +2,7 @@ package lu.uni.bicslab.greenbot.android.ui.fragment.compare;
 
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -41,11 +42,8 @@ public class CompareActivity extends AppCompatActivity {
 		getSupportActionBar().setDisplayShowHomeEnabled(true);
 		
 		modelmain = (ProductModel) getIntent().getSerializableExtra("key_product");
-		
-		
+
 		readData();
-		
-		
 	}
 	
 	/*
@@ -70,6 +68,8 @@ public class CompareActivity extends AppCompatActivity {
 				binding.btnNext.setText("next");
 				binding.btnSkip.setVisibility(View.VISIBLE);
 			}
+
+
 		}
 	};
 	
@@ -141,6 +141,7 @@ public class CompareActivity extends AppCompatActivity {
 			public void onClick(View v) {
 				int cout = 0;
 				if (binding.btnNext.getText().equals("Finish")) {
+
 					finish();
 				}
 				binding.viewPager.setCurrentItem(currentPagemain + 1);
@@ -164,9 +165,9 @@ public class CompareActivity extends AppCompatActivity {
 	public void readData() {
 		
 		List<IndicatorModel> indicatorCategoryList = Utils.getIndicatorList(getApplicationContext());
-		
+
 		List<ProductModel> productModelList = Utils.getProductList(getApplicationContext());
-		
+
 		//get the items for compare
 		List<CompareModel> compareViewModelList = new ArrayList<>();
 		
@@ -181,7 +182,6 @@ public class CompareActivity extends AppCompatActivity {
 				List<IndicatorModel> indCatGoodGevernanceList = new ArrayList<>();
 				List<IndicatorModel> indCatEconomicList = new ArrayList<>();
 				//................................................................
-				
 				for (int j = 0; j < indicatorCategoryList.size(); j++) {
 					IndicatorModel indicatorModelMain = indicatorCategoryList.get(j);
 					
@@ -217,7 +217,12 @@ public class CompareActivity extends AppCompatActivity {
 				//main
 				for (int j = 0; j < mProductModel.indicators.size(); j++) {
 					String indicator = mProductModel.indicators.get(j).getId();
-					String category = getCategoryIndicator(indicatorCategoryList, indicator);
+
+					// TODO: Find reason of getIndicatorfunction instad of direct call of category_id()
+					// String category = getCategoryIndicator(indicatorCategoryList, indicator);
+
+					String category = mProductModel.indicators.get(j).getCategory_id();
+
 					if (category.equals(Utils.ind_cat_environment)) {
 						int n = 0;
 						for (IndicatorModel mm : comparemodel.getIndCatEnvironmentlist()) {
@@ -270,13 +275,14 @@ public class CompareActivity extends AppCompatActivity {
 	public String getCategoryIndicator(List<IndicatorModel> model, String id) {
 		String category = Utils.ind_cat_environment;
 		for (int j = 0; j < model.size(); j++) {
-			if (model.get(j).getId().equals(id)) {
+			String modelId = model.get(j).getId();
+			if (modelId.equals(id)) {
 				category = model.get(j).getCategory_id();
 				break;
 			}
 		}
 		return category;
-		
+
 	}
 	
 }

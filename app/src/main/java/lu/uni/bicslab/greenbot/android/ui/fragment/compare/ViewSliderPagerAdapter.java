@@ -22,6 +22,7 @@ import java.util.List;
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.CompareModel;
 import lu.uni.bicslab.greenbot.android.datamodel.IndicatorCategoryModel;
+import lu.uni.bicslab.greenbot.android.other.Utils;
 
 public class ViewSliderPagerAdapter extends RecyclerView.Adapter<ViewSliderPagerAdapter.SliderViewHolder> {
 	Context mcontext;
@@ -53,15 +54,17 @@ public class ViewSliderPagerAdapter extends RecyclerView.Adapter<ViewSliderPager
 		//ProductModel model = mProductToReviewlist.get(position);
 		holder.txt_categoryname.setText(mCategoryList.get(position).getName());
 		Log.e("dddd", "" + position + mCategoryList.get(position).getName());
-		Glide.with(mcontext).load(mCategoryList.get(position).getIcon_name()).
+
+		// Puts indicator category icon in slider title
+		Glide.with(mcontext).load(Utils.getDrawableImage(mcontext, mCategoryList.get(position).getIcon_name())).
 				apply(RequestOptions.centerCropTransform()).into(holder.img_product_icon);
 		
 		holder.recycler_viewindicator.setHasFixedSize(true);
-		
+
 		GridLayoutManager gridLayoutManager = new GridLayoutManager(mcontext, 2);
 		holder.recycler_viewindicator.setLayoutManager(gridLayoutManager);
 		holder.recycler_viewindicator.setItemAnimator(new DefaultItemAnimator());
-		
+
 		adapter = new CustomCompareGridAdapter(mcontext, position, compareModelList);
 		holder.recycler_viewindicator.setAdapter(adapter);
 	}

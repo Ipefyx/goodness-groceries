@@ -78,8 +78,8 @@ public class CustomCompareGridAdapter extends RecyclerView.Adapter<CustomCompare
 		ImageView imageview_icon = holder.img_product_icon;
 		RecyclerView recycler_viewindicator = holder.recycler_viewindicator;
 		Log.e("eee position", "" + positionViewpager);
-		//imageview_icon.setBackground(dataModel.get(position).getImage());
 
+		//imageview_icon.setBackground(dataModel.get(position).getImage());
 		Drawable image = Utils.getDrawableImage(mcontext, compareModel.get(position).getProductModelForcompare().getImage_url());
 		Glide.with(mcontext).load(image).apply(RequestOptions.centerCropTransform()).into(imageview_icon);
 		//Glide.with(mcontext).load(image).error(R.drawable.ic_menu_gallery).into(imageview_icon);
