@@ -43,7 +43,7 @@ public class Utils {
 	// TODO: Remove when reworking compare page
 	public static final String ind_cat_environment = "ind_cat_environment";
 	public static final String ind_cat_social = "ind_cat_social";
-	public static final String ind_cat_good_gevernance = "ind_cat_good_gevernance";
+	public static final String ind_cat_good_governance = "ind_cat_governance";
 	public static final String ind_cat_economic = "ind_cat_economic";
 	
 	

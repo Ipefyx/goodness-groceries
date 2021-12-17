@@ -36,8 +36,9 @@ public class IndicatorModel implements Serializable {
 		this.general_description = other.general_description;
 		
 		this.applicable = other.applicable;
-		
-		sub_indicators = new ArrayList<>(other.sub_indicators);
+
+		if(other.sub_indicators != null)
+			sub_indicators = new ArrayList<>(other.sub_indicators);
 	}
 	
 	public void mergeBaseIndicator(IndicatorModel base) {
@@ -105,5 +106,13 @@ public class IndicatorModel implements Serializable {
 	
 	public void setSelected(boolean selected) {
 		isSelected = selected;
+	}
+
+	@Override public boolean equals(Object o){
+		if(o instanceof IndicatorModel){
+			IndicatorModel toCompare = (IndicatorModel) o;
+			return this.getId().equals(toCompare.getId());
+		}
+		return false;
 	}
 }

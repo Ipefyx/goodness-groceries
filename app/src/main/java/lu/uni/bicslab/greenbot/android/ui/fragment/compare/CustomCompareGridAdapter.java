@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import lu.uni.bicslab.greenbot.android.R;
@@ -24,10 +25,10 @@ import lu.uni.bicslab.greenbot.android.other.Utils;
 
 public class CustomCompareGridAdapter extends RecyclerView.Adapter<CustomCompareGridAdapter.CustomViewHolder> {
 	
-	private final List<CompareModel> compareModel;
+	private final List<CompareModel> compareModels;
 	private final Context mcontext;
 	int positionViewpager;
-	private final List<IndicatorModel> modelIndicatorModel;
+	private final List<List<IndicatorModel>> modelIndicatorModelss; // Lists of indicators grouped by category
 	
 	public static class CustomViewHolder extends RecyclerView.ViewHolder {
 		
@@ -43,22 +44,23 @@ public class CustomCompareGridAdapter extends RecyclerView.Adapter<CustomCompare
 		}
 	}
 	
-	public CustomCompareGridAdapter(Context mcontext, int positionViewpager, List<CompareModel> mCategoryList) {
-		this.compareModel = mCategoryList;
+	public CustomCompareGridAdapter(Context mcontext, int positionViewpager, List<CompareModel> mCompareModelList) {
+		this.compareModels = mCompareModelList;
 		this.mcontext = mcontext;
 		this.positionViewpager = positionViewpager;
-		if (positionViewpager == 0) {
-			modelIndicatorModel = compareModel.get(0).getmCompareItemsModel().getIndCatEnvironmentlist();
-			
-		} else if (positionViewpager == 1) {
-			modelIndicatorModel = compareModel.get(0).getmCompareItemsModel().getIndCatEconomicList();
-			
-		} else if (positionViewpager == 2) {
-			modelIndicatorModel = compareModel.get(0).getmCompareItemsModel().getIndCatSociallist();
-			
-		} else {
-			modelIndicatorModel = compareModel.get(0).getmCompareItemsModel().getIndCatGoodGevernanceList();
-			
+
+
+		modelIndicatorModelss = new ArrayList<>();
+		for (int i=0; i<compareModels.size(); i++ ) {
+			if(positionViewpager == 0)
+				modelIndicatorModelss.add(compareModels.get(i).getmCompareItemsModel().getIndCatEnvironmentlist());
+			else if(positionViewpager == 1)
+				modelIndicatorModelss.add(compareModels.get(i).getmCompareItemsModel().getIndCatEconomicList());
+			else if(positionViewpager == 2)
+				modelIndicatorModelss.add(compareModels.get(i).getmCompareItemsModel().getIndCatSociallist());
+			else
+				modelIndicatorModelss.add(compareModels.get(i).getmCompareItemsModel().getIndCatGoodGevernanceList());
+
 		}
 	}
 	
@@ -80,11 +82,13 @@ public class CustomCompareGridAdapter extends RecyclerView.Adapter<CustomCompare
 		Log.e("eee position", "" + positionViewpager);
 
 		//imageview_icon.setBackground(dataModel.get(position).getImage());
-		Drawable image = Utils.getDrawableImage(mcontext, compareModel.get(position).getProductModelForcompare().getImage_url());
+		Drawable image = Utils.getDrawableImage(mcontext, compareModels.get(position).getProductModelForcompare().getImage_url());
 		Glide.with(mcontext).load(image).apply(RequestOptions.centerCropTransform()).into(imageview_icon);
 		//Glide.with(mcontext).load(image).error(R.drawable.ic_menu_gallery).into(imageview_icon);
 
-		CustomCompareListRowAdapter adapter = new CustomCompareListRowAdapter(mcontext, positionViewpager, modelIndicatorModel);
+		/////CustomCompareListRowAdapter adapter = new CustomCompareListRowAdapter(mcontext, positionViewpager, modelIndicatorModel);
+		CustomCompareListRowAdapter adapter = new CustomCompareListRowAdapter(mcontext, positionViewpager, modelIndicatorModelss.get(position));
+
 		recycler_viewindicator.setAdapter(adapter);
 		recycler_viewindicator.setLayoutManager(new LinearLayoutManager(mcontext));
 		
@@ -92,6 +96,6 @@ public class CustomCompareGridAdapter extends RecyclerView.Adapter<CustomCompare
 	
 	@Override
 	public int getItemCount() {
-		return compareModel.size();
+		return compareModels.size();
 	}
 }

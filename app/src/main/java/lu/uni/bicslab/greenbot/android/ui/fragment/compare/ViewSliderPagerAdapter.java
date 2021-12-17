@@ -33,9 +33,9 @@ public class ViewSliderPagerAdapter extends RecyclerView.Adapter<ViewSliderPager
 	List<CompareModel> compareModelList;
 	
 	public ViewSliderPagerAdapter(Context mcontext,
-											ArrayList<Integer> layouts, List<IndicatorCategoryModel> mIndicatorCategoryModel, List<CompareModel> mCategoryList) {
+											ArrayList<Integer> layouts, List<IndicatorCategoryModel> mIndicatorCategoryModel, List<CompareModel> mCompareModelList) {
 		this.mcontext = mcontext;
-		this.compareModelList = mCategoryList;
+		this.compareModelList = mCompareModelList;
 		this.mCategoryList = mIndicatorCategoryModel;
 		this.layouts = layouts;
 	}

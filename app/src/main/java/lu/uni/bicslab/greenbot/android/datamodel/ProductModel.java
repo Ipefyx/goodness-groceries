@@ -3,6 +3,7 @@ package lu.uni.bicslab.greenbot.android.datamodel;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ProductModel implements Serializable {
 	
@@ -100,4 +101,24 @@ public class ProductModel implements Serializable {
 	public void setImage_url(String image_url) {
 		this.image_url = image_url;
 	}
+
+	/***
+	 * Provides list featured indicators only of the product
+	 * @return A list of featured indicators
+	 */
+	public List<IndicatorModel> getFeaturedIndicators() {
+		return indicators.stream().filter(ind -> ind.isApplicable() && ind.sub_indicators.size() > 0).collect(Collectors.toList());
+	}
+
+	/***
+	 * Lets know if the given indicator is featured in the product
+	 * @param indicator The indicator to check
+	 * @return true if is is featured otherwise false
+	 */
+	public boolean isFeatured(IndicatorModel indicator) {
+		return indicators.stream().filter(ind -> ind.isApplicable()
+				&& ind.sub_indicators.size() > 0
+				&& ind.getId().equals(indicator.getId())).collect(Collectors.toList()).size() > 0;
+	}
+
 }

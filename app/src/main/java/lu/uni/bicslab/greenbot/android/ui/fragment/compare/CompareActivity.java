@@ -1,8 +1,8 @@
 package lu.uni.bicslab.greenbot.android.ui.fragment.compare;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.text.Html;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -11,6 +11,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.databinding.FragmentComareLayoutBinding;
@@ -28,8 +29,9 @@ public class CompareActivity extends AppCompatActivity {
 	static ArrayList<Integer> layouts;
 	List<ProductModel> mProductToReviewlist;
 	private FragmentComareLayoutBinding binding;
-	ProductModel modelmain;
+	ProductModel modelmain; // The actual product to compare with others
 	int currentPagemain;
+	private Context mContext;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +42,9 @@ public class CompareActivity extends AppCompatActivity {
 		getSupportActionBar().setTitle("Compare");
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setDisplayShowHomeEnabled(true);
-		
+
+		mContext = getApplicationContext();
+
 		modelmain = (ProductModel) getIntent().getSerializableExtra("key_product");
 
 		readData();
@@ -57,8 +61,7 @@ public class CompareActivity extends AppCompatActivity {
 			
 			// changing the next button text 'NEXT' / 'GOT IT'
 			if (position == 0) {
-				// last page. make button text to GOT IT
-				binding.btnNext.setText("start");
+				binding.btnNext.setText("next");
 				binding.btnSkip.setVisibility(View.GONE);
 			} else if (position == (dots.length - 1)) {
 				binding.btnNext.setText("Finish");
@@ -161,128 +164,59 @@ public class CompareActivity extends AppCompatActivity {
 		binding.viewPager.registerOnPageChangeCallback(pageChangeCallback);
 		
 	}
-	
+
 	public void readData() {
-		
-		List<IndicatorModel> indicatorCategoryList = Utils.getIndicatorList(getApplicationContext());
+		// Liste des categories des indicateurs existantes
+		List<IndicatorCategoryModel> indicatorCategoryModels = Utils.getIndicatorCategoryList(mContext);
+		// Liste des indicateurs existants dans la DB
+		List<IndicatorModel> indicatorModels = Utils.getIndicatorList(mContext);
+		// Liste de tous les produits dans la DB
+		List<ProductModel> productModels = Utils.getProductList(mContext);
 
-		List<ProductModel> productModelList = Utils.getProductList(getApplicationContext());
 
-		//get the items for compare
-		List<CompareModel> compareViewModelList = new ArrayList<>();
-		
-		for (ProductModel mProductModel : productModelList) {
-			//main products
-			if (modelmain.getType().equals(mProductModel.getType())) {
-				//add products
-				//................................................................
-				
-				List<IndicatorModel> indCatEnvironmentlist = new ArrayList<>();
-				List<IndicatorModel> indCatSociallist = new ArrayList<>();
-				List<IndicatorModel> indCatGoodGevernanceList = new ArrayList<>();
+		// Liste des CompareModel contenenant les data permettant de comparer entre eux
+		List<CompareModel> compareModels = new ArrayList<>();
+
+		// Comparaison avec chaque produit existant
+		for (ProductModel pm : productModels) {
+			// Si le type des 2 produits sont les même
+			if(modelmain.getType().equals(pm.getType())) {
+				// Alors on l'ajoute pour le comparer
+
+				// Creer pour chaque categorie d'indicateurs, une liste des indicateurs de cette cat
+				List<IndicatorModel> indCatEnvironmentList = new ArrayList<>();
+				List<IndicatorModel> indCatSocialList = new ArrayList<>();
+				List<IndicatorModel> indCatGoodGovernanceList = new ArrayList<>();
 				List<IndicatorModel> indCatEconomicList = new ArrayList<>();
-				//................................................................
-				for (int j = 0; j < indicatorCategoryList.size(); j++) {
-					IndicatorModel indicatorModelMain = indicatorCategoryList.get(j);
-					
-					//our data
-					if (indicatorModelMain.getCategory_id().equals(Utils.ind_cat_environment)) {
-						indicatorModelMain.setSelected(false);
-						
-						indCatEnvironmentlist.add(indicatorModelMain);
-						
-					} else if (indicatorModelMain.getCategory_id().equals(Utils.ind_cat_social)) {
-						indicatorModelMain.setSelected(false);
-						//if (indicatorModelMain.getId().equals(indicator)) {
-						//  indicatorModelMain.setSelected(true);
-						//}
-						indCatSociallist.add(indicatorModelMain);
-					} else if (indicatorModelMain.getCategory_id().equals(Utils.ind_cat_good_gevernance)) {
-						indicatorModelMain.setSelected(false);
-						
-						indCatGoodGevernanceList.add(indicatorModelMain);
-					} else if (indicatorModelMain.getCategory_id().equals(Utils.ind_cat_economic)) {
-						indicatorModelMain.setSelected(false);
-						
-						indCatEconomicList.add(indicatorModelMain);
-					}
-					
-				}
-				//................................................................
-				CompareModel.CompareItemsModel comparemodel = new CompareModel.CompareItemsModel(indCatEnvironmentlist,
-						indCatEconomicList, indCatSociallist, indCatGoodGevernanceList);
-				CompareModel mCompareViewModel = new CompareModel(mProductModel, comparemodel);
-				compareViewModelList.add(mCompareViewModel);
-				
-				//main
-				for (int j = 0; j < mProductModel.indicators.size(); j++) {
-					String indicator = mProductModel.indicators.get(j).getId();
 
-					// TODO: Find reason of getIndicatorfunction instad of direct call of category_id()
-					// String category = getCategoryIndicator(indicatorCategoryList, indicator);
+				// Pour chaque indicateur existant
+				for(IndicatorModel im : indicatorModels) {
 
-					String category = mProductModel.indicators.get(j).getCategory_id();
+					// Verifier et selectionner si le produit contient cet indicateur
+					IndicatorModel nIm = new IndicatorModel(im);
+					nIm.setSelected(pm.isFeatured(im));
 
-					if (category.equals(Utils.ind_cat_environment)) {
-						int n = 0;
-						for (IndicatorModel mm : comparemodel.getIndCatEnvironmentlist()) {
-							if (mm.getId().equals(indicator)) {
-								comparemodel.getIndCatEnvironmentlist().get(n).setSelected(true);
-							}
-							n++;
-						}
-						
-					} else if (category.equals(Utils.ind_cat_social)) {
-						int n = 0;
-						for (IndicatorModel mm : comparemodel.getIndCatSociallist()) {
-							if (mm.getId().equals(indicator)) {
-								comparemodel.getIndCatSociallist().get(n).setSelected(true);
-							}
-							n++;
-						}
-					} else if (category.equals(Utils.ind_cat_good_gevernance)) {
-						int n = 0;
-						for (IndicatorModel mm : comparemodel.getIndCatGoodGevernanceList()) {
-							if (mm.getId().equals(indicator)) {
-								comparemodel.getIndCatGoodGevernanceList().get(n).setSelected(true);
-							}
-							n++;
-						}
-					} else if (category.equals(Utils.ind_cat_economic)) {
-						int n = 0;
-						for (IndicatorModel mm : comparemodel.getIndCatEconomicList()) {
-							if (mm.getId().equals(indicator)) {
-								comparemodel.getIndCatEconomicList().get(n).setSelected(true);
-							}
-							n++;
-						}
+					// Verifier a quelle categorie appartient l'indicateur et l'ajouter dans le
+					// tableau correspondant
+					switch (nIm.getCategory_id()) {
+						case Utils.ind_cat_environment: indCatEnvironmentList.add(nIm); break;
+						case Utils.ind_cat_social: indCatSocialList.add(nIm); break;
+						case Utils.ind_cat_good_governance: indCatGoodGovernanceList.add(nIm); break;
+						case Utils.ind_cat_economic: indCatEconomicList.add(nIm); break;
 					}
 				}
-				
-			}
-			
-		}
-		
-		
-		//category
-		List<IndicatorCategoryModel> mCategoryListmain = Utils.getIndicatorCategoryList(getApplicationContext());
-		
-		
-		setmAdapterViewpager(mCategoryListmain, compareViewModelList);
-		
-	}
-	
-	public String getCategoryIndicator(List<IndicatorModel> model, String id) {
-		String category = Utils.ind_cat_environment;
-		for (int j = 0; j < model.size(); j++) {
-			String modelId = model.get(j).getId();
-			if (modelId.equals(id)) {
-				category = model.get(j).getCategory_id();
-				break;
-			}
-		}
-		return category;
 
+
+				// Ajout à la liste des objets à comparer
+				CompareModel compareModel = new CompareModel(new ProductModel(pm),
+						new CompareModel.CompareItemsModel(indCatEnvironmentList, indCatSocialList,
+								indCatGoodGovernanceList, indCatEconomicList));
+				compareModels.add(compareModel);
+
+			}
+		}
+
+		setmAdapterViewpager(indicatorCategoryModels, compareModels);
 	}
 	
 }
