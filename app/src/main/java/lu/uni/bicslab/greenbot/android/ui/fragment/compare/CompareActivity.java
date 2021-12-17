@@ -210,7 +210,8 @@ public class CompareActivity extends AppCompatActivity {
 				// Ajout à la liste des objets à comparer
 				CompareModel compareModel = new CompareModel(new ProductModel(pm),
 						new CompareModel.CompareItemsModel(indCatEnvironmentList, indCatSocialList,
-								indCatGoodGovernanceList, indCatEconomicList));
+								indCatGoodGovernanceList, indCatEconomicList),
+								pm.getCode().equals(modelmain.getCode()));
 				compareModels.add(compareModel);
 
 			}

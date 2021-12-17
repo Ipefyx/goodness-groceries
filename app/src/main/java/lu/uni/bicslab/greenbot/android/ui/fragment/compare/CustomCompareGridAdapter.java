@@ -1,6 +1,7 @@
 package lu.uni.bicslab.greenbot.android.ui.fragment.compare;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -31,13 +33,15 @@ public class CustomCompareGridAdapter extends RecyclerView.Adapter<CustomCompare
 	private final List<List<IndicatorModel>> modelIndicatorModelss; // Lists of indicators grouped by category
 	
 	public static class CustomViewHolder extends RecyclerView.ViewHolder {
-		
+
+		CardView card_view_main;
 		TextView txt_categoryname;
 		ImageView img_product_icon;
 		RecyclerView recycler_viewindicator;
 		
 		public CustomViewHolder(View view) {
 			super(view);
+			this.card_view_main = view.findViewById(R.id.card_view);
 			this.txt_categoryname = view.findViewById(R.id.txt_categoryname);
 			this.img_product_icon = view.findViewById(R.id.img_product_icon);
 			this.recycler_viewindicator = view.findViewById(R.id.indicator_view);
@@ -86,8 +90,11 @@ public class CustomCompareGridAdapter extends RecyclerView.Adapter<CustomCompare
 		Glide.with(mcontext).load(image).apply(RequestOptions.centerCropTransform()).into(imageview_icon);
 		//Glide.with(mcontext).load(image).error(R.drawable.ic_menu_gallery).into(imageview_icon);
 
-		/////CustomCompareListRowAdapter adapter = new CustomCompareListRowAdapter(mcontext, positionViewpager, modelIndicatorModel);
 		CustomCompareListRowAdapter adapter = new CustomCompareListRowAdapter(mcontext, positionViewpager, modelIndicatorModelss.get(position));
+
+		// Colored frame around compared/featured product
+		if(compareModels.get(position).IsReference())
+			holder.card_view_main.setCardBackgroundColor(Color.YELLOW);
 
 		recycler_viewindicator.setAdapter(adapter);
 		recycler_viewindicator.setLayoutManager(new LinearLayoutManager(mcontext));

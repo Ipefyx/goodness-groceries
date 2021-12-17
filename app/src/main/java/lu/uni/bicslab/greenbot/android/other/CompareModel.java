@@ -9,10 +9,12 @@ public class CompareModel {
 	
 	ProductModel productModelForcompare;
 	CompareItemsModel mCompareItemsModel;
-	
-	public CompareModel(ProductModel productModelForcompare, CompareItemsModel mCompareItemsModel) {
-		this.productModelForcompare = productModelForcompare;
-		this.mCompareItemsModel = mCompareItemsModel;
+	boolean isReferenceProduct;
+
+	public CompareModel(ProductModel producModel, CompareItemsModel compareItemsModel, boolean isRef) {
+		this.productModelForcompare = producModel;
+		this.mCompareItemsModel = compareItemsModel;
+		this.isReferenceProduct = isRef;
 	}
 	
 	public ProductModel getProductModelForcompare() {
@@ -30,6 +32,8 @@ public class CompareModel {
 	public void setmCompareItemsModel(CompareItemsModel mCompareItemsModel) {
 		this.mCompareItemsModel = mCompareItemsModel;
 	}
+
+	public boolean IsReference() { return isReferenceProduct; }
 	
 	public static class CompareItemsModel {
 		List<IndicatorModel> indCatEnvironmentlist;
