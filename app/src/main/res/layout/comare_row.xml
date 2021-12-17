@@ -29,6 +29,13 @@
             card_view:srcCompat="@drawable/ic_menu_gallery"
             >
         </ImageView>
+            <ImageView
+                android:id="@+id/img_category_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom|end"
+                >
+            </ImageView>
 
         </androidx.cardview.widget.CardView>
 

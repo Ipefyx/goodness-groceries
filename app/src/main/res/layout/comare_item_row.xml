@@ -16,14 +16,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/txt_firstletter"
-        style="@style/TextAppearance.AppCompat.Headline"
-        android:layout_width="@dimen/indi_image"
-        android:layout_height="@dimen/indi_image"
-        android:layout_gravity="center_vertical"
-        android:layout_centerVertical="true"
-        />
+            <ImageView
+                android:id="@+id/txt_firstletter"
+                style="@style/TextAppearance.AppCompat.Headline"
+                android:layout_width="@dimen/indi_image"
+                android:layout_height="@dimen/indi_image"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical" />
         <TextView
             android:id="@+id/txt_name"
             style="@style/TextAppearance.AppCompat.Subhead"

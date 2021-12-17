@@ -21,6 +21,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lu.uni.bicslab.greenbot.android.R;
+import lu.uni.bicslab.greenbot.android.datamodel.ProductCategoryModel;
+import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
 import lu.uni.bicslab.greenbot.android.other.CompareModel;
 import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
 import lu.uni.bicslab.greenbot.android.other.Utils;
@@ -37,6 +39,7 @@ public class CustomCompareGridAdapter extends RecyclerView.Adapter<CustomCompare
 		CardView card_view_main;
 		TextView txt_categoryname;
 		ImageView img_product_icon;
+		ImageView img_category_icon;
 		RecyclerView recycler_viewindicator;
 		
 		public CustomViewHolder(View view) {
@@ -44,6 +47,7 @@ public class CustomCompareGridAdapter extends RecyclerView.Adapter<CustomCompare
 			this.card_view_main = view.findViewById(R.id.card_view);
 			this.txt_categoryname = view.findViewById(R.id.txt_categoryname);
 			this.img_product_icon = view.findViewById(R.id.img_product_icon);
+			this.img_category_icon = view.findViewById(R.id.img_category_icon);
 			this.recycler_viewindicator = view.findViewById(R.id.indicator_view);
 		}
 	}
@@ -80,15 +84,18 @@ public class CustomCompareGridAdapter extends RecyclerView.Adapter<CustomCompare
 	
 	@Override
 	public void onBindViewHolder(CustomCompareGridAdapter.CustomViewHolder holder, int position) {
-		// ProductModel dataModel = productModel.get(position);
-		ImageView imageview_icon = holder.img_product_icon;
+		ProductModel model = compareModels.get(position).getProductModelForcompare();
+		ProductCategoryModel categoryModel = Utils.getProductCategoryByID(mcontext, model.getCategory());
+		ImageView iv_product_icon = holder.img_product_icon;
+		ImageView iv_category_icon = holder.img_category_icon;
 		RecyclerView recycler_viewindicator = holder.recycler_viewindicator;
 		Log.e("eee position", "" + positionViewpager);
 
-		//imageview_icon.setBackground(dataModel.get(position).getImage());
-		Drawable image = Utils.getDrawableImage(mcontext, compareModels.get(position).getProductModelForcompare().getImage_url());
-		Glide.with(mcontext).load(image).apply(RequestOptions.centerCropTransform()).into(imageview_icon);
-		//Glide.with(mcontext).load(image).error(R.drawable.ic_menu_gallery).into(imageview_icon);
+		Drawable image = Utils.getDrawableImage(mcontext, model.getImage_url());
+		Glide.with(mcontext).load(image).apply(RequestOptions.centerCropTransform()).into(iv_product_icon);
+		//Glide.with(mcontext).load(image).error(R.drawable.ic_menu_gallery).into(iv_product_icon);
+
+		Glide.with(mcontext).load(Utils.getDrawableImage(mcontext, categoryModel.getIcon_name())).error(R.drawable.ic_menu_gallery).into(iv_category_icon);
 
 		CustomCompareListRowAdapter adapter = new CustomCompareListRowAdapter(mcontext, positionViewpager, modelIndicatorModelss.get(position));
 
