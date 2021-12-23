@@ -104,8 +104,10 @@ public class IndicatorAdapter extends RecyclerView.Adapter<IndicatorAdapter.Indi
 			holder.indicator_layout.addView(imageview);
 			holder.indicator_flow.addView(imageview);
 		}
-		
+
+		// Product icon
 		Glide.with(context).load(Utils.getDrawableImage(context, product.getImage_url())).error(R.drawable.ic_menu_gallery).into(holder.imageview_icon);
+		//Product category icon
 		Glide.with(context).load(Utils.getDrawableImage(context, product.getCategory())).error(R.drawable.ic_menu_gallery).into(holder.imageview_origin);
 	}
 	
