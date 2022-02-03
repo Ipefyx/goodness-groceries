@@ -1,31 +1,29 @@
 <resources>
     <string name="app_name">Goodness Groceries</string>
-    
 
-    
+
     <!--    General stuff-->
     <string name="client_id">Pall Center client ID</string>
-    
+
     <string name="general_error">An error has occurred</string>
     <string name="general_error_try_again">An error has occurred. Please try again later.</string>
     <string name="network_error">Please check your internet connection and try again later.</string>
-    
+
     <string name="no_products_found">Sorry, no products found</string>
-    
+
     <string name="ok">OK</string>
     <string name="next">Continue</string>
     <string name="or">or</string>
-    
+
     <string name="loading">Loading..</string>
     <string name="nodata">No Data!</string>
 
     <string name="permissions_modal_camera_description">Goodness Groceries needs access to your camera to scan QR-codes.</string>
     <string name="camera_not_allowed">Goodness Groceries was not granted access to your camera to scan QR-codes. Please change that in settings. Thank you.</string>
     <string name="scan_low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
-    
-    
-    
-<!--    Welcome pages + first-time pages-->
+
+
+    <!--    Welcome pages + first-time pages-->
     <string name="welcome_page_1_title">Welcome to Goodness Groceries!</string>
     <string name="welcome_page_1_text">This app will allow you to compare the ethical and eco-responsible characteristics of selected food products available in Pall Center whilst you shop.</string>
     <string name="welcome_page_3_title">What is most important to you when you shop?</string>
@@ -44,14 +42,13 @@
     <string name="accountconsideration">Your account is under consideration</string>
     <string name="id_digit_alert">The client ID must have exactly 13 digits</string>
     <string name="scan_directly">Scan your Pall Center customer card</string>
-    
-    
-    
-<!--    Language dialog-->
+
+
+    <!--    Language dialog-->
     <string name="language">Language</string>
     <string name="language_change_later">You can change the language in the settings later.</string>
-    
-    
+
+
     <!--    Home menu-->
     <string name="menu_home">Home</string>
     <string name="menu_scan">Scan</string>
@@ -60,16 +57,14 @@
 
     <string name="menu_product_categories">Categories</string>
     <string name="menu_products">Products</string>
-    
-    
-    
-<!--    Feedback screen-->
+
+
+    <!--    Feedback screen-->
     <string name="feedback_page_text">You recently bought the following product, which indicators led you to choose it?</string>
     <string name="price">Price</string>
     <string name="other_reason">Other reason…</string>
     <string name="feedback_thank_you">Thank you!</string>
     <string name="feedback_thank_you_message">Thank you for reviewing the product(s) you purchased. Your feedback allows the research team to understand your food choices and to find out how grocery shopping can be made more sustainable.</string>
-
 
 
     <!--    Product details screen-->
@@ -80,29 +75,24 @@
     <string name="type">Type</string>
     <string name="category">Category</string>
     <string name="provider">Company</string>
-    
+
     <string name="indicators">Indicators</string>
 
     <string name="show_less">Show less</string>
     <string name="show_more">Show more</string>
-    
+
     <string name="similar_products">Similar products</string>
-    
-    
-    
-<!--    Profile page-->
+
+
+    <!--    Profile page-->
     <string name="products">Products</string>
     <string name="review_products">Review products</string>
     <string name="settings">Settings</string>
 
-    
-    
 
     <!--    Product data-->
     <string name="NOT_APPLICABLE">Not applicable</string>
     <string name="NO_EVIDENCE">No evidence</string>
-
-
 
 
     <!--    Product and indicator categories-->
@@ -121,7 +111,6 @@
     <string name="IND_CAT_SOCIAL_NAME">Social well-being</string>
 
 
-    
     <!--Indicators-->
     <string name="IND_ANIMAL_DESCRIPTION">The physical and psychological well-being of animals is monitored so that they may live in their species-specific way and be healthy, comfortable, safe, well-nourished, and exist without fear or suffering. This includes housing, rearing, transport, feed, and slaughter.</string>
     <string name="IND_ANIMAL_NAME">Animal welfare</string>
@@ -246,26 +235,23 @@
     <string name="IND_TRANSPARENCY_NAME">Transparency</string>
     <string name="IND_TRANSPARENCY_SUBIND_PRODUCTINFORMATION_NAME">Product Information</string>
     <string name="IND_TRANSPARENCY_SUBIND_SPECIFICATIONS_NAME">Specifications</string>
-    
-    
-<!--    4, Douwe Egberts-->
+
+
+    <!--    4, Douwe Egberts-->
     <string name="PRODUCT_COFFEE_IC_DESCRIPTION">Composition of Robusta and Arabica coffees with beans from Rainforest Alliance and UTZ Certified™ farms only.  Coffee does not contain any additives.</string>
     <string name="PRODUCT_COFFEE_IC_NAME">Aroma Rood Ground Coffee, 250g</string>
-<!--    3, Ethiquable-->
+    <!--    3, Ethiquable-->
     <string name="PRODUCT_COFFEE_IO_DESCRIPTION">Bean coffee from Congo from organic farming and fair trade</string>
     <string name="PRODUCT_COFFEE_IO_NAME">Café Kivu en grains</string>
-<!--    2, Knopes-->
+    <!--    2, Knopes-->
     <string name="PRODUCT_COFFEE_LC_DESCRIPTION">Origin 100% Brazil Isidro Pereira, ground, 250g</string>
     <string name="PRODUCT_COFFEE_LC_NAME">Roasted coffee 1936</string>
-<!--    1, Moulin J.P. Dieschbourg-->
+    <!--    1, Moulin J.P. Dieschbourg-->
     <string name="PRODUCT_COFFEE_LO_DESCRIPTION">100% organic and Fairtrade certified Arabica coffee from Ethiopia, grown in the Sidamo region in heights between 1400 and 2200 m, and roasted at the Moulin J.P. Dieschbourg in Echternach, Luxembourg.</string>
     <string name="PRODUCT_COFFEE_LO_NAME">Café Sidamo Bio</string>
-    
-    
-    
-    
-    
+
+
     <string name="TYPE_COFFEE">Coffee</string>
-    
+
 </resources>
 

@@ -24,6 +24,7 @@ import lu.uni.bicslab.greenbot.android.other.Utils;
 import lu.uni.bicslab.greenbot.android.ui.fragment.compare.CompareActivity;
 import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
 import lu.uni.bicslab.greenbot.android.datamodel.ProductCategoryModel;
+import lu.uni.bicslab.greenbot.android.ui.fragment.compare.CompareActivity2;
 
 public class ProductDetailsActivity extends AppCompatActivity {
 	
@@ -125,8 +126,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
 				if (slideTransition)
 					overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
 				return true;
-			case 0:
-				Intent mIntent = new Intent(getApplicationContext(), CompareActivity.class);
+			case 0: // Start compare activity
+				Intent mIntent = new Intent(getApplicationContext(), CompareActivity2.class);
 				ProductModel product = Utils.getProductByCode(this, productCode);
 				mIntent.putExtra("key_product", product);
 				startActivity(mIntent);
