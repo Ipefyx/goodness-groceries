@@ -1,18 +1,22 @@
 package lu.uni.bicslab.greenbot.android.ui.fragment.compare;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ActionBar;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -98,58 +102,119 @@ public class CompareActivity2 extends AppCompatActivity {
 
     private void displayData() {
 
+        // Liste des categories des indicateurs existantes
+        List<IndicatorCategoryModel> indicatorCategoryModels = Utils.getIndicatorCategoryList(mContext);
+
         // Products
-        productsTable = (TableLayout) findViewById(R.id.tab_compare_product);
+        productsTable = (TableLayout) findViewById(R.id.tab_compare);
         TableLayout.LayoutParams layoutParams = new TableLayout.LayoutParams(TableLayout.LayoutParams.WRAP_CONTENT, TableLayout.LayoutParams.WRAP_CONTENT);
 
         TableRow row = new TableRow(this);
-        row.setLayoutParams(new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        //row.setLayoutParams(new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
         productsTable.addView(row, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
-        addTextToTableRow("Prod.", row);
+        int baseWidth = addTextToTableRow("Pro.", row);
 
 
-        for(CompareModel cm : compareModels) {
+        for (CompareModel cm : compareModels) {
             Drawable prodImg = Utils.getDrawableImage(mContext, cm.getProductModelForcompare().getImage_url());
             addImgToTableRow(prodImg, row);
         }
 
+
         // Categories
-        TableLayout categoriesTable = (TableLayout) findViewById(R.id.tab_compare_category);
+        TableLayout categoriesTable = (TableLayout) findViewById(R.id.tab_compare);
 
         row = new TableRow(this);
-        row.setLayoutParams(new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        //row.setLayoutParams(new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
 
         categoriesTable.addView(row, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
-        addTextToTableRow("Cat.", row);
+        addTextToTableRow("Cat. ", row);
 
-        for(CompareModel cm : compareModels) {
+        for (CompareModel cm : compareModels) {
             String name = cm.getProductModelForcompare().getCategory();
             ProductCategoryModel cat = Utils.getProductCategoryByID(mContext, cm.getProductModelForcompare().getCategory());
             Drawable catImg = Utils.getDrawableImage(mContext, cat.getIcon_name());
             addImgToTableRow(catImg, row);
-            //addTextToTableRow(name,row);
+        }
+
+
+        for (IndicatorCategoryModel icm : indicatorCategoryModels) {
+            row = new TableRow(this);
+            categoriesTable.addView(row);
+
+            Drawable indicatorCatImg = Utils.getDrawableImage(this, icm.getIcon_name());
+
+            addImgToTableRow(indicatorCatImg, row);
+
+            addTextToTableRow(icm.getName(), row, 4);
+
         }
 
 
 
     }
 
-    private void addTextToTableRow(String str, TableRow row)
+    private int addTextToTableRow(String str, TableRow row)
     {
         TextView t = new TextView(this);
+        TableRow.LayoutParams params =  new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 200);
+        params.setMargins(1,0,1,1);
         //t.setTextColor(color);
+        t.setBackgroundColor(Color.WHITE);
+        t.setGravity(Gravity.CENTER);
+
+        t.setLayoutParams(params);
         t.setText(str);
         row.addView(t);
+
+        return t.getMeasuredWidth();
+    }
+
+    private int addTextToTableRow(String str, TableRow row, int span)
+    {
+        TextView t = new TextView(this);
+        TableRow.LayoutParams params =  new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 200);
+        params.setMargins(1,0,1,1);
+
+        params.span = span;
+
+        //t.setTextColor(color);
+        t.setBackgroundColor(Color.WHITE);
+        t.setGravity(Gravity.CENTER);
+
+        t.setLayoutParams(params);
+        t.setText(str);
+
+
+
+        row.addView(t);
+
+        return t.getWidth();
     }
 
     private void addImgToTableRow(Drawable img, TableRow row) {
         ImageView i = new ImageView(this);
-        ViewGroup.LayoutParams params = new TableRow.LayoutParams(200,200);
+        TableRow.LayoutParams params = new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
+        params.setMargins(1,0,1,1);
         i.setLayoutParams(params);
-        i.setBackground(img);
+        i.setBackgroundColor(Color.WHITE);
+        //i.setBackground(img);
+        Glide.with(mContext).load(img).apply(RequestOptions.fitCenterTransform()).into(i);
+        row.addView(i);
+    }
+
+    private void addImgToTableRow(Drawable img, TableRow row, int width) {
+        ImageView i = new ImageView(this);
+        TableRow.LayoutParams params = new TableRow.LayoutParams(width,ViewGroup.LayoutParams.MATCH_PARENT);
+        params.setMargins(1,0,1,1);
+        i.setLayoutParams(params);
+        i.setBackgroundColor(Color.WHITE);
+        //i.setBackground(img);
+        Glide.with(mContext).load(img).apply(RequestOptions.fitCenterTransform()).into(i);
         row.addView(i);
     }
 }
