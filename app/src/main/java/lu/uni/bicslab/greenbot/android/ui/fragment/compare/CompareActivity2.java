@@ -7,6 +7,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -34,6 +35,13 @@ public class CompareActivity2 extends AppCompatActivity {
     private ProductModel comparedProduct;
     private Context mContext;
     private List<CompareModel> compareModels;
+
+    // Pour chaque categorie d'indicateurs, une liste des indicateurs de cette cat
+    List<IndicatorModel> indCatEnvironmentList = new ArrayList<>();
+    List<IndicatorModel> indCatSocialList = new ArrayList<>();
+    List<IndicatorModel> indCatGoodGovernanceList = new ArrayList<>();
+    List<IndicatorModel> indCatEconomicList = new ArrayList<>();
+
 
     private TableLayout productsTable;
 
@@ -67,10 +75,10 @@ public class CompareActivity2 extends AppCompatActivity {
                 // Ajout de cet item à la liste de comparaison
 
                 // Creer pour chaque categorie d'indicateurs, une liste des indicateurs de cette cat
-                List<IndicatorModel> indCatEnvironmentList = new ArrayList<>();
-                List<IndicatorModel> indCatSocialList = new ArrayList<>();
-                List<IndicatorModel> indCatGoodGovernanceList = new ArrayList<>();
-                List<IndicatorModel> indCatEconomicList = new ArrayList<>();
+                indCatEnvironmentList = new ArrayList<>();
+                indCatSocialList = new ArrayList<>();
+                indCatGoodGovernanceList = new ArrayList<>();
+                indCatEconomicList = new ArrayList<>();
 
                 // Pour chaque indicateur existant
                 for(IndicatorModel im : indicatorModels) {
@@ -142,6 +150,7 @@ public class CompareActivity2 extends AppCompatActivity {
         }
 
 
+        // Indicators
         for (IndicatorCategoryModel icm : indicatorCategoryModels) {
             row = new TableRow(this);
             categoriesTable.addView(row);
@@ -152,10 +161,82 @@ public class CompareActivity2 extends AppCompatActivity {
 
             addTextToTableRow(icm.getName(), row, 4);
 
+            // Environment
+            if(icm.getId().equals(Utils.ind_cat_environment)) {
+                // Environment indicators
+                for(IndicatorModel ind : indCatEnvironmentList) {
+                    row = new TableRow(this);
+                    categoriesTable.addView(row);
+
+                    Drawable indImg = Utils.getDrawableImage(this, ind.getIcon_name());
+                    addImgToTableRow(indImg, row);
+
+                    for(CompareModel cm : compareModels) {
+                        if(cm.getProductModelForcompare().isFeatured(ind))
+                            addTextToTableRow("V", row);
+                        else
+                            addTextToTableRow("X", row);
+                    }
+                }
+            }
+
+            // Economic well-being
+            if(icm.getId().equals(Utils.ind_cat_economic)) {
+                // Economic indicators
+                for(IndicatorModel ind : indCatEconomicList) {
+                    row = new TableRow(this);
+                    categoriesTable.addView(row);
+
+                    Drawable indImg = Utils.getDrawableImage(this, ind.getIcon_name());
+                    addImgToTableRow(indImg, row);
+
+                    for(CompareModel cm : compareModels) {
+                        if(cm.getProductModelForcompare().isFeatured(ind))
+                            addTextToTableRow("V", row);
+                        else
+                            addTextToTableRow("X", row);
+                    }
+                }
+            }
+
+            // Social
+            if(icm.getId().equals(Utils.ind_cat_social)) {
+                // Social indicators
+                for(IndicatorModel ind : indCatSocialList) {
+                    row = new TableRow(this);
+                    categoriesTable.addView(row);
+
+                    Drawable indImg = Utils.getDrawableImage(this, ind.getIcon_name());
+                    addImgToTableRow(indImg, row);
+
+                    for(CompareModel cm : compareModels) {
+                        if(cm.getProductModelForcompare().isFeatured(ind))
+                            addTextToTableRow("V", row);
+                        else
+                            addTextToTableRow("X", row);
+                    }
+                }
+            }
+
+            // Good governance
+            if(icm.getId().equals(Utils.ind_cat_good_governance)) {
+                // Good governance indicators
+                for(IndicatorModel ind : indCatGoodGovernanceList) {
+                    row = new TableRow(this);
+                    categoriesTable.addView(row);
+
+                    Drawable indImg = Utils.getDrawableImage(this, ind.getIcon_name());
+                    addImgToTableRow(indImg, row);
+
+                    for(CompareModel cm : compareModels) {
+                        if(cm.getProductModelForcompare().isFeatured(ind))
+                            addTextToTableRow("V", row);
+                        else
+                            addTextToTableRow("X", row);
+                    }
+                }
+            }
         }
-
-
-
     }
 
     private int addTextToTableRow(String str, TableRow row)
