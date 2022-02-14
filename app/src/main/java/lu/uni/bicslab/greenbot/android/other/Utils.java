@@ -256,10 +256,10 @@ public class Utils {
 			product.setType(getStringByResName(context, product.getType()));
 			
 			product.setImage_url(PRODUCT_IMAGE_PREFIX + product.getImage_url());
-			
+
 			for (IndicatorModel ind : product.indicators) {
 				ind.mergeBaseIndicator(getIndicatorByID(context, ind.getId()));
-				
+
 				for (SubIndicatorModel sub : ind.sub_indicators) {
 					sub.setName(getStringByResName(context, sub.getName()));
 					sub.setDescription(getStringByResName(context, sub.getDescription()));
@@ -267,8 +267,17 @@ public class Utils {
 			}
 		}
 	}
-	
-	
+
+	// TODO: REMOVE ? //
+	public static boolean isIndicatorApplicable(Context context, String productId, String indicatorId) {
+		ProductModel product = getProductByCode(context, productId);
+		Optional<IndicatorModel> match = product.indicators.stream().filter(ind -> ind.getId().equals(indicatorId)).findAny();
+
+		IndicatorModel ind = match.orElse(null);
+
+		if(ind != null) return ind.isApplicable();
+		return false;
+	}
 	
 	public static IndicatorModel getIndicatorByID(Context context, String id) {
 		Optional<IndicatorModel> match = getIndicatorList(context).stream().filter(ind -> ind.getId().equals(id)).findFirst();

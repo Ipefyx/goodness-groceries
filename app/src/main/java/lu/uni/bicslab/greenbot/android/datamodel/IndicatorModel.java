@@ -24,6 +24,7 @@ public class IndicatorModel implements Serializable {
 		this.category_id = category_id;
 		this.icon_name = icon_name;
 		this.general_description = general_description;
+		this.applicable = applicable;
 	}
 	
 	public IndicatorModel(IndicatorModel other) {
@@ -97,9 +98,7 @@ public class IndicatorModel implements Serializable {
 	public void setApplicable(boolean applicable) {
 		this.applicable = applicable;
 	}
-	
-	
-	
+
 	public boolean isSelected() {
 		return isSelected;
 	}

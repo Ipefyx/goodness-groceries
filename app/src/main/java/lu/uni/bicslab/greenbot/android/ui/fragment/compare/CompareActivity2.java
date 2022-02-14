@@ -7,6 +7,8 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.SpannableString;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.ViewGroup;
@@ -32,9 +34,15 @@ import lu.uni.bicslab.greenbot.android.other.Utils;
 
 public class CompareActivity2 extends AppCompatActivity {
 
+    private static SpannableString indicatorYes = new SpannableString(
+            Html.fromHtml("<font color=#47a216><b>" + "✔" + "</b></font>"));
+    private static SpannableString indicatorNo = new SpannableString(
+            Html.fromHtml("<font color=#ff0000><b>" + "Ø" + "</b></font>"));
+
     private ProductModel comparedProduct;
     private Context mContext;
     private List<CompareModel> compareModels;
+
 
     // Pour chaque categorie d'indicateurs, une liste des indicateurs de cette cat
     List<IndicatorModel> indCatEnvironmentList = new ArrayList<>();
@@ -85,6 +93,8 @@ public class CompareActivity2 extends AppCompatActivity {
                     // Verifier et selectionner si le produit contient cet indicateur
                     IndicatorModel nIm = new IndicatorModel(im);
                     nIm.setSelected(pm.isFeatured(im));
+                    nIm.setApplicable(im.isApplicable());
+
 
                     // Verifier a quelle categorie appartient l'indicateur et l'ajouter dans le
                     // tableau correspondant
@@ -164,6 +174,7 @@ public class CompareActivity2 extends AppCompatActivity {
             // Environment
             if(icm.getId().equals(Utils.ind_cat_environment)) {
                 // Environment indicators
+
                 for(IndicatorModel ind : indCatEnvironmentList) {
                     row = new TableRow(this);
                     categoriesTable.addView(row);
@@ -171,11 +182,18 @@ public class CompareActivity2 extends AppCompatActivity {
                     Drawable indImg = Utils.getDrawableImage(this, ind.getIcon_name());
                     addImgToTableRow(indImg, row);
 
+                    // Control with the featured product if this indicator is applicable to those
+                    if(!Utils.isIndicatorApplicable(mContext, comparedProduct.getCode(), ind.getId())) {
+                        addTextToTableRow("Not applicable", row, 4);
+                        continue;
+                    }
+
                     for(CompareModel cm : compareModels) {
+
                         if(cm.getProductModelForcompare().isFeatured(ind))
-                            addTextToTableRow("V", row);
+                            addSpannableToTableRow(indicatorYes, row);
                         else
-                            addTextToTableRow("X", row);
+                            addSpannableToTableRow(indicatorNo, row);
                     }
                 }
             }
@@ -190,12 +208,20 @@ public class CompareActivity2 extends AppCompatActivity {
                     Drawable indImg = Utils.getDrawableImage(this, ind.getIcon_name());
                     addImgToTableRow(indImg, row);
 
-                    for(CompareModel cm : compareModels) {
-                        if(cm.getProductModelForcompare().isFeatured(ind))
-                            addTextToTableRow("V", row);
-                        else
-                            addTextToTableRow("X", row);
+                    // Control with the featured product if this indicator is applicable to those
+                    if(!Utils.isIndicatorApplicable(mContext, comparedProduct.getCode(), ind.getId())) {
+                        addTextToTableRow("Not applicable", row, 4);
+                        continue;
                     }
+
+                    for(CompareModel cm : compareModels) {
+
+                        if(cm.getProductModelForcompare().isFeatured(ind))
+                            addSpannableToTableRow(indicatorYes, row);
+                        else
+                            addSpannableToTableRow(indicatorNo, row);
+                    }
+
                 }
             }
 
@@ -209,11 +235,18 @@ public class CompareActivity2 extends AppCompatActivity {
                     Drawable indImg = Utils.getDrawableImage(this, ind.getIcon_name());
                     addImgToTableRow(indImg, row);
 
+                    // Control with the featured product if this indicator is applicable to those
+                    if(!Utils.isIndicatorApplicable(mContext, comparedProduct.getCode(), ind.getId())) {
+                        addTextToTableRow("Not applicable", row, 4);
+                        continue;
+                    }
+
                     for(CompareModel cm : compareModels) {
+
                         if(cm.getProductModelForcompare().isFeatured(ind))
-                            addTextToTableRow("V", row);
+                            addSpannableToTableRow(indicatorYes, row);
                         else
-                            addTextToTableRow("X", row);
+                            addSpannableToTableRow(indicatorNo, row);
                     }
                 }
             }
@@ -228,11 +261,18 @@ public class CompareActivity2 extends AppCompatActivity {
                     Drawable indImg = Utils.getDrawableImage(this, ind.getIcon_name());
                     addImgToTableRow(indImg, row);
 
+                    // Control with the featured product if this indicator is applicable to those
+                    if(!Utils.isIndicatorApplicable(mContext, comparedProduct.getCode(), ind.getId())) {
+                        addTextToTableRow("Not applicable", row, 4);
+                        continue;
+                    }
+
                     for(CompareModel cm : compareModels) {
+
                         if(cm.getProductModelForcompare().isFeatured(ind))
-                            addTextToTableRow("V", row);
+                            addSpannableToTableRow(indicatorYes, row);
                         else
-                            addTextToTableRow("X", row);
+                            addSpannableToTableRow(indicatorNo, row);
                     }
                 }
             }
@@ -275,6 +315,19 @@ public class CompareActivity2 extends AppCompatActivity {
         row.addView(t);
 
         return t.getWidth();
+    }
+
+    private void addSpannableToTableRow(SpannableString ss, TableRow row) {
+        TextView t = new TextView(this);
+        TableRow.LayoutParams params =  new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 200);
+        params.setMargins(1,0,1,1);
+        //t.setTextColor(color);
+        t.setBackgroundColor(Color.WHITE);
+        t.setGravity(Gravity.CENTER);
+
+        t.setLayoutParams(params);
+        t.setText(ss);
+        row.addView(t);
     }
 
     private void addImgToTableRow(Drawable img, TableRow row) {
