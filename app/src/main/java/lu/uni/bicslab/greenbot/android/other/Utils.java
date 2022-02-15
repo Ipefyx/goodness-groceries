@@ -154,8 +154,6 @@ public class Utils {
 	}
 	
 	
-	
-	
 	private static List<IndicatorModel> indicatorList = null;
 	private static List<IndicatorCategoryModel> indicatorCategoryList = null;
 	private static List<ProductCategoryModel> productCategoryList = null;
