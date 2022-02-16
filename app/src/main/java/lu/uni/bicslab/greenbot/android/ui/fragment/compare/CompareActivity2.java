@@ -133,7 +133,8 @@ public class CompareActivity2 extends AppCompatActivity {
 
         productsTable.addView(row, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
-        addRotatedTextToTableRow("Product", row, -90);
+        // Product row
+        addRotatedTextToTableRow(getString(R.string.product), row, -90);
 
 
         for (CompareModel cm : compareModels) {
@@ -151,7 +152,8 @@ public class CompareActivity2 extends AppCompatActivity {
 
         categoriesTable.addView(row, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
-        addRotatedTextToTableRow("Category", row, -90);
+        // Category row
+        addRotatedTextToTableRow(getString(R.string.category), row, -90);
 
         for (CompareModel cm : compareModels) {
             String name = cm.getProductModelForcompare().getCategory();
@@ -185,7 +187,7 @@ public class CompareActivity2 extends AppCompatActivity {
 
                     // Control with the featured product if this indicator is applicable to those
                     if(!Utils.isIndicatorApplicable(mContext, comparedProduct.getCode(), ind.getId())) {
-                        addTextToTableRow("Not applicable", row, 4);
+                        addTextToTableRow(getString(R.string.NOT_APPLICABLE), row, 4);
                         continue;
                     }
 
@@ -211,7 +213,7 @@ public class CompareActivity2 extends AppCompatActivity {
 
                     // Control with the featured product if this indicator is applicable to those
                     if(!Utils.isIndicatorApplicable(mContext, comparedProduct.getCode(), ind.getId())) {
-                        addTextToTableRow("Not applicable", row, 4);
+                        addTextToTableRow(getString(R.string.NOT_APPLICABLE), row, 4);
                         continue;
                     }
 
@@ -238,7 +240,7 @@ public class CompareActivity2 extends AppCompatActivity {
 
                     // Control with the featured product if this indicator is applicable to those
                     if(!Utils.isIndicatorApplicable(mContext, comparedProduct.getCode(), ind.getId())) {
-                        addTextToTableRow("Not applicable", row, 4);
+                        addTextToTableRow(getString(R.string.NOT_APPLICABLE), row, 4);
                         continue;
                     }
 
@@ -264,7 +266,7 @@ public class CompareActivity2 extends AppCompatActivity {
 
                     // Control with the featured product if this indicator is applicable to those
                     if(!Utils.isIndicatorApplicable(mContext, comparedProduct.getCode(), ind.getId())) {
-                        addTextToTableRow("Not applicable", row, 4);
+                        addTextToTableRow(getString(R.string.NOT_APPLICABLE), row, 4);
                         continue;
                     }
 

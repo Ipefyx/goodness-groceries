@@ -14,17 +14,17 @@
     
 
     <string name="loading">Loading..</string>
-    <string name="nodata">No Data!</string>
+    <string name="nodata">Pas de données !</string>
 
 
 
-    <string name="type"> Type</string>
-    <string name="category"> Category</string>
+    <string name="type">Type</string>
+    <string name="category">Categorie</string>
     <string name="provider">Entreprise</string>
 
 
 
-    <string name="accountconsideration">Your account is under consideration</string>
+    <string name="accountconsideration">Votre compte est en cours d\'examen</string>
 
 
 
