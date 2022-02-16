@@ -12,6 +12,7 @@ import android.text.SpannableString;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
@@ -132,7 +133,7 @@ public class CompareActivity2 extends AppCompatActivity {
 
         productsTable.addView(row, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
-        int baseWidth = addTextToTableRow("Pro.", row);
+        addRotatedTextToTableRow("Product", row, -90);
 
 
         for (CompareModel cm : compareModels) {
@@ -150,7 +151,7 @@ public class CompareActivity2 extends AppCompatActivity {
 
         categoriesTable.addView(row, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
-        addTextToTableRow("Cat. ", row);
+        addRotatedTextToTableRow("Category", row, -90);
 
         for (CompareModel cm : compareModels) {
             String name = cm.getProductModelForcompare().getCategory();
@@ -282,7 +283,7 @@ public class CompareActivity2 extends AppCompatActivity {
     private int addTextToTableRow(String str, TableRow row)
     {
         TextView t = new TextView(this);
-        TableRow.LayoutParams params =  new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 200);
+        TableRow.LayoutParams params =  new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 150);
         params.setMargins(1,0,1,1);
         //t.setTextColor(color);
         t.setBackgroundColor(Color.WHITE);
@@ -295,10 +296,33 @@ public class CompareActivity2 extends AppCompatActivity {
         return t.getMeasuredWidth();
     }
 
+    private void addRotatedTextToTableRow(String str, TableRow row, int r) {
+
+        GridView v = new GridView(this);
+        TextView t = new TextView(this);
+
+
+        TableRow.LayoutParams params =  new TableRow.LayoutParams(10, 200);
+        params.setMargins(1,0,1,1);
+        //v.setStretchMode(GridView.);
+
+
+        //t.setBackgroundColor(Color.WHITE);
+        t.setGravity(Gravity.CENTER);
+        t.setLayoutParams(params);
+
+        t.setText(str);
+        t.setRotation(r);
+
+        //v.addView(t);
+
+        row.addView(t);
+    }
+
     private int addTextToTableRow(String str, TableRow row, int span)
     {
         TextView t = new TextView(this);
-        TableRow.LayoutParams params =  new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 200);
+        TableRow.LayoutParams params =  new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 150);
         params.setMargins(1,0,1,1);
 
         params.span = span;
@@ -319,7 +343,7 @@ public class CompareActivity2 extends AppCompatActivity {
 
     private void addSpannableToTableRow(SpannableString ss, TableRow row) {
         TextView t = new TextView(this);
-        TableRow.LayoutParams params =  new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 200);
+        TableRow.LayoutParams params =  new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 150);
         params.setMargins(1,0,1,1);
         //t.setTextColor(color);
         t.setBackgroundColor(Color.WHITE);
