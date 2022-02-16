@@ -20,7 +20,9 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.android.volley.NoConnectionError;
 import com.android.volley.TimeoutError;
 import com.bumptech.glide.Glide;
+import com.google.android.material.snackbar.Snackbar;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -84,12 +86,18 @@ public class FeedbackMainActivity extends AppCompatActivity {
 			other_reason_text.setEnabled(isChecked);
 			onCheckedChange(s2, isChecked);
 		});
-		
-		
+
 		// Fill in the product info, below code taken partially from IndicatorAdapter
 		ProductModel product = Utils.getProductByCode(this, productID);
-		txtName.setText(product.getName());
-		
+
+		try {
+			txtName.setText(product.getName());
+		} catch (NullPointerException e) {
+			Snackbar.make(findViewById(android.R.id.content), "Invalid product!", Snackbar.LENGTH_INDEFINITE).show();
+			//finish();
+			return;
+		}
+
 		// Assume Flow is element 0 and remove all of the ImageViews that may already be there
 		indicator_layout.removeViewsInLayout(1, indicator_layout.getChildCount()-1);
 		
