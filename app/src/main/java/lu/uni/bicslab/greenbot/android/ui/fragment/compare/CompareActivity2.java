@@ -172,112 +172,60 @@ public class CompareActivity2 extends AppCompatActivity {
 
             addImgToTableRow(indicatorCatImg, row);
 
-            addTextToTableRow(icm.getName(), row, 4);
+            addTextToTableRow(icm.getName(), row, compareModels.size());
 
             // Environment
             if(icm.getId().equals(Utils.ind_cat_environment)) {
                 // Environment indicators
-
-                for(IndicatorModel ind : indCatEnvironmentList) {
-                    row = new TableRow(this);
-                    categoriesTable.addView(row);
-
-                    Drawable indImg = Utils.getDrawableImage(this, ind.getIcon_name());
-                    addImgToTableRow(indImg, row);
-
-                    // Control with the featured product if this indicator is applicable to those
-                    if(!Utils.isIndicatorApplicable(mContext, comparedProduct.getCode(), ind.getId())) {
-                        addTextToTableRow(getString(R.string.NOT_APPLICABLE), row, 4);
-                        continue;
-                    }
-
-                    for(CompareModel cm : compareModels) {
-
-                        if(cm.getProductModelForcompare().isFeatured(ind))
-                            addSpannableToTableRow(indicatorYes, row);
-                        else
-                            addSpannableToTableRow(indicatorNo, row);
-                    }
-                }
+                fillCategoryIndicators(indCatEnvironmentList, categoriesTable);
             }
-
             // Economic well-being
-            if(icm.getId().equals(Utils.ind_cat_economic)) {
+            else if(icm.getId().equals(Utils.ind_cat_economic)) {
                 // Economic indicators
-                for(IndicatorModel ind : indCatEconomicList) {
-                    row = new TableRow(this);
-                    categoriesTable.addView(row);
-
-                    Drawable indImg = Utils.getDrawableImage(this, ind.getIcon_name());
-                    addImgToTableRow(indImg, row);
-
-                    // Control with the featured product if this indicator is applicable to those
-                    if(!Utils.isIndicatorApplicable(mContext, comparedProduct.getCode(), ind.getId())) {
-                        addTextToTableRow(getString(R.string.NOT_APPLICABLE), row, 4);
-                        continue;
-                    }
-
-                    for(CompareModel cm : compareModels) {
-
-                        if(cm.getProductModelForcompare().isFeatured(ind))
-                            addSpannableToTableRow(indicatorYes, row);
-                        else
-                            addSpannableToTableRow(indicatorNo, row);
-                    }
-
-                }
+                fillCategoryIndicators(indCatEconomicList, categoriesTable);
             }
 
             // Social
-            if(icm.getId().equals(Utils.ind_cat_social)) {
+            else if(icm.getId().equals(Utils.ind_cat_social)) {
                 // Social indicators
-                for(IndicatorModel ind : indCatSocialList) {
-                    row = new TableRow(this);
-                    categoriesTable.addView(row);
+                fillCategoryIndicators(indCatSocialList, categoriesTable);
+            }
+            // Good governance
+            else if(icm.getId().equals(Utils.ind_cat_good_governance)) {
+                // Good governance indicators
+                fillCategoryIndicators(indCatGoodGovernanceList, categoriesTable);
+            }
+        }
+    }
 
-                    Drawable indImg = Utils.getDrawableImage(this, ind.getIcon_name());
-                    addImgToTableRow(indImg, row);
+    /*** Fills indicators from given list for each product. Has to be called for each indicator category
+     * @param indicators Given indicators from a category
+     * @param table Table layout to add created row to
+     */
+    private void fillCategoryIndicators(List<IndicatorModel> indicators, TableLayout table) {
+        TableRow row;
+        int span = compareModels.size();
 
-                    // Control with the featured product if this indicator is applicable to those
-                    if(!Utils.isIndicatorApplicable(mContext, comparedProduct.getCode(), ind.getId())) {
-                        addTextToTableRow(getString(R.string.NOT_APPLICABLE), row, 4);
-                        continue;
-                    }
 
-                    for(CompareModel cm : compareModels) {
+        for(IndicatorModel ind : indicators) {
+            row = new TableRow(this);
+            table.addView(row);
 
-                        if(cm.getProductModelForcompare().isFeatured(ind))
-                            addSpannableToTableRow(indicatorYes, row);
-                        else
-                            addSpannableToTableRow(indicatorNo, row);
-                    }
-                }
+            Drawable indImg = Utils.getDrawableImage(this, ind.getIcon_name());
+            addImgToTableRow(indImg, row);
+
+            // Control with the featured product if this indicator is applicable to those
+            if(!Utils.isIndicatorApplicable(mContext, comparedProduct.getCode(), ind.getId())) {
+                addTextToTableRow(getString(R.string.NOT_APPLICABLE), row, span);
+                continue;
             }
 
-            // Good governance
-            if(icm.getId().equals(Utils.ind_cat_good_governance)) {
-                // Good governance indicators
-                for(IndicatorModel ind : indCatGoodGovernanceList) {
-                    row = new TableRow(this);
-                    categoriesTable.addView(row);
+            for(CompareModel cm : compareModels) {
 
-                    Drawable indImg = Utils.getDrawableImage(this, ind.getIcon_name());
-                    addImgToTableRow(indImg, row);
-
-                    // Control with the featured product if this indicator is applicable to those
-                    if(!Utils.isIndicatorApplicable(mContext, comparedProduct.getCode(), ind.getId())) {
-                        addTextToTableRow(getString(R.string.NOT_APPLICABLE), row, 4);
-                        continue;
-                    }
-
-                    for(CompareModel cm : compareModels) {
-
-                        if(cm.getProductModelForcompare().isFeatured(ind))
-                            addSpannableToTableRow(indicatorYes, row);
-                        else
-                            addSpannableToTableRow(indicatorNo, row);
-                    }
-                }
+                if(cm.getProductModelForcompare().isFeatured(ind))
+                    addSpannableToTableRow(indicatorYes, row);
+                else
+                    addSpannableToTableRow(indicatorNo, row);
             }
         }
     }
