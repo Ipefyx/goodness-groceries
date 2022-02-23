@@ -1,8 +1,10 @@
 package lu.uni.bicslab.greenbot.android.ui.fragment.compare;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -11,6 +13,7 @@ import android.text.Html;
 import android.text.SpannableString;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -30,6 +33,7 @@ import lu.uni.bicslab.greenbot.android.datamodel.IndicatorCategoryModel;
 import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
 import lu.uni.bicslab.greenbot.android.datamodel.ProductCategoryModel;
 import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
+import lu.uni.bicslab.greenbot.android.datamodel.SubIndicatorModel;
 import lu.uni.bicslab.greenbot.android.other.CompareModel;
 import lu.uni.bicslab.greenbot.android.other.Utils;
 
@@ -42,8 +46,8 @@ public class CompareActivity2 extends AppCompatActivity {
 
     private ProductModel comparedProduct;
     private Context mContext;
+    private Activity mActivity;
     private List<CompareModel> compareModels;
-
 
     // Pour chaque categorie d'indicateurs, une liste des indicateurs de cette cat
     List<IndicatorModel> indCatEnvironmentList = new ArrayList<>();
@@ -60,6 +64,7 @@ public class CompareActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_compare2);
 
         mContext = getApplicationContext();
+        mActivity = this;
         comparedProduct = (ProductModel) getIntent().getSerializableExtra("key_product");
 
         readData();
@@ -149,7 +154,6 @@ public class CompareActivity2 extends AppCompatActivity {
         row = new TableRow(this);
         //row.setLayoutParams(new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
-
         categoriesTable.addView(row, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
         // Category row
@@ -195,6 +199,7 @@ public class CompareActivity2 extends AppCompatActivity {
                 // Good governance indicators
                 fillCategoryIndicators(indCatGoodGovernanceList, categoriesTable);
             }
+
         }
     }
 
@@ -212,7 +217,9 @@ public class CompareActivity2 extends AppCompatActivity {
             table.addView(row);
 
             Drawable indImg = Utils.getDrawableImage(this, ind.getIcon_name());
-            addImgToTableRow(indImg, row);
+            View clickableIcon = addImgToTableRow(indImg, row);
+
+            createIndicatorInfoPopup(ind.getGeneral_description(), ind.getName(), clickableIcon);
 
             // Control with the featured product if this indicator is applicable to those
             if(!Utils.isIndicatorApplicable(mContext, comparedProduct.getCode(), ind.getId())) {
@@ -269,7 +276,7 @@ public class CompareActivity2 extends AppCompatActivity {
         row.addView(t);
     }
 
-    private int addTextToTableRow(String str, TableRow row, int span)
+    private View addTextToTableRow(String str, TableRow row, int span)
     {
         TextView t = new TextView(this);
         TableRow.LayoutParams params =  new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 150);
@@ -288,7 +295,7 @@ public class CompareActivity2 extends AppCompatActivity {
 
         row.addView(t);
 
-        return t.getWidth();
+        return t;
     }
 
     private void addSpannableToTableRow(SpannableString ss, TableRow row) {
@@ -304,7 +311,7 @@ public class CompareActivity2 extends AppCompatActivity {
         row.addView(t);
     }
 
-    private void addImgToTableRow(Drawable img, TableRow row) {
+    private View addImgToTableRow(Drawable img, TableRow row) {
         ImageView i = new ImageView(this);
         TableRow.LayoutParams params = new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
         params.setMargins(1,0,1,1);
@@ -313,6 +320,7 @@ public class CompareActivity2 extends AppCompatActivity {
         //i.setBackground(img);
         Glide.with(mContext).load(img).apply(RequestOptions.fitCenterTransform()).into(i);
         row.addView(i);
+        return i;
     }
 
     private void addImgToTableRow(Drawable img, TableRow row, int width) {
@@ -324,5 +332,18 @@ public class CompareActivity2 extends AppCompatActivity {
         //i.setBackground(img);
         Glide.with(mContext).load(img).apply(RequestOptions.fitCenterTransform()).into(i);
         row.addView(i);
+    }
+
+    private void createIndicatorInfoPopup(String content, String title, View clickable) {
+        clickable.setOnClickListener( new View.OnClickListener() {
+                               @Override
+                               public void onClick(View view) {
+                                   AlertDialog.Builder infoPopup = new AlertDialog.Builder(mActivity);
+                                   infoPopup.setTitle(title);
+                                   infoPopup.setMessage(content);
+                                   infoPopup.show();
+                               }
+                           }
+        );
     }
 }

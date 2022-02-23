@@ -3,6 +3,8 @@ package lu.uni.bicslab.greenbot.android.ui.activity.itemmain;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.SpannableString;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,6 +27,7 @@ import java.util.stream.Collectors;
 
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
+import lu.uni.bicslab.greenbot.android.datamodel.SubIndicatorModel;
 import lu.uni.bicslab.greenbot.android.other.Utils;
 import lu.uni.bicslab.greenbot.android.ui.fragment.compare.CompareActivity;
 import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
@@ -191,7 +194,16 @@ public class ProductDetailsActivity extends AppCompatActivity {
 					public void onClick(View view) {
 						AlertDialog.Builder infoPopup = new AlertDialog.Builder(mContext);
 						infoPopup.setTitle(ind.getName());
-						infoPopup.setMessage(ind.getGeneral_description());
+
+						String content = new String();
+
+						for (SubIndicatorModel si : ind.sub_indicators) {
+							content += "<br><br>";
+							content += "<b>" + si.getName() +"</b>" + "<br>";
+							content += si.getDescription();
+						}
+
+						infoPopup.setMessage(Html.fromHtml(content, Html.FROM_HTML_MODE_LEGACY));
 						infoPopup.setPositiveButton("OK", null);
 						infoPopup.show();
 					}
