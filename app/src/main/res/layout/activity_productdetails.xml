@@ -39,18 +39,18 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" >
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <include
-                        layout="@layout/productview"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"></include>
+                    layout="@layout/productview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></include>
             </LinearLayout>
         </ScrollView>
 

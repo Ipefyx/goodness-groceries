@@ -1,19 +1,24 @@
 package lu.uni.bicslab.greenbot.android.ui.activity.itemmain;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -44,11 +49,15 @@ public class ProductDetailsActivity extends AppCompatActivity {
 	boolean indicatorsExpanded = false;
 	
 	boolean slideTransition = false;
+
+	Context mContext;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
+		mContext = this;
+
 		setContentView(R.layout.activity_productdetails);
 		
 		title = findViewById(R.id.title);
@@ -114,12 +123,13 @@ public class ProductDetailsActivity extends AppCompatActivity {
 		
 		menu.add(R.string.compare_button)
 				.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
-		
+
 		return true;
 	}
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
+
 		switch (item.getItemId()) {
 			case android.R.id.home:
 				finish();
@@ -172,10 +182,23 @@ public class ProductDetailsActivity extends AppCompatActivity {
 		// If the category id matches the search filter, put in indicator_list1, else in indicator_list2 (collapsible)
 		for (IndicatorModel ind : indicators) {
 			View view = this.getLayoutInflater().inflate(R.layout.item_row, indicator_list1, false);
-			
+
 			((TextView) view.findViewById(R.id.indicator_name)).setText(ind.getName());
 			Glide.with(this).load(Utils.getDrawableImage(this, ind.getIcon_name())).error(R.drawable.ic_menu_gallery).into((ImageView) view.findViewById(R.id.indicator_image));
-			
+
+			((TextView)view.findViewById(R.id.indicator_info)).setOnClickListener( new View.OnClickListener() {
+					@Override
+					public void onClick(View view) {
+						AlertDialog.Builder infoPopup = new AlertDialog.Builder(mContext);
+						infoPopup.setTitle(ind.getName());
+						infoPopup.setMessage(ind.getGeneral_description());
+						infoPopup.setPositiveButton("OK", null);
+						infoPopup.show();
+					}
+				}
+			);
+
+
 			if (ind.getCategory_id().equals(indicatorCategoryFilter) || indicatorCategoryFilter == null) {
 				indicator_list1.addView(view);
 			} else {

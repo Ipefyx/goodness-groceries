@@ -51,14 +51,17 @@
                     card_view:srcCompat="@drawable/ic_menu_gallery"></ImageView>
 
             <TextView
-                    android:id="@+id/txtDoc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_margin="@dimen/padding"
-                    android:layout_toRightOf="@+id/imageview_icon"
-                    android:text="Small Textggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg gggggggggggggg gggggggggggggggg gggggggggggggg ggggggggggg ggggggggggggggggggggggggggggggggg"
-                    style="@style/Textprofiledata" />
+                android:id="@+id/txtDoc"
+                style="@style/Textprofiledata"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/padding"
+                android:layout_marginTop="@dimen/padding"
+                android:layout_marginEnd="@dimen/padding"
+                android:layout_marginBottom="@dimen/padding"
+                android:layout_toRightOf="@+id/imageview_icon"
+                android:text="Small Textggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg gggggggggggggg gggggggggggggggg gggggggggggggg ggggggggggg ggggggggggggggggggggggggggggggggg" />
         </RelativeLayout>
     </RelativeLayout>
     r
