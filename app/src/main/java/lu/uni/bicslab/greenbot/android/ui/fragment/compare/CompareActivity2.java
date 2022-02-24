@@ -174,7 +174,8 @@ public class CompareActivity2 extends AppCompatActivity {
 
             Drawable indicatorCatImg = Utils.getDrawableImage(this, icm.getIcon_name());
 
-            addImgToTableRow(indicatorCatImg, row);
+            View clickableView = addImgToTableRow(indicatorCatImg, row);
+            createIndicatorInfoPopup(icm.getDescription(), icm.getName(), clickableView);
 
             addTextToTableRow(icm.getName(), row, compareModels.size());
 
