@@ -21,6 +21,9 @@ import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
 import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
 import lu.uni.bicslab.greenbot.android.datamodel.IndicatorCategoryModel;
 
+/**
+ * @deprecated Use CompareActivity2 instead
+ */
 public class CompareActivity extends AppCompatActivity {
 	
 	private CompareViewModel compareViewModel;

@@ -55,6 +55,10 @@
     <string name="menu_profile">Profile</string>
     <string name="menu_help">Help</string>
 
+    <string name="help_page_button_1">Indicator definitions</string>
+    <string name="help_page_button_2">Help</string>
+    <string name="help_page_button_3">Contact us</string>
+
     <string name="menu_product_categories">Categories</string>
     <string name="menu_products">Products</string>
 
@@ -252,6 +256,10 @@
 
 
     <string name="TYPE_COFFEE">Coffee</string>
+
+    <!--    External links -->
+    <string name="url_help_page">https://food.daloos.uni.lu/projects/research-projects/sustainable-shopping-app/help-page</string>
+    <string name="url_contact_us">https://food.daloos.uni.lu/projects/research-projects/sustainable-shopping-app/contact-us</string>
 
 </resources>
 

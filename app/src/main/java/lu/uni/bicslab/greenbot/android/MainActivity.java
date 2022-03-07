@@ -23,15 +23,18 @@ import lu.uni.bicslab.greenbot.android.other.UserData;
 import lu.uni.bicslab.greenbot.android.ui.activity.itemmain.ProductDetailsActivity;
 import lu.uni.bicslab.greenbot.android.ui.activity.scan.BarcodeScannerActivity;
 
+
+
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, NavigationView.OnNavigationItemSelectedListener {
-	
+
 	private AppBarConfiguration mAppBarConfiguration;
 	private BottomNavigationView navigation;
 	
 	private String[] productsToReview;
 	
 	public static final int BARCODE_CAPTURE = 1;
-	
+
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

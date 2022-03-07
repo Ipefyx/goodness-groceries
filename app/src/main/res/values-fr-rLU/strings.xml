@@ -3,9 +3,12 @@
 
     <string name="menu_home">Accueil</string>
     <string name="menu_scan">Scanner</string>
-    <string name="menu_profile">Profil</string>
+    <string name="menu_profile">Profile</string>
     <string name="menu_help">Aide</string>
 
+    <string name="help_page_button_1">Définitions des indicateurs</string>
+    <string name="help_page_button_2">Aide</string>
+    <string name="help_page_button_3">Nous contacter</string>
 
 
     <string name="ok">OK</string>
@@ -250,6 +253,10 @@
     <string name="or">ou</string>
     <string name="scan_directly">Scannez votre carte client Pall Center</string>
     <string name="settings">Paramètres</string>
+
+    <!--    External links -->
+    <string name="url_help_page">https://food.daloos.uni.lu/projects/research-projects/sustainable-shopping-app/help-page</string>
+    <string name="url_contact_us">https://food.daloos.uni.lu/projects/research-projects/sustainable-shopping-app/contact-us</string>
 
 </resources>
 

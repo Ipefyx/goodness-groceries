@@ -2,9 +2,12 @@ package lu.uni.bicslab.greenbot.android.other;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -307,6 +310,25 @@ public class Utils {
 		
 		return ctx.getString(resID);
 	}
-	
+
+	/**
+	 * Transform given Textview in a clickable hyperlink to the given uri
+	 * @param ctx
+	 * @param textView
+	 * @param uri
+	 */
+	public static void linkify(Context ctx, TextView textView, String uri) {
+		textView.setMovementMethod(LinkMovementMethod.getInstance());
+
+		textView.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Uri uri = Uri.parse(ctx.getResources().getString(R.string.url_contact_us));
+				Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+				ctx.startActivity(intent);
+			}
+
+		});
+	}
 	
 }

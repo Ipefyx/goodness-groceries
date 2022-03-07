@@ -3,12 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
+
     <ImageView
         android:id="@+id/img_icon"
         android:layout_width="@dimen/icon_width"
         android:layout_height="@dimen/icon_width"
-        android:layout_marginTop="@dimen/padding2"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/padding2"
         android:src="@drawable/uni_icon" />
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -21,33 +22,33 @@
 
 
         <TextView
-                android:id="@+id/onbord_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/welcome_page_7_title"
-                android:textColor="@android:color/black"
-                android:layout_gravity="center_horizontal"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentTop="true"
-                android:gravity="center_horizontal"
-                android:textSize="@dimen/txt_title_size"
-                android:textStyle="bold" />
+            android:id="@+id/onbord_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="@string/welcome_page_7_title"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/txt_title_size"
+            android:textStyle="bold" />
 
         <TextView
-                android:id="@+id/onbord_doc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/padding2"
-                android:paddingLeft="@dimen/desc_padding"
-                android:paddingRight="@dimen/desc_padding"
-                android:text="@string/welcome_page_7_text"
-                android:textAlignment="center"
-                android:gravity="center_horizontal"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/txt_doc_size"
-                android:layout_below="@+id/onbord_title" />
+            android:id="@+id/onbord_doc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/onbord_title"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/padding2"
+            android:gravity="center_horizontal"
+            android:paddingLeft="@dimen/desc_padding"
+            android:paddingRight="@dimen/desc_padding"
+            android:text="@string/welcome_page_7_text"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/txt_doc_size" />
 
         <Button
                 android:id="@+id/button_continue"
