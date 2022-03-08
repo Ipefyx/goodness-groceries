@@ -15,7 +15,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.Utils;
@@ -27,6 +31,16 @@ public class HelpFragment extends Fragment {
 	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View root = inflater.inflate(R.layout.fragment_help, container, false);
 		mContext = getContext();
+
+		// Navigation to Indicator definitions page
+
+		ConstraintLayout layout = (ConstraintLayout) root.findViewById(R.id.help_indicator_layout);
+		layout.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Navigation.findNavController(view).navigate(R.id.action_helpFragment_to_indicatorHelpFragment);
+			}
+		});
 
 		// Create hyperlinks to web urls
 		TextView text;

@@ -51,11 +51,24 @@
     <fragment
             android:id="@+id/helpFragment"
             android:name="lu.uni.bicslab.greenbot.android.ui.fragment.help.HelpFragment"
-            android:label="@string/menu_help" />
+            android:label="@string/menu_help" >
+        <action
+            android:id="@+id/action_helpFragment_to_indicatorHelpFragment"
+            app:destination="@id/indicatorHelpFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
     <action
             android:id="@+id/action_global_helpFragment"
             app:destination="@id/helpFragment"
             app:popUpTo="@id/nav_home"
             app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/indicatorHelpFragment"
+        android:name="lu.uni.bicslab.greenbot.android.ui.fragment.help.IndicatorHelpFragment"
+        android:label="@string/help_page_button_1"
+        tools:layout="@layout/fragment_indicator_help_list" />
 
 </navigation>

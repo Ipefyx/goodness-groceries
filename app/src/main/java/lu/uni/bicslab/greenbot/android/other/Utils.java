@@ -284,6 +284,11 @@ public class Utils {
 		Optional<IndicatorModel> match = getIndicatorList(context).stream().filter(ind -> ind.getId().equals(id)).findFirst();
 		return match.orElse(null);
 	}
+
+	public static IndicatorCategoryModel getIndicatorCategoryById(Context context, String id) {
+		Optional<IndicatorCategoryModel> match = getIndicatorCategoryList(context).stream().filter(ind -> ind.getId().equals(id)).findFirst();
+		return match.orElse(null);
+	}
 	
 	public static ProductCategoryModel getProductCategoryByID(Context context, String id) {
 		Optional<ProductCategoryModel> match = getProductCategoryList(context).stream().filter(p -> p.getId().equals(id)).findFirst();
