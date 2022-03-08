@@ -45,7 +45,6 @@ public class IndicatorHelpAdapter extends RecyclerView.Adapter<IndicatorHelpAdap
     public void onBindViewHolder(final ViewHolder holder, int position) {
         IndicatorHelpFragment.IndicatorHelpItem item = items.get(position);
 
-
         Drawable image = Utils.getDrawableImage(context, item.iconName);
         Glide.with(context).load(image).apply(RequestOptions.centerInsideTransform()).into(holder.mContentIcon);
         //Glide.with(mcontext).load(image).error(R.drawable.ic_menu_gallery).into(iv_product_icon);
@@ -83,11 +82,6 @@ public class IndicatorHelpAdapter extends RecyclerView.Adapter<IndicatorHelpAdap
                         notifyItemChanged(selectedItem);
 
                     selectedItem = holder.getAdapterPosition();
-
-                    if(holder.mContentDescription.getVisibility() == View.GONE)
-                        holder.mContentDescription.setVisibility(View.VISIBLE);
-                    else
-                        holder.mContentDescription.setVisibility(View.GONE);
 
                     notifyItemChanged(selectedItem);
                 }

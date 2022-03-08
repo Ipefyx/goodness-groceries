@@ -1,8 +1,8 @@
 package lu.uni.bicslab.greenbot.android.ui.fragment.compare;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,7 +11,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.SpannableString;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +32,6 @@ import lu.uni.bicslab.greenbot.android.datamodel.IndicatorCategoryModel;
 import lu.uni.bicslab.greenbot.android.datamodel.IndicatorModel;
 import lu.uni.bicslab.greenbot.android.datamodel.ProductCategoryModel;
 import lu.uni.bicslab.greenbot.android.datamodel.ProductModel;
-import lu.uni.bicslab.greenbot.android.datamodel.SubIndicatorModel;
 import lu.uni.bicslab.greenbot.android.other.CompareModel;
 import lu.uni.bicslab.greenbot.android.other.Utils;
 
@@ -43,6 +41,9 @@ public class CompareActivity2 extends AppCompatActivity {
             Html.fromHtml("<font color=#47a216><b>" + "✔" + "</b></font>"));
     private static SpannableString indicatorNo = new SpannableString(
             Html.fromHtml("<font color=#ff0000><b>" + "Ø" + "</b></font>"));
+
+    private static int HEADER_HEIGHT = 90;
+    private static int HEADER_IMG_HEIGHT = 60;
 
     private ProductModel comparedProduct;
     private Context mContext;
@@ -143,7 +144,8 @@ public class CompareActivity2 extends AppCompatActivity {
 
         for (CompareModel cm : compareModels) {
             Drawable prodImg = Utils.getDrawableImage(mContext, cm.getProductModelForcompare().getImage_url());
-            addImgToTableRow(prodImg, row);
+            //addImgToTableRow(prodImg, row);
+            addHeaderToTableRow(prodImg, cm.getProductModelForcompare().getName(), row);
         }
 
 
@@ -161,7 +163,8 @@ public class CompareActivity2 extends AppCompatActivity {
             String name = cm.getProductModelForcompare().getCategory();
             ProductCategoryModel cat = Utils.getProductCategoryByID(mContext, cm.getProductModelForcompare().getCategory());
             Drawable catImg = Utils.getDrawableImage(mContext, cat.getIcon_name());
-            addImgToTableRow(catImg, row);
+            //addImgToTableRow(catImg, row);
+            addHeaderToTableRow(catImg, cat.getName(), row);
         }
 
 
@@ -250,6 +253,50 @@ public class CompareActivity2 extends AppCompatActivity {
         row.addView(t);
 
         return t.getMeasuredWidth();
+    }
+
+    private View addHeaderToTableRow(Drawable img, String label, TableRow row) {
+
+        LinearLayout l = new LinearLayout(this);
+        ImageView i = new ImageView(this);
+        TextView t = new TextView(this);
+
+       TableRow.LayoutParams params = new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int)(90 * mContext.getResources().getDisplayMetrics().density));
+        params.setMargins(1,0,1,1);
+        params.setLayoutDirection(ConstraintLayout.LayoutParams.VERTICAL);
+        l.setLayoutParams(params);
+        l.setOrientation(LinearLayout.VERTICAL);
+        l.setBackgroundColor(Color.WHITE);
+
+
+        float imgSizeFactor = 60 * mContext.getResources().getDisplayMetrics().density;
+        LinearLayout.LayoutParams imgParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Math.round(imgSizeFactor) );
+        imgParams.setMarginEnd(2);
+
+        i.setLayoutParams(imgParams);
+        //i.setBackground(img);
+        //Glide.with(mContext).load(img).apply(RequestOptions.fitCenterTransform()).into(i);
+        Glide.with(mContext).load(img).apply(RequestOptions.centerInsideTransform()).into(i);
+        //i.setImageDrawable(img);
+
+
+        LinearLayout.LayoutParams txtParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        //t.setHorizontallyScrolling(false);
+
+        t.setLayoutParams(txtParams);
+        //t.setMinLines(2);
+        //t.setSingleLine(false);
+        t.setWidth(0);
+        t.setTextSize(10);
+        t.setMaxLines(2);
+        t.setGravity(Gravity.CENTER_HORIZONTAL);
+        t.setText(label);
+
+        l.addView(i);
+        l.addView(t);
+
+        row.addView(l);
+        return l;
     }
 
     private void addRotatedTextToTableRow(String str, TableRow row, int r) {
