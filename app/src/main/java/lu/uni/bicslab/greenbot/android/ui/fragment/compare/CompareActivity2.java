@@ -261,7 +261,8 @@ public class CompareActivity2 extends AppCompatActivity {
         ImageView i = new ImageView(this);
         TextView t = new TextView(this);
 
-       TableRow.LayoutParams params = new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int)(90 * mContext.getResources().getDisplayMetrics().density));
+        int height = Math.round(HEADER_HEIGHT * mContext.getResources().getDisplayMetrics().density);
+        TableRow.LayoutParams params = new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height);
         params.setMargins(1,0,1,1);
         params.setLayoutDirection(ConstraintLayout.LayoutParams.VERTICAL);
         l.setLayoutParams(params);
@@ -269,8 +270,8 @@ public class CompareActivity2 extends AppCompatActivity {
         l.setBackgroundColor(Color.WHITE);
 
 
-        float imgSizeFactor = 60 * mContext.getResources().getDisplayMetrics().density;
-        LinearLayout.LayoutParams imgParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Math.round(imgSizeFactor) );
+        height = Math.round(HEADER_IMG_HEIGHT * mContext.getResources().getDisplayMetrics().density);
+        LinearLayout.LayoutParams imgParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height );
         imgParams.setMarginEnd(2);
 
         i.setLayoutParams(imgParams);

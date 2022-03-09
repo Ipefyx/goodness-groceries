@@ -7,6 +7,7 @@ public class SubIndicatorModel implements Serializable {
 	
 	private String name;
 	private String description;
+	private String file;
 	
 	public SubIndicatorModel(String name, String description) {
 		this.name = name;
@@ -28,4 +29,8 @@ public class SubIndicatorModel implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	public String getFile() { return file; }
+
+	public void setFile(String file) { this.file = file; }
 }

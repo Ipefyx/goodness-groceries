@@ -198,9 +198,12 @@ public class ProductDetailsActivity extends AppCompatActivity {
 						String content = new String();
 
 						for (SubIndicatorModel si : ind.sub_indicators) {
-							content += "<br><br>";
-							content += "<b>" + si.getName() +"</b>" + "<br>";
-							content += si.getDescription();
+							content += "<div><p><b>" + si.getName() +"</b><br>";
+							content += si.getDescription() + "</p>";
+							if(si.getFile() != null) {
+								String link = "<a style=\"text-align: right\" href=\"" + si.getFile() + "\">More info...</a>";
+								content +=  link + "</div>";
+							}
 						}
 
 						infoPopup.setMessage(Html.fromHtml(content, Html.FROM_HTML_MODE_LEGACY));

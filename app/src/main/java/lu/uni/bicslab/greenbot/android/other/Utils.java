@@ -264,6 +264,7 @@ public class Utils {
 				for (SubIndicatorModel sub : ind.sub_indicators) {
 					sub.setName(getStringByResName(context, sub.getName()));
 					sub.setDescription(getStringByResName(context, sub.getDescription()));
+					sub.setFile(sub.getFile());
 				}
 			}
 		}
@@ -303,12 +304,13 @@ public class Utils {
 	public static List<ProductModel> getProductsByType(Context context, String type) {
 		return getProductList(context).stream().filter(p -> p.getType().equals(type)).collect(Collectors.toList());
 	}
-	
-	
-	
+
+
+
+
 	public static String getStringByResName(Context ctx, String str) {
 		int resID = ctx.getResources().getIdentifier(str, "string", ctx.getPackageName());
-		
+
 		if (resID == 0) {
 			throw new RuntimeException("String Resource \""+str+"\" could not be found.");
 		}
@@ -320,15 +322,15 @@ public class Utils {
 	 * Transform given Textview in a clickable hyperlink to the given uri
 	 * @param ctx
 	 * @param textView
-	 * @param uri
+	 * @param url
 	 */
-	public static void linkify(Context ctx, TextView textView, String uri) {
+	public static void linkify(Context ctx, TextView textView, String url) {
 		textView.setMovementMethod(LinkMovementMethod.getInstance());
 
 		textView.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				Uri uri = Uri.parse(ctx.getResources().getString(R.string.url_contact_us));
+				Uri uri = Uri.parse(url);
 				Intent intent = new Intent(Intent.ACTION_VIEW, uri);
 				ctx.startActivity(intent);
 			}

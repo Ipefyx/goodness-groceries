@@ -82,7 +82,6 @@ public class IndicatorHelpAdapter extends RecyclerView.Adapter<IndicatorHelpAdap
                         notifyItemChanged(selectedItem);
 
                     selectedItem = holder.getAdapterPosition();
-
                     notifyItemChanged(selectedItem);
                 }
             });
