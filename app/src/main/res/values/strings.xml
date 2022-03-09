@@ -43,6 +43,7 @@
     <string name="id_digit_alert">The client ID must have exactly 13 digits</string>
     <string name="scan_directly">Scan your Pall Center customer card</string>
 
+    <string name="moreinfo">More info...</string>
 
     <!--    Language dialog-->
     <string name="language">Language</string>

@@ -192,7 +192,10 @@ public class ProductDetailsActivity extends AppCompatActivity {
 			((TextView)view.findViewById(R.id.indicator_info)).setOnClickListener( new View.OnClickListener() {
 					@Override
 					public void onClick(View view) {
-						AlertDialog.Builder infoPopup = new AlertDialog.Builder(mContext);
+						IndicatorInfoPopup infoPopup = new IndicatorInfoPopup(mContext, ind);
+						infoPopup.build();
+
+						/*AlertDialog.Builder infoPopup = new AlertDialog.Builder(mContext);
 						infoPopup.setTitle(ind.getName());
 
 						String content = new String();
@@ -209,6 +212,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 						infoPopup.setMessage(Html.fromHtml(content, Html.FROM_HTML_MODE_LEGACY));
 						infoPopup.setPositiveButton("OK", null);
 						infoPopup.show();
+						*/
 					}
 				}
 			);
