@@ -1,25 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center">
 
-    <TextView
-        android:id="@+id/indicatorNameText"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:text="Indicator name"
-        android:textStyle="bold"
-        android:textSize="16dp"
-        />
+        android:id="@+id/popupIndicatorTitleLinear"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/indicatorIconImage"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            app:srcCompat="@drawable/ic_menu_gallery" />
+
+        <TextView
+            android:id="@+id/indicatorNameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Indicator name"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:contentDescription="@string/help_page_button_1"
-        android:layout_below="@+id/indicatorNameText"
+        android:layout_below="@+id/popupIndicatorTitleLinear"
         android:id="@+id/popupIndicatorInfoScroll">
 
         <LinearLayout
