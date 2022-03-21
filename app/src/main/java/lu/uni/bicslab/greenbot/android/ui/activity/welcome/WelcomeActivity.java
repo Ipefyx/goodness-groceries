@@ -50,7 +50,7 @@ public class WelcomeActivity extends AppCompatActivity {
 	public WelcomeSelectable[] selectableIndicatorCategories;
 	public WelcomeSelectable[] selectableProductCategories;
 	public String id;
-	
+
 	private int currentPage = 0;
 	
 	@Override
@@ -108,8 +108,8 @@ public class WelcomeActivity extends AppCompatActivity {
 		List<String> selectedIndicators = new ArrayList<>();
 		List<String> selectedProducts = new ArrayList<>();
 		
-		for (WelcomeSelectable w : selectableIndicatorCategories) selectedIndicators.add(w.getId());
-		for (WelcomeSelectable w : selectableProductCategories) selectedProducts.add(w.getId());
+		for (WelcomeSelectable w : selectableIndicatorCategories) if(w.isSelected()) selectedIndicators.add(w.getId());
+		for (WelcomeSelectable w : selectableProductCategories) if(w.isSelected()) selectedProducts.add(w.getId());
 		
 		ServerConnection.requestUserAccess(this, id, selectedProducts.toArray(new String[]{}), selectedIndicators.toArray(new String[]{}), status -> {
 			UserData.setStatus(this, status);
