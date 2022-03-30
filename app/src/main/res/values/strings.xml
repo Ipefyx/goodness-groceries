@@ -39,6 +39,12 @@
     <string name="welcome_page_7_title">See indicators that matter to you</string>
     <string name="welcome_page_7_text">Each product will be presented with its relevant sustainability indicators. Read more about each indicator by clicking on them, and make your purchases based on the information available.</string>
 
+    <string name="welcome_page_8_title">Before start</string>
+    <string name="welcome_page_8_text">Finalize your subscription by clicking on the link and fulfilling three steps.</string>
+    <string name="welcome_page_8_checkbox">I answered the three questions</string>
+    <string name="welcome_page_8_button">Complete the survey</string>
+    <string name="welcome_page_interest">Thanks for your interest to participate to the app and for the Goodness Groceries study!</string>
+
     <string name="accountconsideration">Your account is under consideration</string>
     <string name="id_digit_alert">The client ID must have exactly 13 digits</string>
     <string name="scan_directly">Scan your Pall Center customer card</string>
@@ -261,6 +267,7 @@
     <!--    External links -->
     <string name="url_help_page">https://food.daloos.uni.lu/projects/research-projects/sustainable-shopping-app/help-page</string>
     <string name="url_contact_us">https://food.daloos.uni.lu/projects/research-projects/sustainable-shopping-app/contact-us</string>
+    <string name="url_welcome_survey">https://food.daloos.uni.lu/projects/research-projects/sustainable-shopping-app/</string>
 
 </resources>
 

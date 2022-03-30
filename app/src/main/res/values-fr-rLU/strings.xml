@@ -239,6 +239,11 @@
     <string name="welcome_page_3_text">Dites-nous ce qui compte pour vous afin de personnaliser votre expérience.</string>
     <string name="welcome_page_notifications_text">Veuillez autoriser les notifications de Goodness Groceries pour être informé lorsque votre compte a été vérifié et pour recevoir les enquêtes sur les produits et l’application.\\n\\nVos commentaires permettent à l’équipe de recherche de comprendre vos choix de produits alimentaires et de détecter des pistes vers des achats plus durables. Vu qu’il s’agit d’un projet pilote, nous avons également besoin de vos commentaires pour améliorer l’application dans le futur.</string>
     <string name="welcome_page_notifications_title">Notifications</string>
+    <string name="welcome_page_8_title">Avant de commencer</string>
+    <string name="welcome_page_8_text">Finaliser votre inscription en cliquant sur le lien et en completant les trois étapes.</string>
+    <string name="welcome_page_8_checkbox">J\'ai répondu aux 3 questions</string>
+    <string name="welcome_page_8_button">Completer le questionnaire</string>
+    <string name="welcome_page_interest">Merci pour votre interêt à participer à l\'appli et l\'étude Goodness Groceries !</string>
     <string name="id_digit_alert">L\'identifiant doit avoir exactement 13 chiffres</string>
     <string name="product_not_found">Product introuvable</string>
     <string name="language">Langue</string>
@@ -250,6 +255,7 @@
     <!--    External links -->
     <string name="url_help_page">https://food.daloos.uni.lu/projects/research-projects/sustainable-shopping-app/help-page</string>
     <string name="url_contact_us">https://food.daloos.uni.lu/projects/research-projects/sustainable-shopping-app/contact-us</string>
+    <string name="url_welcome_survey">https://food.daloos.uni.lu/projects/research-projects/sustainable-shopping-app/</string>
 
 </resources>
 

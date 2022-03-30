@@ -3,9 +3,12 @@ package lu.uni.bicslab.greenbot.android.ui.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 
@@ -17,7 +20,6 @@ import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.other.ServerConnection;
 import lu.uni.bicslab.greenbot.android.other.UserData;
 import lu.uni.bicslab.greenbot.android.other.Utils;
-import lu.uni.bicslab.greenbot.android.ui.activity.welcome.SignInFragment;
 import lu.uni.bicslab.greenbot.android.ui.activity.welcome.WelcomeActivity;
 
 /**
@@ -32,7 +34,7 @@ public class StartActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		// Always reset the app locale when it is restarted
 		String lang = UserData.getLanguage(this);
 		if (lang != null)
@@ -42,6 +44,9 @@ public class StartActivity extends AppCompatActivity {
 		String userStatus = UserData.getStatus(this);
 		
 		if (userStatus.equals(UserData.USER_VALID)) {
+
+			// TODO : Check and implement observation phase
+
 			if (UserData.isFirstTimeVisit(getApplicationContext())) {
 				// Show first-time screen 1 or 2
 				
@@ -76,9 +81,41 @@ public class StartActivity extends AppCompatActivity {
 			}
 			
 		} else if (userStatus.equals(UserData.USER_REQUESTED) || userStatus.equals(UserData.USER_ARCHIVED)) {
-			// Show requested/survey screen
-			setContentView(R.layout.activity_waitingpage_layout);
-			refreshStatus = true;
+
+			if(!refreshStatus) {
+				setContentView(R.layout.activity_before_start);
+
+				CheckBox surveyCB = (CheckBox) findViewById(R.id.survey_checkBox);
+				Button surveyBtn = (Button) findViewById(R.id.survey_button);
+
+				surveyCB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+					@Override
+					public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+						if (surveyCB.isChecked()) {
+							surveyBtn.setText(R.string.next);
+						} else {
+							surveyBtn.setText(R.string.welcome_page_8_button);
+						}
+
+					}
+				});
+
+				surveyBtn.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(View view) {
+						if (surveyCB.isChecked()) {
+							refreshStatus = true;
+							setContentView(R.layout.activity_waitingpage_layout);
+						} else {
+							startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(getString(R.string.url_welcome_survey))));
+						}
+					}
+				});
+
+			} else {
+				setContentView(R.layout.activity_waitingpage_layout);
+				refreshStatus = true;
+			}
 			
 		} else {
 			// User invalid, show welcome+login screen

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:contextClickable="false"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+    <ImageView
+        android:layout_width="@dimen/icon_width"
+        android:layout_height="@dimen/icon_width"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/gg_logo_1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="19dp"
+        android:text="@string/welcome_page_8_title"
+        android:layout_margin="20dp"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/welcome_page_8_text"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/survey_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/welcome_page_8_checkbox" />
+
+    <Button
+        android:id="@+id/survey_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/welcome_page_8_button" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="bottom"
+        android:paddingTop="10dp"
+        android:paddingBottom="30dp">
+
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/icon_width"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/uni_icon" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/icon_width"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/pall_center" />
+    </LinearLayout>
+
+</LinearLayout>

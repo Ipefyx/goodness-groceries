@@ -3,6 +3,12 @@ package lu.uni.bicslab.greenbot.android.other;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.util.Log;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class UserData {
 	
@@ -25,6 +31,7 @@ public class UserData {
 	}
 	
 	public static String getStatus(Context context) {
+		Log.e("UserData getStatus", getPrefs(context).getString("user_status", USER_INVALID));
 		return getPrefs(context).getString("user_status", USER_INVALID);
 	}
 	
@@ -47,6 +54,7 @@ public class UserData {
 	}
 	
 	public static String getID(Context context) {
+		Log.e("UserData getID", getPrefs(context).getString("user_id", null));
 		return getPrefs(context).getString("user_id", null);
 	}
 	
@@ -59,6 +67,38 @@ public class UserData {
 	
 	public static String getLanguage(Context context) {
 		return getPrefs(context).getString("user_lang", null);
+	}
+
+
+	public static void setPhase2Date(Context context, String date) {
+		getPrefs(context).edit().putString("user_phase2_date", date);
+	}
+
+	public static String getPhase2Date(Context context) {
+		return getPrefs(context).getString("user_phase2_date", "1970-01-01");
+	}
+
+
+	public static void setPhase1Date(Context context, String date) {
+		getPrefs(context).edit().putString("user_phase1_date", date);
+	}
+
+	public static String getPhase1Date(Context context) {
+
+		return getPrefs(context).getString("user_phase1_date", "1970-01-01");
+	}
+
+	public Boolean isPhase2(Context context) {
+		Date today = new Date();
+		Date phase2;
+		try {
+			phase2 = new SimpleDateFormat("yyyy-MM-dd").parse(getPhase2Date(context));
+		} catch (ParseException e) {
+			phase2 = null;
+		}
+		if(phase2 != null)
+			return today.compareTo(phase2) >= 0;
+		return false;
 	}
 	
 }

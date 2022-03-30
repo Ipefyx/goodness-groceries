@@ -19,12 +19,15 @@
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/prod_cat_localorganic.xml" value="0.6666666666666666" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/rectangle.xml" value="0.2635416666666667" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/scrim.xml" value="0.26458333333333334" />
+        <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/layout/activity_before_start.xml" value="0.22" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/layout/activity_compare2.xml" value="0.16259057971014493" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/layout/activity_firsttime1.xml" value="0.16" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/layout/activity_firsttime2.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/layout/activity_productdetails.xml" value="0.25" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/layout/activity_products.xml" value="0.2484375" />
+        <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/layout/activity_test.xml" value="0.17889492753623187" />
+        <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/layout/activity_waitingpage_layout.xml" value="0.22" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/layout/barcode_capture.xml" value="0.3" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/layout/comare_item_row.xml" value="0.20572916666666666" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/layout/comare_row.xml" value="0.25" />
@@ -50,6 +53,8 @@
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/layout/onbording_select_one_layout.xml" value="0.28306159420289856" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/layout/onbording_select_two_layout.xml" value="0.28306159420289856" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/layout/onbording_signin.xml" value="0.28306159420289856" />
+        <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/layout/onbording_three_layout.xml" value="0.17889492753623187" />
+        <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/layout/onbording_two_layout.xml" value="0.17889492753623187" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/layout/popup_indicator.xml" value="0.2875" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/layout/popup_indicator_info.xml" value="0.5" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/layout/productview.xml" value="0.2484375" />

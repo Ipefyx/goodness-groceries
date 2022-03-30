@@ -73,7 +73,7 @@ public class ServerConnection {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		
+		Log.e("Server connection data sent ", object.toString());
 		JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, postUrl, object, response -> {
 			callback.callback(response.optString("status"));
 			
