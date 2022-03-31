@@ -25,7 +25,10 @@ import com.android.volley.TimeoutError;
 
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import lu.uni.bicslab.greenbot.android.MainActivity;
@@ -107,9 +110,16 @@ public class WelcomeActivity extends AppCompatActivity {
 		
 		List<String> selectedIndicators = new ArrayList<>();
 		List<String> selectedProducts = new ArrayList<>();
+		Calendar cal = Calendar.getInstance();
+		String phase1Date;
+		String phase2Date;
 		
 		for (WelcomeSelectable w : selectableIndicatorCategories) if(w.isSelected()) selectedIndicators.add(w.getId());
 		for (WelcomeSelectable w : selectableProductCategories) if(w.isSelected()) selectedProducts.add(w.getId());
+
+		phase1Date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+		cal.add(Calendar.DATE, 42);
+		phase2Date = new SimpleDateFormat("yyyy-MM-dd").format(cal.getTime());
 		
 		ServerConnection.requestUserAccess(this, id, selectedProducts.toArray(new String[]{}), selectedIndicators.toArray(new String[]{}), status -> {
 			UserData.setStatus(this, status);

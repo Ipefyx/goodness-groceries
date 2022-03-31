@@ -27,10 +27,10 @@ import lu.uni.bicslab.greenbot.android.ui.activity.welcome.WelcomeActivity;
  * status bar and navigation/system bar) with user interaction.
  */
 public class StartActivity extends AppCompatActivity {
-	
+
+	private static boolean completedSurvey = false;
 	private boolean refreshStatus = false;
-	
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -82,7 +82,7 @@ public class StartActivity extends AppCompatActivity {
 			
 		} else if (userStatus.equals(UserData.USER_REQUESTED) || userStatus.equals(UserData.USER_ARCHIVED)) {
 
-			if(!refreshStatus) {
+			if(!completedSurvey) {
 				setContentView(R.layout.activity_before_start);
 
 				CheckBox surveyCB = (CheckBox) findViewById(R.id.survey_checkBox);
@@ -104,8 +104,9 @@ public class StartActivity extends AppCompatActivity {
 					@Override
 					public void onClick(View view) {
 						if (surveyCB.isChecked()) {
-							refreshStatus = true;
-							setContentView(R.layout.activity_waitingpage_layout);
+							completedSurvey = true;
+							startActivity(new Intent(StartActivity.this, StartActivity.class));
+							finish();
 						} else {
 							startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(getString(R.string.url_welcome_survey))));
 						}
