@@ -7,6 +7,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 
 import com.google.gson.Gson;
@@ -24,8 +26,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
@@ -336,6 +342,31 @@ public class Utils {
 			}
 
 		});
+	}
+
+	public static long daysUntilToday(String date) {
+		LocalDate dateBefore = LocalDate.parse(date);
+		LocalDate today = LocalDate.now();
+
+		long daysCount = ChronoUnit.DAYS.between(today, dateBefore);
+
+		return daysCount;
+	}
+
+	public static String dateToText(String date) {
+		String lang = Locale.getDefault().getLanguage();
+
+		try {
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+			SimpleDateFormat df2;
+			if(lang.equals(Locale.FRANCE.getLanguage()))
+				df2 = new SimpleDateFormat("dd MMMM yyyy");
+			else
+				df2 = new SimpleDateFormat("MMMM dd, yyy");
+			return df2.format(format.parse(date)) + " ";
+		} catch (java.text.ParseException e) {
+			return date;
+		}
 	}
 	
 }

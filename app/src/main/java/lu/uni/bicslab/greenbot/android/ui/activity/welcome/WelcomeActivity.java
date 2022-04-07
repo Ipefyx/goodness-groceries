@@ -110,20 +110,15 @@ public class WelcomeActivity extends AppCompatActivity {
 		
 		List<String> selectedIndicators = new ArrayList<>();
 		List<String> selectedProducts = new ArrayList<>();
-		Calendar cal = Calendar.getInstance();
-		String phase1Date;
-		String phase2Date;
 		
 		for (WelcomeSelectable w : selectableIndicatorCategories) if(w.isSelected()) selectedIndicators.add(w.getId());
 		for (WelcomeSelectable w : selectableProductCategories) if(w.isSelected()) selectedProducts.add(w.getId());
 
-		phase1Date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-		cal.add(Calendar.DATE, 42);
-		phase2Date = new SimpleDateFormat("yyyy-MM-dd").format(cal.getTime());
-		
-		ServerConnection.requestUserAccess(this, id, selectedProducts.toArray(new String[]{}), selectedIndicators.toArray(new String[]{}), status -> {
+		ServerConnection.requestUserAccess(this, id, selectedProducts.toArray(new String[]{}), selectedIndicators.toArray(new String[]{}), (status, phase2, phase1)  -> {
 			UserData.setStatus(this, status);
 			UserData.setID(this, id);
+			UserData.setPhase2Date(this, phase2);
+			UserData.setPhase1Date(this, phase1);
 			startActivity(new Intent(this, StartActivity.class));
 			finish();
 		}, error -> {

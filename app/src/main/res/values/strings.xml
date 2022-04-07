@@ -46,6 +46,13 @@
     <string name="welcome_page_interest">Thanks for your interest to participate to the app and for the Goodness Groceries study!</string>
 
     <string name="accountconsideration">Your account is under consideration</string>
+
+    <string name="observationphase_title">Observation phase</string>
+    <string name="observationphase_text1">We are analysing your buying habit in a first phase since</string>
+    <string name="observationphase_text2">It is a required period to see if your buying habits change thanks to this application.</string>
+    <string name="observationphase_text3">You will be able to use the application in</string>
+    <string name="observationphase_text4">days.</string>
+
     <string name="id_digit_alert">The client ID must have exactly 13 digits</string>
     <string name="scan_directly">Scan your Pall Center customer card</string>
 

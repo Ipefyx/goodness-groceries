@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -42,12 +43,23 @@ public class StartActivity extends AppCompatActivity {
 		
 		// Redirect to correct activities or show correct layout based on the user status
 		String userStatus = UserData.getStatus(this);
+		String phase1Date = UserData.getPhase1Date(this);
+		String phase2Date = UserData.getPhase2Date(this);
 		
 		if (userStatus.equals(UserData.USER_VALID)) {
+			if(!UserData.isPhase2(this)) {
+				setContentView(R.layout.activity_observation);
 
-			// TODO : Check and implement observation phase
+				long days = Utils.daysUntilToday(phase2Date);
+				TextView observationDateTxt = findViewById(R.id.text_observation);
+				TextView daysTxt = findViewById(R.id.text_days);
 
-			if (UserData.isFirstTimeVisit(getApplicationContext())) {
+				observationDateTxt.setText(getResources().getString(R.string.observationphase_text1) + " " + Utils.dateToText(phase1Date) + ".");
+				daysTxt.setText(days + " " + getResources().getString(R.string.observationphase_text4));
+
+				refreshStatus = true;
+
+			} else if (UserData.isFirstTimeVisit(getApplicationContext())) {
 				// Show first-time screen 1 or 2
 				
 				int firstTimePage = getIntent().getIntExtra("first_time_page", 1);
@@ -131,15 +143,22 @@ public class StartActivity extends AppCompatActivity {
 	protected void onResume() {
 		super.onResume();
 		
-		if (refreshStatus) {
-			ServerConnection.fetchUserStatus(this, UserData.getID(this), status -> {
+		if (refreshStatus) { // TODO: find best way to handle this in observation phase
+
+			ServerConnection.fetchUserStatus(this, UserData.getID(this), (status, phase2, phase1) -> {
 				UserData.setStatus(this, status);
-				
-				// Restart/redirect to the right screen if user isn't requested anymore
+
+				UserData.setPhase2Date(this, phase2);
+				UserData.setPhase1Date(this, phase1);
+
+				// Restart/redirect to the right screen if user isn't requested or not in phase 1 anymore
 				if (!(status.equals(UserData.USER_REQUESTED) || status.equals(UserData.USER_ARCHIVED))) {
 					startActivity(new Intent(this, StartActivity.class));
+					if(!UserData.isPhase2(this)) // Avoid blink view on each refresh
+						overridePendingTransition(0, 0);
 					finish();
 				}
+
 			}, error -> {
 				if (error instanceof TimeoutError || error instanceof NoConnectionError) {
 					Toast.makeText(this, R.string.network_error, Toast.LENGTH_SHORT).show();
@@ -147,4 +166,5 @@ public class StartActivity extends AppCompatActivity {
 			});
 		}
 	}
+
 }

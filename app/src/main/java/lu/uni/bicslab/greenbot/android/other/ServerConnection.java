@@ -45,9 +45,9 @@ public class ServerConnection {
 	}
 	
 	public interface UserStatusCallback {
-		void callback(String status);
+		void callback(String status, String date2, String date1);
 	}
-	
+
 	public interface ProductsCallback {
 		void callback(String[] products);
 	}
@@ -75,7 +75,7 @@ public class ServerConnection {
 		}
 		Log.e("Server connection data sent ", object.toString());
 		JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, postUrl, object, response -> {
-			callback.callback(response.optString("status"));
+			callback.callback(response.optString("status"), response.optString("phase2_date"), response.optString("phase1_date"));
 			
 		}, errorCallback::callback);
 		
@@ -89,14 +89,14 @@ public class ServerConnection {
 		String url = BASE_URL + FETCH_USER_STATUS + userID + "/";
 		
 		JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, response -> {
-			callback.callback(response.optString("status"));
+			//callback.callback(response.optString("status"));
+			callback.callback(response.optString("status"), response.optString("phase2_date"), response.optString("phase1_date"));
 			
 		}, errorCallback::callback);
 		
 		requestQueue.add(request);
 	}
-	
-	
+
 	
 	public static void fetchProductsBought(Context context, String userID, ProductsCallback callback, ErrorCallback errorCallback) {
 		RequestQueue requestQueue = Volley.newRequestQueue(context);

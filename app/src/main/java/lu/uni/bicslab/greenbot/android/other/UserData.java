@@ -71,7 +71,7 @@ public class UserData {
 
 
 	public static void setPhase2Date(Context context, String date) {
-		getPrefs(context).edit().putString("user_phase2_date", date);
+		getPrefs(context).edit().putString("user_phase2_date", date).apply();
 	}
 
 	public static String getPhase2Date(Context context) {
@@ -80,7 +80,7 @@ public class UserData {
 
 
 	public static void setPhase1Date(Context context, String date) {
-		getPrefs(context).edit().putString("user_phase1_date", date);
+		getPrefs(context).edit().putString("user_phase1_date", date).apply();
 	}
 
 	public static String getPhase1Date(Context context) {
@@ -88,7 +88,7 @@ public class UserData {
 		return getPrefs(context).getString("user_phase1_date", "1970-01-01");
 	}
 
-	public Boolean isPhase2(Context context) {
+	public static boolean isPhase2(Context context) {
 		Date today = new Date();
 		Date phase2;
 		try {

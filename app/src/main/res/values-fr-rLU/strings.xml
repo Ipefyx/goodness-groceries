@@ -29,6 +29,12 @@
 
     <string name="accountconsideration">Votre compte est en cours d\'examen</string>
 
+    <string name="observationphase_title">Phase d\'observation</string>
+    <string name="observationphase_text1">Nous analysons actuellement vos habitudes d\'achat depuis le </string>
+    <string name="observationphase_text2">Cette phase est inportante pour savoir si vos habitudes vont changer grâce à l\'application.</string>
+    <string name="observationphase_text3">Vous pourrez utiliser l\'application dans</string>
+    <string name="observationphase_text4">jours.</string>
+
     <string name="moreinfo">Plus d\'info...</string>
 
 
