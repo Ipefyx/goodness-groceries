@@ -239,10 +239,10 @@ public class Utils {
 	private static void readProductCategoryList(Context context) {
 		// Currently hardcoded
 		productCategoryList = Arrays.asList(
-				new ProductCategoryModel("local_organic", context.getResources().getString(R.string.PRODUCT_CATEGORY_LOCAL_ORGANIC), "prod_cat_localorganic", ""),
-				new ProductCategoryModel("imported_organic", context.getResources().getString(R.string.PRODUCT_CATEGORY_IMPORTED_ORGANIC), "prod_cat_importedorganic", ""),
-				new ProductCategoryModel("local_conventional", context.getResources().getString(R.string.PRODUCT_CATEGORY_LOCAL_CONVENTIONAL), "prod_cat_localconventional", ""),
-				new ProductCategoryModel("imported_conventional", context.getResources().getString(R.string.PRODUCT_CATEGORY_IMPORTED_CONVENTIONAL), "prod_cat_importedconventional", "")
+				new ProductCategoryModel("local_organic", context.getResources().getString(R.string.PRODUCT_CATEGORY_LOCAL_ORGANIC), "prod_cat_localorganic", context.getResources().getString(R.string.PRODUCT_CATEGORY_LOCAL_ORGANIC_DESC)),
+				new ProductCategoryModel("imported_organic", context.getResources().getString(R.string.PRODUCT_CATEGORY_IMPORTED_ORGANIC), "prod_cat_importedorganic", context.getResources().getString(R.string.PRODUCT_CATEGORY_IMPORTED_ORGANIC_DESC)),
+				new ProductCategoryModel("local_conventional", context.getResources().getString(R.string.PRODUCT_CATEGORY_LOCAL_CONVENTIONAL), "prod_cat_localconventional", context.getResources().getString(R.string.PRODUCT_CATEGORY_LOCAL_CONVENTIONAL_DESC)),
+				new ProductCategoryModel("imported_conventional", context.getResources().getString(R.string.PRODUCT_CATEGORY_IMPORTED_CONVENTIONAL), "prod_cat_importedconventional", context.getResources().getString(R.string.PRODUCT_CATEGORY_IMPORTED_CONVENTIONAL_DESC))
 		);
 	}
 	

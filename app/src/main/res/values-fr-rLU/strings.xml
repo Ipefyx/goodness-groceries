@@ -37,20 +37,20 @@
 
     <string name="moreinfo">Plus d\'info...</string>
 
-
+    <!--    Product data-->
     <string name="NOT_APPLICABLE">Non applicable</string>
     <string name="NO_EVIDENCE">Pas de données</string>
 
-    
-    
 
-
-
+    <!--    Product and indicator categories-->
     <string name="PRODUCT_CATEGORY_IMPORTED_CONVENTIONAL">Conventionel importé</string>
+    <string name="PRODUCT_CATEGORY_IMPORTED_CONVENTIONAL_DESC">Les « produits importés » ont été entièrement produits ou transformés en dehors du Luxembourg. Ils voyagent par voie aérienne, maritime ou terrestre vers les marchés de gros et de détail luxembourgeois. La distance parcourue est appelée « kilomètres-assiette ». Les « produits conventionnels » sont produits, distribués et commercialisés selon des critères autres que ceux de la certification biologique. Ils sont conformes aux normes générales, établies par l\'UE et la législation du pays producteur et peuvent avoir des critères supplémentaires, définis dans des programmes et des labels spécifiques.</string>
     <string name="PRODUCT_CATEGORY_IMPORTED_ORGANIC">Bio importé</string>
+    <string name="PRODUCT_CATEGORY_IMPORTED_ORGANIC_DESC">Les « produits importés » ont été entièrement produits ou transformés en dehors du Luxembourg. Ils voyagent par voie aérienne, maritime ou terrestre vers les marchés de gros et de détail luxembourgeois. La distance parcourue est appelée « kilomètres-assiette ». Les « produits biologiques » sont produits, distribués et commercialisés selon les critères de la certification biologique publique. Ils doivent respecter au moins la législation du pays importateur définissant l\'utilisation des pesticides et des engrais, les normes de bien-être animal, les considérations pour la biodiversité, etc. Certains produits peuvent avoir des critères supplémentaires volontaires définis par des certifications biologiques privées.</string>
     <string name="PRODUCT_CATEGORY_LOCAL_CONVENTIONAL">Conventionel local</string>
+    <string name="PRODUCT_CATEGORY_LOCAL_CONVENTIONAL_DESC">Les « produits locaux » ont été produits ou transformés au Luxembourg. Ils peuvent être fabriqués à partir d\'ingrédients issus de la production nationale, d’ingrédients importés ou d’un mélange des deux. Les « produits conventionnels » sont produits, distribués et commercialisés selon des critères autres que ceux de la certification biologique. Ils sont conformes aux normes générales, définies par la législation européenne et luxembourgeoise et peuvent avoir des critères supplémentaires, définis dans des programmes et des labels spécifiques.</string>
     <string name="PRODUCT_CATEGORY_LOCAL_ORGANIC">Bio local</string>
-    
+    <string name="PRODUCT_CATEGORY_LOCAL_ORGANIC_DESC">Les « produits locaux » ont été produits ou transformés au Luxembourg. Ils peuvent être fabriqués à partir d\'ingrédients issus de la production nationale, d\'ingrédients importés ou d\'un mélange des deux. Les « produits biologiques » sont produits, distribués et commercialisés selon les critères de la certification biologique publique. Ils doivent respecter au moins la législation biologique de l\'UE définissant l\'utilisation des pesticides et des engrais, les normes de bien-être animal, les considérations pour la biodiversité, etc. Certains produits peuvent avoir des critères supplémentaires volontaires, définis par des certifications biologiques privées.</string>
     
     
     
