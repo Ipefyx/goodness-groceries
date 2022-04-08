@@ -143,7 +143,7 @@ public class StartActivity extends AppCompatActivity {
 	protected void onResume() {
 		super.onResume();
 		
-		if (refreshStatus) { // TODO: find best way to handle this in observation phase
+		if (refreshStatus) { // TODO: find better way to handle this in observation phase
 
 			ServerConnection.fetchUserStatus(this, UserData.getID(this), (status, phase2, phase1) -> {
 				UserData.setStatus(this, status);
@@ -165,6 +165,13 @@ public class StartActivity extends AppCompatActivity {
 				}
 			});
 		}
+	}
+
+	// Called by the waiting page layout button when user want to registration page
+	public void backToRegistration(View view) {
+		completedSurvey = false;
+		startActivity(new Intent(this, StartActivity.class));
+		finish();
 	}
 
 }

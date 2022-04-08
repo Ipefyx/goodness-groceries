@@ -26,12 +26,12 @@
     <!--    Welcome pages + first-time pages-->
     <string name="welcome_page_1_title">Welcome to Goodness Groceries!</string>
     <string name="welcome_page_1_text">This app will allow you to compare the ethical and eco-responsible characteristics of selected food products available in Pall Center whilst you shop.</string>
-    <string name="welcome_page_3_title">What is most important to you when you shop?</string>
-    <string name="welcome_page_3_text">Please tell us about your priorities, in order to personalise your experience.</string>
+    <string name="welcome_page_3_title">The four sustainability themes</string>
+    <string name="welcome_page_3_text">Continue to personalize your App experience.</string>
     <string name="welcome_page_4_title">What is closest to your heart when grocery shopping? (up to 4)</string>
     <string name="welcome_page_5_title">What types of products do you tend to buy? (up to 4)</string>
 
-    <string name="welcome_page_notifications_text">Please authorise notifications from Goodness Groceries in order to be informed once your account will have been verified, and to receive feedback forms regarding products and the app.\n\nYour feedback allows the research team to understand your food choices and to find out how grocery shopping can be made more sustainable. As this is a pilot app, we also need your feedback to improve the app in the future.</string>
+    <string name="welcome_page_notifications_text">Please authorise notifications from Goodness Groceries, to be informed once your account is verified, to receive feedback prompts about your selected products, and messaging about the study and the App.</string>
     <string name="welcome_page_notifications_title">Notifications</string>
 
     <string name="welcome_page_6_title">Scan a product</string>
@@ -39,13 +39,17 @@
     <string name="welcome_page_7_title">See indicators that matter to you</string>
     <string name="welcome_page_7_text">Each product will be presented with its relevant sustainability indicators. Read more about each indicator by clicking on them, and make your purchases based on the information available.</string>
 
-    <string name="welcome_page_8_title">Before start</string>
-    <string name="welcome_page_8_text">Finalize your subscription by clicking on the link and fulfilling three steps.</string>
+    <string name="welcome_page_8_title">Final steps</string>
+    <string name="welcome_page_8_text1">Thank you for your interest in participating in the Goodness Groceries App and study!</string>
+    <string name="welcome_page_8_text2">Finalise your registration for this study by clicking on the link and following the three steps!</string>
     <string name="welcome_page_8_checkbox">I answered the three questions</string>
     <string name="welcome_page_8_button">Complete the survey</string>
     <string name="welcome_page_interest">Thanks for your interest to participate to the app and for the Goodness Groceries study!</string>
 
-    <string name="accountconsideration">Your account is under consideration</string>
+    <string name="accountconsideration_title">We are validating your registration</string>
+    <string name="accountconsideration_text1">You will receive a notification when we have validated your informed consent form.</string>
+    <string name="accountconsideration_text2">If you missed a registration step, please click on the button below.</string>
+    <string name="accountconsideration_button">Return to previous page</string>
 
     <string name="observationphase_title">Observation phase</string>
     <string name="observationphase_text1">We are analysing your buying habit in a first phase since</string>

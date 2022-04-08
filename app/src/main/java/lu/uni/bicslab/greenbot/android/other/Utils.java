@@ -345,12 +345,17 @@ public class Utils {
 	}
 
 	public static long daysUntilToday(String date) {
-		LocalDate dateBefore = LocalDate.parse(date);
-		LocalDate today = LocalDate.now();
+		try {
+			LocalDate dateBefore = LocalDate.parse(date);
+			LocalDate today = LocalDate.now();
 
-		long daysCount = ChronoUnit.DAYS.between(today, dateBefore);
+			long daysCount = ChronoUnit.DAYS.between(today, dateBefore);
 
-		return daysCount;
+			return daysCount;
+		} catch (java.time.format.DateTimeParseException e) {
+			Log.e("DaysUntilToday", e.getMessage());
+			return 0l;
+		}
 	}
 
 	public static String dateToText(String date) {

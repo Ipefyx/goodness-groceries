@@ -4,12 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/border.xml" value="0.26481481481481484" />
+        <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/btn_bg_blue.xml" value="0.223" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/gg_animalwelfare.xml" value="0.3151041666666667" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/gg_biodiversity.xml" value="0.3151041666666667" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/gg_decentlivelihood.xml" value="0.3151041666666667" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/gg_economicwellbeing.xml" value="0.3151041666666667" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/gg_environment.xml" value="0.3151041666666667" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/gg_goodgovernance.xml" value="0.2635416666666667" />
+        <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/gg_logo_1.xml" value="0.223" />
+        <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/gg_logo_2.xml" value="0.223" />
+        <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/ic_baseline_account_circle.xml" value="0.223" />
+        <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/ic_baseline_home.xml" value="0.223" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/ic_gg_importedconventional.xml" value="0.26" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/ic_gg_localconventional.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.26458333333333334" />
@@ -18,6 +23,7 @@
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/prod_cat_localconventional.xml" value="0.6666666666666666" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/prod_cat_localorganic.xml" value="0.6666666666666666" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/rectangle.xml" value="0.2635416666666667" />
+        <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/rounded_image_bg.xml" value="0.223" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/drawable/scrim.xml" value="0.26458333333333334" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/layout/activity_before_start.xml" value="0.22" />
         <entry key="..\:/Users/renaud.carpentiers/Workspace/git/goodness-groceries-ipefyx/app/src/main/res/layout/activity_compare2.xml" value="0.16259057971014493" />

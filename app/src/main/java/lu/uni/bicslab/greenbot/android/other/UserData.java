@@ -98,7 +98,7 @@ public class UserData {
 		}
 		if(phase2 != null)
 			return today.compareTo(phase2) >= 0;
-		return false;
+		return true;
 	}
 	
 }

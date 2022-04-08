@@ -27,7 +27,10 @@
 
 
 
-    <string name="accountconsideration">Votre compte est en cours d\'examen</string>
+    <string name="accountconsideration_title">Nous validons votre inscription</string>
+    <string name="accountconsideration_text1">Vous recevrez une notification lorsque nous aurons validé votre formulaire de consentement.</string>
+    <string name="accountconsideration_text2">Si vous avez manqué une étape d’inscription, veuillez cliquer sur le bouton ci-dessous.</string>
+    <string name="accountconsideration_button">Retourner à la page précédente</string>
 
     <string name="observationphase_title">Phase d\'observation</string>
     <string name="observationphase_text1">Nous analysons actuellement vos habitudes d\'achat depuis le </string>
@@ -241,12 +244,13 @@
     <string name="scan_low_storage_error">Les dépendances de détection ne peuvent pas être téléchargées pour cause d\'espace de stockage faible</string>
     <string name="welcome_page_1_title">Bienvenue dans Goodness Groceries!</string>
     <string name="welcome_page_1_text">Cette application vous permettra de comparer les caractéristiques éthiques et éco-responsables de certains produits alimentaires pendant que vous faites vos courses au Pall Center.</string>
-    <string name="welcome_page_3_title">Qu\'est-ce qui vous importe lorsque vous faites vos courses?</string>
-    <string name="welcome_page_3_text">Dites-nous ce qui compte pour vous afin de personnaliser votre expérience.</string>
-    <string name="welcome_page_notifications_text">Veuillez autoriser les notifications de Goodness Groceries pour être informé lorsque votre compte a été vérifié et pour recevoir les enquêtes sur les produits et l’application.\\n\\nVos commentaires permettent à l’équipe de recherche de comprendre vos choix de produits alimentaires et de détecter des pistes vers des achats plus durables. Vu qu’il s’agit d’un projet pilote, nous avons également besoin de vos commentaires pour améliorer l’application dans le futur.</string>
+    <string name="welcome_page_3_title">Les quatre thèmes de la durabilité</string>
+    <string name="welcome_page_3_text">Continuez pour personnaliser votre expérience de l\'application.</string>
+    <string name="welcome_page_notifications_text">Veuillez autoriser les notifications de Goodness Groceries, pour être informé(e) que votre compte a été vérifié, et pour recevoir des notifications pour commenter les produits que vous avez achetés, ainsi que des messages concernant l\'étude et l\'application.</string>
     <string name="welcome_page_notifications_title">Notifications</string>
-    <string name="welcome_page_8_title">Avant de commencer</string>
-    <string name="welcome_page_8_text">Finaliser votre inscription en cliquant sur le lien et en completant les trois étapes.</string>
+    <string name="welcome_page_8_title"> On y est presque !</string>
+    <string name="welcome_page_8_text1">Merci de votre intérêt pour participer à l\'application et l\'étude Goodness Groceries !</string>
+    <string name="welcome_page_8_text2">Finalisez votre inscription en cliquant sur le lien et en suivant les trois étapes.</string>
     <string name="welcome_page_8_checkbox">J\'ai répondu aux 3 questions</string>
     <string name="welcome_page_8_button">Completer le questionnaire</string>
     <string name="welcome_page_interest">Merci pour votre interêt à participer à l\'appli et l\'étude Goodness Groceries !</string>
