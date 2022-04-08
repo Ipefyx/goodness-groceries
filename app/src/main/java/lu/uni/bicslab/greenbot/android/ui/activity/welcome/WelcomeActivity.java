@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.text.Html;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,13 +24,9 @@ import com.android.volley.TimeoutError;
 
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
-import lu.uni.bicslab.greenbot.android.MainActivity;
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.databinding.OnbordingMainLayoutBinding;
 import lu.uni.bicslab.greenbot.android.other.ServerConnection;
@@ -45,7 +40,7 @@ import lu.uni.bicslab.greenbot.android.ui.activity.StartActivity;
  */
 public class WelcomeActivity extends AppCompatActivity {
 	
-	private OnbordFragmentStateAdapter sliderAdapter;
+	private OnboardFragmentStateAdapter sliderAdapter;
 	private TextView[] dots;
 	private OnbordingMainLayoutBinding binding;
 	JSONObject jsonObject;
@@ -81,7 +76,7 @@ public class WelcomeActivity extends AppCompatActivity {
 	}
 	
 	private void init() {
-		sliderAdapter = new OnbordFragmentStateAdapter(this);
+		sliderAdapter = new OnboardFragmentStateAdapter(this);
 		
 		binding.viewPager.setAdapter(sliderAdapter);
 		binding.viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
@@ -173,9 +168,9 @@ public class WelcomeActivity extends AppCompatActivity {
 	}
 	
 	
-	private static class OnbordFragmentStateAdapter extends FragmentStateAdapter {
+	private static class OnboardFragmentStateAdapter extends FragmentStateAdapter {
 		
-		public OnbordFragmentStateAdapter(@NonNull FragmentActivity fragmentActivity) {
+		public OnboardFragmentStateAdapter(@NonNull FragmentActivity fragmentActivity) {
 			super(fragmentActivity);
 		}
 		

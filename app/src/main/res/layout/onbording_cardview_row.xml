@@ -44,6 +44,7 @@
                 android:lines="3"
                 android:layout_marginLeft="@dimen/padding"
                 android:layout_marginRight="@dimen/padding"
+                android:gravity="center_vertical"
                 style="@style/Textprofiledata"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_weight="1"

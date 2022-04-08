@@ -51,8 +51,8 @@
             android:layout_below="@+id/slide_one_title"/>
 
         <ImageView
-                android:layout_width="@dimen/onbording_image_width"
-                android:layout_height="@dimen/onbording_image_width"
+                android:layout_width="@dimen/onboarding_image_width"
+                android:layout_height="@dimen/onboarding_image_width"
                 android:layout_gravity="center_horizontal"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/padding2"

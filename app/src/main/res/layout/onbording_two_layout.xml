@@ -51,14 +51,62 @@
             style="@style/textdatastyle"
             android:layout_below="@+id/slide_two_title"/>
 
+        <LinearLayout
+            android:id="@+id/layout_onboarding_icon1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/slide_two_doc"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            >
+
         <ImageView
-                android:layout_width="@dimen/onbording_image_width"
-                android:layout_height="@dimen/onbording_image_width"
-                android:layout_gravity="center_horizontal"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/padding2"
+            android:layout_width="@dimen/onboarding_icon_width"
+            android:layout_height="@dimen/onboarding_icon_width"
+            android:layout_below="@+id/slide_two_doc"
+            android:layout_marginTop="@dimen/padding2"
+            android:layout_gravity="start|left"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/gg_environment" />
+
+        <ImageView
+            android:layout_width="@dimen/onboarding_icon_width"
+            android:layout_height="@dimen/onboarding_icon_width"
+            android:layout_below="@+id/slide_two_doc"
+            android:layout_marginTop="@dimen/padding2"
+            android:layout_gravity="end|right"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/gg_economicwellbeing" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_onboarding_icon2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_onboarding_icon1"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            >
+
+            <ImageView
+                android:layout_width="@dimen/onboarding_icon_width"
+                android:layout_height="@dimen/onboarding_icon_width"
                 android:layout_below="@+id/slide_two_doc"
-                app:srcCompat="@drawable/one_onbord" />
+                android:layout_marginTop="@dimen/padding2"
+                android:layout_gravity="start|left"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/gg_socialwellbeing" />
+
+            <ImageView
+                android:layout_width="@dimen/onboarding_icon_width"
+                android:layout_height="@dimen/onboarding_icon_width"
+                android:layout_below="@+id/slide_two_doc"
+                android:layout_marginTop="@dimen/padding2"
+                android:layout_gravity="end|right"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/gg_goodgovernance" />
+        </LinearLayout>
 
     </RelativeLayout>
 </RelativeLayout>

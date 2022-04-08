@@ -48,14 +48,15 @@
             android:textAlignment="center"
             style="@style/textdatastyle"
             android:layout_below="@+id/slide_three_title"/>
+
         <ImageView
-            android:layout_width="@dimen/onbording_image_width"
-            android:layout_height="@dimen/onbording_image_width"
-            android:src="@drawable/three_onbord"
+            android:layout_width="@dimen/onboarding_image_width"
+            android:layout_height="@dimen/onboarding_image_width"
+            android:layout_below="@+id/slide_three_doc"
+            android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/padding2"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/slide_three_doc"/>
+            android:src="@drawable/three_onbord" />
 
     </RelativeLayout>
 </RelativeLayout>
