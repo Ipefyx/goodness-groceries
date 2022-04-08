@@ -176,6 +176,24 @@ public class ProductDetailsActivity extends AppCompatActivity {
 		Glide.with(this).load(Utils.getDrawableImage(this, product.getImage_url())).error(R.drawable.ic_menu_gallery).into(product_image);
 		// Category picture
 		Glide.with(this).load(Utils.getDrawableImage(this, category.getIcon_name())).error(R.drawable.ic_menu_gallery).into(category_icon);
+
+		// Product category info popup
+		category_icon.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				AlertDialog.Builder infoPopup = new AlertDialog.Builder(mContext);
+				infoPopup.setTitle(category.getName());
+
+				String content = new String();
+				content += "<div><p>" + category.getDescription() + "</p></div>";
+
+				infoPopup.setMessage(Html.fromHtml(content, Html.FROM_HTML_MODE_LEGACY));
+				infoPopup.setPositiveButton("OK", null);
+				infoPopup.show();
+			}
+		});
+
+
 		
 		if (indicators.size() == 0) {
 			indicators_section.setVisibility(View.GONE);
