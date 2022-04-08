@@ -49,12 +49,22 @@
                 android:textSize="@dimen/txt_doc_size"
                 android:layout_below="@+id/onbord_title" />
 
+        <ImageView
+            android:id="@+id/onbord_img"
+            android:layout_width="@dimen/onboarding_image_width"
+            android:layout_height="@dimen/onboarding_image_width"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/onbord_doc"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/padding2"
+            android:src="@drawable/one_onbord" />
+
         <Button
                 android:id="@+id/button_continue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@+id/onbord_doc"
+                android:layout_below="@+id/onbord_img"
                 android:layout_marginTop="50dp"
                 android:text="@string/next"
                 style="@style/BetterButton" />
