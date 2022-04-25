@@ -45,6 +45,10 @@ public class HelpFragment extends Fragment {
 		// Create hyperlinks to web urls
 		TextView text;
 
+		// To home page
+		text = (TextView) root.findViewById(R.id.help_home_text);
+		Utils.linkify(mContext, text, getResources().getString(R.string.url_home_page));
+
 		//	To help page
 		text = (TextView) root.findViewById(R.id.help_help_text);
 		Utils.linkify(mContext, text, getResources().getString(R.string.url_help_page));

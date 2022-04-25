@@ -81,10 +81,40 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_onboarding_label1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_below="@id/layout_onboarding_icon1"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            >
+
+            <TextView
+                android:layout_width="@dimen/onboarding_icon_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:text="@string/IND_CAT_ENVIRONMENT_NAME"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="@dimen/onboarding_icon_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:text="@string/IND_CAT_ECONOMIC_NAME"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/layout_onboarding_icon2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/layout_onboarding_icon1"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/layout_onboarding_label1"
             android:orientation="horizontal"
             android:layout_centerHorizontal="true"
             >
@@ -106,6 +136,35 @@
                 android:layout_gravity="end|right"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/gg_goodgovernance" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_onboarding_label2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_below="@id/layout_onboarding_icon2"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            >
+
+            <TextView
+                android:layout_width="@dimen/onboarding_icon_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:text="@string/IND_CAT_SOCIAL_NAME"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="@dimen/onboarding_icon_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:text="@string/IND_CAT_GOVERNANCE_NAME"
+                android:textColor="@color/black" />
         </LinearLayout>
 
     </RelativeLayout>

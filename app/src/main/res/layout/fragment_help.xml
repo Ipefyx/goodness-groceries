@@ -103,7 +103,7 @@
             android:layout_height="10dp" />
 
         <TextView
-            android:id="@+id/help_help_text"
+            android:id="@+id/help_home_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/help_page_button_2"
@@ -115,10 +115,22 @@
             android:layout_height="10dp" />
 
         <TextView
-            android:id="@+id/help_contact_text"
+            android:id="@+id/help_help_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/help_page_button_3"
+            android:textColor="@color/black"
+            android:textColorLink="@color/black" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <TextView
+            android:id="@+id/help_contact_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/help_page_button_4"
             android:textColor="@color/black"
             android:textColorLink="@color/black" />
 
