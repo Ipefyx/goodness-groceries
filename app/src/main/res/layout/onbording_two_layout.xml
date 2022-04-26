@@ -64,7 +64,6 @@
         <ImageView
             android:layout_width="@dimen/onboarding_icon_width"
             android:layout_height="@dimen/onboarding_icon_width"
-            android:layout_below="@+id/slide_two_doc"
             android:layout_marginTop="@dimen/padding2"
             android:layout_gravity="start|left"
             android:layout_weight="1"
@@ -73,7 +72,6 @@
         <ImageView
             android:layout_width="@dimen/onboarding_icon_width"
             android:layout_height="@dimen/onboarding_icon_width"
-            android:layout_below="@+id/slide_two_doc"
             android:layout_marginTop="@dimen/padding2"
             android:layout_gravity="end|right"
             android:layout_weight="1"
@@ -122,7 +120,6 @@
             <ImageView
                 android:layout_width="@dimen/onboarding_icon_width"
                 android:layout_height="@dimen/onboarding_icon_width"
-                android:layout_below="@+id/slide_two_doc"
                 android:layout_marginTop="@dimen/padding2"
                 android:layout_gravity="start|left"
                 android:layout_weight="1"
@@ -131,7 +128,6 @@
             <ImageView
                 android:layout_width="@dimen/onboarding_icon_width"
                 android:layout_height="@dimen/onboarding_icon_width"
-                android:layout_below="@+id/slide_two_doc"
                 android:layout_marginTop="@dimen/padding2"
                 android:layout_gravity="end|right"
                 android:layout_weight="1"

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
@@ -10,7 +11,7 @@
         android:layout_height="@dimen/icon_width"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/padding2"
-        android:src="@drawable/uni_icon" />
+        android:src="@drawable/gg_logo_1" />
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,12 +51,124 @@
             android:textColor="@android:color/black"
             android:textSize="@dimen/txt_doc_size" />
 
+        <LinearLayout
+            android:id="@+id/layout_firsttime2_icon1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/onbord_doc"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            >
+
+            <ImageView
+                android:layout_width="@dimen/firsttime_icon_width"
+                android:layout_height="@dimen/firsttime_icon_width"
+                android:layout_marginTop="@dimen/padding2"
+                android:layout_gravity="start|left"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/gg_environment" />
+
+            <ImageView
+                android:layout_width="@dimen/firsttime_icon_width"
+                android:layout_height="@dimen/firsttime_icon_width"
+                android:layout_marginTop="@dimen/padding2"
+                android:layout_gravity="end|right"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/gg_economicwellbeing" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_firsttime2_label1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_below="@id/layout_firsttime2_icon1"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            >
+
+            <TextView
+                android:layout_width="@dimen/onboarding_icon_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:text="@string/IND_CAT_ENVIRONMENT_NAME"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="@dimen/onboarding_icon_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:text="@string/IND_CAT_ECONOMIC_NAME"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_firsttime2_icon2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/layout_firsttime2_label1"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            >
+
+            <ImageView
+                android:layout_width="@dimen/firsttime_icon_width"
+                android:layout_height="@dimen/firsttime_icon_width"
+                android:layout_marginTop="@dimen/padding2"
+                android:layout_gravity="start|left"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/gg_socialwellbeing" />
+
+            <ImageView
+                android:layout_width="@dimen/firsttime_icon_width"
+                android:layout_height="@dimen/firsttime_icon_width"
+                android:layout_marginTop="@dimen/padding2"
+                android:layout_gravity="end|right"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/gg_goodgovernance" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_firsttime2_label2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_below="@id/layout_firsttime2_icon2"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            >
+
+            <TextView
+                android:layout_width="@dimen/onboarding_icon_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:text="@string/IND_CAT_SOCIAL_NAME"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="@dimen/onboarding_icon_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:text="@string/IND_CAT_GOVERNANCE_NAME"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
         <Button
                 android:id="@+id/button_continue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@+id/onbord_doc"
+                android:layout_below="@+id/layout_firsttime2_label2"
                 android:layout_marginTop="50dp"
                 android:text="@string/next"
                 style="@style/BetterButton" />
