@@ -53,7 +53,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
 	private int currentPage = 0;
 
-	public static View s_logoLayout;
+	public static View s_logoLayout; // Acces to Uni+Pall logo for an hacky and dirty way to show/hide them regarding the Onboarding fragment
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
