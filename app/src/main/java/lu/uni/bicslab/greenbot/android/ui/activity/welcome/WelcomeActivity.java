@@ -53,7 +53,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
 	private int currentPage = 0;
 
-	public static View s_logoLayout; // Acces to Uni+Pall logo for an hacky and dirty way to show/hide them regarding the Onboarding fragment
+	public static LinearLayout s_logoLayout; // Access to Uni+Pall logo for an hacky and dirty way to show/hide them regarding the Onboarding fragment
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -131,7 +131,6 @@ public class WelcomeActivity extends AppCompatActivity {
 		
 		
 	}
-	
 	
 	/*
 	 * Adds bottom dots indicator
