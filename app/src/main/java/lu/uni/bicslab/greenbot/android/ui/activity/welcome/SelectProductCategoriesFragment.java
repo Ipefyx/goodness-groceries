@@ -26,8 +26,10 @@ public class SelectProductCategoriesFragment extends Fragment {
 	private WelcomeSelectable[] selectables;
 	
 	@Override
-	public void onCreate(@Nullable Bundle savedInstanceState) {
+	public void onCreate(@Nullable Bundle savedInstanceState)
+	{
 		super.onCreate(savedInstanceState);
+		WelcomeActivity.s_logoLayout.setVisibility(View.GONE);
 	}
 	
 	@Nullable

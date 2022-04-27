@@ -86,7 +86,7 @@
             app:drawableTint="@color/palette_blue1"/>
         <!--    android:focusable="true" -->
 
-
+<!-- Logo are now on onboarding main layout
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -122,5 +122,5 @@
             android:adjustViewBounds="true"></ImageView>
 
     </LinearLayout>
-
+-->
 </androidx.constraintlayout.widget.ConstraintLayout>

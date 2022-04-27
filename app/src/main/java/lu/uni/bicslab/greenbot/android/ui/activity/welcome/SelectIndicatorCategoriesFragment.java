@@ -26,6 +26,7 @@ public class SelectIndicatorCategoriesFragment extends Fragment {
 	@Override
 	public void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		WelcomeActivity.s_logoLayout.setVisibility(View.GONE);
 	}
 	
 	@Nullable

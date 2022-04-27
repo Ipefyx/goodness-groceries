@@ -46,17 +46,48 @@
                     android:visibility="gone" />
 
             <Button
-                    android:id="@+id/btn_next"
+                android:id="@+id/btn_next"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/next"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/BetterButton"
+                android:layout_marginStart="@dimen/padding2"
+                android:layout_marginEnd="@dimen/padding2"
+                android:layout_marginBottom="50dp"
+                />
+
+            <LinearLayout
+                android:id="@+id/layout_logos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="50dp"
+                android:layout_marginHorizontal="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_below="@id/btn_next"
+                android:visibility="visible"
+                >
+
+
+                <ImageView
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/next"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    style="@style/BetterButton"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginStart="@dimen/padding2"
-                    android:layout_marginEnd="@dimen/padding2"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:layout_marginBottom="50dp" />
+                    android:layout_height="@dimen/icon_width"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/uni_icon" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/icon_width"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/pall_center" />
+            </LinearLayout>
 
             <LinearLayout
                     android:id="@+id/layoutDots"
@@ -67,7 +98,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/btn_next" />
+                    app:layout_constraintTop_toBottomOf="@id/layout_logos" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.viewpager2.widget.ViewPager2

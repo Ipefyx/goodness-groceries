@@ -8,6 +8,7 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.android.volley.NoConnectionError;
 import com.android.volley.TimeoutError;
+import com.google.android.gms.vision.text.Line;
 
 import org.json.JSONObject;
 
@@ -50,12 +52,13 @@ public class WelcomeActivity extends AppCompatActivity {
 	public String id;
 
 	private int currentPage = 0;
+
+	public static View s_logoLayout;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		binding = OnbordingMainLayoutBinding.inflate(getLayoutInflater());
-		
 		
 		String data = getIntent().getStringExtra("data");
 		try {
@@ -63,9 +66,11 @@ public class WelcomeActivity extends AppCompatActivity {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		setContentView(binding.getRoot());
 		init();
+
+		s_logoLayout = findViewById(R.id.layout_logos);
 		
 		// Ask for language and restart the app
 		if (UserData.getLanguage(this) == null)
@@ -166,6 +171,8 @@ public class WelcomeActivity extends AppCompatActivity {
 			}
 		}
 	}
+
+
 	
 	
 	private static class OnboardFragmentStateAdapter extends FragmentStateAdapter {
@@ -193,7 +200,8 @@ public class WelcomeActivity extends AppCompatActivity {
 				case 4:
 					return new SelectProductCategoriesFragment();
 				case 5:
-					return new SimpleLayoutFragment(R.layout.onbording_three_layout);
+					return new NotificationsFragment();
+
 			}
 		}
 		
