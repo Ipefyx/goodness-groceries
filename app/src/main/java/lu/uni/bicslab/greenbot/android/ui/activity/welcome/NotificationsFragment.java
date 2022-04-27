@@ -72,8 +72,8 @@ public class NotificationsFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        requestNotificationPermission();
-        WelcomeActivity.s_logoLayout.setVisibility(View.VISIBLE);
+        //requestNotificationPermission();
+        //WelcomeActivity.s_logoLayout.setVisibility(View.VISIBLE);
 
     }
 }

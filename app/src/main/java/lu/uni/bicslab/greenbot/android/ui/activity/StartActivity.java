@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -15,6 +16,9 @@ import android.widget.Toast;
 
 import com.android.volley.NoConnectionError;
 import com.android.volley.TimeoutError;
+
+import java.sql.Timestamp;
+import java.util.Timer;
 
 import lu.uni.bicslab.greenbot.android.MainActivity;
 import lu.uni.bicslab.greenbot.android.R;
@@ -31,6 +35,7 @@ public class StartActivity extends AppCompatActivity {
 
 	private static boolean completedSurvey = false;
 	private boolean refreshStatus = false;
+	private long  lastTime = -1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +62,21 @@ public class StartActivity extends AppCompatActivity {
 				observationDateTxt.setText(getResources().getString(R.string.observationphase_text1) + " " + Utils.dateToText(phase1Date) + ".");
 				daysTxt.setText(days + " " + getResources().getString(R.string.observationphase_text4));
 
-				refreshStatus = true;
+				// Create hyperlinks to web urls
+				TextView text;
+
+				// To home page
+				text = (TextView) findViewById(R.id.help_home_text);
+				Utils.linkify(this, text, getResources().getString(R.string.url_home_page));
+
+
+				//	To contact page
+				text = (TextView) findViewById((R.id.help_contact_text));
+				Utils.linkify(this, text, getResources().getString(R.string.url_contact_us));
+
+
+				// TODO: Find a solution to refresh and have links working...
+				refreshStatus = false;
 
 			} else if (UserData.isFirstTimeVisit(getApplicationContext())) {
 				// Show first-time screen 1 or 2
@@ -127,7 +146,6 @@ public class StartActivity extends AppCompatActivity {
 
 			} else {
 				setContentView(R.layout.activity_waitingpage_layout);
-				refreshStatus = true;
 			}
 			
 		} else {
@@ -142,8 +160,20 @@ public class StartActivity extends AppCompatActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		
+
+		if(lastTime < 0)
+			lastTime = System.currentTimeMillis();
+
 		if (refreshStatus) { // TODO: find better way to handle this in observation phase
+
+			int deltaTime = (int)(System.currentTimeMillis() - lastTime);
+
+			if(deltaTime < 5) {
+				Log.e("Time", " : " + deltaTime );
+				return;
+			} else {
+				lastTime = System.currentTimeMillis();
+			}
 
 			ServerConnection.fetchUserStatus(this, UserData.getID(this), (status, phase2, phase1) -> {
 				UserData.setStatus(this, status);
