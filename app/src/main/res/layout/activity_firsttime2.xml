@@ -43,6 +43,7 @@
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/padding2"
+            android:layout_marginBottom="10dp"
             android:gravity="center_horizontal"
             android:paddingLeft="@dimen/desc_padding"
             android:paddingRight="@dimen/desc_padding"
@@ -55,7 +56,7 @@
             android:id="@+id/layout_firsttime2_icon1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="0dp"
             android:layout_below="@id/onbord_doc"
             android:orientation="horizontal"
             android:layout_centerHorizontal="true"
@@ -64,7 +65,7 @@
             <ImageView
                 android:layout_width="@dimen/firsttime_icon_width"
                 android:layout_height="@dimen/firsttime_icon_width"
-                android:layout_marginTop="@dimen/padding2"
+                android:layout_marginTop="0dp"
                 android:layout_gravity="start|left"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/gg_environment" />
@@ -72,7 +73,7 @@
             <ImageView
                 android:layout_width="@dimen/firsttime_icon_width"
                 android:layout_height="@dimen/firsttime_icon_width"
-                android:layout_marginTop="@dimen/padding2"
+                android:layout_marginTop="0dp"
                 android:layout_gravity="end|right"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/gg_economicwellbeing" />
@@ -111,7 +112,7 @@
             android:id="@+id/layout_firsttime2_icon2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="0dp"
             android:layout_below="@id/layout_firsttime2_label1"
             android:orientation="horizontal"
             android:layout_centerHorizontal="true"
@@ -120,7 +121,7 @@
             <ImageView
                 android:layout_width="@dimen/firsttime_icon_width"
                 android:layout_height="@dimen/firsttime_icon_width"
-                android:layout_marginTop="@dimen/padding2"
+                android:layout_marginTop="0dp"
                 android:layout_gravity="start|left"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/gg_socialwellbeing" />
@@ -128,7 +129,7 @@
             <ImageView
                 android:layout_width="@dimen/firsttime_icon_width"
                 android:layout_height="@dimen/firsttime_icon_width"
-                android:layout_marginTop="@dimen/padding2"
+                android:layout_marginTop="0dp"
                 android:layout_gravity="end|right"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/gg_goodgovernance" />
@@ -164,14 +165,14 @@
         </LinearLayout>
 
         <Button
-                android:id="@+id/button_continue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/layout_firsttime2_label2"
-                android:layout_marginTop="50dp"
-                android:text="@string/next"
-                style="@style/BetterButton" />
+            android:id="@+id/button_continue"
+            style="@style/BetterButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_firsttime2_label2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="@string/next" />
     </RelativeLayout>
 
 

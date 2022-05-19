@@ -128,6 +128,11 @@
     <string name="PRODUCT_CATEGORY_LOCAL_ORGANIC">Local organic</string>
     <string name="PRODUCT_CATEGORY_LOCAL_ORGANIC_DESC">\'Local products\' are produced or processed in Luxembourg. They can be made from nationally produced ingredients, imported ones or from a mixture of both. \'Organic products\' are produced, distributed and marketed according to the criteria of public organic certification, and must comply at least with EU organic legislation defining the use of pesticides and fertilisers, animal welfare standards and considerations for biodiversity etc.  Some products may have voluntarily additional criteria defined by private organic certifications.</string>
 
+    <string name="PRODUCT_CATEGORY_IMPORTED_DESC">\'Imported products\' have entirely been produced or processed outside of Luxembourg. They travel by air, sea or land to Luxembourgish wholesale and retail markets. The distance travelled is referred to as \'food miles\'.</string>
+    <string name="PRODUCT_CATEGORY_CONVENTIONAL_DESC">\'Conventional products\' are produced, distributed and marketed according to any other criteria than the ones of organic methods, following general standards laid out by EU and the producing country’s legislation. They may have additional criteria defined in specific programmes and labels.</string>
+    <string name="PRODUCT_CATEGORY_ORGANIC_DESC">\'Organic products\' are produced, distributed and marketed according to the criteria of public organic certification, and must comply at least with EU organic legislation defining the use of pesticides and fertilisers, animal welfare standards and considerations for biodiversity etc.  Some products may have voluntarily additional criteria defined by private organic certifications.</string>
+    <string name="PRODUCT_CATEGORY_LOCAL_DESC">\'Local products\' are produced or processed in Luxembourg. They can be made from nationally produced ingredients, imported ones or from a mixture of both.</string>
+
     <string name="IND_CAT_ECONOMIC_DESCRIPTION">All the people working in the food sector have present and future financial security. Societies as a whole prosper through their food production activities, which build not only financial gains but also social ones. To achieve this, more local, circular and solidarity-based food production is fostered.</string>
     <string name="IND_CAT_ECONOMIC_NAME">Economic well-being</string>
     <string name="IND_CAT_ENVIRONMENT_DESCRIPTION">Efforts are made, during the various phases of production, processing and consumption of food, to minimise negative impacts on nature and even create positive side effects. This makes our food system more ecologically sustainable.</string>
@@ -279,6 +284,15 @@
 
 
     <string name="TYPE_COFFEE">Coffee</string>
+
+    <string name="NOTIFICATION_ACCOUNT_AUTHENTICATED_BODY">Your account has been validated, you take part of the studie! Thank you.</string>
+    <string name="NOTIFICATION_ACCOUNT_AUTHENTICATED_TITLE">Congratulations</string>
+    <string name="NOTIFICATION_ACCOUNT_ARCHIVED_BODY">Your account has been archived, you can uninstall the app.</string>
+    <string name="NOTIFICATION_ACCOUNT_ARCHIVED_TITLE">Account archived</string>
+    <string name="NOTIFICATION_REVIEW_PRODUCTS_BODY">Take our short survey.</string>
+    <string name="NOTIFICATION_REVIEW_PRODUCTS_TITLE">Client feedback</string>
+    <string name="NOTIFICATION_ACCOUNT_PHASE2_TITLE">Next Step</string>
+    <string name="NOTIFICATION_ACCOUNT_PHASE2_BODY">You are invited to use the application to do grocery shopping.</string>
 
     <!--    External links -->
     <string name="url_home_page">https://food.uni.lu/goodness-groceries</string>

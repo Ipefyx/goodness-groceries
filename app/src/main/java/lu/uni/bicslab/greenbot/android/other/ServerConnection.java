@@ -156,6 +156,7 @@ public class ServerConnection {
 			object.put("name", userID);
 			object.put("registration_id", deviceToken);
 			object.put("active", true);
+			object.put("cloud_message_type", "FCM");
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}

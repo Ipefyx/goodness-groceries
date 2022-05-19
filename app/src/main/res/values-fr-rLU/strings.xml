@@ -55,9 +55,12 @@
     <string name="PRODUCT_CATEGORY_LOCAL_CONVENTIONAL_DESC">Les « produits locaux » ont été produits ou transformés au Luxembourg. Ils peuvent être fabriqués à partir d\'ingrédients issus de la production nationale, d’ingrédients importés ou d’un mélange des deux. Les « produits conventionnels » sont produits, distribués et commercialisés selon des critères autres que ceux de la certification biologique. Ils sont conformes aux normes générales, définies par la législation européenne et luxembourgeoise et peuvent avoir des critères supplémentaires, définis dans des programmes et des labels spécifiques.</string>
     <string name="PRODUCT_CATEGORY_LOCAL_ORGANIC">Bio local</string>
     <string name="PRODUCT_CATEGORY_LOCAL_ORGANIC_DESC">Les « produits locaux » ont été produits ou transformés au Luxembourg. Ils peuvent être fabriqués à partir d\'ingrédients issus de la production nationale, d\'ingrédients importés ou d\'un mélange des deux. Les « produits biologiques » sont produits, distribués et commercialisés selon les critères de la certification biologique publique. Ils doivent respecter au moins la législation biologique de l\'UE définissant l\'utilisation des pesticides et des engrais, les normes de bien-être animal, les considérations pour la biodiversité, etc. Certains produits peuvent avoir des critères supplémentaires volontaires, définis par des certifications biologiques privées.</string>
-    
-    
-    
+
+    <string name="PRODUCT_CATEGORY_IMPORTED_DESC">Les « produits importés » ont été entièrement produits ou transformés en dehors du Luxembourg. Ils voyagent par voie aérienne, maritime ou terrestre vers les marchés de gros et de détail luxembourgeois. La distance parcourue est appelée « kilomètres-assiette ».</string>
+    <string name="PRODUCT_CATEGORY_CONVENTIONAL_DESC">Les « produits conventionnels » sont produits, distribués et commercialisés selon des critères autres que ceux de la certification biologique. Ils sont conformes aux normes générales, établies par l\'UE et la législation du pays producteur et peuvent avoir des critères supplémentaires, définis dans des programmes et des labels spécifiques.</string>
+    <string name="PRODUCT_CATEGORY_ORGANIC_DESC">Les « produits biologiques » sont produits, distribués et commercialisés selon les critères de la certification biologique publique. Ils doivent respecter au moins la législation biologique de l\'UE définissant l\'utilisation des pesticides et des engrais, les normes de bien-être animal, les considérations pour la biodiversité, etc. Certains produits peuvent avoir des critères supplémentaires volontaires, définis par des certifications biologiques privées.</string>
+    <string name="PRODUCT_CATEGORY_LOCAL_DESC">Les « produits locaux » ont été produits ou transformés au Luxembourg. Ils peuvent être fabriqués à partir d\'ingrédients issus de la production nationale, d\'ingrédients importés ou d\'un mélange des deux.</string>
+
     <string name="IND_CAT_ECONOMIC_DESCRIPTION">Toutes les personnes travaillant dans le secteur alimentaire ont une sécurité financière actuelle et future. Les activités de production alimentaire, en générant non seulement des gains financiers mais aussi des gains sociaux, permettent aux sociétés de prospérer dans leur ensemble. Pour y parvenir, une production alimentaire plus locale, circulaire et solidaire est encouragée.</string>
     <string name="IND_CAT_ECONOMIC_NAME">Bien-être économique</string>
     <string name="IND_CAT_ENVIRONMENT_DESCRIPTION">Tout au cours des différentes phases de production, de transformation et de consommation des aliments, des efforts sont faits pour minimiser les impacts négatifs sur l’environnement, voire pour créer des effets secondaires positifs. Cela rend notre système alimentaire plus durable sur le plan écologique.</string>
@@ -209,10 +212,18 @@
     <string name="PRODUCT_COFFEE_LO_NAME">Café Sidamo Bio</string>
 
 
-
-
-
     <string name="TYPE_COFFEE">Café</string>
+
+    <string name="NOTIFICATION_ACCOUNT_AUTHENTICATED_BODY">Votre compte a été authentifié, vous pouvez désormais accéder à l’application</string>
+    <string name="NOTIFICATION_ACCOUNT_AUTHENTICATED_TITLE">Authentification complétée</string>
+    <string name="NOTIFICATION_ACCOUNT_ARCHIVED_BODY">Votre compte à été archivé, vous pouvez supprimer l\'applicatino.</string>
+    <string name="NOTIFICATION_ACCOUNT_ARCHIVED_TITLE">Compte archivé</string>
+    <string name="NOTIFICATION_REVIEW_PRODUCTS_BODY">Répondez à notre enquête rapide.</string>
+    <string name="NOTIFICATION_REVIEW_PRODUCTS_TITLE">Retour client</string>
+    <string name="NOTIFICATION_ACCOUNT_PHASE2_TITLE">Prochaine étape</string>
+    <string name="NOTIFICATION_ACCOUNT_PHASE2_BODY">Vous pouvez maintenant utiliser l\'application pour faire vos courses.</string>
+    
+    
     <string name="compare_button">Comparer</string>
     <string name="product">Produit</string>
     <string name="indicators">Indicateurs</string>

@@ -57,8 +57,14 @@ public class UserData {
 		Log.e("UserData getID", getPrefs(context).getString("user_id", null));
 		return getPrefs(context).getString("user_id", null);
 	}
+
+	public static void setToken(Context context, String token) {
+		getPrefs(context).edit().putString("user_token", token).apply();
+	}
 	
-	
+	public static String getToken(Context context) {
+		return getPrefs(context).getString("user_token", null);
+	}
 	
 	// The language/locale chosen by the user
 	public static void setLanguage(Context context, String language) {

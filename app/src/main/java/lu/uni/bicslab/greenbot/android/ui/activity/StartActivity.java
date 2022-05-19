@@ -76,7 +76,7 @@ public class StartActivity extends AppCompatActivity {
 
 
 				// TODO: Find a solution to refresh and have links working...
-				refreshStatus = false;
+				refreshStatus = true;
 
 			} else if (UserData.isFirstTimeVisit(getApplicationContext())) {
 				// Show first-time screen 1 or 2
@@ -113,7 +113,14 @@ public class StartActivity extends AppCompatActivity {
 			
 		} else if (userStatus.equals(UserData.USER_REQUESTED) || userStatus.equals(UserData.USER_ARCHIVED)) {
 
+
+
 			if(!completedSurvey) {
+
+				String userID = UserData.getID(this);
+				String token = UserData.getToken(this);
+				ServerConnection.sendDeviceToken(this, userID, token, callback -> {}, error -> {});
+
 				setContentView(R.layout.activity_before_start);
 
 				CheckBox surveyCB = (CheckBox) findViewById(R.id.survey_checkBox);
@@ -161,19 +168,8 @@ public class StartActivity extends AppCompatActivity {
 	protected void onResume() {
 		super.onResume();
 
-		if(lastTime < 0)
-			lastTime = System.currentTimeMillis();
 
 		if (refreshStatus) { // TODO: find better way to handle this in observation phase
-
-			int deltaTime = (int)(System.currentTimeMillis() - lastTime);
-
-			if(deltaTime < 5) {
-				Log.e("Time", " : " + deltaTime );
-				return;
-			} else {
-				lastTime = System.currentTimeMillis();
-			}
 
 			ServerConnection.fetchUserStatus(this, UserData.getID(this), (status, phase2, phase1) -> {
 				UserData.setStatus(this, status);
