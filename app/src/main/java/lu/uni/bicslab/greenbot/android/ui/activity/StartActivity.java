@@ -45,7 +45,7 @@ public class StartActivity extends AppCompatActivity {
 		String lang = UserData.getLanguage(this);
 		if (lang != null)
 			Utils.setLocale(this, lang);
-		
+
 		// Redirect to correct activities or show correct layout based on the user status
 		String userStatus = UserData.getStatus(this);
 		String phase1Date = UserData.getPhase1Date(this);
@@ -75,7 +75,8 @@ public class StartActivity extends AppCompatActivity {
 				Utils.linkify(this, text, getResources().getString(R.string.url_contact_us));
 
 
-				// TODO: Find a solution to refresh and have links working...
+				/* TODO: Find a solution to refresh and have links working...
+			 	 Idea -> Toggle one time refreshStatus then toggle it off + add a button to toggle it back on */
 				refreshStatus = true;
 
 			} else if (UserData.isFirstTimeVisit(getApplicationContext())) {
@@ -114,6 +115,7 @@ public class StartActivity extends AppCompatActivity {
 		} else if (userStatus.equals(UserData.USER_REQUESTED) || userStatus.equals(UserData.USER_ARCHIVED)) {
 
 
+			refreshStatus = true;
 
 			if(!completedSurvey) {
 
@@ -199,5 +201,7 @@ public class StartActivity extends AppCompatActivity {
 		startActivity(new Intent(this, StartActivity.class));
 		finish();
 	}
+
+
 
 }
