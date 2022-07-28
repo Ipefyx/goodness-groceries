@@ -75,9 +75,9 @@ public class StartActivity extends AppCompatActivity {
 				Utils.linkify(this, text, getResources().getString(R.string.url_contact_us));
 
 
-				/* TODO: Find a solution to refresh and have links working...
-			 	 Idea -> Toggle one time refreshStatus then toggle it off + add a button to toggle it back on */
-				refreshStatus = true;
+				/* Find a solution to refresh and have links working...
+			 	 Idea -> Toggle one time refreshStatus then toggle it off + add a button to toggle it back on ----> Done */
+				//refreshStatus = true;
 
 			} else if (UserData.isFirstTimeVisit(getApplicationContext())) {
 				// Show first-time screen 1 or 2
@@ -173,6 +173,7 @@ public class StartActivity extends AppCompatActivity {
 
 		if (refreshStatus) { // TODO: find better way to handle this in observation phase
 
+
 			ServerConnection.fetchUserStatus(this, UserData.getID(this), (status, phase2, phase1) -> {
 				UserData.setStatus(this, status);
 
@@ -187,6 +188,8 @@ public class StartActivity extends AppCompatActivity {
 					finish();
 				}
 
+
+
 			}, error -> {
 				if (error instanceof TimeoutError || error instanceof NoConnectionError) {
 					Toast.makeText(this, R.string.network_error, Toast.LENGTH_SHORT).show();
@@ -200,6 +203,30 @@ public class StartActivity extends AppCompatActivity {
 		completedSurvey = false;
 		startActivity(new Intent(this, StartActivity.class));
 		finish();
+	}
+
+	public void refreshStatus(View view) {
+		ServerConnection.fetchUserStatus(this, UserData.getID(this), (status, phase2, phase1) -> {
+			UserData.setStatus(this, status);
+
+			UserData.setPhase2Date(this, phase2);
+			UserData.setPhase1Date(this, phase1);
+
+			// Restart/redirect to the right screen if user isn't requested or not in phase 1 anymore
+			if (!(status.equals(UserData.USER_REQUESTED) || status.equals(UserData.USER_ARCHIVED))) {
+				startActivity(new Intent(this, StartActivity.class));
+				if(!UserData.isPhase2(this)) // Avoid blink view on each refresh
+					overridePendingTransition(0,  0);
+				finish();
+			}
+
+
+
+		}, error -> {
+			if (error instanceof TimeoutError || error instanceof NoConnectionError) {
+				Toast.makeText(this, R.string.network_error, Toast.LENGTH_SHORT).show();
+			}
+		});
 	}
 
 

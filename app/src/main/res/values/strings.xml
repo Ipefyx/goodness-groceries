@@ -13,6 +13,7 @@
 
     <string name="ok">OK</string>
     <string name="next">Continue</string>
+    <string name="refresh">Refresh</string>
     <string name="or">or</string>
 
     <string name="loading">Loading..</string>
@@ -281,6 +282,9 @@
     <!--    1, Moulin J.P. Dieschbourg-->
     <string name="PRODUCT_COFFEE_LO_DESCRIPTION">100% organic and Fairtrade certified Arabica coffee from Ethiopia, grown in the Sidamo region in heights between 1400 and 2200 m, and roasted at the Moulin J.P. Dieschbourg in Echternach, Luxembourg.</string>
     <string name="PRODUCT_COFFEE_LO_NAME">Café Sidamo Bio</string>
+    <!-- 5420051401161 -->
+    <string name="PRODUCT_5420051401161">Cafe 5420051401161</string>
+    <string name="PRODUCT_5420051401161_DESCRIPTION">Cafe 5420051401161 description</string>
 
 
     <string name="TYPE_COFFEE">Coffee</string>
