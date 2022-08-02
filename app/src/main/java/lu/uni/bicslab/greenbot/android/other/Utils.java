@@ -266,12 +266,16 @@ public class Utils {
 
 			for (IndicatorModel ind : product.indicators) {
 				ind.mergeBaseIndicator(getIndicatorByID(context, ind.getId()));
+/*
+				ind.setGeneral_description(getStringByResName(context, ind.getGeneral_description()));
+
 
 				for (SubIndicatorModel sub : ind.sub_indicators) {
 					sub.setName(getStringByResName(context, sub.getName()));
 					sub.setDescription(getStringByResName(context, sub.getDescription()));
 					sub.setFile(sub.getFile());
 				}
+*/
 			}
 		}
 	}
@@ -318,7 +322,8 @@ public class Utils {
 		int resID = ctx.getResources().getIdentifier(str, "string", ctx.getPackageName());
 
 		if (resID == 0) {
-			throw new RuntimeException("String Resource \""+str+"\" could not be found.");
+			//throw new RuntimeException("String Resource \""+str+"\" could not be found.");
+			return str;
 		}
 		
 		return ctx.getString(resID);

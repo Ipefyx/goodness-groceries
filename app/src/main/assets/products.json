@@ -1,639 +1,735 @@
-[
+[ {
+	"code": "5453001556888",
+	"name": "PRODUCT_5453001556888_NAME",
+	"description": "PRODUCT_5453001556888_DESCRIPTION",
+	"type": "TYPE_HAM",
+	"category": "local_conventional",
+	"provider": "Boucherie-Salaisons Meyer SARL",
+	"image_url": "5453001556888",
+	"indicators": [
+		{
+			"id": "ind_animal",
+			"applicable": true,
+			"description": ""
+		},
+		{
+			"id": "ind_biodiv",
+			"applicable": true,
+			"description": ""
+		},
+		{
+			"id": "ind_flora",
+			"applicable": true,
+			"description": ""
+		},
+		{
+			"id": "ind_soil",
+			"applicable": true,
+			"description": ""
+		},
+		{
+			"id": "ind_sovereignty",
+			"applicable": true,
+			"description": ""
+		},
+		{
+			"id": "ind_food",
+			"applicable": true,
+			"description": "IND_FOOD_5453001556888"
+		},
+		{
+			"id": "ind_localeco",
+			"applicable": true,
+			"description": "IND_LOCALECO_5453001556888"
+		},
+		{
+			"id": "ind_decent",
+			"applicable": true,
+			"description": ""
+		},
+		{
+			"id": "ind_equity",
+			"applicable": true,
+			"description": ""
+		},
+		{
+			"id": "ind_labour",
+			"applicable": true,
+			"description": "IND_LABOUR_5453001556888"
+		},
+		{
+			"id": "ind_fair",
+			"applicable": true,
+			"description": ""
+		},
+		{
+			"id": "ind_transparency",
+			"applicable": true,
+			"description": "IND_TRANSPARANCY_5453001556888"
+		},
+		{
+			"id": "ind_participation",
+			"applicable": true,
+			"description": ""
+		},
+		{
+			"id": "ind_sustainablemanagement",
+			"applicable": true,
+			"description": ""
+		}
+	]
+},
 	{
-		"code": "1",
-		"name": "PRODUCT_COFFEE_LO_NAME",
-		"description": "PRODUCT_COFFEE_LO_DESCRIPTION",
-		"type": "TYPE_COFFEE",
+		"code": "2117",
+		"name": "PRODUCT_2117_NAME",
+		"description": "PRODUCT_5453001556888_DESCRIPTION",
+		"type": "TYPE_POTATOES",
 		"category": "local_organic",
-		"provider": "Moulin J.P. Dieschbourg",
-		"image_url": "1",
+		"provider": "OBCO",
+		"image_url": "2117",
 		"indicators": [
 			{
 				"id": "ind_animal",
 				"applicable": false,
-				"sub_indicators": []
+				"description": ""
 			},
 			{
 				"id": "ind_biodiv",
 				"applicable": true,
-				"sub_indicators": []
+				"description": "IND_BIODIV_2117"
 			},
 			{
 				"id": "ind_flora",
 				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_FLORA_SUBIND_PESTICIDES_NAME",
-						"description": "IND_FLORA_SUBIND_PESTICIDES_COFFEE_LO_DESCRIPTION"
-					},
-					{
-						"name": "IND_FLORA_SUBIND_ANIMALDRUGUSE_NAME",
-						"description": "NOT_APPLICABLE"
-					}
-				]
+				"description": "IND_FLORA_2117"
 			},
 			{
 				"id": "ind_soil",
 				"applicable": true,
-				"sub_indicators": []
+				"description": "IND_SOIL_2117"
 			},
 			{
 				"id": "ind_sovereignty",
 				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_SOVEREIGNTY_SUBIND_COMMUNITYSUPPORTED_NAME",
-						"description": "NO_EVIDENCE"
-					},
-					{
-						"name": "IND_SOVEREIGNTY_SUBIND_PRODUCTDIVERSIFICATION_NAME",
-						"description": "NO_EVIDENCE"
-					},
-					{
-						"name": "IND_SOVEREIGNTY_SUBIND_FARMERCOOPERATIVE_NAME",
-						"description": "IND_SOVEREIGNTY_SUBIND_FARMERCOOPERATIVE_COFFEE_LO_DESCRIPTION"
-					}
-				]
+				"description": "IND_SOVEREIGNTY_2117"
 			},
 			{
 				"id": "ind_food",
-				"applicable": false,
-				"sub_indicators": []
+				"applicable": true,
+				"description": "IND_FOOD_2117"
 			},
 			{
 				"id": "ind_localeco",
 				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_LOCALECO_SUBIND_COMMUNITYINVESTMENT_NAME",
-						"description": "IND_LOCALECO_SUBIND_COMMUNITYINVESTMENT_COFFEE_LO_DESCRIPTION"
-					},
-					{
-						"name": "IND_LOCALECO_SUBIND_LOCALPROCUREMENT_NAME",
-						"description": "NO_EVIDENCE"
-					},
-					{
-						"name": "IND_LOCALECO_SUBIND_LOCALWORKFORCE_NAME",
-						"description": "IND_LOCALECO_SUBIND_LOCALWORKFORCE_COFFEE_LO_DESCRIPTION"
-					}
-				]
+				"description": "IND_LOCALECO_2117"
 			},
 			{
 				"id": "ind_decent",
 				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_DECENT_SUBIND_QUALITYOFLIFE_NAME",
-						"description": "IND_DECENT_SUBIND_QUALITYOFLIFE_COFFEE_LO_DESCRIPTION"
-					},
-					{
-						"name": "IND_DECENT_SUBIND_CAPACITYDEVELOPMENT_NAME",
-						"description": "NO_EVIDENCE"
-					},
-					{
-						"name": "IND_DECENT_SUBIND_FAIRACCESSTOMEANSOFPRODUCTIONANDTOLAND_NAME",
-						"description": "NO_EVIDENCE"
-					}
-				]
+				"description": ""
 			},
 			{
 				"id": "ind_equity",
 				"applicable": true,
-				"sub_indicators": []
+				"description": ""
 			},
 			{
 				"id": "ind_labour",
 				"applicable": true,
-				"sub_indicators": []
+				"description": "IND_LABOUR_2117"
 			},
 			{
 				"id": "ind_fair",
 				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_FAIR_SUBIND_FAIRPRICINGANDTRANSPARENTCONTRACTS_NAME",
-						"description": "IND_FAIR_SUBIND_FAIRPRICINGANDTRANSPARENTCONTRACTS_COFFEE_LO_DESCRIPTION"
-					},
-					{
-						"name": "IND_FAIR_SUBIND_FREEDOMOFASSOCIATIONANDRIGHTTOBARGAINING_NAME",
-						"description": "IND_FAIR_SUBIND_FREEDOMOFASSOCIATIONANDRIGHTTOBARGAINING_COFFEE_LO_DESCRIPTION",
-						"file":"https://food.daloos.uni.lu/wp-content/uploads/sites/21/2022/02/GG_Product-sheet_Flour_OrganicLocal.pdf"
-					},
-					{
-						"name": "IND_FAIR_SUBIND_WAGELEVEL_NAME",
-						"description": "NO_EVIDENCE"
-					},
-					{
-						"name": "IND_FAIR_SUBIND_INDIGENOUSKNOWLEDGE_NAME",
-						"description": "IND_FAIR_SUBIND_INDIGENOUSKNOWLEDGE_COFFEE_LO_DESCRIPTION"
-					}
-				]
+				"description": ""
 			},
 			{
 				"id": "ind_transparency",
 				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_TRANSPARENCY_SUBIND_PUBLICCOMMUNICATION_NAME",
-						"description": "IND_TRANSPARENCY_SUBIND_PUBLICCOMMUNICATION_COFFEE_LO_DESCRIPTION"
-					},
-					{
-						"name": "IND_TRANSPARENCY_SUBIND_SPECIFICATIONS_NAME",
-						"description": "NO_EVIDENCE"
-					},
-					{
-						"name": "IND_TRANSPARENCY_SUBIND_PRODUCTINFORMATION_NAME",
-						"description": "NO_EVIDENCE"
-					}
-				]
+				"description": "IND_TRANSPARENCY_2117"
 			},
 			{
 				"id": "ind_participation",
 				"applicable": true,
-				"sub_indicators": []
+				"description": ""
 			},
 			{
 				"id": "ind_sustainablemanagement",
 				"applicable": true,
-				"sub_indicators": []
+				"description": ""
 			}
 		]
 	},
 	{
-		"code": "2",
-		"name": "PRODUCT_COFFEE_LC_NAME",
-		"description": "PRODUCT_COFFEE_LC_DESCRIPTION",
+		"code": "2999",
+		"name": "PRODUCT_2999_NAME",
+		"description": "PRODUCT_2999_DESCRIPTION",
+		"type": "TYPE_POTATOES",
+		"category": "local_conventional",
+		"provider": "Steffen - Majerus",
+		"image_url": "2999",
+		"indicators": [
+			{
+				"id": "ind_animal",
+				"applicable": false,
+				"description": ""
+			},
+			{
+				"id": "ind_biodiv",
+				"applicable": true,
+				"description": "IND_BIODIV_2999"
+			},
+			{
+				"id": "ind_flora",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_soil",
+				"applicable": true,
+				"description": "IND_SOIL_2999"
+			},
+			{
+				"id": "ind_sovereignty",
+				"applicable": true,
+				"description": "IND_SOVEREIGNTY_2999"
+			},
+			{
+				"id": "ind_food",
+				"applicable": true,
+				"description": "IND_FOOD_2999"
+			},
+			{
+				"id": "ind_localeco",
+				"applicable": true,
+				"description": "IND_LOCALECO_2999"
+			},
+			{
+				"id": "ind_decent",
+				"applicable": false,
+				"description": ""
+			},
+			{
+				"id": "ind_equity",
+				"applicable": false,
+				"description": ""
+			},
+			{
+				"id": "ind_labour",
+				"applicable": true,
+				"description": "IND_LABOUR_2999"
+			},
+			{
+				"id": "ind_fair",
+				"applicable": false,
+				"description": ""
+			},
+			{
+				"id": "ind_transparency",
+				"applicable": true,
+				"description": "IND_TRANSPARENCY_2999"
+			},
+			{
+				"id": "ind_participation",
+				"applicable": false,
+				"description": ""
+			},
+			{
+				"id": "ind_sustainablemanagement",
+				"applicable": true,
+				"description": "IND_SUSTAINABLEMANAGEMENT_2999"
+			}
+		]
+	},
+	{
+		"code": "5430000686037",
+		"name": "PRODUCT_5430000686037_NAME",
+		"description": "PRODUCT_5430000686037_DESCRIPTION",
+		"type": "TYPE_HONEY",
+		"category": "local_organic",
+		"provider": "Letzebuerger Hunneg",
+		"image_url": "5430000686037",
+		"indicators": [
+			{
+				"id": "ind_animal",
+				"applicable": true,
+				"description": "IND_ANIMAL_5430000686037"
+			},
+			{
+				"id": "ind_biodiv",
+				"applicable": true,
+				"description": "IND_BIODIV_5430000686037"
+			},
+			{
+				"id": "ind_flora",
+				"applicable": true,
+				"description": "IND_FLORA_5430000686037"
+			},
+			{
+				"id": "ind_soil",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_sovereignty",
+				"applicable": true,
+				"description": "IND_SOVEREIGNTY_5430000686037"
+			},
+			{
+				"id": "ind_food",
+				"applicable": true,
+				"description": "IND_FOOD_5430000686037"
+			},
+			{
+				"id": "ind_localeco",
+				"applicable": true,
+				"description": "IND_LOCALECO_5430000686037"
+			},
+			{
+				"id": "ind_decent",
+				"applicable": true,
+				"description": "IND_DECENT_5430000686037"
+			},
+			{
+				"id": "ind_equity",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_labour",
+				"applicable": true,
+				"description": "IND_LABOUR_5430000686037"
+			},
+			{
+				"id": "ind_fair",
+				"applicable": true,
+				"description": "IND_FAIR_5430000686037"
+			},
+			{
+				"id": "ind_transparency",
+				"applicable": true,
+				"description": "IND_TRANSPARENCY_5430000686037"
+			},
+			{
+				"id": "ind_participation",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_sustainablemanagement",
+				"applicable": true,
+				"description": ""
+			}
+		]
+	},
+	{
+		"code": "5453000683004",
+		"name": "PRODUCT_5453000683004_NAME",
+		"description": "PRODUCT_5453000683004_DESCRIPTION",
+		"type": "TYPE_HONEY",
+		"category": "local_conventional",
+		"provider": "Ourdaller",
+		"image_url": "5453000683004",
+		"indicators": [
+			{
+				"id": "ind_animal",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_biodiv",
+				"applicable": true,
+				"description": "IND_BIODIV_5453000683004"
+			},
+			{
+				"id": "ind_flora",
+				"applicable": true,
+				"description": "IND_FLORA_5453000683004"
+			},
+			{
+				"id": "ind_soil",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_sovereignty",
+				"applicable": true,
+				"description": "IND_SOVEREIGNTY_5453000683004"
+			},
+			{
+				"id": "ind_food",
+				"applicable": true,
+				"description": "IND_FOOD_5453000683004"
+			},
+			{
+				"id": "ind_localeco",
+				"applicable": true,
+				"description": "IND_LOCALECO_5453000683004"
+			},
+			{
+				"id": "ind_decent",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_equity",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_labour",
+				"applicable": true,
+				"description": "IND_LABOUR_5453000683004"
+			},
+			{
+				"id": "ind_fair",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_transparency",
+				"applicable": true,
+				"description": "IND_TRANSPARENCY_5453000683004"
+			},
+			{
+				"id": "ind_participation",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_sustainablemanagement",
+				"applicable": true,
+				"description": ""
+			}
+		]
+	},
+	{
+		"code": "4260333063103",
+		"name": "PRODUCT_4260333063103_NAME",
+		"description": "PRODUCT_4260333063103_DESCRIPTION",
+		"type": "TYPE_YOGURT",
+		"category": "local_conventional",
+		"provider": "Molkerei Thiry",
+		"image_url": "4260333063103",
+		"indicators": [
+			{
+				"id": "ind_animal",
+				"applicable": true,
+				"description": "IND_ANIMAL_4260333063103"
+			},
+			{
+				"id": "ind_biodiv",
+				"applicable": true,
+				"description": "IND_BIODIV_4260333063103"
+			},
+			{
+				"id": "ind_flora",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_soil",
+				"applicable": true,
+				"description": "IND_SOIL_4260333063103"
+			},
+			{
+				"id": "ind_sovereignty",
+				"applicable": true,
+				"description": "IND_SOVEREIGNTY_4260333063103"
+			},
+			{
+				"id": "ind_food",
+				"applicable": true,
+				"description": "IND_FOOD_4260333063103"
+			},
+			{
+				"id": "ind_localeco",
+				"applicable": true,
+				"description": "IND_LOCALECO_4260333063103"
+			},
+			{
+				"id": "ind_decent",
+				"applicable": true,
+				"description": "IND_DECENT_4260333063103"
+			},
+			{
+				"id": "ind_equity",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_labour",
+				"applicable": true,
+				"description": "IND_LABOUR_4260333063103"
+			},
+			{
+				"id": "ind_fair",
+				"applicable": false,
+				"description": ""
+			},
+			{
+				"id": "ind_transparency",
+				"applicable": true,
+				"description": "IND_TRANSPARENCY_4260333063103"
+			},
+			{
+				"id": "ind_participation",
+				"applicable": true,
+				"description": "IND_PARTICIPATION_4260333063103"
+			},
+			{
+				"id": "ind_sustainablemanagement",
+				"applicable": true,
+				"description": ""
+			}
+		]
+	},
+	{
+		"code": "5450252011296",
+		"name": "PRODUCT_5450252011296_NAME",
+		"description": "PRODUCT_5450252011296_DESCRIPTION",
+		"type": "TYPE_YOGURT",
+		"category": "local_organic",
+		"provider": "BIOG",
+		"image_url": "5450252011296",
+		"indicators": [
+			{
+				"id": "ind_animal",
+				"applicable": true,
+				"description": "IND_ANIMAL_5450252011296"
+			},
+			{
+				"id": "ind_biodiv",
+				"applicable": true,
+				"description": "IND_BIODIV_5450252011296"
+			},
+			{
+				"id": "ind_flora",
+				"applicable": true,
+				"description": "IND_FLORA_5450252011296"
+			},
+			{
+				"id": "ind_soil",
+				"applicable": true,
+				"description": "IND_SOIL_5450252011296"
+			},
+			{
+				"id": "ind_sovereignty",
+				"applicable": true,
+				"description": "IND_SOVEREIGNTY_5450252011296"
+			},
+			{
+				"id": "ind_food",
+				"applicable": true,
+				"description": "IND_FOOD_5450252011296"
+			},
+			{
+				"id": "ind_localeco",
+				"applicable": true,
+				"description": "IND_LOCALECO_5450252011296"
+			},
+			{
+				"id": "ind_decent",
+				"applicable": true,
+				"description": "IND_DECENT_5450252011296"
+			},
+			{
+				"id": "ind_equity",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_labour",
+				"applicable": true,
+				"description": "IND_LABOUR_5450252011296"
+			},
+			{
+				"id": "ind_fair",
+				"applicable": true,
+				"description": "IND_FAIR_5450252011296"
+			},
+			{
+				"id": "ind_transparency",
+				"applicable": true,
+				"description": "IND_TRANSPARENCY_5450252011296"
+			},
+			{
+				"id": "ind_participation",
+				"applicable": true,
+				"description": "IND_PARTICIPATION_5450252011296"
+			},
+			{
+				"id": "ind_sustainablemanagement",
+				"applicable": true,
+				"description": "IND_SUSTAINABLEMANAGEMENT_5450252011296"
+			}
+		]
+	},
+	{
+		"code": "5400332304039",
+		"name": "PRODUCT_5400332304039_NAME",
+		"description": "PRODUCT_5400332304039_DESCRIPTION",
 		"type": "TYPE_COFFEE",
 		"category": "local_conventional",
-		"provider": "Knopes SARL",
-		"image_url": "2",
+		"provider": "Knopes Artisan Torréfacteur",
+		"image_url": "5400332304039",
 		"indicators": [
 			{
 				"id": "ind_animal",
 				"applicable": false,
-				"sub_indicators": []
+				"description": ""
 			},
 			{
 				"id": "ind_biodiv",
 				"applicable": true,
-				"sub_indicators": []
+				"description": ""
 			},
 			{
 				"id": "ind_flora",
 				"applicable": true,
-				"sub_indicators": []
+				"description": ""
 			},
 			{
 				"id": "ind_soil",
 				"applicable": true,
-				"sub_indicators": []
+				"description": ""
 			},
 			{
 				"id": "ind_sovereignty",
 				"applicable": true,
-				"sub_indicators": []
+				"description": ""
 			},
 			{
 				"id": "ind_food",
 				"applicable": false,
-				"sub_indicators": []
+				"description": ""
 			},
 			{
 				"id": "ind_localeco",
 				"applicable": true,
-				"sub_indicators": []
+				"description": "IND_LOCALECO_5400332304039"
 			},
 			{
 				"id": "ind_decent",
 				"applicable": true,
-				"sub_indicators": []
+				"description": ""
 			},
 			{
 				"id": "ind_equity",
 				"applicable": true,
-				"sub_indicators": []
+				"description": ""
 			},
 			{
 				"id": "ind_labour",
 				"applicable": true,
-				"sub_indicators": []
+				"description": "IND_LABOUR_5400332304039"
 			},
 			{
 				"id": "ind_fair",
 				"applicable": true,
-				"sub_indicators": []
+				"description": ""
 			},
 			{
 				"id": "ind_transparency",
 				"applicable": true,
-				"sub_indicators": []
+				"description": "IND_TRANSPARENCY_5400332304039"
 			},
 			{
 				"id": "ind_participation",
 				"applicable": true,
-				"sub_indicators": []
+				"description": ""
 			},
 			{
 				"id": "ind_sustainablemanagement",
 				"applicable": true,
-				"sub_indicators": []
+				"description": ""
 			}
 		]
 	},
 	{
-		"code": "3",
-		"name": "PRODUCT_COFFEE_IO_NAME",
-		"description": "PRODUCT_COFFEE_IO_DESCRIPTION",
-		"type": "TYPE_COFFEE",
-		"category": "imported_organic",
-		"provider": "Ethiquable",
-		"image_url": "3",
+		"code": "5407005661055",
+		"name": "PRODUCT_5407005661055_NAME",
+		"description": "PRODUCT_5407005661055_DESCRIPTION",
+		"type": "TYPE_CHOCOSPREAD",
+		"category": "local_conventional",
+		"provider": "Genaveh",
+		"image_url": "5407005661055",
 		"indicators": [
 			{
 				"id": "ind_animal",
 				"applicable": false,
-				"sub_indicators": []
+				"description": ""
 			},
 			{
 				"id": "ind_biodiv",
 				"applicable": true,
-				"sub_indicators": []
+				"description": ""
 			},
 			{
 				"id": "ind_flora",
 				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_FLORA_SUBIND_PESTICIDES_NAME",
-						"description": "IND_FLORA_SUBIND_PESTICIDES_COFFEE_IO_DESCRIPTION"
-					},
-					{
-						"name": "IND_FLORA_SUBIND_ANIMALDRUGUSE_NAME",
-						"description": "NOT_APPLICABLE"
-					}
-				]
+				"description": ""
 			},
 			{
 				"id": "ind_soil",
 				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_SOIL_SUBIND_SOILIMPROVEMENTPRACTICES_NAME",
-						"description": "IND_SOIL_SUBIND_SOILIMPROVEMENTPRACTICES_COFFEE_IO_DESCRIPTION"
-					},
-					{
-						"name": "IND_SOIL_SUBIND_LANDCONSERVATIONANDREHABILITATION_NAME",
-						"description": "NO_EVIDENCE"
-					}
-				]
+				"description": ""
 			},
 			{
 				"id": "ind_sovereignty",
 				"applicable": true,
-				"sub_indicators": []
+				"description": ""
 			},
 			{
 				"id": "ind_food",
-				"applicable": false,
-				"sub_indicators": []
+				"applicable": true,
+				"description": ""
 			},
 			{
 				"id": "ind_localeco",
 				"applicable": true,
-				"sub_indicators": []
+				"description": "IND_LOCALECO_5407005661055"
 			},
 			{
 				"id": "ind_decent",
 				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_DECENT_SUBIND_QUALITYOFLIFE_NAME",
-						"description": "IND_DECENT_SUBIND_QUALITYOFLIFE_COFFEE_IO_DESCRIPTION"
-					},
-					{
-						"name": "IND_DECENT_SUBIND_CAPACITYDEVELOPMENT_NAME",
-						"description": "NO_EVIDENCE"
-					},
-					{
-						"name": "IND_DECENT_SUBIND_FAIRACCESSTOMEANSOFPRODUCTIONANDTOLAND_NAME",
-						"description": "NO_EVIDENCE"
-					}
-				]
+				"description": ""
 			},
 			{
 				"id": "ind_equity",
 				"applicable": true,
-				"sub_indicators": []
+				"description": "IND_EQUITY_5407005661055"
 			},
 			{
 				"id": "ind_labour",
 				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_LABOUR_SUBIND_EMPLOYMENTRELATIONS_NAME",
-						"description": "IND_LABOUR_SUBIND_EMPLOYMENTRELATIONS_COFFEE_IO_DESCRIPTION"
-					},
-					{
-						"name": "IND_LABOUR_SUBIND_RIGHTSOFNEGOTIATION_NAME",
-						"description": "IND_LABOUR_SUBIND_RIGHTSOFNEGOTIATION_COFFEE_IO_DESCRIPTION"
-					},
-					{
-						"name": "IND_LABOUR_SUBIND_FORCEDLABOUR_NAME",
-						"description": "IND_LABOUR_SUBIND_FORCEDLABOUR_COFFEE_IO_DESCRIPTION"
-					},
-					{
-						"name": "IND_LABOUR_SUBIND_CHILDLABOUR_NAME",
-						"description": "IND_LABOUR_SUBIND_CHILDLABOUR_COFFEE_IO_DESCRIPTION"
-					}
-				]
+				"description": "IND_LABOUR_5407005661055"
 			},
 			{
 				"id": "ind_fair",
 				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_FAIR_SUBIND_FAIRPRICINGANDTRANSPARENTCONTRACTS_NAME",
-						"description": "IND_FAIR_SUBIND_FAIRPRICINGANDTRANSPARENTCONTRACTS_COFFEE_IO_DESCRIPTION"
-					},
-					{
-						"name": "IND_FAIR_SUBIND_FREEDOMOFASSOCIATIONANDRIGHTTOBARGAINING_NAME",
-						"description": "IND_FAIR_SUBIND_FREEDOMOFASSOCIATIONANDRIGHTTOBARGAINING_COFFEE_IO_DESCRIPTION"
-					},
-					{
-						"name": "IND_FAIR_SUBIND_WAGELEVEL_NAME",
-						"description": "IND_FAIR_SUBIND_WAGELEVEL_COFFEE_IO_DESCRIPTION"
-					},
-					{
-						"name": "IND_FAIR_SUBIND_INDIGENOUSKNOWLEDGE_NAME",
-						"description": "IND_FAIR_SUBIND_INDIGENOUSKNOWLEDGE_COFFEE_IO_DESCRIPTION"
-					}
-				]
+				"description": ""
 			},
 			{
 				"id": "ind_transparency",
 				"applicable": true,
-				"sub_indicators": []
+				"description": "IND_TRANSPARENCY_5407005661055"
 			},
 			{
 				"id": "ind_participation",
 				"applicable": true,
-				"sub_indicators": []
+				"description": ""
 			},
 			{
 				"id": "ind_sustainablemanagement",
 				"applicable": true,
-				"sub_indicators": []
-			}
-		]
-	},
-	{
-		"code": "4",
-		"name": "PRODUCT_COFFEE_IC_NAME",
-		"description": "PRODUCT_COFFEE_IC_DESCRIPTION",
-		"type": "TYPE_COFFEE",
-		"category": "imported_conventional",
-		"provider": "Douwe Egberts",
-		"image_url": "4",
-		"indicators": [
-			{
-				"id": "ind_animal",
-				"applicable": false,
-				"sub_indicators": []
-			},
-			{
-				"id": "ind_biodiv",
-				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_BIODIV_SUBIND_LANDCONSERVATIONANDREHABILITATION_NAME",
-						"description": "IND_BIODIV_SUBIND_LANDCONSERVATIONANDREHABILITATION_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_BIODIV_SUBIND_SAVINGOFSEEDSANDBREEDS_NAME",
-						"description": "IND_BIODIV_SUBIND_SAVINGOFSEEDSANDBREEDS_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_BIODIV_SUBIND_DIVERSITYOFPRODUCTION_NAME",
-						"description": "IND_BIODIV_SUBIND_DIVERSITYOFPRODUCTION_COFFEE_IC_DESCRIPTION"
-					}
-				]
-			},
-			{
-				"id": "ind_flora",
-				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_FLORA_SUBIND_PESTICIDES_NAME",
-						"description": "IND_FLORA_SUBIND_PESTICIDES_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_FLORA_SUBIND_ANIMALDRUGUSE_NAME",
-						"description": "NOT_APPLICABLE"
-					},
-					{
-						"name": "IND_FLORA_SUBIND_FURTHEREFFORTS_NAME",
-						"description": "IND_FLORA_SUBIND_FURTHEREFFORTS_COFFEE_IC_DESCRIPTION"
-					}
-				]
-			},
-			{
-				"id": "ind_soil",
-				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_SOIL_SUBIND_SOILIMPROVEMENTPRACTICES_NAME",
-						"description": "IND_SOIL_SUBIND_SOILIMPROVEMENTPRACTICES_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_SOIL_SUBIND_LANDCONSERVATIONANDREHABILITATION_NAME",
-						"description": "IND_SOIL_SUBIND_LANDCONSERVATIONANDREHABILITATION_COFFEE_IC_DESCRIPTION"
-					}
-				]
-			},
-			{
-				"id": "ind_sovereignty",
-				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_SOVEREIGNTY_SUBIND_COMMUNITYSUPPORTED_NAME",
-						"description": "IND_SOVEREIGNTY_SUBIND_COMMUNITYSUPPORTED_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_SOVEREIGNTY_SUBIND_PRODUCTDIVERSIFICATION_NAME",
-						"description": "IND_SOVEREIGNTY_SUBIND_PRODUCTDIVERSIFICATION_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_SOVEREIGNTY_SUBIND_FARMERCOOPERATIVE_NAME",
-						"description": "IND_SOVEREIGNTY_SUBIND_FARMERCOOPERATIVE_COFFEE_IC_DESCRIPTION"
-					}
-				]
-			},
-			{
-				"id": "ind_food",
-				"applicable": false,
-				"sub_indicators": []
-			},
-			{
-				"id": "ind_localeco",
-				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_LOCALECO_SUBIND_COMMUNITYINVESTMENT_NAME",
-						"description": "IND_LOCALECO_SUBIND_COMMUNITYINVESTMENT_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_LOCALECO_SUBIND_LOCALPROCUREMENT_NAME",
-						"description": "IND_LOCALECO_SUBIND_LOCALPROCUREMENT_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_LOCALECO_SUBIND_LOCALWORKFORCE_NAME",
-						"description": "IND_LOCALECO_SUBIND_LOCALWORKFORCE_COFFEE_IC_DESCRIPTION"
-					}
-				]
-			},
-			{
-				"id": "ind_decent",
-				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_DECENT_SUBIND_QUALITYOFLIFE_NAME",
-						"description": "IND_DECENT_SUBIND_QUALITYOFLIFE_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_DECENT_SUBIND_CAPACITYDEVELOPMENT_NAME",
-						"description": "IND_DECENT_SUBIND_CAPACITYDEVELOPMENT_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_DECENT_SUBIND_FAIRACCESSTOMEANSOFPRODUCTIONANDTOLAND_NAME",
-						"description": "IND_DECENT_SUBIND_FAIRACCESSTOMEANSOFPRODUCTIONANDTOLAND_COFFEE_IC_DESCRIPTION"
-					}
-				]
-			},
-			{
-				"id": "ind_equity",
-				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_EQUITY_SUBIND_SUPPORTTOVULNERABLEPEOPLE_NAME",
-						"description": "IND_EQUITY_SUBIND_SUPPORTTOVULNERABLEPEOPLE_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_EQUITY_SUBIND_GENDEREQUALITY_NAME",
-						"description": "IND_EQUITY_SUBIND_GENDEREQUALITY_COFFEE_IC_DESCRIPTION"
-					}
-				]
-			},
-			{
-				"id": "ind_labour",
-				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_LABOUR_SUBIND_EMPLOYMENTRELATIONS_NAME",
-						"description": "IND_LABOUR_SUBIND_EMPLOYMENTRELATIONS_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_LABOUR_SUBIND_RIGHTSOFNEGOTIATION_NAME",
-						"description": "IND_LABOUR_SUBIND_RIGHTSOFNEGOTIATION_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_LABOUR_SUBIND_FORCEDLABOUR_NAME",
-						"description": "IND_LABOUR_SUBIND_FORCEDLABOUR_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_LABOUR_SUBIND_CHILDLABOUR_NAME",
-						"description": "IND_LABOUR_SUBIND_CHILDLABOUR_COFFEE_IC_DESCRIPTION"
-					}
-				]
-			},
-			{
-				"id": "ind_fair",
-				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_FAIR_SUBIND_FAIRPRICINGANDTRANSPARENTCONTRACTS_NAME",
-						"description": "IND_FAIR_SUBIND_FAIRPRICINGANDTRANSPARENTCONTRACTS_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_FAIR_SUBIND_FREEDOMOFASSOCIATIONANDRIGHTTOBARGAINING_NAME",
-						"description": "IND_FAIR_SUBIND_FREEDOMOFASSOCIATIONANDRIGHTTOBARGAINING_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_FAIR_SUBIND_WAGELEVEL_NAME",
-						"description": "IND_FAIR_SUBIND_WAGELEVEL_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_FAIR_SUBIND_INDIGENOUSKNOWLEDGE_NAME",
-						"description": "IND_FAIR_SUBIND_INDIGENOUSKNOWLEDGE_COFFEE_IC_DESCRIPTION"
-					}
-				]
-			},
-			{
-				"id": "ind_transparency",
-				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_TRANSPARENCY_SUBIND_PUBLICCOMMUNICATION_NAME",
-						"description": "IND_TRANSPARENCY_SUBIND_PUBLICCOMMUNICATION_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_TRANSPARENCY_SUBIND_SPECIFICATIONS_NAME",
-						"description": "IND_TRANSPARENCY_SUBIND_SPECIFICATIONS_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_TRANSPARENCY_SUBIND_PRODUCTINFORMATION_NAME",
-						"description": "IND_TRANSPARENCY_SUBIND_PRODUCTINFORMATION_COFFEE_IC_DESCRIPTION"
-					}
-				]
-			},
-			{
-				"id": "ind_participation",
-				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_PARTICIPATION_SUBIND_STAKEHOLDERENGAGEMENT_NAME",
-						"description": "IND_PARTICIPATION_SUBIND_STAKEHOLDERENGAGEMENT_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_PARTICIPATION_SUBIND_ENGAGEMENTBARRIERS_NAME",
-						"description": "IND_PARTICIPATION_SUBIND_ENGAGEMENTBARRIERS_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_PARTICIPATION_SUBIND_EFFECTIVEPARTICIPATION_NAME",
-						"description": "IND_PARTICIPATION_SUBIND_EFFECTIVEPARTICIPATION_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_PARTICIPATION_SUBIND_CONFLICTRESOLUTION_NAME",
-						"description": "IND_PARTICIPATION_SUBIND_CONFLICTRESOLUTION_COFFEE_IC_DESCRIPTION"
-					}
-				]
-			},
-			{
-				"id": "ind_sustainablemanagement",
-				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_SUSTAINABLEMANAGEMENT_SUBIND_SUSTAINABILITYMANAGEMENTPLAN_NAME",
-						"description": "IND_SUSTAINABLEMANAGEMENT_SUBIND_SUSTAINABILITYMANAGEMENTPLAN_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_SUSTAINABLEMANAGEMENT_SUBIND_CIVICRESPONSIBILITY_NAME",
-						"description": "IND_SUSTAINABLEMANAGEMENT_SUBIND_CIVICRESPONSIBILITY_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_SUSTAINABLEMANAGEMENT_SUBIND_DUEDILIGENCE_NAME",
-						"description": "IND_SUSTAINABLEMANAGEMENT_SUBIND_DUEDILIGENCE_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_SUSTAINABLEMANAGEMENT_SUBIND_HOLISTICAUDITS_NAME",
-						"description": "IND_SUSTAINABLEMANAGEMENT_SUBIND_HOLISTICAUDITS_COFFEE_IC_DESCRIPTION"
-					}
-				]
+				"description": ""
 			}
 		]
 	},
 	{
 		"code": "5420051401161",
-		"name": "PRODUCT_5420051401161",
+		"name": "PRODUCT_5420051401161_NAME",
 		"description": "PRODUCT_5420051401161_DESCRIPTION",
 		"type": "TYPE_COFFEE",
 		"category": "imported_organic",
@@ -643,236 +739,1125 @@
 			{
 				"id": "ind_animal",
 				"applicable": false,
-				"sub_indicators": []
+				"description": ""
 			},
 			{
 				"id": "ind_biodiv",
 				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_BIODIV_SUBIND_LANDCONSERVATIONANDREHABILITATION_NAME",
-						"description": "IND_BIODIV_SUBIND_LANDCONSERVATIONANDREHABILITATION_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_BIODIV_SUBIND_SAVINGOFSEEDSANDBREEDS_NAME",
-						"description": "IND_BIODIV_SUBIND_SAVINGOFSEEDSANDBREEDS_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_BIODIV_SUBIND_DIVERSITYOFPRODUCTION_NAME",
-						"description": "IND_BIODIV_SUBIND_DIVERSITYOFPRODUCTION_COFFEE_IC_DESCRIPTION"
-					}
-				]
+				"description": "IND_BIODIV_5420051401161"
 			},
 			{
 				"id": "ind_flora",
 				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_FLORA_SUBIND_PESTICIDES_NAME",
-						"description": "IND_FLORA_SUBIND_PESTICIDES_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_FLORA_SUBIND_ANIMALDRUGUSE_NAME",
-						"description": "NOT_APPLICABLE"
-					},
-					{
-						"name": "IND_FLORA_SUBIND_FURTHEREFFORTS_NAME",
-						"description": "IND_FLORA_SUBIND_FURTHEREFFORTS_COFFEE_IC_DESCRIPTION"
-					}
-				]
+				"description": "IND_FLORA_5420051401161"
 			},
 			{
 				"id": "ind_soil",
 				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_SOIL_SUBIND_SOILIMPROVEMENTPRACTICES_NAME",
-						"description": "IND_SOIL_SUBIND_SOILIMPROVEMENTPRACTICES_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_SOIL_SUBIND_LANDCONSERVATIONANDREHABILITATION_NAME",
-						"description": "IND_SOIL_SUBIND_LANDCONSERVATIONANDREHABILITATION_COFFEE_IC_DESCRIPTION"
-					}
-				]
+				"description": "IND_SOIL_5420051401161"
 			},
 			{
 				"id": "ind_sovereignty",
 				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_SOVEREIGNTY_SUBIND_COMMUNITYSUPPORTED_NAME",
-						"description": "IND_SOVEREIGNTY_SUBIND_COMMUNITYSUPPORTED_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_SOVEREIGNTY_SUBIND_PRODUCTDIVERSIFICATION_NAME",
-						"description": "IND_SOVEREIGNTY_SUBIND_PRODUCTDIVERSIFICATION_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_SOVEREIGNTY_SUBIND_FARMERCOOPERATIVE_NAME",
-						"description": "IND_SOVEREIGNTY_SUBIND_FARMERCOOPERATIVE_COFFEE_IC_DESCRIPTION"
-					}
-				]
+				"description": "IND_SOVEREIGNTY_5420051401161"
 			},
 			{
 				"id": "ind_food",
-				"applicable": false,
-				"sub_indicators": []
+				"applicable": true,
+				"description": ""
 			},
 			{
 				"id": "ind_localeco",
 				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_LOCALECO_SUBIND_COMMUNITYINVESTMENT_NAME",
-						"description": "IND_LOCALECO_SUBIND_COMMUNITYINVESTMENT_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_LOCALECO_SUBIND_LOCALPROCUREMENT_NAME",
-						"description": "IND_LOCALECO_SUBIND_LOCALPROCUREMENT_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_LOCALECO_SUBIND_LOCALWORKFORCE_NAME",
-						"description": "IND_LOCALECO_SUBIND_LOCALWORKFORCE_COFFEE_IC_DESCRIPTION"
-					}
-				]
+				"description": ""
 			},
 			{
 				"id": "ind_decent",
 				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_DECENT_SUBIND_QUALITYOFLIFE_NAME",
-						"description": "IND_DECENT_SUBIND_QUALITYOFLIFE_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_DECENT_SUBIND_CAPACITYDEVELOPMENT_NAME",
-						"description": "IND_DECENT_SUBIND_CAPACITYDEVELOPMENT_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_DECENT_SUBIND_FAIRACCESSTOMEANSOFPRODUCTIONANDTOLAND_NAME",
-						"description": "IND_DECENT_SUBIND_FAIRACCESSTOMEANSOFPRODUCTIONANDTOLAND_COFFEE_IC_DESCRIPTION"
-					}
-				]
+				"description": "IND_DECENT_5420051401161"
 			},
 			{
 				"id": "ind_equity",
 				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_EQUITY_SUBIND_SUPPORTTOVULNERABLEPEOPLE_NAME",
-						"description": "IND_EQUITY_SUBIND_SUPPORTTOVULNERABLEPEOPLE_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_EQUITY_SUBIND_GENDEREQUALITY_NAME",
-						"description": "IND_EQUITY_SUBIND_GENDEREQUALITY_COFFEE_IC_DESCRIPTION"
-					}
-				]
+				"description": ""
 			},
 			{
 				"id": "ind_labour",
 				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_LABOUR_SUBIND_EMPLOYMENTRELATIONS_NAME",
-						"description": "IND_LABOUR_SUBIND_EMPLOYMENTRELATIONS_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_LABOUR_SUBIND_RIGHTSOFNEGOTIATION_NAME",
-						"description": "IND_LABOUR_SUBIND_RIGHTSOFNEGOTIATION_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_LABOUR_SUBIND_FORCEDLABOUR_NAME",
-						"description": "IND_LABOUR_SUBIND_FORCEDLABOUR_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_LABOUR_SUBIND_CHILDLABOUR_NAME",
-						"description": "IND_LABOUR_SUBIND_CHILDLABOUR_COFFEE_IC_DESCRIPTION"
-					}
-				]
+				"description": "IND_LABOUR_5420051401161"
 			},
 			{
 				"id": "ind_fair",
 				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_FAIR_SUBIND_FAIRPRICINGANDTRANSPARENTCONTRACTS_NAME",
-						"description": "IND_FAIR_SUBIND_FAIRPRICINGANDTRANSPARENTCONTRACTS_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_FAIR_SUBIND_FREEDOMOFASSOCIATIONANDRIGHTTOBARGAINING_NAME",
-						"description": "IND_FAIR_SUBIND_FREEDOMOFASSOCIATIONANDRIGHTTOBARGAINING_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_FAIR_SUBIND_WAGELEVEL_NAME",
-						"description": "IND_FAIR_SUBIND_WAGELEVEL_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_FAIR_SUBIND_INDIGENOUSKNOWLEDGE_NAME",
-						"description": "IND_FAIR_SUBIND_INDIGENOUSKNOWLEDGE_COFFEE_IC_DESCRIPTION"
-					}
-				]
+				"description": "IND_FAIR_5420051401161"
 			},
 			{
 				"id": "ind_transparency",
 				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_TRANSPARENCY_SUBIND_PUBLICCOMMUNICATION_NAME",
-						"description": "IND_TRANSPARENCY_SUBIND_PUBLICCOMMUNICATION_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_TRANSPARENCY_SUBIND_SPECIFICATIONS_NAME",
-						"description": "IND_TRANSPARENCY_SUBIND_SPECIFICATIONS_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_TRANSPARENCY_SUBIND_PRODUCTINFORMATION_NAME",
-						"description": "IND_TRANSPARENCY_SUBIND_PRODUCTINFORMATION_COFFEE_IC_DESCRIPTION"
-					}
-				]
+				"description": "IND_TRANSPARENCY_5420051401161"
 			},
 			{
 				"id": "ind_participation",
 				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_PARTICIPATION_SUBIND_STAKEHOLDERENGAGEMENT_NAME",
-						"description": "IND_PARTICIPATION_SUBIND_STAKEHOLDERENGAGEMENT_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_PARTICIPATION_SUBIND_ENGAGEMENTBARRIERS_NAME",
-						"description": "IND_PARTICIPATION_SUBIND_ENGAGEMENTBARRIERS_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_PARTICIPATION_SUBIND_EFFECTIVEPARTICIPATION_NAME",
-						"description": "IND_PARTICIPATION_SUBIND_EFFECTIVEPARTICIPATION_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_PARTICIPATION_SUBIND_CONFLICTRESOLUTION_NAME",
-						"description": "IND_PARTICIPATION_SUBIND_CONFLICTRESOLUTION_COFFEE_IC_DESCRIPTION"
-					}
-				]
+				"description": "IND_PARTICIPATION_5420051401161"
 			},
 			{
 				"id": "ind_sustainablemanagement",
 				"applicable": true,
-				"sub_indicators": [
-					{
-						"name": "IND_SUSTAINABLEMANAGEMENT_SUBIND_SUSTAINABILITYMANAGEMENTPLAN_NAME",
-						"description": "IND_SUSTAINABLEMANAGEMENT_SUBIND_SUSTAINABILITYMANAGEMENTPLAN_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_SUSTAINABLEMANAGEMENT_SUBIND_CIVICRESPONSIBILITY_NAME",
-						"description": "IND_SUSTAINABLEMANAGEMENT_SUBIND_CIVICRESPONSIBILITY_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_SUSTAINABLEMANAGEMENT_SUBIND_DUEDILIGENCE_NAME",
-						"description": "IND_SUSTAINABLEMANAGEMENT_SUBIND_DUEDILIGENCE_COFFEE_IC_DESCRIPTION"
-					},
-					{
-						"name": "IND_SUSTAINABLEMANAGEMENT_SUBIND_HOLISTICAUDITS_NAME",
-						"description": "IND_SUSTAINABLEMANAGEMENT_SUBIND_HOLISTICAUDITS_COFFEE_IC_DESCRIPTION"
-					}
-				]
+				"description": "IND_SUSTAINABLEMANAGEMENT_5420051401161"
+			}
+		]
+	},
+	{
+		"code": "5430000018968",
+		"name": "PRODUCT_5430000018968_NAME",
+		"description": "PRODUCT_5430000018968_DESCRIPTION",
+		"type": "TYPE_APPLEJUICE",
+		"category": "local_conventional",
+		"provider": "Ramborn",
+		"image_url": "5430000018968",
+		"indicators": [
+			{
+				"id": "ind_animal",
+				"applicable": false,
+				"description": ""
+			},
+			{
+				"id": "ind_biodiv",
+				"applicable": true,
+				"description": "IND_BIODIV_5430000018968"
+			},
+			{
+				"id": "ind_flora",
+				"applicable": true,
+				"description": "IND_FLORA_5430000018968"
+			},
+			{
+				"id": "ind_soil",
+				"applicable": true,
+				"description": "IND_SOIL_5430000018968"
+			},
+			{
+				"id": "ind_sovereignty",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_food",
+				"applicable": true,
+				"description": "IND_FOOD_5430000018968"
+			},
+			{
+				"id": "ind_localeco",
+				"applicable": true,
+				"description": "IND_LOCALECO_5430000018968"
+			},
+			{
+				"id": "ind_decent",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_equity",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_labour",
+				"applicable": true,
+				"description": "IND_LABOUR_5430000018968"
+			},
+			{
+				"id": "ind_fair",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_transparency",
+				"applicable": true,
+				"description": "IND_TRANSPARENCY_5430000018968"
+			},
+			{
+				"id": "ind_participation",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_sustainablemanagement",
+				"applicable": true,
+				"description": ""
+			}
+		]
+	},
+	{
+		"code": "5430000732116",
+		"name": "PRODUCT_5430000732116_NAME",
+		"description": "PRODUCT_5430000732116_DESCRIPTION",
+		"type": "TYPE_PASTA",
+		"category": "local_organic",
+		"provider": "Dudel-Magie",
+		"image_url": "5430000732116",
+		"indicators": [
+			{
+				"id": "ind_animal",
+				"applicable": true,
+				"description": "IND_ANIMAL_5430000732116"
+			},
+			{
+				"id": "ind_biodiv",
+				"applicable": true,
+				"description": "IND_BIODIV_5430000732116"
+			},
+			{
+				"id": "ind_flora",
+				"applicable": true,
+				"description": "IND_FLORA_5430000732116"
+			},
+			{
+				"id": "ind_soil",
+				"applicable": true,
+				"description": "IND_SOIL_5430000732116"
+			},
+			{
+				"id": "ind_sovereignty",
+				"applicable": true,
+				"description": "IND_SOVEREIGNTY_5430000732116"
+			},
+			{
+				"id": "ind_food",
+				"applicable": true,
+				"description": "IND_FOOD_5430000732116"
+			},
+			{
+				"id": "ind_localeco",
+				"applicable": true,
+				"description": "IND_LOCALECO_5430000732116"
+			},
+			{
+				"id": "ind_decent",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_equity",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_labour",
+				"applicable": true,
+				"description": "IND_LABOUR_5430000732116"
+			},
+			{
+				"id": "ind_fair",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_transparency",
+				"applicable": true,
+				"description": "IND_TRANSPARENCY_5430000732116"
+			},
+			{
+				"id": "ind_participation",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_sustainablemanagement",
+				"applicable": true,
+				"description": ""
+			}
+		]
+	},
+	{
+		"code": "5450086199535",
+		"name": "PRODUCT_5450086199535_NAME",
+		"description": "PRODUCT_5450086199535_DESCRIPTION",
+		"type": "TYPE_FLOUR",
+		"category": "local_organic",
+		"provider": "Moulins de Kleinbettingen",
+		"image_url": "5450086199535",
+		"indicators": [
+			{
+				"id": "ind_animal",
+				"applicable": false,
+				"description": ""
+			},
+			{
+				"id": "ind_biodiv",
+				"applicable": true,
+				"description": "IND_BIODIV_5450086199535"
+			},
+			{
+				"id": "ind_flora",
+				"applicable": true,
+				"description": "IND_FLORA_5450086199535"
+			},
+			{
+				"id": "ind_soil",
+				"applicable": true,
+				"description": "IND_SOIL_5450086199535"
+			},
+			{
+				"id": "ind_sovereignty",
+				"applicable": true,
+				"description": "IND_SOVEREIGNTY_5450086199535"
+			},
+			{
+				"id": "ind_food",
+				"applicable": true,
+				"description": "IND_FOOD_5450086199535"
+			},
+			{
+				"id": "ind_localeco",
+				"applicable": true,
+				"description": "IND_LOCALECO_5450086199535"
+			},
+			{
+				"id": "ind_decent",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_equity",
+				"applicable": true,
+				"description": "IND_EQUITY_5450086199535"
+			},
+			{
+				"id": "ind_labour",
+				"applicable": true,
+				"description": "IND_LABOUR_5450086199535"
+			},
+			{
+				"id": "ind_fair",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_transparency",
+				"applicable": true,
+				"description": "IND_TRANSPARENCY_5450086199535"
+			},
+			{
+				"id": "ind_participation",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_sustainablemanagement",
+				"applicable": true,
+				"description": "IND_SUSTAINABLEMANAGEMENT_5450086199535"
+			}
+		]
+	},
+	{
+		"code": "5450086125428",
+		"name": "PRODUCT_5450086125428_NAME",
+		"description": "PRODUCT_5450086125428_DESCRIPTION",
+		"type": "TYPE_FLOUR",
+		"category": "local_conventional",
+		"provider": "",
+		"image_url": "5450086125428",
+		"indicators": [
+			{
+				"id": "ind_animal",
+				"applicable": false,
+				"description": ""
+			},
+			{
+				"id": "ind_biodiv",
+				"applicable": true,
+				"description": "IND_BIODIV_5450086125428"
+			},
+			{
+				"id": "ind_flora",
+				"applicable": true,
+				"description": "IND_FLORA_5450086125428"
+			},
+			{
+				"id": "ind_soil",
+				"applicable": true,
+				"description": "IND_SOIL_5450086125428"
+			},
+			{
+				"id": "ind_sovereignty",
+				"applicable": true,
+				"description": "IND_SOVEREIGNTY_5450086125428"
+			},
+			{
+				"id": "ind_food",
+				"applicable": true,
+				"description": "IND_FOOD_5450086125428"
+			},
+			{
+				"id": "ind_localeco",
+				"applicable": true,
+				"description": "IND_LOCALECO_5450086125428"
+			},
+			{
+				"id": "ind_decent",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_equity",
+				"applicable": true,
+				"description": "IND_EQUITY_5450086125428"
+			},
+			{
+				"id": "ind_labour",
+				"applicable": true,
+				"description": "IND_LABOUR_5450086125428"
+			},
+			{
+				"id": "ind_fair",
+				"applicable": true,
+				"description": "IND_FAIR_5450086125428"
+			},
+			{
+				"id": "ind_transparency",
+				"applicable": true,
+				"description": "IND_TRANSPARENCY_5450086125428"
+			},
+			{
+				"id": "ind_participation",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_sustainablemanagement",
+				"applicable": true,
+				"description": "IND_SUSTAINABLEMANAGEMENT_5450086125428"
+			}
+		]
+	},
+	{
+		"code": "5450086400044",
+		"name": "PRODUCT_5450086400044_NAME",
+		"description": "PRODUCT_5450086400044_DESCRIPTION",
+		"type": "TYPE_PASTA",
+		"category": "local_conventional",
+		"provider": "Moulin de Kleinbettingen",
+		"image_url": "5450086400044",
+		"indicators": [
+			{
+				"id": "ind_animal",
+				"applicable": false,
+				"description": ""
+			},
+			{
+				"id": "ind_biodiv",
+				"applicable": true,
+				"description": "IND_BIODIV_5450086400044"
+			},
+			{
+				"id": "ind_flora",
+				"applicable": true,
+				"description": "IND_FLORA_5450086400044"
+			},
+			{
+				"id": "ind_soil",
+				"applicable": true,
+				"description": "IND_SOIL_5450086400044"
+			},
+			{
+				"id": "ind_sovereignty",
+				"applicable": true,
+				"description": "IND_SOVEREIGNTY_5450086400044"
+			},
+			{
+				"id": "ind_food",
+				"applicable": true,
+				"description": "IND_FOOD_5450086400044"
+			},
+			{
+				"id": "ind_localeco",
+				"applicable": true,
+				"description": "IND_LOCALECO_5450086400044"
+			},
+			{
+				"id": "ind_decent",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_equity",
+				"applicable": true,
+				"description": "IND_EQUITY_5450086400044"
+			},
+			{
+				"id": "ind_labour",
+				"applicable": true,
+				"description": "IND_LABOUR_5450086400044"
+			},
+			{
+				"id": "ind_fair",
+				"applicable": true,
+				"description": "IND_FAIR_5450086400044"
+			},
+			{
+				"id": "ind_transparency",
+				"applicable": true,
+				"description": "IND_TRANSPARENCY_5450086400044"
+			},
+			{
+				"id": "ind_participation",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_sustainablemanagement",
+				"applicable": true,
+				"description": "IND_SUSTAINABLEMANAGEMENT_5450086400044"
+			}
+		]
+	},
+	{
+		"code": "5450250009240",
+		"name": "PRODUCT_5450250009240_NAME",
+		"description": "PRODUCT_5450250009240_DESCRIPTION",
+		"type": "TYPE_EGG",
+		"category": "local_organic",
+		"provider": "BIOG",
+		"image_url": "5450250009240",
+		"indicators": [
+			{
+				"id": "ind_animal",
+				"applicable": true,
+				"description": "IND_ANIMAL_5450250009240"
+			},
+			{
+				"id": "ind_biodiv",
+				"applicable": true,
+				"description": "IND_BIODIV_5450250009240"
+			},
+			{
+				"id": "ind_flora",
+				"applicable": true,
+				"description": "IND_FLORA_5450250009240"
+			},
+			{
+				"id": "ind_soil",
+				"applicable": true,
+				"description": "IND_SOIL_5450250009240"
+			},
+			{
+				"id": "ind_sovereignty",
+				"applicable": true,
+				"description": "IND_SOVEREIGNTY_5450250009240"
+			},
+			{
+				"id": "ind_food",
+				"applicable": true,
+				"description": "IND_FOOD_5450250009240"
+			},
+			{
+				"id": "ind_localeco",
+				"applicable": true,
+				"description": "IND_LOCALECO_5450250009240"
+			},
+			{
+				"id": "ind_decent",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_equity",
+				"applicable": true,
+				"description": "IND_EQUITY_5450250009240"
+			},
+			{
+				"id": "ind_labour",
+				"applicable": true,
+				"description": "IND_LABOUR_5450250009240"
+			},
+			{
+				"id": "ind_fair",
+				"applicable": true,
+				"description": "IND_FAIR_5450250009240"
+			},
+			{
+				"id": "ind_transparency",
+				"applicable": true,
+				"description": "IND_TRANSPARENCY_5450250009240"
+			},
+			{
+				"id": "ind_participation",
+				"applicable": true,
+				"description": "IND_PARTICIPATION_5450250009240"
+			},
+			{
+				"id": "ind_sustainablemanagement",
+				"applicable": true,
+				"description": "IND_SUSTAINABLEMANAGEMENT_5450250009240"
+			}
+		]
+	},
+	{
+		"code": "5450252000016",
+		"name": "PRODUCT_5450252000016_NAME",
+		"description": "PRODUCT_5450252000016_DESCRIPTION",
+		"type": "TYPE_MILK",
+		"category": "local_organic",
+		"provider": "BIOG",
+		"image_url": "5450252000016",
+		"indicators": [
+			{
+				"id": "ind_animal",
+				"applicable": true,
+				"description": "IND_ANIMAL_5450252000016"
+			},
+			{
+				"id": "ind_biodiv",
+				"applicable": true,
+				"description": "IND_BIODIV_5450252000016"
+			},
+			{
+				"id": "ind_flora",
+				"applicable": true,
+				"description": "IND_FLORA_5450252000016"
+			},
+			{
+				"id": "ind_soil",
+				"applicable": true,
+				"description": "IND_SOIL_5450252000016"
+			},
+			{
+				"id": "ind_sovereignty",
+				"applicable": true,
+				"description": "IND_SOVEREIGNTY_5450252000016"
+			},
+			{
+				"id": "ind_food",
+				"applicable": true,
+				"description": "IND_FOOD_5450252000016"
+			},
+			{
+				"id": "ind_localeco",
+				"applicable": true,
+				"description": "IND_LOCALECO_5450252000016"
+			},
+			{
+				"id": "ind_decent",
+				"applicable": true,
+				"description": "IND_DECENT_5450252000016"
+			},
+			{
+				"id": "ind_equity",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_labour",
+				"applicable": true,
+				"description": "IND_LABOUR_5450252000016"
+			},
+			{
+				"id": "ind_fair",
+				"applicable": true,
+				"description": "IND_FAIR_5450252000016"
+			},
+			{
+				"id": "ind_transparency",
+				"applicable": true,
+				"description": "IND_TRANSPARENCY_5450252000016"
+			},
+			{
+				"id": "ind_participation",
+				"applicable": true,
+				"description": "IND_PARTICIPATION_5450252000016"
+			},
+			{
+				"id": "ind_sustainablemanagement",
+				"applicable": true,
+				"description": "IND_SUSTAINABLEMANAGEMENT_5450252000016"
+			}
+		]
+	},
+	{
+		"code": "5450252000078",
+		"name": "PRODUCT_5450252000078_NAME",
+		"description": "PRODUCT_5450252000078_DESCRIPTION",
+		"type": "TYPE_MILK",
+		"category": "local_organic",
+		"provider": "BIOG",
+		"image_url": "5450252000078",
+		"indicators": [
+			{
+				"id": "ind_animal",
+				"applicable": true,
+				"description": "IND_ANIMAL_5450252000078"
+			},
+			{
+				"id": "ind_biodiv",
+				"applicable": true,
+				"description": "IND_BIODIV_5450252000078"
+			},
+			{
+				"id": "ind_flora",
+				"applicable": true,
+				"description": "IND_FLORA_5450252000078"
+			},
+			{
+				"id": "ind_soil",
+				"applicable": true,
+				"description": "IND_SOIL_5450252000078"
+			},
+			{
+				"id": "ind_sovereignty",
+				"applicable": true,
+				"description": "IND_SOVEREIGNTY_5450252000078"
+			},
+			{
+				"id": "ind_food",
+				"applicable": true,
+				"description": "IND_FOOD_5450252000078"
+			},
+			{
+				"id": "ind_localeco",
+				"applicable": true,
+				"description": "IND_LOCALECO_5450252000078"
+			},
+			{
+				"id": "ind_decent",
+				"applicable": true,
+				"description": "IND_DECENT_5450252000078"
+			},
+			{
+				"id": "ind_equity",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_labour",
+				"applicable": true,
+				"description": "IND_LABOUR_5450252000078"
+			},
+			{
+				"id": "ind_fair",
+				"applicable": true,
+				"description": "IND_FAIR_5450252000078"
+			},
+			{
+				"id": "ind_transparency",
+				"applicable": true,
+				"description": "IND_TRANSPARENCY_5450252000078"
+			},
+			{
+				"id": "ind_participation",
+				"applicable": true,
+				"description": "IND_PARTICIPATION_5450252000078"
+			},
+			{
+				"id": "ind_sustainablemanagement",
+				"applicable": true,
+				"description": "IND_SUSTAINABLEMANAGEMENT_5450252000078"
+			}
+		]
+	},
+	{
+		"code": "5450322023273",
+		"name": "PRODUCT_5450322023273_NAME",
+		"description": "PRODUCT_5450322023273_DESCRIPTION",
+		"type": "TYPE_EGG",
+		"category": "local_conventional",
+		"provider": "Meyrishaff",
+		"image_url": "5450322023273",
+		"indicators": [
+			{
+				"id": "ind_animal",
+				"applicable": true,
+				"description": "IND_ANIMAL_5450322023273"
+			},
+			{
+				"id": "ind_biodiv",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_flora",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_soil",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_sovereignty",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_food",
+				"applicable": true,
+				"description": "IND_FOOD_5450322023273"
+			},
+			{
+				"id": "ind_localeco",
+				"applicable": true,
+				"description": "IND_LOCALECO_5450322023273"
+			},
+			{
+				"id": "ind_decent",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_equity",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_labour",
+				"applicable": true,
+				"description": "IND_LABOUR_5450322023273"
+			},
+			{
+				"id": "ind_fair",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_transparency",
+				"applicable": true,
+				"description": "IND_TRANSPARENCY_5450322023273"
+			},
+			{
+				"id": "ind_participation",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_sustainablemanagement",
+				"applicable": true,
+				"description": ""
+			}
+		]
+	},
+	{
+		"code": "5453002012055",
+		"name": "PRODUCT_5453002012055_NAME",
+		"description": "PRODUCT_5453002012055_DESCRIPTION",
+		"type": "TYPE_JAM",
+		"category": "local_conventional",
+		"provider": "Autisme",
+		"image_url": "5453002012055",
+		"indicators": [
+			{
+				"id": "ind_animal",
+				"applicable": false,
+				"description": ""
+			},
+			{
+				"id": "ind_biodiv",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_flora",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_soil",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_sovereignty",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_food",
+				"applicable": true,
+				"description": "IND_FOOD_5453002012055"
+			},
+			{
+				"id": "ind_localeco",
+				"applicable": true,
+				"description": "IND_LOCALECO_5453002012055"
+			},
+			{
+				"id": "ind_decent",
+				"applicable": true,
+				"description": "IND_DECENT_5453002012055"
+			},
+			{
+				"id": "ind_equity",
+				"applicable": true,
+				"description": "IND_EQUITY_5453002012055"
+			},
+			{
+				"id": "ind_labour",
+				"applicable": true,
+				"description": "IND_LABOUR_5453002012055"
+			},
+			{
+				"id": "ind_fair",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_transparency",
+				"applicable": true,
+				"description": "IND_TRANSPARENCY_5453002012055"
+			},
+			{
+				"id": "ind_participation",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_sustainablemanagement",
+				"applicable": true,
+				"description": ""
+			}
+		]
+	},
+	{
+		"code": "",
+		"name": "PRODUCT_5453003550020_NAME",
+		"description": "PRODUCT_5453003550020_DESCRIPTION",
+		"type": "TYPE_COFFEE",
+		"category": "local_organic",
+		"provider": "Moulin Dieschbourg",
+		"image_url": "5453003550020",
+		"indicators": [
+			{
+				"id": "ind_animal",
+				"applicable": false,
+				"description": ""
+			},
+			{
+				"id": "ind_biodiv",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_flora",
+				"applicable": true,
+				"description": "IND_FLORA_5453003550020"
+			},
+			{
+				"id": "ind_soil",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_sovereignty",
+				"applicable": true,
+				"description": "IND_SOVEREIGNTY_5453003550020"
+			},
+			{
+				"id": "ind_food",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_localeco",
+				"applicable": true,
+				"description": "IND_LOCALECO_5453003550020"
+			},
+			{
+				"id": "ind_decent",
+				"applicable": true,
+				"description": "IND_DECENT_5453003550020"
+			},
+			{
+				"id": "ind_equity",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_labour",
+				"applicable": true,
+				"description": "IND_LABOUR_5453003550020"
+			},
+			{
+				"id": "ind_fair",
+				"applicable": true,
+				"description": "IND_FAIR_5453003550020"
+			},
+			{
+				"id": "ind_transparency",
+				"applicable": true,
+				"description": "IND_TRANSPARENCY_5453003550020"
+			},
+			{
+				"id": "ind_participation",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_sustainablemanagement",
+				"applicable": true,
+				"description": ""
+			}
+		]
+	},
+	{
+		"code": "5453003631279",
+		"name": "PRODUCT_5453003631279_NAME",
+		"description": "PRODUCT_5453003631279_DESCRIPTION",
+		"type": "TYPE_PASTA",
+		"category": "local_conventional",
+		"provider": "Nuddelfabrik",
+		"image_url": "5453003631279",
+		"indicators": [
+			{
+				"id": "ind_animal",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_biodiv",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_flora",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_soil",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_sovereignty",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_food",
+				"applicable": true,
+				"description": "IND_FOOD_5453003631279"
+			},
+			{
+				"id": "ind_localeco",
+				"applicable": true,
+				"description": "IND_LOCALECO_5453003631279"
+			},
+			{
+				"id": "ind_decent",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_equity",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_labour",
+				"applicable": true,
+				"description": "IND_LABOUR_5453003631279"
+			},
+			{
+				"id": "ind_fair",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_transparency",
+				"applicable": true,
+				"description": "IND_TRANSPARENCY_5453003631279"
+			},
+			{
+				"id": "ind_participation",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_sustainablemanagement",
+				"applicable": true,
+				"description": ""
+			}
+		]
+	},
+	{
+		"code": "9120008998688",
+		"name": "PRODUCT_9120008998688_NAME",
+		"description": "PRODUCT_9120008998688_DESCRIPTION",
+		"type": "TYPE_APPLEJUICE",
+		"category": "imported_organic",
+		"provider": "Höllinger",
+		"image_url": "9120008998688",
+		"indicators": [
+			{
+				"id": "ind_animal",
+				"applicable": false,
+				"description": ""
+			},
+			{
+				"id": "ind_biodiv",
+				"applicable": true,
+				"description": "IND_BIODIV_9120008998688"
+			},
+			{
+				"id": "ind_flora",
+				"applicable": true,
+				"description": "IND_FLORA_9120008998688"
+			},
+			{
+				"id": "ind_soil",
+				"applicable": true,
+				"description": "IND_SOIL_9120008998688"
+			},
+			{
+				"id": "ind_sovereignty",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_food",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_localeco",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_decent",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_equity",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_labour",
+				"applicable": true,
+				"description": "IND_LABOUR_9120008998688"
+			},
+			{
+				"id": "ind_fair",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_transparency",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_participation",
+				"applicable": true,
+				"description": ""
+			},
+			{
+				"id": "ind_sustainablemanagement",
+				"applicable": true,
+				"description": ""
 			}
 		]
 	}

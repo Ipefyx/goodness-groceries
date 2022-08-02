@@ -11,6 +11,7 @@ public class IndicatorModel implements Serializable {
 	private String category_id;
 	private String icon_name;
 	private String general_description;
+	private String file;
 	
 	private boolean applicable;
 	public List<SubIndicatorModel> sub_indicators;
@@ -38,8 +39,10 @@ public class IndicatorModel implements Serializable {
 		
 		this.applicable = other.applicable;
 
-		if(other.sub_indicators != null)
+		/*if(other.sub_indicators != null)
 			sub_indicators = new ArrayList<>(other.sub_indicators);
+
+		 */
 	}
 	
 	public void mergeBaseIndicator(IndicatorModel base) {

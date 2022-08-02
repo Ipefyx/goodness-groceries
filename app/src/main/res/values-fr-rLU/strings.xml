@@ -198,23 +198,43 @@
     <string name="IND_TRANSPARENCY_SUBIND_PUBLICCOMMUNICATION_NAME">Communication transparante</string>
     <string name="IND_TRANSPARENCY_SUBIND_SPECIFICATIONS_COFFEE_IC_DESCRIPTION">Les cahiers de charge sont disponibles en ligne.</string>
     <string name="IND_TRANSPARENCY_SUBIND_SPECIFICATIONS_NAME">Cahiers de charges</string>
-    
-    
-    
-    
-    <string name="PRODUCT_COFFEE_IC_DESCRIPTION">Composition des cafés Robusta et Arabica en provenance de fermes Rainforest Alliance et UTZ Certified™ uniquement. Le café ne contient aucun additif.</string>
-    <string name="PRODUCT_COFFEE_IC_NAME">Douwe Egberts Aroma Rood Café moulu, 250g</string>
-    <string name="PRODUCT_COFFEE_IO_DESCRIPTION">Café en grains du Congo issu de l\'agriculture biologique et du commerce équitable</string>
-    <string name="PRODUCT_COFFEE_IO_NAME">Café Kivu en grains</string>
-    <string name="PRODUCT_COFFEE_LC_DESCRIPTION">Origine 100% Brésil Isidro Pereira, moulu, 250g</string>
-    <string name="PRODUCT_COFFEE_LC_NAME">Café moulu 1936</string>
-    <string name="PRODUCT_COFFEE_LO_DESCRIPTION">Produit dans la région Sidamo en Ethiopie dans des hauteurs entre 1400 et 2200, ce café Arabica est à 100% certifié d’agriculture biologique et Fairtrade et torréfié au Moulin J.P. Dieschbourg à Echternach, Luxembourg.</string>
-    <string name="PRODUCT_COFFEE_LO_NAME">Café Sidamo Bio</string>
 
-    <string name="PRODUCT_5420051401161">Cafe 5420051401161</string>
-    <string name="PRODUCT_5420051401161_DESCRIPTION">Cafe 5420051401161 description</string>
 
+
+
+    <!-- PRODUCTS -->
+    <string name="PRODUCT_5453001556888_NAME">Meyer Dés de jambon cuit - jambon local conventionnel</string>
+    <string name="PRODUCT_5453001556888_DESCRIPTION">Jambon cuit. Le jambon est réceptionné, désossé, paré, saumuré et cuit dans les locaux de Boucherie-Salaisons Meyer à Bascharage.</string>
+    <string name="IND_FOOD_5453001556888">La viande de porc provient de l\'agriculture belge et luxembourgeoise et est entièrement transformée en jambon au Luxembourg (Bascharage). Le jambon est expédié de Bascharage vers le marché national et le marché frontalier belge.</string>
+    <string name="IND_LOCALECO_5453001556888">La viande de porc provient de l\'agriculture belge et luxembourgeoise et est entièrement transformée en jambon au Luxembourg (Bascharage). Le jambon est expédié de Bascharage vers le marché national et le marché frontalier belge.</string>
+    <string name="IND_LABOUR_5453001556888">La législation du travail luxembourgeoise est appliquée pour garantir des contrats transparents et juridiquement contraignants, protéger contre le travail forcé ou le travail des enfants et permettre la liberté de réunion et de négociation.</string>
+    <string name="IND_TRANSPARANCY_5453001556888">L\'entreprise fournit des informations sur le produit, sur l\'entreprise, sur la production de jambon, ainsi que la signification des labels, etc. via son site Web. Les données de contact sont facilement accessibles au public.</string>
+
+    <string name="PRODUCT_2117_NAME">OBCO Lëtzebuerger Grompereren - pommes de terre locales bio</string>
+    <string name="PRODUCT_2117_DESCRIPTION">Pommes de terre issues de la production biologique locale, entièrement produits et vendus au Luxembourg.</string>
+    <string name="IND_BIODIV_2117">Les réglementations biologiques de l\'UE sont suivies pour les critères de biodiversité. La rotation des cultures est pratiquée sur 100% de la surface cultivée, ainsi que la couverture permanente du sol. Culture de variétés anciennes et de nouvelles variétés adaptées (variétés résistantes aux maladies).</string>
+    <string name="IND_FLORA_2117">Les réglementations biologiques de l\'UE sont suivies pour les critères de gestion des ravageurs et des maladies. De plus, l\'utilisation du cuivre est réduite au minimum.</string>
+    <string name="IND_SOIL_2117">Les réglementations biologiques de l\'UE sont suivies pour les critères de fertilité du sol. Couverture permanente du sol, utilisation de compost comme engrais principal, coopération avec d\'autres exploitations pour obtenir un cycle nutritif le plus fermé possible, utilisation de légumineuses dans la rotation des cultures.</string>
+    <string name="IND_SOVEREIGNTY_2117">Les réglementations biologiques de l\'UE sont suivies pour assurer la diversification des produits afin de diversifier les risques et les améliorer les opportunités de revenus pour les agriculteurs.</string>
+    <string name="IND_FOOD_2117">Toutes les pommes de terre sont produites dans le nord du Luxembourg et vendues directement au détail depuis la ferme.</string>
+    <string name="IND_LOCALECO_2117">Toutes les pommes de terre sont produites dans le nord du Luxembourg et vendues directement au détail depuis la ferme. Une partie des pommes de terre sont vendues directement à la ferme au consommateur individuel.</string>
+    <string name="IND_LABOUR_2117">La législation du travail luxembourgeoise est appliquée pour garantir des contrats transparents et juridiquement contraignants, protéger contre le travail forcé ou le travail des enfants et permettre la liberté de réunion et de négociation.</string>
+    <string name="IND_TRANSPARENCY_2117">La ferme est ouverte aux visiteurs et aux clients toute l\'année. Les médias sociaux sont utilisés pour communiquer avec les consommateurs, ainsi que pour partager des données de contact et des nouvelles sur la production des pommes de terre.</string>
+
+
+    <!-- TYPES -->
     <string name="TYPE_COFFEE">Café</string>
+    <string name="TYPE_HONEY">Miel</string>
+    <string name="TYPE_FLOUR">Farine</string>
+    <string name="TYPE_CHOCOSPREAD">Pâte à tartiner</string>
+    <string name="TYPE_JAM">Confiture</string>
+    <string name="TYPE_YOGURT">Yaourt</string>
+    <string name="TYPE_MILK">Lait</string>
+    <string name="TYPE_EGG">Oeufs</string>
+    <string name="TYPE_PASTA">Pâtes</string>
+    <string name="TYPE_POTATOES">Pommes de terre</string>
+    <string name="TYPE_APPLEJUICE">Jus de pomme</string>
+    <string name="TYPE_HAM">Jambon</string>
 
     <string name="NOTIFICATION_ACCOUNT_AUTHENTICATED_BODY">Votre compte a été authentifié, vous pouvez désormais accéder à l’application</string>
     <string name="NOTIFICATION_ACCOUNT_AUTHENTICATED_TITLE">Authentification complétée</string>

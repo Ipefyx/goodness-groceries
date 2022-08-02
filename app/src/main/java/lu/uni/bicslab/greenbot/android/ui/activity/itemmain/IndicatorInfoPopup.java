@@ -70,6 +70,28 @@ public class IndicatorInfoPopup extends Dialog {
         Glide.with(mContext).load(img).apply(RequestOptions.centerInsideTransform()).into(indicatorIconView);
         indicatorNameView.setText(indicator.getName());
 
+
+        TextView indName = new TextView(mContext);
+        TextView indDesc = new TextView(mContext);
+        TextView more = new TextView(mContext);
+
+
+        LinearLayout.LayoutParams txtParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        txtParams.setMargins(0,2,0,4);
+
+        indName.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+        indName.setLayoutParams(txtParams);
+        indName.setText(indicator.getName());
+        indDesc.setLayoutParams(txtParams);
+        indDesc.setText(indicator.getGeneral_description());
+
+        descriptionLayout.addView(indName);
+        descriptionLayout.addView(indDesc);
+
+        // TODO : Add file ?
+
+        /* -- No more usage of subindicator
         for(SubIndicatorModel sub : indicator.sub_indicators) {
             TextView subName = new TextView(mContext);
             TextView subDesc = new TextView(mContext);
@@ -99,6 +121,7 @@ public class IndicatorInfoPopup extends Dialog {
                 descriptionLayout.addView(more);
             }
         }
+        */
 
         show();
     }

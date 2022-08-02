@@ -270,24 +270,41 @@
     <string name="IND_TRANSPARENCY_SUBIND_SPECIFICATIONS_NAME">Specifications</string>
 
 
-    <!--    4, Douwe Egberts-->
-    <string name="PRODUCT_COFFEE_IC_DESCRIPTION">Composition of Robusta and Arabica coffees with beans from Rainforest Alliance and UTZ Certified™ farms only.  Coffee does not contain any additives.</string>
-    <string name="PRODUCT_COFFEE_IC_NAME">Aroma Rood Ground Coffee, 250g</string>
-    <!--    3, Ethiquable-->
-    <string name="PRODUCT_COFFEE_IO_DESCRIPTION">Bean coffee from Congo from organic farming and fair trade</string>
-    <string name="PRODUCT_COFFEE_IO_NAME">Café Kivu en grains</string>
-    <!--    2, Knopes-->
-    <string name="PRODUCT_COFFEE_LC_DESCRIPTION">Origin 100% Brazil Isidro Pereira, ground, 250g</string>
-    <string name="PRODUCT_COFFEE_LC_NAME">Roasted coffee 1936</string>
-    <!--    1, Moulin J.P. Dieschbourg-->
-    <string name="PRODUCT_COFFEE_LO_DESCRIPTION">100% organic and Fairtrade certified Arabica coffee from Ethiopia, grown in the Sidamo region in heights between 1400 and 2200 m, and roasted at the Moulin J.P. Dieschbourg in Echternach, Luxembourg.</string>
-    <string name="PRODUCT_COFFEE_LO_NAME">Café Sidamo Bio</string>
-    <!-- 5420051401161 -->
-    <string name="PRODUCT_5420051401161">Cafe 5420051401161</string>
-    <string name="PRODUCT_5420051401161_DESCRIPTION">Cafe 5420051401161 description</string>
+    <!-- PRODUCTS -->
+    <string name="PRODUCT_5453001556888_NAME">Meyer Dés de jambon cuit - local conventional ham</string>
+    <string name="PRODUCT_5453001556888_DESCRIPTION">Cooked ham. The ham is received, boned, trimmed, brined and cooked at Boucherie-Salaisons Meyer\'s premises in Bascharage.</string>
+    <string name="IND_FOOD_5453001556888">The pork meat is purchased from Belgium and Luxembourg agriculture and is entirely processed into ham in Luxembourg (Bascharage). It is dispatched from Bascharage to national market and nearby Belgian border market.</string>
+    <string name="IND_LOCALECO_5453001556888">The pork meat is purchased from Belgium and Luxembourg agriculture and is entirely processed into ham in Luxembourg (Bascharage). It is dispatched from Bascharage to national market and nearby Belgian border market.</string>
+    <string name="IND_LABOUR_5453001556888">Luxembourg labour laws are applied to ensure transparent and legally binding contracts, protect from forced or child labour, and allow freedom of assembly and bargaining.</string>
+    <string name="IND_TRANSPARANCY_5453001556888">The enterprise provides product information, information about the company, about the ham production, as well as the meaning of the labels, etc. via their website. Contact data are easily accessible to the public.</string>
+
+    <string name="PRODUCT_2117_NAME">OBCO Lëtzebuerger Grompereren - local organic potatoes</string>
+    <string name="PRODUCT_2117_DESCRIPTION">Local Organic Potatoes produced and sold in Luxembourg.</string>
+    <string name="IND_BIODIV_2117">EU organic regulations are followed for biodiversity criteria. Crop rotation is practiced on 100% of the cultivated area, as well as permanent soil cover. Cultivation of elder varieties as well as newer, adapted ones (disease resistant varieties).</string>
+    <string name="IND_FLORA_2117">EU organic regulations are followed for pest and disease management criteria. Additionally, the use of copper is reduced to a minimum.</string>
+    <string name="IND_SOIL_2117">EU organic regulations are followed for soil fertility criteria. Permanent soil cover, use of compost as a main fertiliser, cooperation with other farms to achieve the most closed nutrient cycle possible, use of leguminous plants in crop rotation.";</string>
+    <string name="IND_SOVEREIGNTY_2117">EU organic regulations are followed to ensure product diversification to diversify risk and improve income opportunities for farmers.</string>
+    <string name="IND_FOOD_2117">All potatoes are produced in the North of Luxembourg and dispatched directly to retail from the farms.</string>
+    <string name="IND_LOCALECO_2117">All the potatoes are produced in the North of Luxembourg and directly dispatched to retail from the farms. Part of the potatoes are sold via direct marketing from producing farms to consumers.</string>
+    <string name="IND_LABOUR_2117">Luxembourg labour laws are applied to ensure transparent and legally binding contracts, protect from forced or child labour, and allow freedom of assembly and bargaining.</string>
+    <string name="IND_TRANSPARENCY_2117">Farm is open to visitors and clients year-round. Social media is used to communicate with consumers, and to share contact data and news about the potato production.</string>
 
 
+
+
+    <!-- TYPES -->
     <string name="TYPE_COFFEE">Coffee</string>
+    <string name="TYPE_HONEY">Honey</string>
+    <string name="TYPE_FLOUR">Flour</string>
+    <string name="TYPE_CHOCOSPREAD">Chocolate Spread</string>
+    <string name="TYPE_JAM">Jam</string>
+    <string name="TYPE_YOGURT">Yogurt</string>
+    <string name="TYPE_MILK">Milk</string>
+    <string name="TYPE_EGG">Eggs</string>
+    <string name="TYPE_PASTA">Pasta</string>
+    <string name="TYPE_POTATOES">Potatoes</string>
+    <string name="TYPE_APPLEJUICE">Apple Juice</string>
+    <string name="TYPE_HAM">Ham</string>
 
     <string name="NOTIFICATION_ACCOUNT_AUTHENTICATED_BODY">Your account has been validated, you take part of the studie! Thank you.</string>
     <string name="NOTIFICATION_ACCOUNT_AUTHENTICATED_TITLE">Congratulations</string>

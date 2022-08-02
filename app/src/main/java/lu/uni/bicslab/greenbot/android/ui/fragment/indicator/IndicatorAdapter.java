@@ -95,7 +95,7 @@ public class IndicatorAdapter extends RecyclerView.Adapter<IndicatorAdapter.Indi
 		holder.indicator_layout.removeViewsInLayout(1, holder.indicator_layout.getChildCount()-1);
 		
 		for (IndicatorModel ind : product.indicators) {
-			if (!ind.isApplicable() || ind.sub_indicators.size() == 0)
+			if (!ind.isApplicable() /*|| ind.sub_indicators.size() == 0*/)
 				continue;
 			
 			ImageView imageview = (ImageView) LayoutInflater.from(context).inflate(R.layout.indicator_item_layout_indicator_imageview, holder.indicator_layout, false);

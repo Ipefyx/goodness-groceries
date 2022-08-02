@@ -98,7 +98,7 @@ public class IndicatorFragment extends Fragment {
 				product.indicators.stream().anyMatch(indicator -> 
 						indicator.getCategory_id().equals(indicatorCategoryFilter)
 						&& indicator.isApplicable()
-						&& indicator.sub_indicators.size() > 0
+						/*&& indicator.sub_indicators.size() > 0*/
 				)
 				&& product.getCategory().equals(productCategoryFilter)
 		).collect(Collectors.toList());
