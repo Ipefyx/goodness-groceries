@@ -210,7 +210,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 			((TextView)view.findViewById(R.id.indicator_info)).setOnClickListener( new View.OnClickListener() {
 					@Override
 					public void onClick(View view) {
-						IndicatorInfoPopup infoPopup = new IndicatorInfoPopup(mContext, ind);
+						ProductIndicatorInfoPopup infoPopup = new ProductIndicatorInfoPopup(mContext, ind);
 						infoPopup.build();
 
 						/*AlertDialog.Builder infoPopup = new AlertDialog.Builder(mContext);

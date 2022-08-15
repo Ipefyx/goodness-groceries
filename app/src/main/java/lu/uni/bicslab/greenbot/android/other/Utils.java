@@ -266,6 +266,8 @@ public class Utils {
 
 			for (IndicatorModel ind : product.indicators) {
 				ind.mergeBaseIndicator(getIndicatorByID(context, ind.getId()));
+
+				ind.setDescription((getStringByResName(context, ind.getDescription())));
 /*
 				ind.setGeneral_description(getStringByResName(context, ind.getGeneral_description()));
 

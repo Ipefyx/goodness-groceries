@@ -11,6 +11,7 @@ public class IndicatorModel implements Serializable {
 	private String category_id;
 	private String icon_name;
 	private String general_description;
+	private String description;
 	private String file;
 	
 	private boolean applicable;
@@ -19,12 +20,13 @@ public class IndicatorModel implements Serializable {
 	// TODO: Remove when reworking Compare Page
 	private boolean isSelected = false;
 	
-	public IndicatorModel(String id, String name, String category_id, String icon_name, String general_description) {
+	public IndicatorModel(String id, String name, String category_id, String icon_name, String general_description, String description) {
 		this.id = id;
 		this.name = name;
 		this.category_id = category_id;
 		this.icon_name = icon_name;
 		this.general_description = general_description;
+		this.description = description;
 		this.applicable = applicable;
 	}
 	
@@ -36,6 +38,7 @@ public class IndicatorModel implements Serializable {
 		this.category_id = other.category_id;
 		this.icon_name = other.icon_name;
 		this.general_description = other.general_description;
+		this.description = other.description;
 		
 		this.applicable = other.applicable;
 
@@ -92,6 +95,12 @@ public class IndicatorModel implements Serializable {
 	
 	public void setGeneral_description(String general_description) {
 		this.general_description = general_description;
+	}
+
+	public String getDescription() { return description; }
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 	public boolean isApplicable() {

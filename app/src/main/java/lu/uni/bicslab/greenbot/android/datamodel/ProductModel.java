@@ -107,7 +107,7 @@ public class ProductModel implements Serializable {
 	 * @return A list of featured indicators
 	 */
 	public List<IndicatorModel> getFeaturedIndicators() {
-		return indicators.stream().filter(ind -> ind.isApplicable() /*&& ind.sub_indicators.size() > 0*/).collect(Collectors.toList());
+		return indicators.stream().filter(ind -> ind.isApplicable() && ind.getDescription().length() > 0 /*&& ind.sub_indicators.size() > 0*/).collect(Collectors.toList());
 	}
 
 	/***
@@ -117,6 +117,7 @@ public class ProductModel implements Serializable {
 	 */
 	public boolean isFeatured(IndicatorModel indicator) {
 		return indicators.stream().filter(ind -> ind.isApplicable()
+				&& ind.getDescription().length() > 0
 				/*&& ind.sub_indicators.size() > 0*/
 				&& ind.getId().equals(indicator.getId())).collect(Collectors.toList()).size() > 0;
 	}
