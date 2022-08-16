@@ -1,6 +1,8 @@
 package lu.uni.bicslab.greenbot.android.ui.fragment.product_category;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -89,6 +91,22 @@ public class ProductCategoryAdapter extends RecyclerView.Adapter<ItemHolder> imp
 		
 //		holder.imageview_icon.setImageDrawable(Utils.getDrawableImage(context, model.getIcon_name()));
 		Glide.with(context).load(Utils.getDrawableImage(context, model.getIcon_name())).error(R.drawable.ic_menu_gallery).into(holder.imageview_icon);
+
+		// Info popup for category description
+		holder.imageview_icon.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				AlertDialog.Builder infoPopup = new AlertDialog.Builder(context);
+				infoPopup.setTitle(model.getName());
+
+				String content = model.getDescription();
+
+				infoPopup.setMessage(Html.fromHtml(content, Html.FROM_HTML_MODE_LEGACY));
+				infoPopup.setPositiveButton("OK", null);
+				infoPopup.show();
+				}
+			}
+		);
 	}
 	
 	@Override

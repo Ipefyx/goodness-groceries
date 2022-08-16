@@ -19,14 +19,16 @@
                 android:layout_height="wrap_content">
 
             <TextView
-                    android:id="@+id/txtName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Large Tehhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhxt"
-                    android:maxLines="1"
-                    android:layout_marginRight="@dimen/profilearrowsize"
-                    android:layout_alignParentTop="true"
-                    style="@style/texttitlestyle" />
+                android:id="@+id/txtName"
+                style="@style/texttitlestyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="19dp"
+                android:layout_marginRight="@dimen/profilearrowsize"
+                android:maxLines="1"
+                android:layout_toRightOf="@+id/imageview_icon"
+                android:text="Large Tehhhhhhhhhhhhhhhhhhhh" />
 
             <ImageView
                     android:layout_width="@dimen/profilearrowsize"
@@ -34,6 +36,13 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/arrow_right" />
+
+            <ImageView
+                android:id="@+id/imageview_icon"
+                android:layout_width="@dimen/img_category_size"
+                android:layout_height="@dimen/img_category_size"
+                android:scaleType="fitCenter"
+                card_view:srcCompat="@drawable/ic_menu_gallery"></ImageView>
         </RelativeLayout>
 
         <RelativeLayout
@@ -41,14 +50,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/padding"
                 android:layout_below="@+id/headding">
-
-            <ImageView
-                    android:id="@+id/imageview_icon"
-                    android:layout_width="@dimen/img_category_size"
-                    android:layout_height="@dimen/img_category_size"
-                    android:layout_centerVertical="true"
-                    android:scaleType="fitCenter"
-                    card_view:srcCompat="@drawable/ic_menu_gallery"></ImageView>
 
             <TextView
                 android:id="@+id/txtDoc"
@@ -60,9 +61,11 @@
                 android:layout_marginTop="@dimen/padding"
                 android:layout_marginEnd="@dimen/padding"
                 android:layout_marginBottom="@dimen/padding"
-                android:layout_toRightOf="@+id/imageview_icon"
-                android:text="Small Textggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg gggggggggggggg gggggggggggggggg gggggggggggggg ggggggggggg ggggggggggggggggggggggggggggggggg" />
+                android:text="Small Textggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg gggggggggggggg gggggggggggggggg gggggggggggggg ggggggggggg ggggggggggggggggggggggggggggggggg"
+                android:visibility="gone" />
+            <!--android:layout_toRightOf="@+id/imageview_icon" -->
+
         </RelativeLayout>
     </RelativeLayout>
-    r
+
 </androidx.cardview.widget.CardView>

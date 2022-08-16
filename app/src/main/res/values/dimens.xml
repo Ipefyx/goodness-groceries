@@ -17,7 +17,7 @@
     <dimen name="desc_padding">30dp</dimen>
 
     <dimen name="icon_width">130dp</dimen>
-    <dimen name="padding2">20dp</dimen>
+    <dimen name="padding2">10dp</dimen>
 
     <dimen name="fab_elevation">8dp</dimen>
     <dimen name="fab_elevation_press">12dp</dimen>

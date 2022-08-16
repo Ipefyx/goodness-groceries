@@ -1,11 +1,14 @@
 package lu.uni.bicslab.greenbot.android.ui.fragment.indicator_category;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,6 +22,7 @@ import java.util.function.Consumer;
 import lu.uni.bicslab.greenbot.android.R;
 import lu.uni.bicslab.greenbot.android.datamodel.IndicatorCategoryModel;
 import lu.uni.bicslab.greenbot.android.other.Utils;
+import lu.uni.bicslab.greenbot.android.ui.activity.itemmain.ProductIndicatorInfoPopup;
 
 public class IndicatorCategoryAdapter extends RecyclerView.Adapter<ItemHolder> implements Filterable {
 	
@@ -89,6 +93,22 @@ public class IndicatorCategoryAdapter extends RecyclerView.Adapter<ItemHolder> i
 		
 //		holder.imageview_icon.setImageDrawable(Utils.getDrawableImage(context, model.getIcon_name()));
 		Glide.with(context).load(Utils.getDrawableImage(context, model.getIcon_name())).error(R.drawable.ic_menu_gallery).into(holder.imageview_icon);
+
+		// Info popup for indicator description
+		holder.imageview_icon.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				AlertDialog.Builder infoPopup = new AlertDialog.Builder(context);
+				infoPopup.setTitle(model.getName());
+
+				String content = model.getDescription();
+
+				infoPopup.setMessage(Html.fromHtml(content, Html.FROM_HTML_MODE_LEGACY));
+				infoPopup.setPositiveButton("OK", null);
+				infoPopup.show();
+			}
+		  }
+		);
 	}
 	
 	@Override
