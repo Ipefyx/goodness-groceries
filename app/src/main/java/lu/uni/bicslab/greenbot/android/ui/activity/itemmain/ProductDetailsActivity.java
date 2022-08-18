@@ -235,15 +235,15 @@ public class ProductDetailsActivity extends AppCompatActivity {
 				}
 			);
 
-			indicator_list1.addView(view);
-/*
+			//indicator_list1.addView(view);
+
 			if (ind.getCategory_id().equals(indicatorCategoryFilter) || indicatorCategoryFilter == null) {
 				indicator_list1.addView(view);
 			} else {
 				indicator_list2.addView(view);
 				
 				show_more.setVisibility(View.VISIBLE);
-			}*/
+			}
 		}
 		
 		// Fill in similar products
