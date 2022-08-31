@@ -96,7 +96,8 @@ public class IndicatorFragment extends Fragment {
 		// For each PRODUCT: (there exists at least one INDICATOR from PRODUCT.INDICATORS where INDICATOR.CATEGORY == indicatorCategoryFilter) and PRODUCT.CATEGORY == productCategoryFilter
 		List<ProductModel> filteredProductList = productList.stream().filter(product -> 
 				product.indicators.stream().anyMatch(indicator -> 
-						indicator.getCategory_id().equals(indicatorCategoryFilter)
+						/*indicator.getCategory_id().contains(indicatorCategoryFilter)*/
+						indicatorCategoryFilter.contains(indicator.getCategory_id())
 						&& indicator.isApplicable()
 						/*&& indicator.sub_indicators.size() > 0*/
 				)
@@ -105,7 +106,8 @@ public class IndicatorFragment extends Fragment {
 		
 		// Remove all indicators that don't match the indicator category
 		for (ProductModel product : filteredProductList) {
-			product.indicators = product.indicators.stream().filter(ind -> ind.getCategory_id().equals(indicatorCategoryFilter)).collect(Collectors.toList());
+			//product.indicators = product.indicators.stream().filter(ind -> ind.getCategory_id().equals(indicatorCategoryFilter)).collect(Collectors.toList());
+			product.indicators = product.indicators.stream().filter(ind -> indicatorCategoryFilter.contains(ind.getCategory_id())).collect(Collectors.toList());
 		}
 		
 		

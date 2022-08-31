@@ -142,6 +142,7 @@
     <string name="IND_CAT_GOVERNANCE_NAME">Good governance</string>
     <string name="IND_CAT_SOCIAL_DESCRIPTION">Every human being is able to fulfil their basic human needs, and has the right and freedom to pursue their aspirations for a better life, without compromising the ability of others and of future generations to do the same.</string>
     <string name="IND_CAT_SOCIAL_NAME">Social well-being</string>
+    <string name="IND_CAT_ALL_NAME">All indicators</string>
 
 
     <!--Indicators-->

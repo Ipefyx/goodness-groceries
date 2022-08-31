@@ -69,10 +69,8 @@
     <string name="IND_CAT_GOVERNANCE_NAME">Bonne gouvernance</string>
     <string name="IND_CAT_SOCIAL_DESCRIPTION">Chaque être humain est capable de satisfaire ses besoins humains fondamentaux et a le droit et la liberté de poursuivre ses aspirations à une vie meilleure, sans compromettre la capacité des autres et des générations futures à en faire de même.</string>
     <string name="IND_CAT_SOCIAL_NAME">Bien-être social</string>
+    <string name="IND_CAT_ALL_NAME">Tous les indicateurs</string>
 
-
-
-    
     
     
     <string name="IND_ANIMAL_DESCRIPTION">Le bien-être physique et psychologique des animaux est surveillé afin qu\'ils puissent vivre de manière appropriée à leur espèce et être en bonne santé, confortables, en sécurité, bien nourris et exister sans peur ni souffrance. Cela comprend l\'élevage, le transport, l\'alimentation et l\'abattage.</string>

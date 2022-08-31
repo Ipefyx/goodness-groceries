@@ -119,7 +119,8 @@ public class ProductModel implements Serializable {
 		return indicators.stream().filter(ind -> ind.isApplicable()
 				&& ind.getDescription().length() > 0
 				/*&& ind.sub_indicators.size() > 0*/
-				&& ind.getId().equals(indicator.getId())).collect(Collectors.toList()).size() > 0;
+				/*&& ind.getId().equals(indicator.getId())).collect(Collectors.toList()).size() > 0*/
+				&& indicator.getId().contains(ind.getId())).collect(Collectors.toList()).size() > 0;
 	}
 
 }
