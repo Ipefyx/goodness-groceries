@@ -32,7 +32,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemHolder> {
 	public void onBindViewHolder(ItemHolder holder, int position) {
 		IndicatorCategoryModel item = celebrityList.get(position);
 		holder.txtName.setText(item.getName());
-		holder.txtDoc.setText("item.getName()");
+		holder.txtDoc.setText(item.getName());
 	}
 	
 	@Override

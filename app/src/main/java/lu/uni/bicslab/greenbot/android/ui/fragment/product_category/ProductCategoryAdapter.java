@@ -130,13 +130,13 @@ public class ProductCategoryAdapter extends RecyclerView.Adapter<ItemHolder> imp
 				} else {
 					List<ProductCategoryModel> filteredList = new ArrayList<>();
 					for (ProductCategoryModel movie : modelList) {
-						if(charString.toLowerCase().contains(movie.getName().toLowerCase()))
+						/*if(charString.toLowerCase().contains(movie.getName().toLowerCase()))
+							filteredList.add(movie);
+*/
+						if (movie.getName().toLowerCase().contains(charString.toLowerCase())) {
 							filteredList.add(movie);
 
-						/*if (movie.getName().toLowerCase().contains(charString.toLowerCase())) {
-							filteredList.add(movie);
-
-						}*/
+						}
 					}
 					modelListFiltered = filteredList;
 				}
