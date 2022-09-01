@@ -26,7 +26,7 @@
 	{
 		"id": "ind_cat_environment ind_cat_economic ind_cat_social ind_cat_governance",
 		"name": "IND_CAT_ALL_NAME",
-		"icon_name": "GG_Environment",
+		"icon_name": "GG_Allindicators",
 		"description": "NONE"
 	}
 ]
