@@ -84,6 +84,9 @@ public class IndicatorCategoryFragment extends Fragment {
 		textviewloading.setText(R.string.loading);
 		
 		List<IndicatorCategoryModel> indicatorCategoryList = Utils.getIndicatorCategoryList(getActivity());
+
+		// 'Hacky' way to add the possibility to browse on any indicators
+		indicatorCategoryList.add(Utils.getAllIndicatorCategoryItem(getActivity()));
 		
 		
 		if (indicatorCategoryList.size() > 0) {

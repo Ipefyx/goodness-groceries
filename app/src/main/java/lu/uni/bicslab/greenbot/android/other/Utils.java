@@ -182,6 +182,15 @@ public class Utils {
 		
 		return new ArrayList<>(indicatorCategoryList);
 	}
+
+	public static IndicatorCategoryModel getAllIndicatorCategoryItem(Context context) {
+		IndicatorCategoryModel ind = new IndicatorCategoryModel("ind_cat_environment ind_cat_economic ind_cat_social ind_cat_governance",
+				getStringByResName(context,"IND_CAT_ALL_NAME"),
+				"GG_Allindicators".toLowerCase(),
+				"NONE");
+
+		return ind;
+	}
 	
 	public static List<ProductCategoryModel> getProductCategoryList(Context context) {
 		if (productCategoryList == null)
