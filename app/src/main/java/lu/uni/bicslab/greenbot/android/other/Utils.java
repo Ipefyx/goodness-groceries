@@ -183,11 +183,11 @@ public class Utils {
 		return new ArrayList<>(indicatorCategoryList);
 	}
 
-	public static IndicatorCategoryModel getAllIndicatorCategoryItem(Context context) {
+	public static IndicatorCategoryModel getAnyIndicatorCategoryItem(Context context) {
 		IndicatorCategoryModel ind = new IndicatorCategoryModel("ind_cat_environment ind_cat_economic ind_cat_social ind_cat_governance",
-				getStringByResName(context,"IND_CAT_ALL_NAME"),
+				context.getResources().getString(R.string.IND_CAT_ANY_NAME),
 				"GG_Allindicators".toLowerCase(),
-				"NONE");
+				context.getResources().getString(R.string.IND_CAT_ANY_DESCRIPTION));
 
 		return ind;
 	}
@@ -198,7 +198,17 @@ public class Utils {
 		
 		return new ArrayList<>(productCategoryList);
 	}
-	
+
+	public static ProductCategoryModel getAnyProductCategoryItem(Context context) {
+		ProductCategoryModel p = new ProductCategoryModel(
+				"local_organic imported_organic local_conventional imported_conventional",
+				context.getResources().getString(R.string.PRODUCT_CATEGORY_ANY),
+				"prod_cat_any",
+				context.getResources().getString(R.string.PRODUCT_CATEGORY_ANY_DESC));
+
+		return p;
+	}
+
 	public static List<ProductModel> getProductList(Context context) {
 		if (productList == null)
 			readProductList(context);

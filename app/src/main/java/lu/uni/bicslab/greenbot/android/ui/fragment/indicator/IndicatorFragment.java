@@ -101,7 +101,8 @@ public class IndicatorFragment extends Fragment {
 						&& indicator.isApplicable()
 						/*&& indicator.sub_indicators.size() > 0*/
 				)
-				&& product.getCategory().equals(productCategoryFilter)
+				/*&& product.getCategory().equals(productCategoryFilter)*/
+				&& productCategoryFilter.contains(product.getCategory())
 		).collect(Collectors.toList());
 		
 		// Remove all indicators that don't match the indicator category

@@ -83,7 +83,9 @@ public class ProductCategoryFragment extends Fragment {
 		textviewloading.setText(R.string.loading);
 		
 		List<ProductCategoryModel> productCategoryList = Utils.getProductCategoryList(getContext());
-		
+
+		productCategoryList.add(Utils.getAnyProductCategoryItem(getContext()));
+
 		if (productCategoryList.size() > 0) {
 			textviewloading.setVisibility(View.GONE);
 			searchView.setVisibility(View.VISIBLE);

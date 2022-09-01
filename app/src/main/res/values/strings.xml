@@ -128,6 +128,8 @@
     <string name="PRODUCT_CATEGORY_LOCAL_CONVENTIONAL_DESC">\'Local products\' are produced or processed in Luxembourg. They can be made from nationally produced ingredients, imported ones or from a mixture of both. \'Conventional products\' are produced, distributed and marketed according to any other criteria than the ones of organic methods, following general standards laid out by EU and Luxembourgish legislation. They may have additional criteria defined in specific programmes and labels.</string>
     <string name="PRODUCT_CATEGORY_LOCAL_ORGANIC">Local organic</string>
     <string name="PRODUCT_CATEGORY_LOCAL_ORGANIC_DESC">\'Local products\' are produced or processed in Luxembourg. They can be made from nationally produced ingredients, imported ones or from a mixture of both. \'Organic products\' are produced, distributed and marketed according to the criteria of public organic certification, and must comply at least with EU organic legislation defining the use of pesticides and fertilisers, animal welfare standards and considerations for biodiversity etc.  Some products may have voluntarily additional criteria defined by private organic certifications.</string>
+    <string name="PRODUCT_CATEGORY_ANY">Any category</string>
+    <string name="PRODUCT_CATEGORY_ANY_DESC">Products from any category</string>
 
     <string name="PRODUCT_CATEGORY_IMPORTED_DESC">\'Imported products\' have entirely been produced or processed outside of Luxembourg. They travel by air, sea or land to Luxembourgish wholesale and retail markets. The distance travelled is referred to as \'food miles\'.</string>
     <string name="PRODUCT_CATEGORY_CONVENTIONAL_DESC">\'Conventional products\' are produced, distributed and marketed according to any other criteria than the ones of organic methods, following general standards laid out by EU and the producing country’s legislation. They may have additional criteria defined in specific programmes and labels.</string>
@@ -142,7 +144,8 @@
     <string name="IND_CAT_GOVERNANCE_NAME">Good governance</string>
     <string name="IND_CAT_SOCIAL_DESCRIPTION">Every human being is able to fulfil their basic human needs, and has the right and freedom to pursue their aspirations for a better life, without compromising the ability of others and of future generations to do the same.</string>
     <string name="IND_CAT_SOCIAL_NAME">Social well-being</string>
-    <string name="IND_CAT_ALL_NAME">All indicators</string>
+    <string name="IND_CAT_ANY_NAME">Any indicators</string>
+    <string name="IND_CAT_ANY_DESCRIPTION">List products from any indicators</string>
 
 
     <!--Indicators-->

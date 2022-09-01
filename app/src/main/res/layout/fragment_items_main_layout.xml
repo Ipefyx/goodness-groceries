@@ -57,12 +57,12 @@
 
     <androidx.recyclerview.widget.RecyclerView
 
-            android:id="@+id/indicator_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/top"
-            android:scrollbars="vertical"
-            android:layout_marginTop="@dimen/padding" />
+        android:id="@+id/indicator_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/top"
+        android:scrollbars="vertical"
+        android:layout_marginTop="@dimen/padding" />
 
     <TextView
             android:id="@+id/textviewloading"
@@ -71,3 +71,4 @@
             android:layout_height="wrap_content"></TextView>
 
 </RelativeLayout>
+

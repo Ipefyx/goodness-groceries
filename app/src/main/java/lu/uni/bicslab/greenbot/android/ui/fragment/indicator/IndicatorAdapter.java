@@ -103,7 +103,7 @@ public class IndicatorAdapter extends RecyclerView.Adapter<IndicatorAdapter.Indi
 			// NEW WAY : Display featured indicators only
 			if(!product.isFeatured(ind))
 				continue;
-			
+
 			ImageView imageview = (ImageView) LayoutInflater.from(context).inflate(R.layout.indicator_item_layout_indicator_imageview, holder.indicator_layout, false);
 			Glide.with(context).load(Utils.getDrawableImage(context, ind.getIcon_name())).into(imageview);
 			imageview.setId(View.generateViewId());
@@ -113,8 +113,10 @@ public class IndicatorAdapter extends RecyclerView.Adapter<IndicatorAdapter.Indi
 
 		// Product icon
 		Glide.with(context).load(Utils.getDrawableImage(context, product.getImage_url())).error(R.drawable.ic_menu_gallery).into(holder.imageview_icon);
+
+		// TODO: find what is used for
 		//Product category icon
-		Glide.with(context).load(Utils.getDrawableImage(context, product.getCategory())).error(R.drawable.ic_menu_gallery).into(holder.imageview_origin);
+		//Glide.with(context).load(Utils.getDrawableImage(context, product.getCategory())).error(R.drawable.ic_menu_gallery).into(holder.imageview_origin);
 	}
 	
 	@Override
