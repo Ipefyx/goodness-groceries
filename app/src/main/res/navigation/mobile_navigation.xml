@@ -59,6 +59,13 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_helpFragment_to_categoryHelpFragment"
+            app:destination="@id/categoryHelpFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
     <action
             android:id="@+id/action_global_helpFragment"
@@ -70,5 +77,10 @@
         android:name="lu.uni.bicslab.greenbot.android.ui.fragment.help.IndicatorHelpFragment"
         android:label="@string/help_page_button_1"
         tools:layout="@layout/fragment_indicator_help_list" />
+    <fragment
+        android:id="@+id/categoryHelpFragment"
+        android:name="lu.uni.bicslab.greenbot.android.ui.fragment.help.CategoryHelpFragment"
+        android:label="@string/help_page_button_5"
+        tools:layout="@layout/fragment_category_help_list" />
 
 </navigation>
