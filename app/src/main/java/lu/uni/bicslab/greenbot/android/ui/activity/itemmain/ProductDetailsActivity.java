@@ -1,7 +1,11 @@
 package lu.uni.bicslab.greenbot.android.ui.activity.itemmain;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.SpannableString;
@@ -9,9 +13,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -174,6 +181,15 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
 		// Product picture
 		Glide.with(this).load(Utils.getDrawableImage(this, product.getImage_url())).error(R.drawable.ic_menu_gallery).into(product_image);
+
+
+		product_image.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				showImage(Utils.getDrawableImage(mContext, product.getImage_url()));
+			}
+		});
+
 		// Category picture
 		Glide.with(this).load(Utils.getDrawableImage(this, category.getIcon_name())).error(R.drawable.ic_menu_gallery).into(category_icon);
 
@@ -267,5 +283,24 @@ public class ProductDetailsActivity extends AppCompatActivity {
 			
 			similar_product_list.addView(view);
 		}
+	}
+
+	public void showImage(Drawable image) {
+		Dialog builder = new Dialog(this);
+		builder.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		builder.getWindow().setBackgroundDrawable(
+				new ColorDrawable(android.graphics.Color.TRANSPARENT));
+		builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+			@Override
+			public void onDismiss(DialogInterface dialogInterface) {
+				//nothing;
+			}
+		});
+		ImageView imageView = new ImageView(this);
+		imageView.setImageDrawable(image);
+		builder.addContentView(imageView, new RelativeLayout.LayoutParams(
+				ViewGroup.LayoutParams.MATCH_PARENT,
+				ViewGroup.LayoutParams.MATCH_PARENT));
+		builder.show();
 	}
 }
