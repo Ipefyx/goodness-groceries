@@ -26,12 +26,14 @@
             android:name=".ui.activity.scan.BarcodeScannerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="false" />
         <activity
             android:name=".ui.activity.StartActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,33 +44,39 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan"
+            android:exported="false"/>
         <activity
             android:name=".ui.activity.welcome.WelcomeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false"/>
         <activity
             android:name=".ui.activity.itemmain.ProductDetailsActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="false"/>
         <activity
             android:name=".ui.activity.feedback.FeedbackMainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan"
+            android:exported="false"/>
         <activity
             android:name=".ui.activity.scanitem.SelectscanActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"
+            android:exported="false"/>
         <activity
             android:name=".ui.fragment.compare.CompareActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"
+            android:exported="false" />
 
         <service
             android:name=".other.FcmMessagingService"
