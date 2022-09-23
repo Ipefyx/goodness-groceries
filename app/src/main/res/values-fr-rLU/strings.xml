@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GreenBot</string>
+    <string name="app_name">Goodness Groceries</string>
 
     <string name="menu_home">Accueil</string>
     <string name="menu_scan">Scanner</string>
