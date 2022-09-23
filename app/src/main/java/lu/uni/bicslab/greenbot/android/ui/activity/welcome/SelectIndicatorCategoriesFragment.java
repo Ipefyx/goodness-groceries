@@ -1,6 +1,8 @@
 package lu.uni.bicslab.greenbot.android.ui.activity.welcome;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,13 +59,30 @@ public class SelectIndicatorCategoriesFragment extends Fragment {
 		for (int i = 0; i < indicatorCategories.size(); i++) {
 			
 			IndicatorCategoryModel indCat = indicatorCategories.get(i);
-			selectables[i] = new WelcomeSelectable(indCat.getId(), indCat.getDescription(), indCat.getIcon_name(), colors[i]);
+			selectables[i] = new WelcomeSelectable(indCat.getId(), indCat.getName(), indCat.getIcon_name(), colors[i]);
 			
 			View view = LayoutInflater.from(selectorLayout.getContext()).inflate(R.layout.onbording_cardview_row, selectorLayout, false);
 			((TextView) view.findViewById(R.id.text_title)).setText(selectables[i].getDescription());
-			
-			Glide.with(getActivity()).load(Utils.getDrawableImage(getActivity(), selectables[i].getImage())).error(R.drawable.ic_menu_gallery).into((ImageView) view.findViewById(R.id.imageview_icon));
-			
+
+			ImageView iconHolder = view.findViewById(R.id.imageview_icon);
+			Glide.with(getActivity()).load(Utils.getDrawableImage(getActivity(), selectables[i].getImage())).error(R.drawable.ic_menu_gallery).into(iconHolder);
+
+			// Info popup for indicator description
+			iconHolder.setOnClickListener(new View.OnClickListener() {
+					 @Override
+					 public void onClick(View view) {
+						 AlertDialog.Builder infoPopup = new AlertDialog.Builder(view.getContext());
+						 infoPopup.setTitle(indCat.getName());
+
+						 String content = indCat.getDescription();
+
+						 infoPopup.setMessage(Html.fromHtml(content, Html.FROM_HTML_MODE_LEGACY));
+						 infoPopup.setPositiveButton("OK", null);
+						 infoPopup.show();
+					 }
+				 }
+			);
+
 			int localPosition = i;
 			view.setOnClickListener(new View.OnClickListener() {
 				@Override
