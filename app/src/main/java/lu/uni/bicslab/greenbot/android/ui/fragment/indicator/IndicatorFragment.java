@@ -99,6 +99,7 @@ public class IndicatorFragment extends Fragment {
 						/*indicator.getCategory_id().contains(indicatorCategoryFilter)*/
 						indicatorCategoryFilter.contains(indicator.getCategory_id())
 						&& indicator.isApplicable()
+						&& indicator.getDescription().length() > 0
 						/*&& indicator.sub_indicators.size() > 0*/
 				)
 				/*&& product.getCategory().equals(productCategoryFilter)*/

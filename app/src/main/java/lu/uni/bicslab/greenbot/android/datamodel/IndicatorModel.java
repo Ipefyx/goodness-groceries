@@ -15,7 +15,7 @@ public class IndicatorModel implements Serializable {
 	private String file;
 	
 	private boolean applicable;
-	public List<SubIndicatorModel> sub_indicators;
+	/*public List<SubIndicatorModel> sub_indicators;*/
 	
 	// TODO: Remove when reworking Compare Page
 	private boolean isSelected = false;
