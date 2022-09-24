@@ -40,6 +40,9 @@ public class ProductCategoryFragment extends Fragment {
 		textviewloading = root.findViewById(R.id.textviewloading);
 		searchView = root.findViewById(R.id.search_src_text);
 		searchView.setMaxWidth(Integer.MAX_VALUE);
+
+		// TODO: Remove when search work on all pages
+		root.findViewById(R.id.layout_search).setVisibility(View.INVISIBLE);
 		
 		itemAdapter = new ProductCategoryAdapter(getActivity(), id -> {
 			// Callback used by the adapter to signal the user clicked on category to proceed

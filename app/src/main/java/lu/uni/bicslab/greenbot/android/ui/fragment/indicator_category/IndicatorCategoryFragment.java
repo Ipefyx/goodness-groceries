@@ -42,6 +42,9 @@ public class IndicatorCategoryFragment extends Fragment {
 		textviewloading = root.findViewById(R.id.textviewloading);
 		searchView = root.findViewById(R.id.search_src_text);
 		searchView.setMaxWidth(Integer.MAX_VALUE);
+
+		// TODO: Remove when search work on all pages
+		root.findViewById(R.id.layout_search).setVisibility(View.INVISIBLE);
 		
 		itemAdapter = new IndicatorCategoryAdapter(getActivity(), id -> {
 			// Callback used by the adapter to signal the user clicked on category to proceed
@@ -56,8 +59,7 @@ public class IndicatorCategoryFragment extends Fragment {
 		recyclerView.setLayoutManager(mLayoutManager);
 		recyclerView.setItemAnimator(new DefaultItemAnimator());
 		recyclerView.setAdapter(itemAdapter);
-		
-		
+
 		//searchManager = (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
 		
 		// listening to search query text change
