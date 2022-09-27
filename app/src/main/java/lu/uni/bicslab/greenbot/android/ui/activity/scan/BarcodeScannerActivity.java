@@ -437,8 +437,13 @@ public class BarcodeScannerActivity extends AppCompatActivity implements Barcode
 	public void onBarcodeDetected(Barcode barcode) {
 		//do something with barcode data returned
 		Log.e(TAG, "Barcode read: got " + barcode.displayValue);
+
+		// Extract product code from barcode
+		String productCode = barcode.displayValue;
+		productCode = productCode.substring(productCode.indexOf("=") + 1, productCode.length());
+
 		Intent intent = getIntent();
-		intent.putExtra("barcode", barcode.displayValue);
+		intent.putExtra("barcode", productCode);
 		setResult(BARCODE_SUCCESS, intent);
 		finish();
 	}

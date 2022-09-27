@@ -394,7 +394,7 @@ public class Utils {
 				df2 = new SimpleDateFormat("dd MMMM yyyy");
 			else
 				df2 = new SimpleDateFormat("MMMM dd, yyy");
-			return df2.format(format.parse(date)) + " ";
+			return df2.format(format.parse(date)) + "";
 		} catch (java.text.ParseException e) {
 			return date;
 		}

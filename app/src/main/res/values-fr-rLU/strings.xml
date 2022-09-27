@@ -15,8 +15,8 @@
 
 
     <string name="ok">OK</string>
-    <string name="next">Suivant</string>
-    <string name="refresh">Refresh</string>
+    <string name="next">Continuer</string>
+    <string name="refresh">Actualiser</string>
     
 
     <string name="loading">Loading..</string>
@@ -65,11 +65,11 @@
     <string name="PRODUCT_CATEGORY_ORGANIC_DESC">Les « produits biologiques » sont produits, distribués et commercialisés selon les critères de la certification biologique publique. Ils doivent respecter au moins la législation biologique de l\'UE définissant l\'utilisation des pesticides et des engrais, les normes de bien-être animal, les considérations pour la biodiversité, etc. Certains produits peuvent avoir des critères supplémentaires volontaires, définis par des certifications biologiques privées.</string>
     <string name="PRODUCT_CATEGORY_LOCAL_DESC">Les « produits locaux » ont été produits ou transformés au Luxembourg. Ils peuvent être fabriqués à partir d\'ingrédients issus de la production nationale, d\'ingrédients importés ou d\'un mélange des deux.</string>
 
-    <string name="IND_CAT_ECONOMIC_DESCRIPTION">Toutes les personnes travaillant dans le secteur alimentaire ont une sécurité financière actuelle et future. Les activités de production alimentaire, en générant non seulement des gains financiers mais aussi des gains sociaux, permettent aux sociétés de prospérer dans leur ensemble. Pour y parvenir, une production alimentaire plus locale, circulaire et solidaire est encouragée.</string>
+    <string name="IND_CAT_ECONOMIC_DESCRIPTION">Tout travailleur du secteur alimentaire a une sécurité financière actuelle et future. La société dans son ensemble prospère à travers leurs activités de production alimentaire, générant des gains financiers et sociaux. Une production alimentaire plus locale, circulaire et solidaire est encouragée.</string>
     <string name="IND_CAT_ECONOMIC_NAME">Bien-être économique</string>
     <string name="IND_CAT_ENVIRONMENT_DESCRIPTION">Tout au cours des différentes phases de production, de transformation et de consommation des aliments, des efforts sont faits pour minimiser les impacts négatifs sur l’environnement, voire pour créer des effets secondaires positifs. Cela rend notre système alimentaire plus durable sur le plan écologique.</string>
     <string name="IND_CAT_ENVIRONMENT_NAME">Environnement</string>
-    <string name="IND_CAT_GOVERNANCE_DESCRIPTION">La façon dont les entreprises mènent leurs activités, gèrent leurs ressources et leurs actifs, et organisent leurs interactions et processus de décision a le but d’augmenter la durabilité. Toutes les informations sur les produits sont transparentes et facilement accessibles. Les entreprises utilisent des approches participatives et associent les producteurs aux décisions. En fin de compte, les entreprises peuvent être tenues responsables de leurs déclarations.</string>
+    <string name="IND_CAT_GOVERNANCE_DESCRIPTION">La façon dont les entreprises mènent leurs activités, gèrent leurs ressources et leurs actifs, et organisent leurs processus de décision a le but d’augmenter la durabilité. Toutes les informations sur les produits sont transparentes et accessibles. Les entreprises utilisent des approches participatives et peuvent être tenues responsables de leurs déclarations.</string>
     <string name="IND_CAT_GOVERNANCE_NAME">Bonne gouvernance</string>
     <string name="IND_CAT_SOCIAL_DESCRIPTION">Chaque être humain est capable de satisfaire ses besoins humains fondamentaux et a le droit et la liberté de poursuivre ses aspirations à une vie meilleure, sans compromettre la capacité des autres et des générations futures à en faire de même.</string>
     <string name="IND_CAT_SOCIAL_NAME">Bien-être social</string>
@@ -513,8 +513,8 @@
 
     <string name="permissions_modal_camera_description">Goodness Groceries a besoin d’accéder à votre caméra pour scanner les codes QR.</string>
     <string name="camera_not_allowed">Goodness Groceries n’a pas pu accéder à votre caméra pour scanner les codes QR. Veuillez activer les autorisations dans les paramètres. Merci.</string>
-    <string name="welcome_page_4_title">Qu’est-ce qui vous tient le plus à cœur lors de vos courses?</string>
-    <string name="welcome_page_5_title">Quels types de produits avez-vous tendance à acheter? (jusqu\'à 4)</string>
+    <string name="welcome_page_4_title">Qu’est-ce qui vous tient le plus à cœur lors de vos courses ? (sélectionnez jusqu\'à 4)</string>
+    <string name="welcome_page_5_title">Quelles catégories de produits avez-vous tendance à acheter ? (sélectionnez jusqu\'à 4)</string>
     <string name="welcome_page_6_title">Scannez un produit</string>
     <string name="welcome_page_6_text">Utilisez votre smartphone pendant que vous faites vos courses pour scanner les codes QR sur une sélection de produits.</string>
     <string name="welcome_page_7_title">Consultez les indicateurs qui comptent pour vous</string>
@@ -523,14 +523,14 @@
     <string name="welcome_page_1_title">Bienvenue dans Goodness Groceries!</string>
     <string name="welcome_page_1_text">Cette application vous permettra de comparer les caractéristiques éthiques et éco-responsables de certains produits alimentaires pendant que vous faites vos courses au Pall Center.</string>
     <string name="welcome_page_3_title">Les quatre thèmes de la durabilité</string>
-    <string name="welcome_page_3_text">Continuez pour personnaliser votre expérience de l\'application.</string>
+    <string name="welcome_page_3_text">Continuer pour personnaliser votre expérience</string>
     <string name="welcome_page_notifications_text">Veuillez autoriser les notifications de Goodness Groceries, pour être informé(e) que votre compte a été vérifié, et pour recevoir des notifications pour commenter les produits que vous avez achetés, ainsi que des messages concernant l\'étude et l\'application.</string>
     <string name="welcome_page_notifications_title">Notifications</string>
     <string name="welcome_page_8_title"> On y est presque !</string>
     <string name="welcome_page_8_text1">Merci de votre intérêt pour participer à l\'application et l\'étude Goodness Groceries !</string>
     <string name="welcome_page_8_text2">Finalisez votre inscription en cliquant sur le lien et en suivant les trois étapes.</string>
-    <string name="welcome_page_8_checkbox">J\'ai répondu aux 3 questions</string>
-    <string name="welcome_page_8_button">Completer le questionnaire</string>
+    <string name="welcome_page_8_checkbox">J\'ai terminé les deux étapes d\'inscription.</string>
+    <string name="welcome_page_8_button">On y va !</string>
     <string name="welcome_page_interest">Merci pour votre interêt à participer à l\'appli et l\'étude Goodness Groceries !</string>
     <string name="id_digit_alert">L\'identifiant doit avoir exactement 13 chiffres</string>
     <string name="product_not_found">Product introuvable</string>
