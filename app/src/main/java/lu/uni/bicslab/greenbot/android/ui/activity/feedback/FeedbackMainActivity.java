@@ -102,7 +102,7 @@ public class FeedbackMainActivity extends AppCompatActivity {
 		indicator_layout.removeViewsInLayout(1, indicator_layout.getChildCount()-1);
 		
 		for (IndicatorModel ind : product.indicators) {
-			if (!ind.isApplicable() || ind.sub_indicators.size() == 0)
+			if (!ind.isApplicable() /*|| ind.sub_indicators.size() == 0*/)
 				continue;
 			
 			// Inflate the indicator icons on the product

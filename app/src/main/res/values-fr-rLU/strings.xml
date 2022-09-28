@@ -546,5 +546,9 @@
     <string name="url_contact_us">https://food.uni.lu/goodness-groceries/contact-us</string>
     <string name="url_welcome_survey">https://food.uni.lu/goodness-groceries/join-the-study</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>
 
