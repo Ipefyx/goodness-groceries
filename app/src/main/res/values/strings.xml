@@ -28,11 +28,11 @@
     <string name="welcome_page_1_title">Welcome to Goodness Groceries!</string>
     <string name="welcome_page_1_text">This app will allow you to compare the ethical and eco-responsible characteristics of selected food products available in Pall Center whilst you shop.</string>
     <string name="welcome_page_3_title">The four sustainability themes</string>
-    <string name="welcome_page_3_text">Continue to personalize your App experience.</string>
+    <string name="welcome_page_3_text">Continue to personalise your App experience.</string>
     <string name="welcome_page_4_title">What is closest to your heart when grocery shopping? (up to 4)</string>
-    <string name="welcome_page_5_title">What types of products do you tend to buy? (up to 4)</string>
+    <string name="welcome_page_5_title">What categories of products do you tend to buy? (up to 4)</string>
 
-    <string name="welcome_page_notifications_text">Please authorise notifications from Goodness Groceries, to be informed once your account is verified, to receive feedback prompts about your selected products, and messaging about the study and the App.</string>
+    <string name="welcome_page_notifications_text">Please authorise notifications from Goodness Groceries in order to be informed once your account will have been verified, and to receive feedback forms regarding products and the App.</string>
     <string name="welcome_page_notifications_title">Notifications</string>
 
     <string name="welcome_page_6_title">Scan a product</string>
@@ -40,11 +40,11 @@
     <string name="welcome_page_7_title">See indicators that matter to you</string>
     <string name="welcome_page_7_text">Each product will be presented with its relevant sustainability indicators. Read more about each indicator by clicking on them, and make your purchases based on the information available.</string>
 
-    <string name="welcome_page_8_title">Final steps</string>
+    <string name="welcome_page_8_title">Before you start</string>
     <string name="welcome_page_8_text1">Thank you for your interest in participating in the Goodness Groceries App and study!</string>
-    <string name="welcome_page_8_text2">Finalise your registration for this study by clicking on the link and following the three steps!</string>
-    <string name="welcome_page_8_checkbox">I answered the three questions</string>
-    <string name="welcome_page_8_button">Complete the survey</string>
+    <string name="welcome_page_8_text2">Finalise your registration for this study by clicking on the link and following the two steps.</string>
+    <string name="welcome_page_8_checkbox">I have completed the two registration steps.</string>
+    <string name="welcome_page_8_button">Let\'s go!</string>
     <string name="welcome_page_interest">Thanks for your interest to participate to the app and for the Goodness Groceries study!</string>
 
     <string name="accountconsideration_title">We are validating your registration</string>
@@ -138,11 +138,11 @@
     <string name="PRODUCT_CATEGORY_ORGANIC_DESC">\'Organic products\' are produced, distributed and marketed according to the criteria of public organic certification, and must comply at least with EU organic legislation defining the use of pesticides and fertilisers, animal welfare standards and considerations for biodiversity etc.  Some products may have voluntarily additional criteria defined by private organic certifications.</string>
     <string name="PRODUCT_CATEGORY_LOCAL_DESC">\'Local products\' are produced or processed in Luxembourg. They can be made from nationally produced ingredients, imported ones or from a mixture of both.</string>
 
-    <string name="IND_CAT_ECONOMIC_DESCRIPTION">All the people working in the food sector have present and future financial security. Societies as a whole prosper through their food production activities, which build not only financial gains but also social ones. To achieve this, more local, circular and solidarity-based food production is fostered.</string>
+    <string name="IND_CAT_ECONOMIC_DESCRIPTION">All workers in the food sector have present and future financial security. Society prospers through their food production activities, building both financial and social gains. More local, circular and solidarity-based food production is fostered.</string>
     <string name="IND_CAT_ECONOMIC_NAME">Economic well-being</string>
     <string name="IND_CAT_ENVIRONMENT_DESCRIPTION">Efforts are made, during the various phases of production, processing and consumption of food, to minimise negative impacts on nature and even create positive side effects. This makes our food system more ecologically sustainable.</string>
     <string name="IND_CAT_ENVIRONMENT_NAME">Environment</string>
-    <string name="IND_CAT_GOVERNANCE_DESCRIPTION">The way companies conduct business, manage their resources and assets, shape their interactions and decision-making processes is directed towards increasing sustainability . All product information is transparent and easily accessible. Enterprises use participatory approaches and include producers in decisions. Ultimately, enterprises can be held accountable for their claims.</string>
+    <string name="IND_CAT_GOVERNANCE_DESCRIPTION">The way companies conduct business, manage their resources and assets, and shape their decision-making aims at increasing sustainability. Product information is transparent and accessible. Companies use participatory approaches and can be held accountable for their claims.</string>
     <string name="IND_CAT_GOVERNANCE_NAME">Good governance</string>
     <string name="IND_CAT_SOCIAL_DESCRIPTION">Every human being is able to fulfil their basic human needs, and has the right and freedom to pursue their aspirations for a better life, without compromising the ability of others and of future generations to do the same.</string>
     <string name="IND_CAT_SOCIAL_NAME">Social well-being</string>
