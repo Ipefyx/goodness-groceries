@@ -42,6 +42,7 @@
             android:id="@+id/imageView3"
             android:layout_width="0dp"
             android:layout_height="@dimen/icon_width"
+            android:padding="20dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/uni_icon" />
 
@@ -49,6 +50,7 @@
             android:id="@+id/imageView4"
             android:layout_width="0dp"
             android:layout_height="@dimen/icon_width"
+            android:padding="20dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/pall_center" />
     </LinearLayout>

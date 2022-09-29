@@ -75,10 +75,10 @@
     <string name="menu_help">Help</string>
 
     <string name="help_page_button_1">Indicator definitions</string>
-    <string name="help_page_button_2">Goodness Groceries Homepage</string>
+    <string name="help_page_button_2">Goodness Groceries homepage</string>
     <string name="help_page_button_3">Help</string>
     <string name="help_page_button_4">Contact us</string>
-    <string name="help_page_button_5">Product Category definitions</string>
+    <string name="help_page_button_5">Product category definitions</string>
     <string name="help_page_button_6">Symbols glossary</string>
 
     <string name="menu_product_categories">Categories</string>
