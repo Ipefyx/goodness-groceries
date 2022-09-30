@@ -51,6 +51,16 @@ public class HelpFragment extends Fragment {
 				}
 		);
 
+		root.findViewById(R.id.help_symbols_layout).setOnClickListener(
+				new View.OnClickListener() {
+					@Override
+					public void onClick(View view) {
+						Navigation.findNavController(view).navigate(R.id.action_helpFragment_to_symbolsHelpFragment);
+					}
+				}
+		);
+
+
 		// Create hyperlinks to web urls
 		TextView text;
 

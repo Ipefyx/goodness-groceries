@@ -81,6 +81,10 @@
     <string name="help_page_button_5">Product category definitions</string>
     <string name="help_page_button_6">Symbols glossary</string>
 
+    <string name="help_attributed">The indicator is attributed to the product</string>
+    <string name="help_not_attributed">The indicator is not attributed to the product</string>
+    <string name="help_not_applicable">The indicator is not applicable to the product</string>
+
     <string name="menu_product_categories">Categories</string>
     <string name="menu_products">Products</string>
 
