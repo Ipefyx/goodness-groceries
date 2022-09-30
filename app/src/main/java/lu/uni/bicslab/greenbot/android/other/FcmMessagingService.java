@@ -34,8 +34,7 @@ public class FcmMessagingService extends FirebaseMessagingService {
         super.onMessageReceived(remoteMessage);
 
         // Check if message contains a notification payload.
-        if (remoteMessage.getNotification() != null) {
-            //sendNotification(remoteMessage.getNotification().getBody());
+        if (remoteMessage.getData() != null) {
             sendNotification(remoteMessage.getData());
         } else {
             Log.e("NOTIFICATION SYSTEM", "IS NULL !! ");
@@ -76,9 +75,9 @@ public class FcmMessagingService extends FirebaseMessagingService {
 
 
         //Log.e("NOTIFICATION SYSTEM", "Data APS: " + data.get("aps"));
-        Log.e("NOTIFICATION SYSTEM", "Data: " + data.toString());
+        Log.i("NOTIFICATION SYSTEM", "Data: " + data.toString());
 
-        Map<String,String> message = parseMessage(data.get("aps"));
+        Map<String,String> message = parseMessage(data.get("data"));
 
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_ONE_SHOT);
@@ -91,7 +90,7 @@ public class FcmMessagingService extends FirebaseMessagingService {
 
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(this, channelId)
-                .setSmallIcon(R.drawable.uni_icon)
+                .setSmallIcon(R.drawable.gg_logo_1)
                 .setContentTitle(messageTitle)
                 .setContentText(messageBody)
                 .setAutoCancel(true)
@@ -147,8 +146,11 @@ public class FcmMessagingService extends FirebaseMessagingService {
             body = obj.getJSONObject("alert").getString("body");
             title = obj.getJSONObject("alert").getString("title");
 
-            Log.e("NOTIFICATION SYSTEM", "message body: " + body);
-            Log.e("NOTIFICATION SYSTEM", "message title: " + title);
+            /*
+            Log.i("NOTIFICATION SYSTEM", "message body: " + body);
+            Log.i("NOTIFICATION SYSTEM", "message title: " + title);
+            */
+
 
         } catch (JSONException e) {
             e.printStackTrace();

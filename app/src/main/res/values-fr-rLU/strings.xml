@@ -13,6 +13,10 @@
     <string name="help_page_button_5">Définitions des categories de produits</string>
     <string name="help_page_button_6">Glossaire des symboles</string>
 
+    <string name="help_attributed">L\'indicateur est attribué au produit</string>
+    <string name="help_not_attributed">L\'indicateur n\'est pas attribué au produit</string>
+    <string name="help_not_applicable">L\'indicateur n\'est pas applicable au produit</string>
+
 
     <string name="ok">OK</string>
     <string name="next">Continuer</string>
@@ -541,10 +545,14 @@
     <string name="settings">Paramètres</string>
 
     <!--    External links -->
-    <string name="url_home_page">https://food.uni.lu/goodness-groceries</string>
-    <string name="url_help_page">https://food.uni.lu/goodness-groceries/help</string>
-    <string name="url_contact_us">https://food.uni.lu/goodness-groceries/contact-us</string>
-    <string name="url_welcome_survey">https://food.uni.lu/goodness-groceries/join-the-study</string>
+    <string name="url_home_page">https://food.uni.lu/goodness-groceries/fr</string>
+    <string name="url_help_page">https://food.uni.lu/goodness-groceries/fr/help</string>
+    <string name="url_contact_us">https://food.uni.lu/goodness-groceries/fr/contact-us</string>
+    <string name="url_welcome_survey">https://food.uni.lu/goodness-groceries/fr/join-the-study</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>
 
