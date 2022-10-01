@@ -1,4 +1,4 @@
-package lu.uni.bicslab.greenbot.android;
+package lu.uni.bicslab.greenbot.android.ui.fragment.help;
 
 import android.os.Bundle;
 
@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import lu.uni.bicslab.greenbot.android.R;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link symbolsHelpFragment#newInstance} factory method to
+ * Use the {@link SymbolsHelpFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class symbolsHelpFragment extends Fragment {
+public class SymbolsHelpFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +26,7 @@ public class symbolsHelpFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public symbolsHelpFragment() {
+    public SymbolsHelpFragment() {
         // Required empty public constructor
     }
 
@@ -37,8 +39,8 @@ public class symbolsHelpFragment extends Fragment {
      * @return A new instance of fragment symbolsHelpFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static symbolsHelpFragment newInstance(String param1, String param2) {
-        symbolsHelpFragment fragment = new symbolsHelpFragment();
+    public static SymbolsHelpFragment newInstance(String param1, String param2) {
+        SymbolsHelpFragment fragment = new SymbolsHelpFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

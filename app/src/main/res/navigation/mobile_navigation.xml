@@ -91,8 +91,8 @@
         tools:layout="@layout/fragment_category_help_list" />
     <fragment
         android:id="@+id/symbolsHelpFragment"
-        android:name="lu.uni.bicslab.greenbot.android.symbolsHelpFragment"
-        android:label="fragment_symbols_help"
+        android:name="lu.uni.bicslab.greenbot.android.ui.fragment.help.SymbolsHelpFragment"
+        android:label="@string/help_page_button_6"
         tools:layout="@layout/fragment_symbols_help" />
 
 </navigation>
