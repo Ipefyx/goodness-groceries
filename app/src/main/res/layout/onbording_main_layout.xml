@@ -79,13 +79,13 @@
 
                 <ImageView
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/icon_width"
+                    android:layout_height="@dimen/logo_height"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/uni_icon" />
 
                 <ImageView
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/icon_width"
+                    android:layout_height="@dimen/logo_height"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/pall_center" />
 
@@ -107,6 +107,7 @@
             android:id="@+id/view_pager"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:minHeight="200dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/bottomControls"

@@ -16,7 +16,8 @@
     <dimen name="slide_desc">18dp</dimen>
     <dimen name="desc_padding">30dp</dimen>
 
-    <dimen name="icon_width">130dp</dimen>
+    <dimen name="icon_width">120dp</dimen>
+    <dimen name="logo_height">100dp</dimen>
     <dimen name="padding2">10dp</dimen>
 
     <dimen name="fab_elevation">8dp</dimen>
