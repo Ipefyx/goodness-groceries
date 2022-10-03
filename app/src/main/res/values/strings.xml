@@ -52,10 +52,10 @@
     <string name="accountconsideration_text2">If you missed a registration step, please click on the button below.</string>
     <string name="accountconsideration_button">Return to previous page</string>
 
-    <string name="observationphase_title">Observation phase</string>
-    <string name="observationphase_text1">We are analysing your buying habit in a first phase since</string>
-    <string name="observationphase_text2">It is a required period to see if your buying habits change thanks to this application.</string>
-    <string name="observationphase_text3">You will be able to use the application in</string>
+    <string name="observationphase_title">Your registration has been approved</string>
+    <string name="observationphase_text1">You are now participating in the study.</string>
+    <string name="observationphase_text2">Shop as normal using your Pall Center customer card for the next few weeks.</string>
+    <string name="observationphase_text3">You will be able to fully explore the four sustainability themes of the App in</string>
     <string name="observationphase_text4">days.</string>
 
     <string name="id_digit_alert">The client ID must have exactly 13 digits</string>

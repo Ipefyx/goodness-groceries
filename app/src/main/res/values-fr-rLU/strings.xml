@@ -39,10 +39,10 @@
     <string name="accountconsideration_text2">Si vous avez manqué une étape d’inscription, veuillez cliquer sur le bouton ci-dessous.</string>
     <string name="accountconsideration_button">Retourner à la page précédente</string>
 
-    <string name="observationphase_title">Phase d\'observation</string>
-    <string name="observationphase_text1">Nous analysons actuellement vos habitudes d\'achat depuis le </string>
-    <string name="observationphase_text2">Cette phase est inportante pour savoir si vos habitudes vont changer grâce à l\'application.</string>
-    <string name="observationphase_text3">Vous pourrez utiliser l\'application dans</string>
+    <string name="observationphase_title">Votre inscription a été validée</string>
+    <string name="observationphase_text1">Vous participez maintenant à l\'étude.</string>
+    <string name="observationphase_text2">Faites vos courses comme d’habitude en utilisant votre carte client Pall Center pendant les prochaines semaines.</string>
+    <string name="observationphase_text3">Vous pourrez explorer en détail les quatre thèmes de durabilité de l\'application dans</string>
     <string name="observationphase_text4">jours.</string>
 
     <string name="moreinfo">Plus d\'info…</string>
