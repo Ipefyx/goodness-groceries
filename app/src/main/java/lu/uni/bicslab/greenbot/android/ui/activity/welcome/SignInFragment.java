@@ -27,12 +27,15 @@ public class SignInFragment extends Fragment {
 	private EditText signin_id;
 	
 	private String id;
-	
+
+	boolean isFocusCleared = false;
+
 	@Override
 	public void onCreate(@Nullable Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
 		WelcomeActivity.s_logoLayout.setVisibility(View.VISIBLE);
+		isFocusCleared = false;
 	}
 	
 	@Nullable
@@ -50,35 +53,7 @@ public class SignInFragment extends Fragment {
 			startActivityForResult(new Intent(getActivity(), BarcodeScannerActivity.class), BARCODE_CAPTURE);
 		});
 
-
-
 		signin_id = getView().findViewById(R.id.signin_id);
-		signin_id.addTextChangedListener(new TextWatcher() {
-
-			@Override
-			public void onTextChanged(CharSequence s, int start, int before, int count) {
-				// May not be good design as it keeps this Fragment and the WelcomeActivity tightly coupled, but it simplifies this horrible mess of a welcome screen a lot
-				WelcomeActivity activity = ((WelcomeActivity) getActivity());
-
-				if (s.length() != 13) {
-					signin_id.setError(getResources().getString(R.string.id_digit_alert));
-					activity.setIDValid(false);
-				} else {
-					signin_id.setError(null);
-					activity.setIDValid(true);
-				}
-				
-				if (s.length() == 0) {
-					signin_id.setError(null);
-				}
-				
-				activity.id = s.toString();
-			}
-			
-			@Override public void afterTextChanged(Editable s) {}
-			@Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-		});
-
 
 		// Hacky code to keep focus on signin edittext when keyboard appear
 		signin_id.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -98,6 +73,46 @@ public class SignInFragment extends Fragment {
 				}
 			}
 		});
+
+
+		signin_id.addTextChangedListener(new TextWatcher() {
+
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+				// May not be good design as it keeps this Fragment and the WelcomeActivity tightly coupled, but it simplifies this horrible mess of a welcome screen a lot
+				WelcomeActivity activity = ((WelcomeActivity) getActivity());
+
+				if (s.length() != 13) {
+					signin_id.setError(getResources().getString(R.string.id_digit_alert));
+					activity.setIDValid(false);
+
+					if(!isFocusCleared) {
+						isFocusCleared = true;
+						signin_id.clearFocus(); // Force recover of focus after displaying error
+						signin_id.requestFocus();
+					}
+				} else {
+					signin_id.setError(null);
+					activity.setIDValid(true);
+					//signin_id.clearFocus();
+				}
+				
+				if (s.length() == 0) {
+					signin_id.setError(null);
+					//signin_id.clearFocus();
+				}
+				//signin_id.clearFocus();
+
+
+				activity.id = s.toString();
+			}
+			
+			@Override public void afterTextChanged(Editable s) {}
+			@Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+		});
+
+
+
 
 	}
 	
