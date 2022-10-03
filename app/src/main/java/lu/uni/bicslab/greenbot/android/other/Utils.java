@@ -54,7 +54,9 @@ public class Utils {
 	public static final String ind_cat_social = "ind_cat_social";
 	public static final String ind_cat_good_governance = "ind_cat_governance";
 	public static final String ind_cat_economic = "ind_cat_economic";
-	
+
+	public static final String ind_cat_any = "ind_cat_environment ind_cat_economic ind_cat_social ind_cat_governance";
+	public static final String prod_cat_any = "local_organic imported_organic local_conventional imported_conventional";
 	
 	
 	public interface DialogCallback {
@@ -184,7 +186,7 @@ public class Utils {
 	}
 
 	public static IndicatorCategoryModel getAnyIndicatorCategoryItem(Context context) {
-		IndicatorCategoryModel ind = new IndicatorCategoryModel("ind_cat_environment ind_cat_economic ind_cat_social ind_cat_governance",
+		IndicatorCategoryModel ind = new IndicatorCategoryModel(ind_cat_any,
 				context.getResources().getString(R.string.IND_CAT_ANY_NAME),
 				"GG_Allindicators".toLowerCase(),
 				context.getResources().getString(R.string.IND_CAT_ANY_DESCRIPTION));
@@ -201,7 +203,7 @@ public class Utils {
 
 	public static ProductCategoryModel getAnyProductCategoryItem(Context context) {
 		ProductCategoryModel p = new ProductCategoryModel(
-				"local_organic imported_organic local_conventional imported_conventional",
+				prod_cat_any,
 				context.getResources().getString(R.string.PRODUCT_CATEGORY_ANY),
 				"prod_cat_any",
 				context.getResources().getString(R.string.PRODUCT_CATEGORY_ANY_DESC));

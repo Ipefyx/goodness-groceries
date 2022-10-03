@@ -93,20 +93,23 @@ public class ProductCategoryAdapter extends RecyclerView.Adapter<ItemHolder> imp
 		Glide.with(context).load(Utils.getDrawableImage(context, model.getIcon_name())).error(R.drawable.ic_menu_gallery).into(holder.imageview_icon);
 
 		// Info popup for category description
-		holder.imageview_icon.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				AlertDialog.Builder infoPopup = new AlertDialog.Builder(context);
-				infoPopup.setTitle(model.getName());
+		if(!model.getId().equals(Utils.prod_cat_any)) { // Don't show popup for 'any category' element
+			holder.imageview_icon.setOnClickListener(new View.OnClickListener() {
+				 @Override
+				 public void onClick(View view) {
+					 AlertDialog.Builder infoPopup = new AlertDialog.Builder(context);
+					 infoPopup.setTitle(model.getName());
 
-				String content = model.getDescription();
+					 String content = model.getDescription();
 
-				infoPopup.setMessage(Html.fromHtml(content, Html.FROM_HTML_MODE_LEGACY));
-				infoPopup.setPositiveButton("OK", null);
-				infoPopup.show();
-				}
-			}
-		);
+					 infoPopup.setMessage(Html.fromHtml(content, Html.FROM_HTML_MODE_LEGACY));
+					 infoPopup.setPositiveButton("OK", null);
+					 infoPopup.show();
+				 }
+			 }
+
+			);
+		}
 	}
 	
 	@Override
