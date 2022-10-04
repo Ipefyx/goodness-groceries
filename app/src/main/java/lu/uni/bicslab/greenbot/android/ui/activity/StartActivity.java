@@ -59,7 +59,7 @@ public class StartActivity extends AppCompatActivity {
 				TextView observationDateTxt = findViewById(R.id.text_observation);
 				TextView daysTxt = findViewById(R.id.text_days);
 
-				observationDateTxt.setText(getResources().getString(R.string.observationphase_text1) + " " + Utils.dateToText(phase1Date) + ".");
+				//observationDateTxt.setText(getResources().getString(R.string.observationphase_text1) + " " + Utils.dateToText(phase1Date) + ".");
 				daysTxt.setText(days + " " + getResources().getString(R.string.observationphase_text4));
 
 				// Create hyperlinks to web urls
