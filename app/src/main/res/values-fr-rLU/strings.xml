@@ -550,6 +550,10 @@
     <string name="url_contact_us">https://food.uni.lu/goodness-groceries/fr/contact-us</string>
     <string name="url_welcome_survey">https://food.uni.lu/goodness-groceries/fr/join-the-study</string>
 
+
+    <string name="flag_fr">Drapeau pour la langue française</string>
+    <string name="flag_en">Drapeau pour la langue anglaise</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

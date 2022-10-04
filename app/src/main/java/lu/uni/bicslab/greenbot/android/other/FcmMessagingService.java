@@ -37,7 +37,7 @@ public class FcmMessagingService extends FirebaseMessagingService {
         if (remoteMessage.getData() != null) {
             sendNotification(remoteMessage.getData());
         } else {
-            Log.e("NOTIFICATION SYSTEM", "IS NULL !! ");
+            Log.w("NOTIFICATION SYSTEM", "IS NULL !! ");
         }
     }
 
@@ -74,7 +74,6 @@ public class FcmMessagingService extends FirebaseMessagingService {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
 
-        //Log.e("NOTIFICATION SYSTEM", "Data APS: " + data.get("aps"));
         Log.i("NOTIFICATION SYSTEM", "Data: " + data.toString());
 
         Map<String,String> message = parseMessage(data.get("data"));
@@ -129,7 +128,7 @@ public class FcmMessagingService extends FirebaseMessagingService {
         //ServerConnection.sendDeviceToken(ctx, userID,  token, object -> {}, error -> {});
 
         UserData.setToken(ctx, token);
-        Log.e("FCM Token", "New token generated: " + token);
+        Log.i("FCM Token", "New token generated: " + token);
 
 
     }

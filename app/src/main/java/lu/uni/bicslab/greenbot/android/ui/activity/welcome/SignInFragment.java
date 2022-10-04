@@ -94,15 +94,11 @@ public class SignInFragment extends Fragment {
 				} else {
 					signin_id.setError(null);
 					activity.setIDValid(true);
-					//signin_id.clearFocus();
 				}
 				
 				if (s.length() == 0) {
 					signin_id.setError(null);
-					//signin_id.clearFocus();
 				}
-				//signin_id.clearFocus();
-
 
 				activity.id = s.toString();
 			}

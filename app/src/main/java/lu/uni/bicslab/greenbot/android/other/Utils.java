@@ -101,7 +101,7 @@ public class Utils {
 			desc_text.setText(R.string.language_change_later);
 			btn_next.setText(R.string.next);
 		});
-		
+
 		btn_next.setOnClickListener(v -> {
 			dialog.dismiss();
 			UserData.setLanguage(context, Locale.getDefault().getLanguage());
@@ -131,7 +131,14 @@ public class Utils {
 		Locale.setDefault(locale);
 		Resources resources = context.getResources();
 		Configuration config = resources.getConfiguration();
-		config.setLocale(locale);
+
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+			config.setLocale(locale);
+		} else {
+			config.locale = locale;
+		}
+
+
 		resources.updateConfiguration(config, resources.getDisplayMetrics());
 	}
 	

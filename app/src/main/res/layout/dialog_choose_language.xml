@@ -29,28 +29,30 @@
             android:weightSum="2">
 
         <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/flag_fr"
-                android:id="@+id/btn_fr"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:layout_margin="@dimen/padding2"
-                style="@style/Widget.AppCompat.ImageButton"
-                android:background="#FFFFFF" />
+            android:id="@+id/btn_fr"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding2"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="#FFFFFF"
+            android:contentDescription="@string/flag_fr"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/flag_fr" />
 
         <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/flag_en"
-                android:id="@+id/btn_en"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:layout_margin="@dimen/padding2"
-                style="@style/Widget.AppCompat.ImageButton"
-                android:background="#FFFFFF" />
+            android:id="@+id/btn_en"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding2"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="#FFFFFF"
+            android:contentDescription="@string/flag_en"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/flag_en" />
     </LinearLayout>
 
     <TextView
