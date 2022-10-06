@@ -42,14 +42,14 @@
 
     <string name="welcome_page_8_title">Before you start</string>
     <string name="welcome_page_8_text1">Thank you for your interest in participating in the Goodness Groceries App and study!</string>
-    <string name="welcome_page_8_text2">Finalise your registration for this study by clicking on the link and following the two steps.</string>
+    <string name="welcome_page_8_text2">To register for the study and to use the app, click the ‘Let’s Go’ button. When you completed the registration process on our website, come back here, tick the box below, and then click the button again to continue. </string>
     <string name="welcome_page_8_checkbox">I have completed the two registration steps.</string>
     <string name="welcome_page_8_button">Let\'s go!</string>
     <string name="welcome_page_interest">Thanks for your interest to participate to the app and for the Goodness Groceries study!</string>
 
     <string name="accountconsideration_title">We are validating your registration</string>
     <string name="accountconsideration_text1">You will receive a notification when we have validated your informed consent form.</string>
-    <string name="accountconsideration_text2">If you missed a registration step, please click on the button below.</string>
+    <string name="accountconsideration_text2">If you did not read the study information and sign the informed consent on our website, return to the previous page by clicking on the button below. </string>
     <string name="accountconsideration_button">Return to previous page</string>
 
     <string name="observationphase_title">Your registration has been approved</string>

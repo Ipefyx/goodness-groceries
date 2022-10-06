@@ -36,7 +36,7 @@
 
     <string name="accountconsideration_title">Nous validons votre inscription</string>
     <string name="accountconsideration_text1">Vous recevrez une notification lorsque nous aurons validé votre formulaire de consentement.</string>
-    <string name="accountconsideration_text2">Si vous avez manqué une étape d’inscription, veuillez cliquer sur le bouton ci-dessous.</string>
+    <string name="accountconsideration_text2">i vous n\'avez pas lu les informations sur l\'étude et signé le formulaire de consentement sur notre site Web, revenez à la page précédente en cliquant sur le bouton ci-dessous.</string>
     <string name="accountconsideration_button">Retourner à la page précédente</string>
 
     <string name="observationphase_title">Votre inscription a été validée</string>
@@ -532,7 +532,7 @@
     <string name="welcome_page_notifications_title">Notifications</string>
     <string name="welcome_page_8_title"> On y est presque !</string>
     <string name="welcome_page_8_text1">Merci de votre intérêt pour participer à l\'application et l\'étude Goodness Groceries !</string>
-    <string name="welcome_page_8_text2">Finalisez votre inscription en cliquant sur le lien et en suivant les trois étapes.</string>
+    <string name="welcome_page_8_text2">Pour vous inscrire à l\'étude et utiliser l\'application, cliquez sur le bouton "Allons-y". Lorsque vous avez terminé le processus d\'inscription sur notre site Web, revenez ici, cochez la case ci-dessous, puis cliquez à nouveau sur le bouton pour continuer</string>
     <string name="welcome_page_8_checkbox">J\'ai terminé les deux étapes d\'inscription.</string>
     <string name="welcome_page_8_button">On y va !</string>
     <string name="welcome_page_interest">Merci pour votre interêt à participer à l\'appli et l\'étude Goodness Groceries !</string>
