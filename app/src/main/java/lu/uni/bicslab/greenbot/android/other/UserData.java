@@ -31,7 +31,7 @@ public class UserData {
 	}
 	
 	public static String getStatus(Context context) {
-		Log.e("UserData getStatus", getPrefs(context).getString("user_status", USER_INVALID));
+		Log.i("UserData getStatus", getPrefs(context).getString("user_status", USER_INVALID));
 		return getPrefs(context).getString("user_status", USER_INVALID);
 	}
 	
@@ -54,7 +54,7 @@ public class UserData {
 	}
 	
 	public static String getID(Context context) {
-		Log.e("UserData getID", getPrefs(context).getString("user_id", null));
+		Log.i("UserData getID", getPrefs(context).getString("user_id", null));
 		return getPrefs(context).getString("user_id", null);
 	}
 

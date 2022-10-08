@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
+    
     <ImageView
         android:id="@+id/img_icon"
         android:layout_width="@dimen/icon_width"
@@ -10,64 +11,76 @@
         android:layout_marginTop="@dimen/padding2"
         android:layout_centerHorizontal="true"
         android:src="@drawable/gg_logo_1" />
+
     <RelativeLayout
+        android:id="@+id/layout_firsttime1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/img_icon"
+        android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
-        android:padding="@dimen/padding2"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="@dimen/padding2">
 
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/layout_firsttime1_scan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
                 android:id="@+id/onbord_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
                 android:text="@string/welcome_page_6_title"
                 android:textColor="@android:color/black"
-                android:layout_gravity="center_horizontal"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentTop="true"
-                android:gravity="center_horizontal"
                 android:textSize="@dimen/txt_title_size"
                 android:textStyle="bold" />
 
-        <TextView
+            <TextView
                 android:id="@+id/onbord_doc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                android:layout_below="@+id/onbord_title"
                 android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/padding2"
+                android:gravity="center_horizontal"
                 android:paddingLeft="@dimen/desc_padding"
                 android:paddingRight="@dimen/desc_padding"
                 android:text="@string/welcome_page_6_text"
                 android:textAlignment="center"
-                android:gravity="center_horizontal"
                 android:textColor="@android:color/black"
-                android:textSize="@dimen/txt_doc_size"
-                android:layout_below="@+id/onbord_title" />
+                android:textSize="@dimen/txt_doc_size" />
 
-        <ImageView
-            android:id="@+id/onbord_img"
-            android:layout_width="@dimen/onboarding_image_width"
-            android:layout_height="@dimen/onboarding_image_width"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/onbord_doc"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/padding2"
-            android:src="@drawable/one_onbord" />
-
-        <Button
-                android:id="@+id/button_continue"
+            <ImageView
+                android:id="@+id/onbord_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/onbord_doc"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@+id/onbord_img"
-                android:layout_marginTop="50dp"
-                android:text="@string/next"
-                style="@style/BetterButton" />
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/padding2"
+                android:layout_marginBottom="50dp"
+                android:src="@drawable/one_onbord" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/button_continue"
+            style="@style/BetterButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/next" />
     </RelativeLayout>
 
 

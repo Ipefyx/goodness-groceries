@@ -14,108 +14,54 @@
             android:layout_centerHorizontal="true"
             android:src="@drawable/uni_icon"
             android:visibility="gone" />
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/icon"
-        android:layout_centerInParent="true"
-        android:gravity="center_horizontal"
-        android:padding="@dimen/padding2"
-        android:orientation="vertical">
-
-
-        <TextView
-            android:id="@+id/slide_two_title"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/welcome_page_3_title"
-            android:textColor="@android:color/black"
-            android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/icon"
+            android:layout_centerInParent="true"
             android:gravity="center_horizontal"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="@dimen/padding"
-            style="@style/texttitlestyle" />
+            android:padding="@dimen/padding2"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/slide_two_doc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/padding2"
-            android:gravity="center_horizontal"
-            android:text="@string/welcome_page_3_text"
-            android:textAlignment="center"
-            style="@style/textdatastyle"
-            android:layout_below="@+id/slide_two_title"/>
-
-        <LinearLayout
-            android:id="@+id/layout_onboarding_icon1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_below="@id/slide_two_doc"
-            android:orientation="horizontal"
-            android:layout_centerHorizontal="true"
-            >
-
-        <ImageView
-            android:layout_width="@dimen/onboarding_icon_width"
-            android:layout_height="@dimen/onboarding_icon_width"
-            android:layout_marginTop="@dimen/padding2"
-            android:layout_gravity="start|left"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/gg_environment" />
-
-        <ImageView
-            android:layout_width="@dimen/onboarding_icon_width"
-            android:layout_height="@dimen/onboarding_icon_width"
-            android:layout_marginTop="@dimen/padding2"
-            android:layout_gravity="end|right"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/gg_economicwellbeing" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layout_onboarding_label1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:layout_below="@id/layout_onboarding_icon1"
-            android:orientation="horizontal"
-            android:layout_centerHorizontal="true"
-            >
 
             <TextView
-                android:layout_width="@dimen/onboarding_icon_width"
+                android:id="@+id/slide_two_title"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/welcome_page_3_title"
+                android:textColor="@android:color/black"
                 android:layout_gravity="center_horizontal"
-                android:layout_weight="1"
-                android:textAlignment="center"
-                android:text="@string/IND_CAT_ENVIRONMENT_NAME"
-                android:textColor="@color/black" />
+                android:gravity="center_horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/padding"
+                style="@style/texttitlestyle" />
 
             <TextView
-                android:layout_width="@dimen/onboarding_icon_width"
+                android:id="@+id/slide_two_doc"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_weight="1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/padding2"
+                android:gravity="center_horizontal"
+                android:text="@string/welcome_page_3_text"
                 android:textAlignment="center"
-                android:text="@string/IND_CAT_ECONOMIC_NAME"
-                android:textColor="@color/black"/>
-        </LinearLayout>
+                style="@style/textdatastyle"
+                android:layout_below="@+id/slide_two_title"/>
 
-        <LinearLayout
-            android:id="@+id/layout_onboarding_icon2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_below="@id/layout_onboarding_label1"
-            android:orientation="horizontal"
-            android:layout_centerHorizontal="true"
-            >
+            <LinearLayout
+                android:id="@+id/layout_onboarding_icon1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/slide_two_doc"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                >
 
             <ImageView
                 android:layout_width="@dimen/onboarding_icon_width"
@@ -123,7 +69,7 @@
                 android:layout_marginTop="@dimen/padding2"
                 android:layout_gravity="start|left"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/gg_socialwellbeing" />
+                app:srcCompat="@drawable/gg_environment" />
 
             <ImageView
                 android:layout_width="@dimen/onboarding_icon_width"
@@ -131,37 +77,94 @@
                 android:layout_marginTop="@dimen/padding2"
                 android:layout_gravity="end|right"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/gg_goodgovernance" />
-        </LinearLayout>
+                app:srcCompat="@drawable/gg_economicwellbeing" />
+            </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/layout_onboarding_label2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:layout_below="@id/layout_onboarding_icon2"
-            android:orientation="horizontal"
-            android:layout_centerHorizontal="true"
-            >
-
-            <TextView
-                android:layout_width="@dimen/onboarding_icon_width"
+            <LinearLayout
+                android:id="@+id/layout_onboarding_label1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="1"
-                android:textAlignment="center"
-                android:text="@string/IND_CAT_SOCIAL_NAME"
-                android:textColor="@color/black" />
+                android:layout_marginTop="0dp"
+                android:layout_below="@id/layout_onboarding_icon1"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                >
 
-            <TextView
-                android:layout_width="@dimen/onboarding_icon_width"
+                <TextView
+                    android:layout_width="@dimen/onboarding_icon_width"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:text="@string/IND_CAT_ENVIRONMENT_NAME"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:layout_width="@dimen/onboarding_icon_width"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:text="@string/IND_CAT_ECONOMIC_NAME"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_onboarding_icon2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="1"
-                android:textAlignment="center"
-                android:text="@string/IND_CAT_GOVERNANCE_NAME"
-                android:textColor="@color/black" />
-        </LinearLayout>
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/layout_onboarding_label1"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                >
 
-    </RelativeLayout>
+                <ImageView
+                    android:layout_width="@dimen/onboarding_icon_width"
+                    android:layout_height="@dimen/onboarding_icon_width"
+                    android:layout_marginTop="@dimen/padding2"
+                    android:layout_gravity="start|left"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/gg_socialwellbeing" />
+
+                <ImageView
+                    android:layout_width="@dimen/onboarding_icon_width"
+                    android:layout_height="@dimen/onboarding_icon_width"
+                    android:layout_marginTop="@dimen/padding2"
+                    android:layout_gravity="end|right"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/gg_goodgovernance" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_onboarding_label2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_below="@id/layout_onboarding_icon2"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                >
+
+                <TextView
+                    android:layout_width="@dimen/onboarding_icon_width"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:text="@string/IND_CAT_SOCIAL_NAME"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:layout_width="@dimen/onboarding_icon_width"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:text="@string/IND_CAT_GOVERNANCE_NAME"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>
