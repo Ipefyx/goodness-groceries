@@ -10,8 +10,8 @@ android {
         applicationId "lu.uni.bicslab.greenbot.android"
         minSdkVersion 24
         targetSdkVersion 31
-        versionCode 5
-        versionName "0.5"
+        versionCode 11
+        versionName "1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

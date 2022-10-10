@@ -12,13 +12,19 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/padding2"
         android:src="@drawable/gg_logo_1" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_icon"
+        android:layout_above="@id/button_continue">
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/img_icon"
         android:gravity="center_horizontal"
         android:padding="@dimen/padding2"
+
         android:orientation="vertical">
 
 
@@ -163,17 +169,19 @@
                 android:text="@string/IND_CAT_GOVERNANCE_NAME"
                 android:textColor="@color/black" />
         </LinearLayout>
-
-        <Button
-            android:id="@+id/button_continue"
-            style="@style/BetterButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/layout_firsttime2_label2"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:text="@string/next" />
     </RelativeLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button_continue"
+        style="@style/BetterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/next" />
 
 
 </RelativeLayout>
