@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -18,6 +20,7 @@ import androidx.fragment.app.Fragment;
 
 import lu.uni.bicslab.greenbot.android.R;
 
+import lu.uni.bicslab.greenbot.android.other.Utils;
 import lu.uni.bicslab.greenbot.android.ui.activity.scan.BarcodeScannerActivity;
 
 public class SignInFragment extends Fragment {
@@ -25,6 +28,7 @@ public class SignInFragment extends Fragment {
 	public static final int BARCODE_CAPTURE = 1;
 
 	private EditText signin_id;
+	private CheckBox cb_noId;
 	
 	private String id;
 
@@ -54,6 +58,7 @@ public class SignInFragment extends Fragment {
 		});
 
 		signin_id = getView().findViewById(R.id.signin_id);
+		cb_noId = getView().findViewById((R.id.no_id_cb));
 
 		// Hacky code to keep focus on signin edittext when keyboard appear
 		signin_id.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -105,6 +110,27 @@ public class SignInFragment extends Fragment {
 			
 			@Override public void afterTextChanged(Editable s) {}
 			@Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+		});
+
+		cb_noId.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				WelcomeActivity activity = ((WelcomeActivity) getActivity());
+
+				signin_id.clearFocus();
+
+				if(isChecked) {
+					signin_id.setError(null);
+					activity.setIDValid(true);
+					activity.id = Utils.guestId();
+				} else {
+					if(signin_id.getText().length() != 13) {
+						signin_id.setError(getResources().getString(R.string.id_digit_alert));
+						activity.setIDValid(false);
+					}
+					activity.id = signin_id.getText().toString();
+				}
+			}
 		});
 
 

@@ -3,6 +3,7 @@ package lu.uni.bicslab.greenbot.android.ui.fragment.profile;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,32 +40,48 @@ public class ProfileFragment extends Fragment {
 	
 	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View root = inflater.inflate(R.layout.fragment_profile, container, false);
-		
+
+		TextView profile_id_label = root.findViewById(R.id.profile_text);
 		TextView profile_id = root.findViewById(R.id.profile_id);
 		review_products_button = root.findViewById(R.id.review_products_button);
 		Button change_language_button = root.findViewById(R.id.change_language_button);
-		
+
+		String userID = UserData.getID(getContext());
+		profile_id.setText(userID);
+
+		if(!Utils.isGuest(userID)) {
+			profile_id_label.setText(R.string.client_id);
+
+			review_products_button.setOnClickListener(v -> {
+				reviewNextProduct();
+			});
+
+			review_products_button.setEnabled(productsToReview.size() > 0);
+
+		} else {
+			profile_id_label.setText(R.string.user_id);
+
+			review_products_button.setText(R.string.feedback);
+			review_products_button.setOnClickListener(v -> {giveFeedback();});
+		}
+
 		String[] arg = getArguments().getStringArray("products_to_review");
 		if (arg == null)
 			arg = new String[]{};
 		productsToReview = new ArrayList<>(Arrays.asList(arg));
-		
-		profile_id.setText(UserData.getID(getContext()));
-		
-		review_products_button.setOnClickListener(v -> {
-			reviewNextProduct();
-		});
-		
+
+
+
 		change_language_button.setOnClickListener(v -> {
 			Utils.showLanguageDialog(getContext(), false, () -> {
 				getActivity().recreate();
 			});
 		});
-		
+
 		badge = BadgeDrawable.create(getContext());
-		
+
 		updateElements();
-		
+
 		return root;
 	}
 	
@@ -96,6 +113,13 @@ public class ProfileFragment extends Fragment {
 			startActivityForResult(i, FEEDBACK_REQUEST);
 		}
 	}
+
+	public void giveFeedback() {
+		String url = "https://food.uni.lu/goodness-groceries/feedback";
+
+		Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+		startActivity(i);;
+	}
 	
 	
 	@Override
@@ -117,7 +141,6 @@ public class ProfileFragment extends Fragment {
 	
 	@SuppressLint("RestrictedApi")
 	public void updateElements() {
-		review_products_button.setEnabled(productsToReview.size() > 0);
 		
 		badge.setVisible(productsToReview.size() > 0);
 		badge.setNumber(productsToReview.size());

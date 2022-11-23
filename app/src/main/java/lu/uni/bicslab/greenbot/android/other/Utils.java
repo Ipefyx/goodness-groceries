@@ -47,6 +47,7 @@ import lu.uni.bicslab.greenbot.android.datamodel.ProductCategoryModel;
 public class Utils {
 	
 	public static final String PRODUCT_IMAGE_PREFIX = "product_";
+	public static final String GUEST_ID_PREFIX = "9";
 	
 	
 	// TODO: Remove when reworking compare page
@@ -407,6 +408,21 @@ public class Utils {
 		} catch (java.text.ParseException e) {
 			return date;
 		}
+	}
+
+	/**
+	 * Gives a generated guest id. Used when no customer id is available.
+	 * @return Generated guest id
+	 */
+	public static String guestId() {
+
+		SimpleDateFormat idFormat = new SimpleDateFormat("yyMMddHHmmssS");
+
+		return GUEST_ID_PREFIX.concat(idFormat.format(new Date()).substring(1));
+	}
+
+	public static boolean isGuest(String id) {
+		return id.toCharArray()[0] == GUEST_ID_PREFIX.toCharArray()[0];
 	}
 	
 }

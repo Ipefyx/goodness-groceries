@@ -4,6 +4,7 @@
 
     <!--    General stuff-->
     <string name="client_id">Pall Center client ID</string>
+    <string name="user_id">User ID</string>
 
     <string name="general_error">An error has occurred</string>
     <string name="general_error_try_again">An error has occurred. Please try again later.</string>
@@ -60,6 +61,7 @@
 
     <string name="id_digit_alert">The client ID must have exactly 13 digits</string>
     <string name="scan_directly">Scan your Pall Center customer card</string>
+    <string name="no_customer_card">I don\'t have a Pall Center customer card</string>
 
     <string name="moreinfo">More info…</string>
 
@@ -117,6 +119,7 @@
     <!--    Profile page-->
     <string name="products">Products</string>
     <string name="review_products">Review products</string>
+    <string name="feedback">Give my feedback</string>
     <string name="settings">Settings</string>
 
 

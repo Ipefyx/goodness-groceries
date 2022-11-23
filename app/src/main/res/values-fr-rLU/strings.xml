@@ -506,9 +506,11 @@
     <string name="network_error">Veuillez vérifier votre connexion Internet et réessayer plus tard.</string>
     <string name="menu_products">Produits</string>
     <string name="menu_product_categories">Catégories</string>
-    <string name="client_id">ID client Pall Center</string>
+    <string name="client_id">ID client Pall center</string>
+    <string name="user_id">ID utilisateur</string>
     <string name="products">Produits</string>
     <string name="review_products">Avis sur produits</string>
+    <string name="feedback">Donner mon avis</string>
     <string name="feedback_page_text">Vous avez récemment acheté le produit suivant, quels indicateurs vous ont amené à le choisir?</string>
     <string name="price">Prix</string>
     <string name="other_reason">Autre raison…</string>
@@ -543,6 +545,7 @@
     <string name="or">ou</string>
     <string name="scan_directly">Scannez votre carte client Pall Center</string>
     <string name="settings">Paramètres</string>
+    <string name="no_customer_card">Je n\'ai pas de carte client Pall Center</string>
 
     <!--    External links -->
     <string name="url_home_page">https://food.uni.lu/goodness-groceries/fr</string>
