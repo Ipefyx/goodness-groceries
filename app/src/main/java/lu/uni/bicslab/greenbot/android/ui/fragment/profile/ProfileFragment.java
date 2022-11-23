@@ -49,6 +49,12 @@ public class ProfileFragment extends Fragment {
 		String userID = UserData.getID(getContext());
 		profile_id.setText(userID);
 
+
+		String[] arg = getArguments().getStringArray("products_to_review");
+		if (arg == null)
+			arg = new String[]{};
+		productsToReview = new ArrayList<>(Arrays.asList(arg));
+
 		if(!Utils.isGuest(userID)) {
 			profile_id_label.setText(R.string.client_id);
 
@@ -65,10 +71,7 @@ public class ProfileFragment extends Fragment {
 			review_products_button.setOnClickListener(v -> {giveFeedback();});
 		}
 
-		String[] arg = getArguments().getStringArray("products_to_review");
-		if (arg == null)
-			arg = new String[]{};
-		productsToReview = new ArrayList<>(Arrays.asList(arg));
+
 
 
 
