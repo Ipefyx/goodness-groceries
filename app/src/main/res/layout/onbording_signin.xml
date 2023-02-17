@@ -41,7 +41,8 @@
             android:inputType="number"
             android:imeOptions="actionDone"
             android:focusable="true"
-            android:focusableInTouchMode="true"/>
+            android:focusableInTouchMode="true"
+            android:visibility="invisible"/>
 
     <Button
             android:id="@+id/tx_login"
@@ -67,7 +68,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="@dimen/padding"
-            app:layout_constraintTop_toBottomOf="@+id/signin_id" />
+            app:layout_constraintTop_toBottomOf="@+id/signin_id"
+            android:visibility="gone"/>
 
     <TextView
             android:text="@string/scan_directly"
@@ -82,7 +84,7 @@
             android:textColor="@color/palette_blue1"
             android:onClick="onClick"
             android:clickable="true"
-            app:drawableLeftCompat="@drawable/ic_baseline_qr_code_scanner"
+            app:drawableLeftCompat="@drawable/ic_baseline_account_circle"
             app:drawableTint="@color/palette_blue1"/>
         <!--    android:focusable="true" -->
 

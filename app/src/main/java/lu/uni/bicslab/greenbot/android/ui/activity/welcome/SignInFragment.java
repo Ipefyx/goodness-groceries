@@ -1,8 +1,10 @@
 package lu.uni.bicslab.greenbot.android.ui.activity.welcome;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.Html;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -53,9 +55,27 @@ public class SignInFragment extends Fragment {
 		super.onActivityCreated(savedInstanceState);
 
 		TextView scan_directly = getView().findViewById(R.id.scan_directly);
+
+		/* DPERECATED
 		scan_directly.setOnClickListener(v -> {
 			startActivityForResult(new Intent(getActivity(), BarcodeScannerActivity.class), BARCODE_CAPTURE);
 		});
+		*/
+		scan_directly.setOnClickListener(new View.OnClickListener() {
+				 @Override
+				 public void onClick(View view) {
+					 AlertDialog.Builder infoPopup = new AlertDialog.Builder(view.getContext());
+					 infoPopup.setTitle(view.getContext().getString(R.string.USER_AGREEMENT_TITLE));
+
+					 String content = view.getContext().getString(R.string.USER_AGREEMENT);
+
+					 infoPopup.setMessage(Html.fromHtml(content, Html.FROM_HTML_MODE_LEGACY));
+					 infoPopup.setPositiveButton("OK", null);
+					 infoPopup.show();
+				 }
+			 }
+		);
+
 
 		signin_id = getView().findViewById(R.id.signin_id);
 		cb_noId = getView().findViewById((R.id.no_id_cb));

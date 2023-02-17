@@ -55,7 +55,7 @@ public class ProfileFragment extends Fragment {
 			arg = new String[]{};
 		productsToReview = new ArrayList<>(Arrays.asList(arg));
 
-		if(!Utils.isGuest(userID)) {
+		if(!Utils.isGuest(userID)) { // DEPREACTED : NO usage of Pall center ID anymore
 			profile_id_label.setText(R.string.client_id);
 
 			review_products_button.setOnClickListener(v -> {
@@ -118,7 +118,8 @@ public class ProfileFragment extends Fragment {
 	}
 
 	public void giveFeedback() {
-		String url = "https://food.uni.lu/goodness-groceries/feedback";
+		//String url = "https://food.uni.lu/goodness-groceries/feedback";
+		String url = getString(R.string.url_give_feedback);
 
 		Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 		startActivity(i);;

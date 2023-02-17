@@ -543,15 +543,21 @@
     <string name="language">Langue</string>
     <string name="language_change_later">Vous pouvez changer la langue dans les paramètres plus tard.</string>
     <string name="or">ou</string>
-    <string name="scan_directly">Scannez votre carte client Pall Center</string>
+    <!-- DEPRECATED <string name="scan_directly">Scannez votre carte client Pall Center</string> -->
+    <string name="scan_directly">Lire l\'Accord Utilisateur</string>
     <string name="settings">Paramètres</string>
-    <string name="no_customer_card">Je n\'ai pas de carte client Pall Center</string>
+    <!-- DEPRECATED <string name="no_customer_card">Je n\'ai pas de carte client Pall Center</string> -->
+    <string name="no_customer_card">J\'ai lu et j\'accepte l\'Accord Utilisateur</string>
+
+    <string name="USER_AGREEMENT_TITLE">Accord Utilisateur</string>
+    <string name="USER_AGREEMENT">Je déclare par la présente que j’ai lu la Fiche d’Information (insert link) et les Termes &amp; Conditions (insert link) et que j’ai été informé(e) sur la nature de cette étude et sur toutes les conséquences et tous les risques potentiels y associés. Je comprends que je suis libre de me retirer de cette étude à tout moment, sans donner de raison et sans conséquences négatives pour moi. Je comprends que je vais recevoir un lien dans l’Application pour remplir un bref questionnaire anonyme à la fin de l’étude, qui est optionnel et volontaire. Je donne mon accord que les données concernant ma personne, qui sont collectées lors de cette étude, sont uniquement utilisées à des fins scientifiques et sont traitées de manière strictement confidentielle tel que défini par le Règlement Général sur la Protection des Données (RGPD).</string>
 
     <!--    External links -->
     <string name="url_home_page">https://food.uni.lu/goodness-groceries/fr</string>
     <string name="url_help_page">https://food.uni.lu/goodness-groceries/fr/help</string>
     <string name="url_contact_us">https://food.uni.lu/goodness-groceries/fr/contact-us</string>
     <string name="url_welcome_survey">https://food.uni.lu/goodness-groceries/fr/join-the-study</string>
+    <string name="url_give_feedback">http://ulsurvey.uni.lu/index.php/587734?lang=fr</string>
 
 
     <string name="flag_fr">Drapeau pour la langue française</string>
