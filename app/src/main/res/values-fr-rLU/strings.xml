@@ -492,6 +492,8 @@
     <string name="NOTIFICATION_REVIEW_PRODUCTS_TITLE">Retour client</string>
     <string name="NOTIFICATION_ACCOUNT_PHASE2_TITLE">Prochaine étape</string>
     <string name="NOTIFICATION_ACCOUNT_PHASE2_BODY">Vous pouvez maintenant utiliser l\'application pour faire vos courses.</string>
+    <string name="NOTIFICATION_ACCOUNT_WIN_TITLE">Tirage au sort</string>
+    <string name="NOTIFICATION_ACCOUNT_WIN_BODY">Prenez 5 minutes pour nous donner votre avis et gagnez 150€</string>
     
     
     <string name="compare_button">Comparer</string>
@@ -511,6 +513,7 @@
     <string name="products">Produits</string>
     <string name="review_products">Avis sur produits</string>
     <string name="feedback">Donner mon avis</string>
+    <string name="feedback_and_win">Donnez votre avis et gagnez 150€</string>
     <string name="feedback_page_text">Vous avez récemment acheté le produit suivant, quels indicateurs vous ont amené à le choisir?</string>
     <string name="price">Prix</string>
     <string name="other_reason">Autre raison…</string>
@@ -550,7 +553,9 @@
     <string name="no_customer_card">J\'ai lu et j\'accepte l\'Accord Utilisateur</string>
 
     <string name="USER_AGREEMENT_TITLE">Accord Utilisateur</string>
-    <string name="USER_AGREEMENT">Je déclare par la présente que j’ai lu la Fiche d’Information (insert link) et les Termes &amp; Conditions (insert link) et que j’ai été informé(e) sur la nature de cette étude et sur toutes les conséquences et tous les risques potentiels y associés. Je comprends que je suis libre de me retirer de cette étude à tout moment, sans donner de raison et sans conséquences négatives pour moi. Je comprends que je vais recevoir un lien dans l’Application pour remplir un bref questionnaire anonyme à la fin de l’étude, qui est optionnel et volontaire. Je donne mon accord que les données concernant ma personne, qui sont collectées lors de cette étude, sont uniquement utilisées à des fins scientifiques et sont traitées de manière strictement confidentielle tel que défini par le Règlement Général sur la Protection des Données (RGPD).</string>
+    <string name="USER_AGREEMENT1">Je déclare par la présente que j’ai lu la</string>
+    <string name="USER_AGREEMENT2">Fiche d\'information</string>
+    <string name="USER_AGREEMENT3">et que j’ai été informé(e) sur la nature de cette étude et sur toutes les conséquences et tous les risques potentiels y associés. Je comprends que je suis libre de me retirer de cette étude à tout moment, sans donner de raison et sans conséquences négatives pour moi. Je comprends que je vais recevoir un lien dans l’Application pour remplir un bref questionnaire anonyme à la fin de l’étude, qui est optionnel et volontaire. Je donne mon accord que les données concernant ma personne, qui sont collectées lors de cette étude, sont uniquement utilisées à des fins scientifiques et sont traitées de manière strictement confidentielle selon les obligations du Règlement Général sur la Protection des Données (RGPD).</string>
 
     <!--    External links -->
     <string name="url_home_page">https://food.uni.lu/goodness-groceries/fr</string>
@@ -558,6 +563,7 @@
     <string name="url_contact_us">https://food.uni.lu/goodness-groceries/fr/contact-us</string>
     <string name="url_welcome_survey">https://food.uni.lu/goodness-groceries/fr/join-the-study</string>
     <string name="url_give_feedback">http://ulsurvey.uni.lu/index.php/587734?lang=fr</string>
+    <string name="url_user_agreement">https://food.uni.lu/wp-content/uploads/sites/21/2023/02/Study-information-for-Goodness-Groceries_FEB2023_ERP-23-005-GGAPP_FR.pdf</string>
 
 
     <string name="flag_fr">Drapeau pour la langue française</string>

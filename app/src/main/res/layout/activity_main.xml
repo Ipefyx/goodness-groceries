@@ -21,12 +21,26 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:id="@+id/appBarLayout">
 
-            <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:background="?attr/colorPrimary"
-                    app:popupTheme="@style/AppTheme.PopupOverlay" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="?attr/colorPrimary"
+                        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+                <Button
+                    android:id="@+id/button_feedback"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/feedback_and_win"
+                    android:textSize="10dp"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"/>
+            </RelativeLayout>
 
         </com.google.android.material.appbar.AppBarLayout>
 

@@ -1,10 +1,13 @@
 package lu.uni.bicslab.greenbot.android;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -50,7 +53,16 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 		
 		navigation = findViewById(R.id.bottomNavigation);
 		navigation.setOnNavigationItemSelectedListener(this);
-		
+
+
+		Button btnFeedback = (Button) findViewById(R.id.button_feedback);
+		btnFeedback.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				giveFeedback();
+			}
+		});
+
 	}
 	
 	@Override
@@ -131,5 +143,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 			}
 			
 		}
+	}
+
+	public void giveFeedback() {
+		String url = getString(R.string.url_give_feedback);
+
+		Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+		startActivity(i);;
 	}
 }

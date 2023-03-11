@@ -122,6 +122,7 @@
     <string name="products">Products</string>
     <string name="review_products">Review products</string>
     <string name="feedback">Give my feedback</string>
+    <string name="feedback_and_win">Give my feedback and win 150€</string>
     <string name="settings">Settings</string>
 
 
@@ -568,10 +569,13 @@
     <string name="NOTIFICATION_REVIEW_PRODUCTS_TITLE">Client feedback</string>
     <string name="NOTIFICATION_ACCOUNT_PHASE2_TITLE">Next Step</string>
     <string name="NOTIFICATION_ACCOUNT_PHASE2_BODY">You are invited to use the application to do grocery shopping.</string>
+    <string name="NOTIFICATION_ACCOUNT_WIN_TITLE">Lottery</string>
+    <string name="NOTIFICATION_ACCOUNT_WIN_BODY">Take 5 minutes to give us your feedback and win 150€</string>
 
     <string name="USER_AGREEMENT_TITLE">User Agreement</string>
-    <string name="USER_AGREEMENT">I hereby declare that I have read the study information sheet (insert link) and the Terms and Conditions (insert link) and have been informed as to the nature of this study and any potential consequences or risks associated therewith. I understand that I am free to withdraw from this study at any time, without giving a reason and without negative consequences to myself. I understand that I will be sent a link in the app to take part in a short anonymous survey at the end of the study but that this is optional and voluntary. I agree that data concerning my person collected within the scope of the study are used for scientific purposes only and are treated as strictly confidential according to the regulations of General Data Protection Regulation (GDPR).</string>
-
+    <string name="USER_AGREEMENT1">I hereby declare that I have read the study</string>
+    <string name="USER_AGREEMENT2">information sheet</string>
+    <string name="USER_AGREEMENT3">and have been informed as to the nature of this study and any potential consequences or risks associated therewith. I understand that I am free to withdraw from this study at any time, and without giving a reason and without negative consequences to myself. I understand that I will be sent a link in the app to take part in a short anonymous survey at the end of the study but that this is purely optional and voluntary. I agree that data concerning my person collected within the scope of the study are used for scientific purposes only and are treated as strictly confidential according to the regulations of General Data Protection Regulation (GDPR).</string>
 
     <!--    External links -->
     <string name="url_home_page">https://food.uni.lu/goodness-groceries</string>
@@ -579,6 +583,7 @@
     <string name="url_contact_us">https://food.uni.lu/goodness-groceries/contact-us</string>
     <string name="url_welcome_survey">https://food.uni.lu/goodness-groceries/join-the-study</string>
     <string name="url_give_feedback">http://ulsurvey.uni.lu/index.php/587734?lang=en</string>
+    <string name="url_user_agreement">https://food.uni.lu/wp-content/uploads/sites/21/2023/02/Study-information-for-Goodness-Groceries_FEB2023_ERP-23-005-GGAPP_EN.pdf</string>
 
 
     <string name="flag_fr">French language flag</string>

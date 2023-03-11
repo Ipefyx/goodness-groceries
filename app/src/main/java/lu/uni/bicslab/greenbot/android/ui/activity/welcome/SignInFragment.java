@@ -1,11 +1,13 @@
 package lu.uni.bicslab.greenbot.android.ui.activity.welcome;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,14 +66,22 @@ public class SignInFragment extends Fragment {
 		scan_directly.setOnClickListener(new View.OnClickListener() {
 				 @Override
 				 public void onClick(View view) {
-					 AlertDialog.Builder infoPopup = new AlertDialog.Builder(view.getContext());
+					 Context ctx = view.getContext();
+					 AlertDialog.Builder infoPopup = new AlertDialog.Builder(ctx);
 					 infoPopup.setTitle(view.getContext().getString(R.string.USER_AGREEMENT_TITLE));
 
-					 String content = view.getContext().getString(R.string.USER_AGREEMENT);
+					 String content = ctx.getString(R.string.USER_AGREEMENT1);
+
+					 content += " <a href=\"" + ctx.getString(R.string.url_user_agreement) + "\">"
+						+ ctx.getString(R.string.USER_AGREEMENT2) + "</a> ";
+
+					 content += ctx.getString(R.string.USER_AGREEMENT3);
 
 					 infoPopup.setMessage(Html.fromHtml(content, Html.FROM_HTML_MODE_LEGACY));
 					 infoPopup.setPositiveButton("OK", null);
-					 infoPopup.show();
+					 AlertDialog d = infoPopup.show();
+
+					 ((TextView)d.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
 				 }
 			 }
 		);

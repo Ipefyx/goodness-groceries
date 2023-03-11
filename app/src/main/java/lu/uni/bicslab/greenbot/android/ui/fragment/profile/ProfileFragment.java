@@ -55,7 +55,7 @@ public class ProfileFragment extends Fragment {
 			arg = new String[]{};
 		productsToReview = new ArrayList<>(Arrays.asList(arg));
 
-		if(!Utils.isGuest(userID)) { // DEPREACTED : NO usage of Pall center ID anymore
+		if(!Utils.isGuest(userID)) { // If user with pall center ID (for LEGACY purpose)
 			profile_id_label.setText(R.string.client_id);
 
 			review_products_button.setOnClickListener(v -> {
@@ -67,7 +67,7 @@ public class ProfileFragment extends Fragment {
 		} else {
 			profile_id_label.setText(R.string.user_id);
 
-			review_products_button.setText(R.string.feedback);
+			review_products_button.setText(R.string.feedback_and_win);
 			review_products_button.setOnClickListener(v -> {giveFeedback();});
 		}
 
